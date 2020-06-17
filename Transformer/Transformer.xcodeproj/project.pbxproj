@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FBF89F111A447A1DDFC5C13 /* Pods_TransformerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BFB1B2D6D9E259340D3A2E /* Pods_TransformerTests.framework */; };
+		C173B1A122A98D0C00B5B51A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1A022A98D0C00B5B51A /* AppDelegate.swift */; };
+		C173B1A922A98D0C00B5B51A /* Transformer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C173B1A722A98D0C00B5B51A /* Transformer.xcdatamodeld */; };
+		C173B1AB22A98D0D00B5B51A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C173B1AA22A98D0D00B5B51A /* Assets.xcassets */; };
+		C173B1AE22A98D0D00B5B51A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C173B1AC22A98D0D00B5B51A /* LaunchScreen.storyboard */; };
+		C173B1B922A98D0E00B5B51A /* TransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1B822A98D0E00B5B51A /* TransformerTests.swift */; };
+		C173B1C922A98F2200B5B51A /* Combat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1C822A98F2200B5B51A /* Combat.swift */; };
+		C173B1F122A9E7EE00B5B51A /* TransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1F022A9E7EE00B5B51A /* TransformerViewModel.swift */; };
+		C173B1F322A9E7FC00B5B51A /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1F222A9E7FC00B5B51A /* ViewModelType.swift */; };
+		C173B1F522A9F00D00B5B51A /* TransformerTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1F422A9F00D00B5B51A /* TransformerTableViewCellType.swift */; };
+		C173B1F722A9F0CA00B5B51A /* TransformerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1F622A9F0CA00B5B51A /* TransformerCellViewModel.swift */; };
+		C173B1FA22A9F21300B5B51A /* TransformerTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1F922A9F21300B5B51A /* TransformerTableViewViewModel.swift */; };
+		C173B1FC22A9F49B00B5B51A /* TransformerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1FB22A9F49B00B5B51A /* TransformerListViewController.swift */; };
+		C173B1FE22A9FA2700B5B51A /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1FD22A9FA2700B5B51A /* Transformer.swift */; };
+		C173B20022A9FEF600B5B51A /* TransformerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B1FF22A9FEF600B5B51A /* TransformerTableViewCell.swift */; };
+		C173B20222AA896900B5B51A /* LabelWithIputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20122AA896900B5B51A /* LabelWithIputView.swift */; };
+		C173B20422AA8E1D00B5B51A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20322AA8E1D00B5B51A /* MainViewController.swift */; };
+		C173B20622AA8E7C00B5B51A /* AddAutobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20522AA8E7C00B5B51A /* AddAutobotViewController.swift */; };
+		C173B20822AA8E9300B5B51A /* AddDecepticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20722AA8E9300B5B51A /* AddDecepticonViewController.swift */; };
+		C173B20A22AA8EAC00B5B51A /* TransformerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20922AA8EAC00B5B51A /* TransformerDetailViewController.swift */; };
+		C173B20C22AACCD700B5B51A /* TransformerDetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20B22AACCD700B5B51A /* TransformerDetailViewModelType.swift */; };
+		C173B20E22AACEA800B5B51A /* UpdateTransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B20D22AACEA800B5B51A /* UpdateTransformerViewModel.swift */; };
+		C173B21122AAD63400B5B51A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B21022AAD63400B5B51A /* Alert.swift */; };
+		C173B21322AAD6D600B5B51A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B21222AAD6D600B5B51A /* APIClient.swift */; };
+		C173B21522AB40A200B5B51A /* AddAutobot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C173B21422AB40A200B5B51A /* AddAutobot.storyboard */; };
+		C173B21722AB414900B5B51A /* AddDecepticon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C173B21622AB414900B5B51A /* AddDecepticon.storyboard */; };
+		C173B21922AC313C00B5B51A /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B21822AC313C00B5B51A /* BattleViewController.swift */; };
+		C173B21B22AC316800B5B51A /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C173B21A22AC316800B5B51A /* Battle.storyboard */; };
+		C173B21D22AC377400B5B51A /* ReadOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B21C22AC377400B5B51A /* ReadOnce.swift */; };
+		C173B21F22AC983500B5B51A /* extension++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173B21E22AC983500B5B51A /* extension++.swift */; };
+		E46671FE39D0BD0144666E4E /* Pods_Transformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290AE6347830DC182D10273B /* Pods_Transformer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C173B1B522A98D0E00B5B51A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C173B19522A98D0B00B5B51A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C173B19C22A98D0B00B5B51A;
+			remoteInfo = Transformer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		225A48790F2765EE9362EEBB /* Pods-TransformerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformerTests.debug.xcconfig"; path = "Target Support Files/Pods-TransformerTests/Pods-TransformerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		290AE6347830DC182D10273B /* Pods_Transformer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transformer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB54943C06FC0ADDED03A47 /* Pods-Transformer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transformer.release.xcconfig"; path = "Target Support Files/Pods-Transformer/Pods-Transformer.release.xcconfig"; sourceTree = "<group>"; };
+		9E7D6A670E9CCA02B3FC4D09 /* Pods-TransformerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformerTests.release.xcconfig"; path = "Target Support Files/Pods-TransformerTests/Pods-TransformerTests.release.xcconfig"; sourceTree = "<group>"; };
+		C173B19D22A98D0C00B5B51A /* Transformer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transformer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C173B1A022A98D0C00B5B51A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C173B1A822A98D0C00B5B51A /* Transformer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Transformer.xcdatamodel; sourceTree = "<group>"; };
+		C173B1AA22A98D0D00B5B51A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C173B1AD22A98D0D00B5B51A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C173B1AF22A98D0D00B5B51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C173B1B422A98D0E00B5B51A /* TransformerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C173B1B822A98D0E00B5B51A /* TransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTests.swift; sourceTree = "<group>"; };
+		C173B1BA22A98D0E00B5B51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C173B1C822A98F2200B5B51A /* Combat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combat.swift; sourceTree = "<group>"; };
+		C173B1F022A9E7EE00B5B51A /* TransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerViewModel.swift; sourceTree = "<group>"; };
+		C173B1F222A9E7FC00B5B51A /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		C173B1F422A9F00D00B5B51A /* TransformerTableViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTableViewCellType.swift; sourceTree = "<group>"; };
+		C173B1F622A9F0CA00B5B51A /* TransformerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerCellViewModel.swift; sourceTree = "<group>"; };
+		C173B1F922A9F21300B5B51A /* TransformerTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTableViewViewModel.swift; sourceTree = "<group>"; };
+		C173B1FB22A9F49B00B5B51A /* TransformerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerListViewController.swift; sourceTree = "<group>"; };
+		C173B1FD22A9FA2700B5B51A /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		C173B1FF22A9FEF600B5B51A /* TransformerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTableViewCell.swift; sourceTree = "<group>"; };
+		C173B20122AA896900B5B51A /* LabelWithIputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithIputView.swift; sourceTree = "<group>"; };
+		C173B20322AA8E1D00B5B51A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C173B20522AA8E7C00B5B51A /* AddAutobotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAutobotViewController.swift; sourceTree = "<group>"; };
+		C173B20722AA8E9300B5B51A /* AddDecepticonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDecepticonViewController.swift; sourceTree = "<group>"; };
+		C173B20922AA8EAC00B5B51A /* TransformerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailViewController.swift; sourceTree = "<group>"; };
+		C173B20B22AACCD700B5B51A /* TransformerDetailViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailViewModelType.swift; sourceTree = "<group>"; };
+		C173B20D22AACEA800B5B51A /* UpdateTransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransformerViewModel.swift; sourceTree = "<group>"; };
+		C173B21022AAD63400B5B51A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C173B21222AAD6D600B5B51A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		C173B21422AB40A200B5B51A /* AddAutobot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAutobot.storyboard; sourceTree = "<group>"; };
+		C173B21622AB414900B5B51A /* AddDecepticon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDecepticon.storyboard; sourceTree = "<group>"; };
+		C173B21822AC313C00B5B51A /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		C173B21A22AC316800B5B51A /* Battle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Battle.storyboard; sourceTree = "<group>"; };
+		C173B21C22AC377400B5B51A /* ReadOnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnce.swift; sourceTree = "<group>"; };
+		C173B21E22AC983500B5B51A /* extension++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension++.swift"; sourceTree = "<group>"; };
+		D4BFB1B2D6D9E259340D3A2E /* Pods_TransformerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9C95CCFBF4A94911ED50869 /* Pods-Transformer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transformer.debug.xcconfig"; path = "Target Support Files/Pods-Transformer/Pods-Transformer.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C173B19A22A98D0B00B5B51A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46671FE39D0BD0144666E4E /* Pods_Transformer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C173B1B122A98D0E00B5B51A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FBF89F111A447A1DDFC5C13 /* Pods_TransformerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA277909FF556873D03D4A3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9C95CCFBF4A94911ED50869 /* Pods-Transformer.debug.xcconfig */,
+				7EB54943C06FC0ADDED03A47 /* Pods-Transformer.release.xcconfig */,
+				225A48790F2765EE9362EEBB /* Pods-TransformerTests.debug.xcconfig */,
+				9E7D6A670E9CCA02B3FC4D09 /* Pods-TransformerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B1ECFA70C4D5824702DFC395 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				290AE6347830DC182D10273B /* Pods_Transformer.framework */,
+				D4BFB1B2D6D9E259340D3A2E /* Pods_TransformerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C173B19422A98D0B00B5B51A = {
+			isa = PBXGroup;
+			children = (
+				C173B19F22A98D0C00B5B51A /* Transformer */,
+				C173B1B722A98D0E00B5B51A /* TransformerTests */,
+				C173B19E22A98D0C00B5B51A /* Products */,
+				AA277909FF556873D03D4A3D /* Pods */,
+				B1ECFA70C4D5824702DFC395 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C173B19E22A98D0C00B5B51A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C173B19D22A98D0C00B5B51A /* Transformer.app */,
+				C173B1B422A98D0E00B5B51A /* TransformerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C173B19F22A98D0C00B5B51A /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				C173B20F22AAD62000B5B51A /* Helper */,
+				C173B1C422A98D3100B5B51A /* Transformers */,
+				C173B1C322A98D2800B5B51A /* API */,
+				C173B1A022A98D0C00B5B51A /* AppDelegate.swift */,
+				C173B1AA22A98D0D00B5B51A /* Assets.xcassets */,
+				C173B1AC22A98D0D00B5B51A /* LaunchScreen.storyboard */,
+				C173B1AF22A98D0D00B5B51A /* Info.plist */,
+				C173B1A722A98D0C00B5B51A /* Transformer.xcdatamodeld */,
+			);
+			path = Transformer;
+			sourceTree = "<group>";
+		};
+		C173B1B722A98D0E00B5B51A /* TransformerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1B822A98D0E00B5B51A /* TransformerTests.swift */,
+				C173B1BA22A98D0E00B5B51A /* Info.plist */,
+			);
+			path = TransformerTests;
+			sourceTree = "<group>";
+		};
+		C173B1C322A98D2800B5B51A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C173B21222AAD6D600B5B51A /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C173B1C422A98D3100B5B51A /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1EF22A9E71500B5B51A /* ViewController */,
+				C173B1EE22A9E70200B5B51A /* View */,
+				C173B1ED22A9E6FB00B5B51A /* ViewModel */,
+				C173B1C522A98D5800B5B51A /* Model */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
+		C173B1C522A98D5800B5B51A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1C822A98F2200B5B51A /* Combat.swift */,
+				C173B1FD22A9FA2700B5B51A /* Transformer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C173B1ED22A9E6FB00B5B51A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1F822A9F1CA00B5B51A /* CellViewModel */,
+				C173B1F022A9E7EE00B5B51A /* TransformerViewModel.swift */,
+				C173B1F222A9E7FC00B5B51A /* ViewModelType.swift */,
+				C173B20B22AACCD700B5B51A /* TransformerDetailViewModelType.swift */,
+				C173B20D22AACEA800B5B51A /* UpdateTransformerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C173B1EE22A9E70200B5B51A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1FF22A9FEF600B5B51A /* TransformerTableViewCell.swift */,
+				C173B20122AA896900B5B51A /* LabelWithIputView.swift */,
+				C173B21422AB40A200B5B51A /* AddAutobot.storyboard */,
+				C173B21622AB414900B5B51A /* AddDecepticon.storyboard */,
+				C173B21A22AC316800B5B51A /* Battle.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C173B1EF22A9E71500B5B51A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1FB22A9F49B00B5B51A /* TransformerListViewController.swift */,
+				C173B20322AA8E1D00B5B51A /* MainViewController.swift */,
+				C173B20522AA8E7C00B5B51A /* AddAutobotViewController.swift */,
+				C173B20722AA8E9300B5B51A /* AddDecepticonViewController.swift */,
+				C173B20922AA8EAC00B5B51A /* TransformerDetailViewController.swift */,
+				C173B21822AC313C00B5B51A /* BattleViewController.swift */,
+				C173B21E22AC983500B5B51A /* extension++.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C173B1F822A9F1CA00B5B51A /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C173B1F422A9F00D00B5B51A /* TransformerTableViewCellType.swift */,
+				C173B1F622A9F0CA00B5B51A /* TransformerCellViewModel.swift */,
+				C173B1F922A9F21300B5B51A /* TransformerTableViewViewModel.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		C173B20F22AAD62000B5B51A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C173B21022AAD63400B5B51A /* Alert.swift */,
+				C173B21C22AC377400B5B51A /* ReadOnce.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C173B19C22A98D0B00B5B51A /* Transformer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C173B1BD22A98D0E00B5B51A /* Build configuration list for PBXNativeTarget "Transformer" */;
+			buildPhases = (
+				AD659630B973D43FEBBFD4C1 /* [CP] Check Pods Manifest.lock */,
+				C173B19922A98D0B00B5B51A /* Sources */,
+				C173B19A22A98D0B00B5B51A /* Frameworks */,
+				C173B19B22A98D0B00B5B51A /* Resources */,
+				0338E30589159DD74C1A8421 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Transformer;
+			productName = Transformer;
+			productReference = C173B19D22A98D0C00B5B51A /* Transformer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C173B1B322A98D0E00B5B51A /* TransformerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C173B1C022A98D0E00B5B51A /* Build configuration list for PBXNativeTarget "TransformerTests" */;
+			buildPhases = (
+				8F6A82466604E2ADD06AFACD /* [CP] Check Pods Manifest.lock */,
+				C173B1B022A98D0E00B5B51A /* Sources */,
+				C173B1B122A98D0E00B5B51A /* Frameworks */,
+				C173B1B222A98D0E00B5B51A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C173B1B622A98D0E00B5B51A /* PBXTargetDependency */,
+			);
+			name = TransformerTests;
+			productName = TransformerTests;
+			productReference = C173B1B422A98D0E00B5B51A /* TransformerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C173B19522A98D0B00B5B51A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Paul Ikhane";
+				TargetAttributes = {
+					C173B19C22A98D0B00B5B51A = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					C173B1B322A98D0E00B5B51A = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = C173B19C22A98D0B00B5B51A;
+					};
+				};
+			};
+			buildConfigurationList = C173B19822A98D0B00B5B51A /* Build configuration list for PBXProject "Transformer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C173B19422A98D0B00B5B51A;
+			productRefGroup = C173B19E22A98D0C00B5B51A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C173B19C22A98D0B00B5B51A /* Transformer */,
+				C173B1B322A98D0E00B5B51A /* TransformerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C173B19B22A98D0B00B5B51A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C173B1AE22A98D0D00B5B51A /* LaunchScreen.storyboard in Resources */,
+				C173B21522AB40A200B5B51A /* AddAutobot.storyboard in Resources */,
+				C173B21722AB414900B5B51A /* AddDecepticon.storyboard in Resources */,
+				C173B1AB22A98D0D00B5B51A /* Assets.xcassets in Resources */,
+				C173B21B22AC316800B5B51A /* Battle.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C173B1B222A98D0E00B5B51A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0338E30589159DD74C1A8421 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Transformer/Pods-Transformer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Transformer/Pods-Transformer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Transformer/Pods-Transformer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F6A82466604E2ADD06AFACD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransformerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD659630B973D43FEBBFD4C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Transformer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C173B19922A98D0B00B5B51A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C173B20E22AACEA800B5B51A /* UpdateTransformerViewModel.swift in Sources */,
+				C173B20C22AACCD700B5B51A /* TransformerDetailViewModelType.swift in Sources */,
+				C173B1FE22A9FA2700B5B51A /* Transformer.swift in Sources */,
+				C173B1F522A9F00D00B5B51A /* TransformerTableViewCellType.swift in Sources */,
+				C173B20222AA896900B5B51A /* LabelWithIputView.swift in Sources */,
+				C173B1A122A98D0C00B5B51A /* AppDelegate.swift in Sources */,
+				C173B20022A9FEF600B5B51A /* TransformerTableViewCell.swift in Sources */,
+				C173B1F122A9E7EE00B5B51A /* TransformerViewModel.swift in Sources */,
+				C173B21322AAD6D600B5B51A /* APIClient.swift in Sources */,
+				C173B20822AA8E9300B5B51A /* AddDecepticonViewController.swift in Sources */,
+				C173B1FA22A9F21300B5B51A /* TransformerTableViewViewModel.swift in Sources */,
+				C173B20422AA8E1D00B5B51A /* MainViewController.swift in Sources */,
+				C173B1A922A98D0C00B5B51A /* Transformer.xcdatamodeld in Sources */,
+				C173B1C922A98F2200B5B51A /* Combat.swift in Sources */,
+				C173B21D22AC377400B5B51A /* ReadOnce.swift in Sources */,
+				C173B21922AC313C00B5B51A /* BattleViewController.swift in Sources */,
+				C173B1FC22A9F49B00B5B51A /* TransformerListViewController.swift in Sources */,
+				C173B20A22AA8EAC00B5B51A /* TransformerDetailViewController.swift in Sources */,
+				C173B20622AA8E7C00B5B51A /* AddAutobotViewController.swift in Sources */,
+				C173B1F322A9E7FC00B5B51A /* ViewModelType.swift in Sources */,
+				C173B21122AAD63400B5B51A /* Alert.swift in Sources */,
+				C173B1F722A9F0CA00B5B51A /* TransformerCellViewModel.swift in Sources */,
+				C173B21F22AC983500B5B51A /* extension++.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C173B1B022A98D0E00B5B51A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C173B1B922A98D0E00B5B51A /* TransformerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C173B1B622A98D0E00B5B51A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C173B19C22A98D0B00B5B51A /* Transformer */;
+			targetProxy = C173B1B522A98D0E00B5B51A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C173B1AC22A98D0D00B5B51A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C173B1AD22A98D0D00B5B51A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C173B1BB22A98D0E00B5B51A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C173B1BC22A98D0E00B5B51A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C173B1BE22A98D0E00B5B51A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C95CCFBF4A94911ED50869 /* Pods-Transformer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UELNN9BXQ;
+				INFOPLIST_FILE = Transformer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.Transformer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C173B1BF22A98D0E00B5B51A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB54943C06FC0ADDED03A47 /* Pods-Transformer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UELNN9BXQ;
+				INFOPLIST_FILE = Transformer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.Transformer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C173B1C122A98D0E00B5B51A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 225A48790F2765EE9362EEBB /* Pods-TransformerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UELNN9BXQ;
+				INFOPLIST_FILE = TransformerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.TransformerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transformer.app/Transformer";
+			};
+			name = Debug;
+		};
+		C173B1C222A98D0E00B5B51A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7D6A670E9CCA02B3FC4D09 /* Pods-TransformerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UELNN9BXQ;
+				INFOPLIST_FILE = TransformerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.TransformerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transformer.app/Transformer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C173B19822A98D0B00B5B51A /* Build configuration list for PBXProject "Transformer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C173B1BB22A98D0E00B5B51A /* Debug */,
+				C173B1BC22A98D0E00B5B51A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C173B1BD22A98D0E00B5B51A /* Build configuration list for PBXNativeTarget "Transformer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C173B1BE22A98D0E00B5B51A /* Debug */,
+				C173B1BF22A98D0E00B5B51A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C173B1C022A98D0E00B5B51A /* Build configuration list for PBXNativeTarget "TransformerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C173B1C122A98D0E00B5B51A /* Debug */,
+				C173B1C222A98D0E00B5B51A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C173B1A722A98D0C00B5B51A /* Transformer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C173B1A822A98D0C00B5B51A /* Transformer.xcdatamodel */,
+			);
+			currentVersion = C173B1A822A98D0C00B5B51A /* Transformer.xcdatamodel */;
+			path = Transformer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C173B19522A98D0B00B5B51A /* Project object */;
+}

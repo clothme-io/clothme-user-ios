@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1404D50243446E100DBE6A1 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1404D4F243446E100DBE6A1 /* Circle.swift */; };
+		C1A8DA732431A94900B95C17 /* Circle.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A8DA712431A94900B95C17 /* Circle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1DAD2422434485100F2A951 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAD2402434485100F2A951 /* Core.framework */; };
+		C1DAD2432434485100F2A951 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAD2402434485100F2A951 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1DAD2442434485100F2A951 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAD2412434485100F2A951 /* User.framework */; };
+		C1DAD2452434485100F2A951 /* User.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAD2412434485100F2A951 /* User.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1DAD24A2434493E00F2A951 /* CircleName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD2492434493E00F2A951 /* CircleName.swift */; };
+		C1DAD24C2434496E00F2A951 /* CreatedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD24B2434496E00F2A951 /* CreatedDate.swift */; };
+		C1DAD24E243449A600F2A951 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD24D243449A600F2A951 /* Member.swift */; };
+		C1DAD25024344C9600F2A951 /* MemberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD24F24344C9600F2A951 /* MemberType.swift */; };
+		C1DAD28E243471B200F2A951 /* CircleId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD28D243471B200F2A951 /* CircleId.swift */; };
+		C1DAD2902436BABA00F2A951 /* MemberId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD28F2436BABA00F2A951 /* MemberId.swift */; };
+		C1DAD309244169F900F2A951 /* CircleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD308244169F900F2A951 /* CircleRepository.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C1DAD2462434485100F2A951 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C1DAD2432434485100F2A951 /* Core.framework in Embed Frameworks */,
+				C1DAD2452434485100F2A951 /* User.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C1404D4F243446E100DBE6A1 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		C1A8DA6E2431A94900B95C17 /* Circle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Circle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1A8DA712431A94900B95C17 /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		C1A8DA722431A94900B95C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1DAD2402434485100F2A951 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1DAD2412434485100F2A951 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1DAD2492434493E00F2A951 /* CircleName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleName.swift; sourceTree = "<group>"; };
+		C1DAD24B2434496E00F2A951 /* CreatedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedDate.swift; sourceTree = "<group>"; };
+		C1DAD24D243449A600F2A951 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		C1DAD24F24344C9600F2A951 /* MemberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberType.swift; sourceTree = "<group>"; };
+		C1DAD28D243471B200F2A951 /* CircleId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleId.swift; sourceTree = "<group>"; };
+		C1DAD28F2436BABA00F2A951 /* MemberId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberId.swift; sourceTree = "<group>"; };
+		C1DAD308244169F900F2A951 /* CircleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRepository.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1A8DA6B2431A94900B95C17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1DAD2422434485100F2A951 /* Core.framework in Frameworks */,
+				C1DAD2442434485100F2A951 /* User.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1404D33243421B500DBE6A1 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAD3042441699A00F2A951 /* repository */,
+				C1404D35243421C200DBE6A1 /* value_object */,
+				C1404D34243421BC00DBE6A1 /* entity */,
+			);
+			name = domain;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C1404D34243421BC00DBE6A1 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAD24D243449A600F2A951 /* Member.swift */,
+				C1404D4F243446E100DBE6A1 /* Circle.swift */,
+				C1DAD24F24344C9600F2A951 /* MemberType.swift */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
+		C1404D35243421C200DBE6A1 /* value_object */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAD2492434493E00F2A951 /* CircleName.swift */,
+				C1DAD24B2434496E00F2A951 /* CreatedDate.swift */,
+				C1DAD28D243471B200F2A951 /* CircleId.swift */,
+				C1DAD28F2436BABA00F2A951 /* MemberId.swift */,
+			);
+			name = value_object;
+			sourceTree = "<group>";
+		};
+		C1404D4C2434224600DBE6A1 /* application */ = {
+			isa = PBXGroup;
+			children = (
+				C1F614042470F9AE003635A4 /* mapper */,
+				C1F614032470F9A2003635A4 /* useCase */,
+			);
+			name = application;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C1A8DA642431A94900B95C17 = {
+			isa = PBXGroup;
+			children = (
+				C1A8DA702431A94900B95C17 /* Circle */,
+				C1A8DA6F2431A94900B95C17 /* Products */,
+				C1DAD23F2434485000F2A951 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C1A8DA6F2431A94900B95C17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1A8DA6E2431A94900B95C17 /* Circle.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1A8DA702431A94900B95C17 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAD2A124381D6500F2A951 /* infrastructure */,
+				C1404D4C2434224600DBE6A1 /* application */,
+				C1404D33243421B500DBE6A1 /* domain */,
+				C1A8DA712431A94900B95C17 /* Circle.h */,
+				C1A8DA722431A94900B95C17 /* Info.plist */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		C1DAD23F2434485000F2A951 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAD2402434485100F2A951 /* Core.framework */,
+				C1DAD2412434485100F2A951 /* User.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1DAD2A124381D6500F2A951 /* infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = infrastructure;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C1DAD3042441699A00F2A951 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAD308244169F900F2A951 /* CircleRepository.swift */,
+			);
+			name = repository;
+			sourceTree = "<group>";
+		};
+		C1F614032470F9A2003635A4 /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = useCase;
+			sourceTree = "<group>";
+		};
+		C1F614042470F9AE003635A4 /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C1A8DA692431A94900B95C17 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1A8DA732431A94900B95C17 /* Circle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C1A8DA6D2431A94900B95C17 /* Circle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1A8DA762431A94900B95C17 /* Build configuration list for PBXNativeTarget "Circle" */;
+			buildPhases = (
+				C1A8DA692431A94900B95C17 /* Headers */,
+				C1A8DA6A2431A94900B95C17 /* Sources */,
+				C1A8DA6B2431A94900B95C17 /* Frameworks */,
+				C1A8DA6C2431A94900B95C17 /* Resources */,
+				C1DAD2462434485100F2A951 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Circle;
+			productName = Circle;
+			productReference = C1A8DA6E2431A94900B95C17 /* Circle.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1A8DA652431A94900B95C17 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Paul Ikhane";
+				TargetAttributes = {
+					C1A8DA6D2431A94900B95C17 = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+				};
+			};
+			buildConfigurationList = C1A8DA682431A94900B95C17 /* Build configuration list for PBXProject "Circle" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1A8DA642431A94900B95C17;
+			productRefGroup = C1A8DA6F2431A94900B95C17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1A8DA6D2431A94900B95C17 /* Circle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1A8DA6C2431A94900B95C17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1A8DA6A2431A94900B95C17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1DAD28E243471B200F2A951 /* CircleId.swift in Sources */,
+				C1DAD24A2434493E00F2A951 /* CircleName.swift in Sources */,
+				C1DAD24C2434496E00F2A951 /* CreatedDate.swift in Sources */,
+				C1DAD309244169F900F2A951 /* CircleRepository.swift in Sources */,
+				C1DAD25024344C9600F2A951 /* MemberType.swift in Sources */,
+				C1404D50243446E100DBE6A1 /* Circle.swift in Sources */,
+				C1DAD2902436BABA00F2A951 /* MemberId.swift in Sources */,
+				C1DAD24E243449A600F2A951 /* Member.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C1A8DA742431A94900B95C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1A8DA752431A94900B95C17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C1A8DA772431A94900B95C17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2UELNN9BXQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Circle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.Circle;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1A8DA782431A94900B95C17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2UELNN9BXQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Circle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.Circle;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1A8DA682431A94900B95C17 /* Build configuration list for PBXProject "Circle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1A8DA742431A94900B95C17 /* Debug */,
+				C1A8DA752431A94900B95C17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1A8DA762431A94900B95C17 /* Build configuration list for PBXNativeTarget "Circle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1A8DA772431A94900B95C17 /* Debug */,
+				C1A8DA782431A94900B95C17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1A8DA652431A94900B95C17 /* Project object */;
+}
