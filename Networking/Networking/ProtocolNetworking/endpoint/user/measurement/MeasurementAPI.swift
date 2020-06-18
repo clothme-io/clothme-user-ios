@@ -28,13 +28,13 @@ extension MeasurementAPI: EndPointType {
         }
     }
     
-    var baseUrl: URL {
+    public var baseUrl: URL {
         guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured")
         }
         return url
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .acceptMeasurement(requestData: _, queryString: let id, header: _):
             return "\(id)/accept_measurement"
@@ -53,7 +53,7 @@ extension MeasurementAPI: EndPointType {
         }
     }
     
-    var httpMethod: HTTPMethod {
+    public var httpMethod: HTTPMethod {
         switch self {
         case .addMeasurement:
             return .post
@@ -72,7 +72,7 @@ extension MeasurementAPI: EndPointType {
         }
     }
     
-    var task: HTTPTask {
+    public var task: HTTPTask {
         switch self {
         case .acceptMeasurement(requestData: let data, let queryString, header: let headers):
             return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
@@ -91,7 +91,7 @@ extension MeasurementAPI: EndPointType {
         }
     }
     
-    var headers: HTTPHeaders? {
+    public var headers: HTTPHeaders? {
         switch self {
         case .acceptMeasurement(requestData: _, queryString: _, header: let header):
             return .some(header)

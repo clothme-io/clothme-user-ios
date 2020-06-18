@@ -11,11 +11,11 @@ import Core
 import Combine
 
 protocol AuthRepository : IRepositoryWithTypedId {
-    func emailSignIn <T: RequestDataAble>(with data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void)
-    func emailSignUp <T: RequestDataAble>(with data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void)
-    func facebookSignIn <T: RequestDataAble>(with data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void)
-    func googleSignIn<T: RequestDataAble>(with data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void)
+    func emailSignIn <T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
+    func emailSignUp <T: RequestDataAble>(with data: T, completion: @escaping (_ user: Void?, _ error: String?) -> ())
+    func facebookSignIn <T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
+    func googleSignIn<T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
     func signOut()
-    func resetPassword<T: RequestDataAble>(with data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void)
-    func forgotPassword<T: RequestDataAble>(with data: T, completion: @escaping (Result<Void, EmailSignInError>) -> Void)
+    func resetPassword<T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
+    func forgotPassword<T: RequestDataAble>(with data: T, completion: @escaping (_ user: Void?, _ error: String?) -> ())
 }

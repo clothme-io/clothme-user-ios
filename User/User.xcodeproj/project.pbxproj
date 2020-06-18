@@ -19,6 +19,8 @@
 		C15890AB247E1A5200514750 /* GetAllConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15890AA247E1A5200514750 /* GetAllConnectionError.swift */; };
 		C15890AD247E1A6100514750 /* GetAllConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15890AC247E1A6100514750 /* GetAllConnectionResponse.swift */; };
 		C15890AF247E1A7100514750 /* GetAllConnectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15890AE247E1A7100514750 /* GetAllConnectionDTO.swift */; };
+		C16494622499E6D8008ED2AF /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16494612499E6D8008ED2AF /* Networking.framework */; };
+		C16494632499E6D8008ED2AF /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C16494612499E6D8008ED2AF /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C16562752479CC97001EB497 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562742479CC97001EB497 /* UserMapper.swift */; };
 		C16562772479CCE1001EB497 /* AccountDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562762479CCE1001EB497 /* AccountDomainMapper.swift */; };
 		C16562792479CD26001EB497 /* ConnectionDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562782479CD26001EB497 /* ConnectionDomainMapper.swift */; };
@@ -219,6 +221,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C16494632499E6D8008ED2AF /* Networking.framework in Embed Frameworks */,
 				C1A8D9CD242EF14000B95C17 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -239,6 +242,7 @@
 		C15890AA247E1A5200514750 /* GetAllConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllConnectionError.swift; sourceTree = "<group>"; };
 		C15890AC247E1A6100514750 /* GetAllConnectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllConnectionResponse.swift; sourceTree = "<group>"; };
 		C15890AE247E1A7100514750 /* GetAllConnectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllConnectionDTO.swift; sourceTree = "<group>"; };
+		C16494612499E6D8008ED2AF /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16562742479CC97001EB497 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
 		C16562762479CCE1001EB497 /* AccountDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDomainMapper.swift; sourceTree = "<group>"; };
 		C16562782479CD26001EB497 /* ConnectionDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDomainMapper.swift; sourceTree = "<group>"; };
@@ -430,6 +434,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16494622499E6D8008ED2AF /* Networking.framework in Frameworks */,
 				C1A8D9CC242EF14000B95C17 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +535,7 @@
 		C1A8D9CA242EF14000B95C17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C16494612499E6D8008ED2AF /* Networking.framework */,
 				C1DAD23E243447CD00F2A951 /* Core.framework */,
 				C1A8D9CB242EF14000B95C17 /* Core.framework */,
 			);
@@ -1797,6 +1803,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = User/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1823,6 +1830,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = User/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

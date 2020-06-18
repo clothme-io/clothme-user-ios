@@ -32,14 +32,14 @@ public struct GoogleSignIn : UseCaseAble {
                     return promise(.failure(GoogleSignInError.youNeedToBeOlder))
                 }
             }
-            self._authRepo.googleSignIn(with: data) { result in
-                switch result {
-                case .failure(let err):
-                    return promise(.failure(GoogleSignInError.unKnown(err)))
-                case .success(let response):
-                    return promise(.success(response))
-                }
-            }
+//            self._authRepo.googleSignIn(with: data) { result in
+//                switch result {
+//                case .failure(let err):
+//                    return promise(.failure(GoogleSignInError.unKnown(err)))
+//                case .success(let response):
+//                    return promise(.success(response))
+//                }
+//            }
           
         }
         

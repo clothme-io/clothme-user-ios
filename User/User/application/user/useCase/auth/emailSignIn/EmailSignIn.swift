@@ -36,15 +36,15 @@ public class EmailSignIn {
             }
             
             //MARK: NETWORK CALL
-            self._authRepo.emailSignIn(with: data) { result in
-                switch result {
-                case .failure(let err):
-                    return promise(.failure(EmailSignInError.unKnown(err)))
-                case .success(let response):
-                    return promise(.success(response))
-                }
-                
-            }
+//            self._authRepo.emailSignIn(with: data) { result,<#arg#>  in
+//                switch result {
+//                case .failure(let err):
+//                    return promise(.failure(EmailSignInError.unKnown(err)))
+//                case .success(let response):
+//                    return promise(.success(response))
+//                }
+//                
+//            }
             
         }
     }

@@ -1,52 +1,74 @@
-////
-////  AuthRepositoryImpl.swift
-////  User
-////
-////  Created by MACPRO on 2020-05-02.
-////  Copyright © 2020 Paul Ikhane. All rights reserved.
-////
 //
-//import Foundation
-//import Core
-//import Combine
+//  AuthRepositoryImpl.swift
+//  User
 //
+//  Created by MACPRO on 2020-05-02.
+//  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
-//class AuthRepositoryImpl : AuthRepository {
-//    func signOut() {
-//        <#code#>
-//    }
-//    
-//    func emailSignIn<EmailSignInDTO>(with data: EmailSignInDTO, completion: @escaping (Result<User, EmailSignInError>) -> Void) {
-//        <#code#>
-//    }
-//    
-//    func emailSignUp<EmailSignUpDTO>(with data: EmailSignUpDTO, completion: @escaping (Result<User, EmailSignInError>) -> Void) {
-//        AuthService.shared.getAccess(with: .email) { (result: Result<User, AuthService.APIServiceError>) in
-//            switch result {
-//            case .success(let movieResponse):
-//                print(movieResponse.results)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//        }
-//    }
-//    
-//    func facebookSignIn<FacebookSignInDTO>(with data: FacebookSignInDTO, completion: @escaping (Result<User, EmailSignInError>) -> Void) {
-//        <#code#>
-//    }
-//    
-//    func googleSignIn<GoogleSignInDTO>(with data: GoogleSignInDTO, completion: @escaping (Result<User, EmailSignInError>) -> Void) {
-//        <#code#>
-//    }
-//    
-//    func resetPassword<ResetPasswordDTO>(with data: ResetPasswordDTO, completion: @escaping (Result<User, EmailSignInError>) -> Void) {
-//        <#code#>
-//    }
-//    
-//    func forgotPassword<ForgotPasswordDTO>(with data: ForgotPasswordDTO, completion: @escaping (Result<Void, EmailSignInError>) -> Void) {
-//        <#code#>
-//    }
-//    
-//
-//    
-//    
-//}
+
+import Foundation
+import Combine
+import Core
+import Networking
+
+
+class AuthRepositoryImpl : AuthRepository {
+    
+    
+    let authRouter = Router<AuthAPI>()
+    
+    func emailSignIn<EmailSignInDTO>(with data: EmailSignInDTO, completion: @escaping (User?, String?) -> ()) {
+        authRouter.request(.signInWithEmail(requestData: data as! Parameters)) { data, response, error in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
+    }
+    
+    func emailSignUp<EmailSignUpDTO>(with data: EmailSignUpDTO, completion: @escaping (Void?, String?) -> ()) {
+        authRouter.request(.signUpWithEmail(requestData: data as! Parameters)) { data, response, error in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
+    }
+    
+    func facebookSignIn<FacebookSignInDTO>(with data: FacebookSignInDTO, completion: @escaping (User?, String?) -> ()) {
+        authRouter.request(.facebookSignIn(requestData: data as! Parameters)) { data, response, error in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
+    }
+    
+    func googleSignIn<GoogleSignInDTO>(with data: GoogleSignInDTO, completion: @escaping (User?, String?) -> ())  {
+        authRouter.request(.googleSignIn(requestData: data as! Parameters)) { data, response, error in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
+    }
+    
+    func signOut() {
+        
+    }
+    
+    func resetPassword<ResetPasswordDTO>(with data: ResetPasswordDTO, completion: @escaping (User?, String?) -> ()) {
+        authRouter.request(.resetPassword(requestData: data as! Parameters)) { (data, response, error) in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
+    }
+    
+    func forgotPassword<ForgotPasswordDTO>(with data: ForgotPasswordDTO, completion: @escaping (Void?, String?) -> ())  {
+        authRouter.request(.forgotPassword(requestData: data as! Parameters)) { (data, response, error) in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
+    }
+    
+    
+    
+}

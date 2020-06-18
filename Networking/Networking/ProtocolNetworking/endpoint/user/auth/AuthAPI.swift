@@ -31,13 +31,13 @@ extension AuthAPI: EndPointType {
         }
     }
     
-    var baseUrl: URL {
+    public var baseUrl: URL {
         guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured")
         }
         return url
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .facebookSignIn:
             return "/facebook_signin"
@@ -56,11 +56,11 @@ extension AuthAPI: EndPointType {
         }
     }
     
-    var httpMethod: HTTPMethod {
+    public var httpMethod: HTTPMethod {
         return .post
     }
     
-    var task: HTTPTask {
+    public var task: HTTPTask {
         switch self {
         case.facebookSignIn(requestData: let data):
             return .requestParameters(bodyParameters: data, urlParameters: nil)
@@ -79,7 +79,7 @@ extension AuthAPI: EndPointType {
         }
     }
     
-    var headers: HTTPHeaders? {
+    public var headers: HTTPHeaders? {
         return nil
     }
     

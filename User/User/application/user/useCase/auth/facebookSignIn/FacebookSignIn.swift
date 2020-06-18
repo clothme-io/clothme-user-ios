@@ -36,14 +36,14 @@ public class FacebookSignIn : UseCaseAble {
             }
             
             //MARK: MAKE NETWORK CALL
-            self._authRepo.facebookSignIn(with: data, completion: { result in
-                switch result {
-                case .failure(let error):
-                    return promise(.failure(FacebookSignInError.unKnown(error)))
-                case .success(let user):
-                    return promise(.success(user as! ResponseDataAble))
-                }
-            })
+//            self._authRepo.facebookSignIn(with: data, completion: { result in
+//                switch result {
+//                case .failure(let error):
+//                    return promise(.failure(FacebookSignInError.unKnown(error)))
+//                case .success(let user):
+//                    return promise(.success(user as! ResponseDataAble))
+//                }
+//            })
         }
     }
 }

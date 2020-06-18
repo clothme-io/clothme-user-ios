@@ -134,7 +134,7 @@ public class User : AggregateRoot {
     }
     
     var city: City? {
-        self._city
+        return self._city
     }
     
     var phoneNumber: PhoneNumber? {

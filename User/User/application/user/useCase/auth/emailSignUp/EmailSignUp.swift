@@ -53,14 +53,14 @@ class EmailSignUp : UseCaseAble {
             }
             
             // MARK: MAKE NETWORK CALL
-            self._authRepo.emailSignUp(with: data) { result in
-                switch result {
-                case .failure(let error):
-                    return promise(.failure(EmailSignUpError.unKnown(error)))
-                case .success(_):
-                    break
-                }
-            }
+//            self._authRepo.emailSignUp(with: data) { result in
+//                switch result {
+//                case .failure(let error):
+//                    return promise(.failure(EmailSignUpError.unKnown(error)))
+//                case .success(_):
+//                    break
+//                }
+//            }
         }
         
     }

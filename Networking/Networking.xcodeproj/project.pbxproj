@@ -238,8 +238,6 @@
 			children = (
 				C1AD99BA2493369C0005D40A /* product */,
 				C1AD99B7249327170005D40A /* user */,
-				C1AF0CA0246278D500E07391 /* EndPointType.swift */,
-				C1AD99A2248D8C3F0005D40A /* NetworkEnvironment.swift */,
 			);
 			path = endpoint;
 			sourceTree = "<group>";
@@ -257,6 +255,8 @@
 		C1AF0C9E2462788500E07391 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				C1AD99A2248D8C3F0005D40A /* NetworkEnvironment.swift */,
+				C1AF0CA0246278D500E07391 /* EndPointType.swift */,
 				C1AF0CA52462799800E07391 /* HTTPMethod.swift */,
 				C1AF0CA7246279FF00E07391 /* HTTPTask.swift */,
 				C1AD999E248D76FE0005D40A /* NetworkRouter.swift */,
@@ -522,6 +522,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Networking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,6 +549,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Networking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

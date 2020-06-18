@@ -11,6 +11,8 @@ import Core
 
 
 protocol UserRepository : IRepositoryWithTypedId {
-    func getUserById<T: RequestDataAble>(data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void)
-    func getUserByName<T: RequestDataAble>(data: T, completion: @escaping (Result<User, EmailSignInError>) -> Void) -> Result<[User], UserError>
+    func getUserById<T: RequestDataAble>(data: T, completion: @escaping (_ user: User, _ error: String?) -> ())
+    func getUserByName<T: RequestDataAble>(data: T, completion: @escaping (_ user: User, _ error: String?) -> ())
+    func blockUser<T: RequestDataAble>(data: T, completion: @escaping (_ user: Void, _ error: String?) -> ())
+    
 }

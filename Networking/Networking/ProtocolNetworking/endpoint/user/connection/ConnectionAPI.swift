@@ -25,13 +25,13 @@ extension ConnectionAPI: EndPointType {
         }
     }
     
-    var baseUrl: URL {
+    public var baseUrl: URL {
         guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured")
         }
         return url
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .blockUser(requestData: let id):
             return "\(id)/block_user"
@@ -44,7 +44,7 @@ extension ConnectionAPI: EndPointType {
         }
     }
     
-    var httpMethod: HTTPMethod {
+    public var httpMethod: HTTPMethod {
         switch self {
         case .blockUser:
             return .post
@@ -57,7 +57,7 @@ extension ConnectionAPI: EndPointType {
         }
     }
     
-    var task: HTTPTask {
+    public var task: HTTPTask {
         switch self {
         case.blockUser(requestData: let data, let queryString, header: let headers):
             return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
@@ -70,7 +70,7 @@ extension ConnectionAPI: EndPointType {
         }
     }
     
-    var headers: HTTPHeaders? {
+    public var headers: HTTPHeaders? {
         switch self {
         case .blockUser(requestData: _, queryString: _, header: let header):
             return .some(header)
