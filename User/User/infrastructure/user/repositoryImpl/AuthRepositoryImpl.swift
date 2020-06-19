@@ -48,7 +48,7 @@ public class AuthRepositoryImpl : AuthRepository {
         }
     }
     
-    func emailSignUp<EmailSignUpDTO>(with data: EmailSignUpDTO, completion: @escaping (Void?, String?) -> ()) {
+    public func emailSignUp<EmailSignUpDTO>(with data: EmailSignUpDTO, completion: @escaping (Void?, String?) -> ()) {
         authNetworkManager.router.request(.signUpWithEmail(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
@@ -78,7 +78,7 @@ public class AuthRepositoryImpl : AuthRepository {
         }
     }
     
-    func facebookSignIn<FacebookSignInDTO>(with data: FacebookSignInDTO, completion: @escaping (User?, String?) -> ()) {
+    public func facebookSignIn<FacebookSignInDTO>(with data: FacebookSignInDTO, completion: @escaping (User?, String?) -> ()) {
         authNetworkManager.router.request(.facebookSignIn(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
@@ -108,7 +108,7 @@ public class AuthRepositoryImpl : AuthRepository {
         }
     }
     
-    func googleSignIn<GoogleSignInDTO>(with data: GoogleSignInDTO, completion: @escaping (User?, String?) -> ())  {
+    public func googleSignIn<GoogleSignInDTO>(with data: GoogleSignInDTO, completion: @escaping (User?, String?) -> ())  {
         authNetworkManager.router.request(.googleSignIn(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
@@ -138,11 +138,11 @@ public class AuthRepositoryImpl : AuthRepository {
         }
     }
     
-    func signOut() {
+    public func signOut() {
         
     }
     
-    func resetPassword<ResetPasswordDTO>(with data: ResetPasswordDTO, completion: @escaping (User?, String?) -> ()) {
+    public func resetPassword<ResetPasswordDTO>(with data: ResetPasswordDTO, completion: @escaping (User?, String?) -> ()) {
         authNetworkManager.router.request(.resetPassword(requestData: data as! Parameters)) { (data, response, error) in
             if error != nil {
                 completion(nil, "")
@@ -150,7 +150,7 @@ public class AuthRepositoryImpl : AuthRepository {
         }
     }
     
-    func forgotPassword<ForgotPasswordDTO>(with data: ForgotPasswordDTO, completion: @escaping (Void?, String?) -> ())  {
+    public func forgotPassword<ForgotPasswordDTO>(with data: ForgotPasswordDTO, completion: @escaping (Void?, String?) -> ())  {
         authNetworkManager.router.request(.forgotPassword(requestData: data as! Parameters)) { (data, response, error) in
             if error != nil {
                 completion(nil, "")
