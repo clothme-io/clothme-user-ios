@@ -10,7 +10,7 @@ import Foundation
 
 struct AccountNetworkManager {
     static let environment: NetworkEnvironment = .production
-    private static let accountRouter = Router<AccountAPI>()
+    static let accountRouter = Router<AccountAPI>()
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String, NetworkResponse> {
         switch response.statusCode {

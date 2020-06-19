@@ -24,7 +24,8 @@ public enum AuthAPI {
 extension AuthAPI: EndPointType {
     
     var environmentBaseURL : String {
-        switch AuthNetworkManager.environment {
+        let authNetworkManager = AuthNetworkManager()
+        switch authNetworkManager.environment {
         case .production: return "https://getclothme.com/prod/api"
         case .qa: return "https://getclothme.com/qa/api"
         case .staging: return "https://getclothme.com/staging/api"

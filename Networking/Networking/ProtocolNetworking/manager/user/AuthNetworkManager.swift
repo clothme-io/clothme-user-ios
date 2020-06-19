@@ -8,11 +8,18 @@
 
 import Foundation
 
-struct AuthNetworkManager {
-    static let environment: NetworkEnvironment = .production
-    private static let authRouter = Router<AuthAPI>()
+public class AuthNetworkManager {
     
-    fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> NetworkResult<String> {
+    public let environment: NetworkEnvironment
+    public let router: Router<AuthAPI>
+    
+    public init() {
+        environment = .production
+        router = Router<AuthAPI>()
+    }
+
+    
+    public func handleNetworkResponse(_ response: HTTPURLResponse) -> NetworkResult<String> {
         switch response.statusCode {
         case 200...299: return .success
         case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)

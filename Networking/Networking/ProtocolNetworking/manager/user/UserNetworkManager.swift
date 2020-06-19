@@ -10,7 +10,7 @@ import Foundation
 
 struct UserNetworkManager {
     static let environment: NetworkEnvironment = .production
-    private static let userRouter = Router<AuthAPI>()
+    static let userRouter = Router<UserAPI>()
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String, NetworkResponse> {
         switch response.statusCode {

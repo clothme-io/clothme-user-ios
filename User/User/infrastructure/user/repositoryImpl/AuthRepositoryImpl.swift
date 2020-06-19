@@ -14,37 +14,124 @@ import Networking
 
 class AuthRepositoryImpl : AuthRepository {
     
-    
-    let authRouter = Router<AuthAPI>()
+    let authNetworkManager = AuthNetworkManager()
     
     func emailSignIn<EmailSignInDTO>(with data: EmailSignInDTO, completion: @escaping (User?, String?) -> ()) {
-        authRouter.request(.signInWithEmail(requestData: data as! Parameters)) { data, response, error in
+        authNetworkManager.router.request(.signInWithEmail(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.authNetworkManager.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "")
+                        return
+                    }
+                    do {
+                        print(responseData)
+                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        print(jsonData)
+//                        let apiResponse = try JSONDecoder().decode(_, from: responseData)
+//                        completion(apiResponse, nil)
+                    }catch {
+                        completion(nil, "")
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
             }
         }
     }
     
     func emailSignUp<EmailSignUpDTO>(with data: EmailSignUpDTO, completion: @escaping (Void?, String?) -> ()) {
-        authRouter.request(.signUpWithEmail(requestData: data as! Parameters)) { data, response, error in
+        authNetworkManager.router.request(.signUpWithEmail(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.authNetworkManager.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "")
+                        return
+                    }
+                    do {
+                        print(responseData)
+                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        print(jsonData)
+//                        let apiResponse = try JSONDecoder().decode(_, from: responseData)
+//                        completion(apiResponse, nil)
+                    }catch {
+                        completion(nil, "")
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
             }
         }
     }
     
     func facebookSignIn<FacebookSignInDTO>(with data: FacebookSignInDTO, completion: @escaping (User?, String?) -> ()) {
-        authRouter.request(.facebookSignIn(requestData: data as! Parameters)) { data, response, error in
+        authNetworkManager.router.request(.facebookSignIn(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.authNetworkManager.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "")
+                        return
+                    }
+                    do {
+                        print(responseData)
+                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        print(jsonData)
+//                        let apiResponse = try JSONDecoder().decode(_, from: responseData)
+//                        completion(apiResponse, nil)
+                    }catch {
+                        completion(nil, "")
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
             }
         }
     }
     
     func googleSignIn<GoogleSignInDTO>(with data: GoogleSignInDTO, completion: @escaping (User?, String?) -> ())  {
-        authRouter.request(.googleSignIn(requestData: data as! Parameters)) { data, response, error in
+        authNetworkManager.router.request(.googleSignIn(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.authNetworkManager.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "")
+                        return
+                    }
+                    do {
+                        print(responseData)
+                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        print(jsonData)
+//                        let apiResponse = try JSONDecoder().decode(_, from: responseData)
+//                        completion(apiResponse, nil)
+                    }catch {
+                        completion(nil, "")
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
             }
         }
     }
@@ -54,7 +141,7 @@ class AuthRepositoryImpl : AuthRepository {
     }
     
     func resetPassword<ResetPasswordDTO>(with data: ResetPasswordDTO, completion: @escaping (User?, String?) -> ()) {
-        authRouter.request(.resetPassword(requestData: data as! Parameters)) { (data, response, error) in
+        authNetworkManager.router.request(.resetPassword(requestData: data as! Parameters)) { (data, response, error) in
             if error != nil {
                 completion(nil, "")
             }
@@ -62,13 +149,33 @@ class AuthRepositoryImpl : AuthRepository {
     }
     
     func forgotPassword<ForgotPasswordDTO>(with data: ForgotPasswordDTO, completion: @escaping (Void?, String?) -> ())  {
-        authRouter.request(.forgotPassword(requestData: data as! Parameters)) { (data, response, error) in
+        authNetworkManager.router.request(.forgotPassword(requestData: data as! Parameters)) { (data, response, error) in
             if error != nil {
                 completion(nil, "")
             }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.authNetworkManager.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, "")
+                        return
+                    }
+                    do {
+                        print(responseData)
+                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                        print(jsonData)
+//                        let apiResponse = try JSONDecoder().decode(_, from: responseData)
+//                        completion(apiResponse, nil)
+                    }catch {
+                        completion(nil, "")
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
+            }
         }
     }
-    
-    
     
 }

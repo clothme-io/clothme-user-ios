@@ -18,7 +18,7 @@ enum NetworkResponse: String, Error {
     
 }
 
-enum NetworkResult<String> {
+public enum NetworkResult<String> {
     case success
     case failure(String)
 }

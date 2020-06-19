@@ -10,7 +10,7 @@ import Foundation
 
 struct ConnectionNetworkManager {
     static let environment: NetworkEnvironment = .production
-    private static let connectionRouter = Router<ConnectionAPI>()
+    static let connectionRouter = Router<ConnectionAPI>()
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String, NetworkResponse> {
         switch response.statusCode {
