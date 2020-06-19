@@ -6,4 +6,17 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import User
+
+final class SignUpViewModel {
+    
+    private let authRepositoryImpl: AuthRepositoryImpl = AuthRepositoryImpl()
+    
+    private var bag = Set<AnyCancellable>()
+    
+    func signUpEmail() {}
+    
+}
+

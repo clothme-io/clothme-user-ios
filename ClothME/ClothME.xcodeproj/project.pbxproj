@@ -191,6 +191,7 @@
 		C153CFFA2484AC5900BD0A31 /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				C164946F249D408A008ED2AF /* ui */,
 				C153CFF82484AC4A00BD0A31 /* ProfileViewModel.swift */,
 			);
 			path = profile;
@@ -199,6 +200,7 @@
 		C153CFFB2484AC9900BD0A31 /* account */ = {
 			isa = PBXGroup;
 			children = (
+				C1649470249D4094008ED2AF /* ui */,
 				C153CFFC2484ACAE00BD0A31 /* AccountViewModel.swift */,
 			);
 			path = account;
@@ -234,6 +236,7 @@
 		C153D0012484AD8200BD0A31 /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				C1649471249D409C008ED2AF /* ui */,
 				C153D0202484B31000BD0A31 /* SettingViewModel.swift */,
 			);
 			path = setting;
@@ -242,6 +245,7 @@
 		C153D0022484AD9300BD0A31 /* brand */ = {
 			isa = PBXGroup;
 			children = (
+				C1649472249D40A3008ED2AF /* ui */,
 				C153D0182484B12C00BD0A31 /* BrandViewModel.swift */,
 			);
 			path = brand;
@@ -250,6 +254,7 @@
 		C153D0032484ADD300BD0A31 /* wardrope */ = {
 			isa = PBXGroup;
 			children = (
+				C1649473249D40AA008ED2AF /* ui */,
 				C153D01A2484B13D00BD0A31 /* WardropeViewModel.swift */,
 			);
 			path = wardrope;
@@ -258,6 +263,7 @@
 		C153D0042484ADE500BD0A31 /* connection */ = {
 			isa = PBXGroup;
 			children = (
+				C1649474249D40B1008ED2AF /* ui */,
 				C153D01C2484B2DF00BD0A31 /* ConnectionViewModel.swift */,
 			);
 			path = connection;
@@ -266,6 +272,7 @@
 		C153D0052484AE5F00BD0A31 /* wishList */ = {
 			isa = PBXGroup;
 			children = (
+				C1649475249D40B9008ED2AF /* ui */,
 				C153D01E2484B2F000BD0A31 /* WishListViewModel.swift */,
 			);
 			path = wishList;
@@ -373,6 +380,71 @@
 			path = ui;
 			sourceTree = "<group>";
 		};
+		C164946D249D2BB8008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C1B47785247AFEAE00D0CCE2 /* SignInView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C164946E249D2BC7008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C1B47783247AFE9300D0CCE2 /* SignUpView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C164946F249D408A008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649470249D4094008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649471249D409C008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649472249D40A3008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649473249D40AA008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649474249D40B1008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649475249D40B9008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		C1AE16BD2429A15600ED1EE4 = {
 			isa = PBXGroup;
 			children = (
@@ -417,8 +489,8 @@
 		C1B4777C247AFDF200D0CCE2 /* signUp */ = {
 			isa = PBXGroup;
 			children = (
+				C164946E249D2BC7008ED2AF /* ui */,
 				C1B4777F247AFE3D00D0CCE2 /* SignUpViewModel.swift */,
-				C1B47783247AFE9300D0CCE2 /* SignUpView.swift */,
 			);
 			path = signUp;
 			sourceTree = "<group>";
@@ -438,8 +510,8 @@
 		C1B4777E247AFE2200D0CCE2 /* signIn */ = {
 			isa = PBXGroup;
 			children = (
+				C164946D249D2BB8008ED2AF /* ui */,
 				C1B47781247AFE5000D0CCE2 /* SignInViewModel.swift */,
-				C1B47785247AFEAE00D0CCE2 /* SignInView.swift */,
 			);
 			path = signIn;
 			sourceTree = "<group>";

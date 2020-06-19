@@ -12,7 +12,7 @@ import User
 
 final class ForgotPasswordViewModel: ObservableObject {
     
-    private let authRepo: AuthRepositoryImpl = AuthRepositoryImpl()
+    private let authRepositoryImpl: AuthRepositoryImpl = AuthRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     
