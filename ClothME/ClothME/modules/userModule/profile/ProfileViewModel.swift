@@ -6,4 +6,22 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import User
+
+final class ProfileViewModel {
+    
+//    private let userRepositoryImpl: UserRepositoryImpl = UserRepositoryImpl()
+    
+    private var bag = Set<AnyCancellable>()
+    
+    func getUser() {}
+    
+    func editUser() {}
+    
+    func blockUser() {}
+    
+    func removeUser() {}
+    
+}

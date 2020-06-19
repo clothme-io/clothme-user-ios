@@ -6,4 +6,22 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import User
+
+final class AccountViewModel {
+    
+//    private let accountRepositoryImpl: AccountRepositoryImpl = AccountRepositoryImpl()
+    
+    private var bag = Set<AnyCancellable>()
+    
+    func getAccount() {}
+    
+    func getAllAccounts() {}
+    
+    func addAccount() {}
+    
+    func removeAccount() {}
+    
+}
