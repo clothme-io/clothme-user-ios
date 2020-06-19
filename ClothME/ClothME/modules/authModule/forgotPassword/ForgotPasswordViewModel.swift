@@ -6,4 +6,18 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import User
+
+final class ForgotPasswordViewModel: ObservableObject {
+    
+    private let authRepo: AuthRepositoryImpl = AuthRepositoryImpl()
+    
+    private var bag = Set<AnyCancellable>()
+    
+    func forgotPassword() {}
+    
+}
+
+

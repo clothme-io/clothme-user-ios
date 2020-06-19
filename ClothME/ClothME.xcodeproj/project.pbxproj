@@ -24,7 +24,9 @@
 		C153D01D2484B2DF00BD0A31 /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153D01C2484B2DF00BD0A31 /* ConnectionViewModel.swift */; };
 		C153D01F2484B2F000BD0A31 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153D01E2484B2F000BD0A31 /* WishListViewModel.swift */; };
 		C153D0212484B31000BD0A31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153D0202484B31000BD0A31 /* SettingViewModel.swift */; };
-		C1649466249D208C008ED2AF /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1649465249D208C008ED2AF /* ResetPassword.swift */; };
+		C1649466249D208C008ED2AF /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1649465249D208C008ED2AF /* ResetPasswordView.swift */; };
+		C1649469249D20ED008ED2AF /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1649468249D20ED008ED2AF /* SignOutView.swift */; };
+		C164946C249D2152008ED2AF /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164946B249D2152008ED2AF /* ForgotPasswordView.swift */; };
 		C19D319C2447D17A00B84B3B /* Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19D319B2447D17A00B84B3B /* Notification.framework */; };
 		C19D319D2447D17A00B84B3B /* Notification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C19D319B2447D17A00B84B3B /* Notification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1AE16CA2429A15600ED1EE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE16C92429A15600ED1EE4 /* AppDelegate.swift */; };
@@ -98,7 +100,9 @@
 		C153D01C2484B2DF00BD0A31 /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
 		C153D01E2484B2F000BD0A31 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		C153D0202484B31000BD0A31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		C1649465249D208C008ED2AF /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		C1649465249D208C008ED2AF /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		C1649468249D20ED008ED2AF /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
+		C164946B249D2152008ED2AF /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		C19D319B2447D17A00B84B3B /* Notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AE16C62429A15600ED1EE4 /* ClothME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AE16C92429A15600ED1EE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 		C153CFFE2484ACDC00BD0A31 /* forgotPassword */ = {
 			isa = PBXGroup;
 			children = (
+				C164946A249D2141008ED2AF /* ui */,
 				C153D0142484B0F300BD0A31 /* ForgotPasswordViewModel.swift */,
 			);
 			path = forgotPassword;
@@ -211,6 +216,7 @@
 		C153CFFF2484AD6300BD0A31 /* signOut */ = {
 			isa = PBXGroup;
 			children = (
+				C1649467249D20D6008ED2AF /* ui */,
 				C153D0122484B0DE00BD0A31 /* SignOutViewModel.swift */,
 			);
 			path = signOut;
@@ -346,7 +352,23 @@
 		C1649464249D2066008ED2AF /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				C1649465249D208C008ED2AF /* ResetPassword.swift */,
+				C1649465249D208C008ED2AF /* ResetPasswordView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C1649467249D20D6008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C1649468249D20ED008ED2AF /* SignOutView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		C164946A249D2141008ED2AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				C164946B249D2152008ED2AF /* ForgotPasswordView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -519,12 +541,14 @@
 				C153D0172484B10700BD0A31 /* ResetPasswordViewModel.swift in Sources */,
 				C153D0192484B12C00BD0A31 /* BrandViewModel.swift in Sources */,
 				C153CFF72484AC0B00BD0A31 /* ProductPresenterDataModel.swift in Sources */,
+				C164946C249D2152008ED2AF /* ForgotPasswordView.swift in Sources */,
 				C153CFF32484AB6B00BD0A31 /* UserPresenterDataModel.swift in Sources */,
 				C153D00D2484B04D00BD0A31 /* CartViewModel.swift in Sources */,
 				C1AE16CA2429A15600ED1EE4 /* AppDelegate.swift in Sources */,
 				C153D00B2484B03D00BD0A31 /* DiscoveryViewModel.swift in Sources */,
 				C153D0152484B0F300BD0A31 /* ForgotPasswordViewModel.swift in Sources */,
 				C153D0132484B0DE00BD0A31 /* SignOutViewModel.swift in Sources */,
+				C1649469249D20ED008ED2AF /* SignOutView.swift in Sources */,
 				C1B47786247AFEAE00D0CCE2 /* SignInView.swift in Sources */,
 				C1AE16CC2429A15600ED1EE4 /* SceneDelegate.swift in Sources */,
 				C1B47780247AFE3D00D0CCE2 /* SignUpViewModel.swift in Sources */,
@@ -534,7 +558,7 @@
 				C153D0212484B31000BD0A31 /* SettingViewModel.swift in Sources */,
 				C153CFF52484ABDC00BD0A31 /* MeasurementPresenterDataModel.swift in Sources */,
 				C153CFFD2484ACAE00BD0A31 /* AccountViewModel.swift in Sources */,
-				C1649466249D208C008ED2AF /* ResetPassword.swift in Sources */,
+				C1649466249D208C008ED2AF /* ResetPasswordView.swift in Sources */,
 				C153D0112484B08400BD0A31 /* ProductViewModel.swift in Sources */,
 				C1B47782247AFE5000D0CCE2 /* SignInViewModel.swift in Sources */,
 			);
@@ -677,6 +701,7 @@
 				DEVELOPMENT_TEAM = 2UELNN9BXQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ClothME/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,6 +722,7 @@
 				DEVELOPMENT_TEAM = 2UELNN9BXQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ClothME/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

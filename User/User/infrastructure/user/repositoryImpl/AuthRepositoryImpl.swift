@@ -12,11 +12,13 @@ import Core
 import Networking
 
 
-class AuthRepositoryImpl : AuthRepository {
+public class AuthRepositoryImpl : AuthRepository {
+    
+    public init() {}
     
     let authNetworkManager = AuthNetworkManager()
     
-    func emailSignIn<EmailSignInDTO>(with data: EmailSignInDTO, completion: @escaping (User?, String?) -> ()) {
+    public func emailSignIn<EmailSignInDTO>(with data: EmailSignInDTO, completion: @escaping (User?, String?) -> ()) {
         authNetworkManager.router.request(.signInWithEmail(requestData: data as! Parameters)) { data, response, error in
             if error != nil {
                 completion(nil, "")
