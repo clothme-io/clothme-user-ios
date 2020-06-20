@@ -1,8 +1,8 @@
 //
-//  CheckoutViewModel.swift
+//  MerchantViewModel.swift
 //  ClothME
 //
-//  Created by MACPRO on 2020-05-31.
+//  Created by MACPRO on 2020-06-19.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
@@ -10,14 +10,16 @@ import SwiftUI
 import Combine
 import User
 
-final class CheckoutViewModel {
+final class MerchantViewModel {
     
 //    private let brandRepositoryImpl: BrandRepositoryImpl = BrandRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     
-    func getCheckout() {}
+    func getBrand() {}
     
+    func addBrand() {}
     
+    func removeBrand() {}
     
 }

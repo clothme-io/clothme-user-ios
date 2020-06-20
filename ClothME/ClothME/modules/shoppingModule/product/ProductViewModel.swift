@@ -6,4 +6,18 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import User
+
+final class ProductViewModel {
+    
+//    private let productRepositoryImpl: ProductRepositoryImpl = ProductRepositoryImpl()
+    
+    private var bag = Set<AnyCancellable>()
+    
+    func getProduct() {}
+    
+    func removeBrand() {}
+    
+}

@@ -6,4 +6,23 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import User
+
+final class CartViewModel {
+    
+//    private let cartRepositoryImpl: CartRepositoryImpl = CartRepositoryImpl()
+    
+    private var bag = Set<AnyCancellable>()
+    
+    func getCart() {}
+    
+    func addToCart() {}
+    
+    func removeFromCart() {}
+    
+    func editCart() {}
+    
+    
+}
