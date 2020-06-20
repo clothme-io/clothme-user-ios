@@ -2,7 +2,7 @@
 //  BrandViewModel.swift
 //  ClothME
 //
-//  Created by MACPRO on 2020-05-31.
+//  Created by MACPRO on 2020-06-19.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
@@ -18,8 +18,10 @@ final class BrandViewModel {
     
     func getBrand() {}
     
-    func addBrand() {}
+    func getAllBrands() {}
     
-    func removeBrand() {}
+    func addBrandToMyBrandList() {}
+    
+    func blockBrand() {}
     
 }

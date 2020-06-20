@@ -1,8 +1,8 @@
 //
-//  DiscoveryViewModel.swift
+//  RackViewModel.swift
 //  ClothME
 //
-//  Created by MACPRO on 2020-05-31.
+//  Created by MACPRO on 2020-06-19.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
@@ -10,10 +10,9 @@ import SwiftUI
 import Combine
 import User
 
-final class DiscoveryViewModel {
+final class RackViewModel {
     
-    private let brandViewModel: BrandViewModel = BrandViewModel()
-    private let merchantViewModel: MerchantViewModel = MerchantViewModel()
+//    private let rackRepositoryImpl: RackRepositoryImpl = RackRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     
