@@ -9,15 +9,11 @@
 import Foundation
 import Core
 
-
 public enum ProductAPI {
-    case getProductByProductId(requestData: Parameters)
-    case getProductByProductName(requestData: Parameters)
-    case removeProduct(requestData: Parameters)
-    case getProductByBrand(requestData: Parameters)
-    case resetPassword(requestData: Parameters)
-    case forgotPassword(requestData: Parameters)
-    case signOut(requestData: Parameters)
+    case getProductByProductId(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case getProductByProductName(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case removeProduct(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case getProductByBrand(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
 }
 
 extension ProductAPI: EndPointType {
@@ -39,20 +35,7 @@ extension ProductAPI: EndPointType {
     
     public var path: String {
         switch self {
-        case .facebookSignIn:
-            return "/facebook_signin"
-        case .googleSignIn:
-            return "/google_sigin"
-        case .signUpWithEmail:
-            return "/signup_with_email"
-        case .signInWithEmail:
-            return "/signin_with_email"
-        case .resetPassword(requestData: let id):
-            return "\(id)/reset_password"
-        case .forgotPassword:
-            return "/forgot_password"
-        case .signOut:
-            return "/signin_out"
+        
         }
     }
     
@@ -62,20 +45,7 @@ extension ProductAPI: EndPointType {
     
     public var task: HTTPTask {
         switch self {
-        case.facebookSignIn(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
-        case .signUpWithEmail(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
-        case .signInWithEmail(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
-        case .googleSignIn(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
-        case .resetPassword(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
-        case .forgotPassword(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
-        case .signOut(requestData: let data):
-            return .requestParameters(bodyParameters: data, urlParameters: nil)
+        
         }
     }
     

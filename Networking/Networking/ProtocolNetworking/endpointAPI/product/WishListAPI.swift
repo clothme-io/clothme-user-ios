@@ -11,9 +11,9 @@ import Core
 
 
 public enum WishListAPI {
-    case getWishList(requestData: Parameters)
-    case removeProductFromWishList(requestData: Parameters)
-    case addProductToWishList(requestData: Parameters)
+    case getWishList(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case removeProductFromWishList(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case addProductToWishList(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
 }
 
 extension WishListAPI: EndPointType {
@@ -35,27 +35,34 @@ extension WishListAPI: EndPointType {
     
     public var path: String {
         switch self {
-        case .getWishList(requestData: let requestData):
-            <#code#>
-        case .removeProductFromWishList(requestData: let requestData):
-            <#code#>
-        case .addProductToWishList(requestData: let requestData):
-            <#code#>
+        case .getWishList(requestData: _, queryString: let userId, header: _):
+            return "\(userId)/get_wishlist"
+        case .removeProductFromWishList(requestData: _, queryString: let userId, header: _):
+            return "\(userId)/remove_product_from_wishlist"
+        case .addProductToWishList(requestData: _, queryString: let userId, header: _):
+            return "\(userId)/add_product_to_wishlist"
         }
     }
     
     public var httpMethod: HTTPMethod {
-        return .post
+        switch self {
+        case .getWishList:
+            return .get
+        case .removeProductFromWishList:
+            return .delete
+        case .addProductToWishList:
+            return .post
+        }
     }
     
     public var task: HTTPTask {
         switch self {
-        case .getWishList(requestData: let requestData):
-            <#code#>
-        case .removeProductFromWishList(requestData: let requestData):
-            <#code#>
-        case .addProductToWishList(requestData: let requestData):
-            <#code#>
+        case .getWishList(requestData: let data, let queryString, header: let headers):
+        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
+        case .removeProductFromWishList(requestData: let data, let queryString, header: let headers):
+        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
+        case .addProductToWishList(requestData: let data, let queryString, header: let headers):
+        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
         }
     }
     

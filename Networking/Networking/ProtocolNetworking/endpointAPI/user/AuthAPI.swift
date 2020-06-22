@@ -22,7 +22,6 @@ public enum AuthAPI {
 }
 
 extension AuthAPI: EndPointType {
-    
     var environmentBaseURL : String {
         let authNetworkManager = AuthNetworkManager()
         switch authNetworkManager.environment {
