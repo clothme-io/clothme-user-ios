@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 import User
+import Product
 
 final class BrandViewModel {
     

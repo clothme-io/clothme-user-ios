@@ -395,16 +395,6 @@
 			path = wishListApplicationMode;
 			sourceTree = "<group>";
 		};
-		C15890BF2482B0EF00514750 /* product */ = {
-			isa = PBXGroup;
-			children = (
-				C165625D247973DB001EB497 /* mapper */,
-				C1F6136E2470CAB4003635A4 /* productApplicationModel */,
-				C191686A244A1B0D00D6C443 /* useCase */,
-			);
-			path = product;
-			sourceTree = "<group>";
-		};
 		C15890C02482B29800514750 /* cartApplicationModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,14 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				C165627C2479D677001EB497 /* CartDomainMapper.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
-		C165625D247973DB001EB497 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C165626C2479BE4E001EB497 /* ProductDomainMapper.swift */,
 			);
 			path = mapper;
 			sourceTree = "<group>";
@@ -469,20 +451,20 @@
 			path = mapper;
 			sourceTree = "<group>";
 		};
-		C16562702479C6DE001EB497 /* mapper */ = {
+		C16562702479C6DE001EB497 /* review */ = {
 			isa = PBXGroup;
 			children = (
 				C165626E2479C6B7001EB497 /* ReviewDomainMapper.swift */,
 			);
-			path = mapper;
+			path = review;
 			sourceTree = "<group>";
 		};
-		C16562712479C6EE001EB497 /* mapper */ = {
+		C16562712479C6EE001EB497 /* like */ = {
 			isa = PBXGroup;
 			children = (
 				C16562722479CC26001EB497 /* LikeDomainMap.swift */,
 			);
-			path = mapper;
+			path = like;
 			sourceTree = "<group>";
 		};
 		C191685C244A16A500D6C443 /* application */ = {
@@ -543,7 +525,7 @@
 			path = repositoryImpl;
 			sourceTree = "<group>";
 		};
-		C191686A244A1B0D00D6C443 /* useCase */ = {
+		C191686A244A1B0D00D6C443 /* product */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0E0D246CCB8A00E07391 /* getUnFitProduct */,
@@ -555,7 +537,7 @@
 				C1AF0D52246C5C5600E07391 /* getProductByProductId */,
 				C191685E244A171200D6C443 /* getProductByProductName */,
 			);
-			path = useCase;
+			path = product;
 			sourceTree = "<group>";
 		};
 		C1916886244A52AB00D6C443 /* getUnFitProductByUserId */ = {
@@ -567,6 +549,56 @@
 				C1F6136F2470CD0F003635A4 /* GetUnFitProductByUserIdError.swift */,
 			);
 			path = getUnFitProductByUserId;
+			sourceTree = "<group>";
+		};
+		C1A2F0F324A03744004A918A /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				C1A2F0F524A07AE8004A918A /* product */,
+				C16562712479C6EE001EB497 /* like */,
+				C16562702479C6DE001EB497 /* review */,
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		C1A2F0F424A0374E004A918A /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0D56246C62AC00E07391 /* badge */,
+				C191686A244A1B0D00D6C443 /* product */,
+				C1AF0CC1246911CD00E07391 /* like */,
+				C1AF0CC0246911C500E07391 /* review */,
+			);
+			path = useCase;
+			sourceTree = "<group>";
+		};
+		C1A2F0F524A07AE8004A918A /* product */ = {
+			isa = PBXGroup;
+			children = (
+				C165626C2479BE4E001EB497 /* ProductDomainMapper.swift */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		C1A2F0F624A07AFB004A918A /* applicationModel */ = {
+			isa = PBXGroup;
+			children = (
+				C1F6136C2470CA56003635A4 /* likeApplicationModel */,
+				C1F6136D2470CA85003635A4 /* reviewApplicationModel */,
+				C1F6136E2470CAB4003635A4 /* productApplicationModel */,
+			);
+			path = applicationModel;
+			sourceTree = "<group>";
+		};
+		C1A2F0F724A07B4B004A918A /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0D2E246C49DC00E07391 /* ProductRepository.swift */,
+				C1AF0D0A246C436000E07391 /* badge */,
+				C1AF0D0D246C43B500E07391 /* review */,
+				C1AF0D0E246C43BD00E07391 /* like */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 		C1AE16F8242B0C7C00ED1EE4 = {
@@ -591,9 +623,9 @@
 		C1AE1704242B0C7C00ED1EE4 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				C1916867244A1ADD00D6C443 /* infrastructure */,
 				C191685C244A16A500D6C443 /* application */,
 				C1AF0CC92469139200E07391 /* domain */,
+				C1916867244A1ADD00D6C443 /* infrastructure */,
 				C1AE1705242B0C7C00ED1EE4 /* Product.h */,
 				C1AE1706242B0C7C00ED1EE4 /* Info.plist */,
 			);
@@ -603,10 +635,10 @@
 		C1AF0CB624690C8900E07391 /* product */ = {
 			isa = PBXGroup;
 			children = (
-				C15890BF2482B0EF00514750 /* product */,
-				C1AF0CBB246910CB00E07391 /* badge */,
-				C1AF0CB92469106E00E07391 /* review */,
-				C1AF0CB82469106600E07391 /* like */,
+				C1A2F0F724A07B4B004A918A /* repository */,
+				C1A2F0F424A0374E004A918A /* useCase */,
+				C1A2F0F324A03744004A918A /* mapper */,
+				C1A2F0F624A07AFB004A918A /* applicationModel */,
 			);
 			path = product;
 			sourceTree = "<group>";
@@ -621,26 +653,6 @@
 			path = cart;
 			sourceTree = "<group>";
 		};
-		C1AF0CB82469106600E07391 /* like */ = {
-			isa = PBXGroup;
-			children = (
-				C16562712479C6EE001EB497 /* mapper */,
-				C1F6136C2470CA56003635A4 /* likeApplicationModel */,
-				C1AF0CC1246911CD00E07391 /* useCase */,
-			);
-			path = like;
-			sourceTree = "<group>";
-		};
-		C1AF0CB92469106E00E07391 /* review */ = {
-			isa = PBXGroup;
-			children = (
-				C16562702479C6DE001EB497 /* mapper */,
-				C1F6136D2470CA85003635A4 /* reviewApplicationModel */,
-				C1AF0CC0246911C500E07391 /* useCase */,
-			);
-			path = review;
-			sourceTree = "<group>";
-		};
 		C1AF0CBA2469109C00E07391 /* wishlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,14 +661,6 @@
 				C1AF0D54246C629700E07391 /* useCase */,
 			);
 			path = wishlist;
-			sourceTree = "<group>";
-		};
-		C1AF0CBB246910CB00E07391 /* badge */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D56246C62AC00E07391 /* useCase */,
-			);
-			path = badge;
 			sourceTree = "<group>";
 		};
 		C1AF0CBC2469115300E07391 /* cart */ = {
@@ -697,7 +701,7 @@
 			path = product;
 			sourceTree = "<group>";
 		};
-		C1AF0CC0246911C500E07391 /* useCase */ = {
+		C1AF0CC0246911C500E07391 /* review */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0D68246C644C00E07391 /* removeProductReview */,
@@ -705,24 +709,22 @@
 				C1AF0D66246C643600E07391 /* addProductReview */,
 				C1AF0D64246C641300E07391 /* getProductReviewByProductId */,
 			);
-			path = useCase;
+			path = review;
 			sourceTree = "<group>";
 		};
-		C1AF0CC1246911CD00E07391 /* useCase */ = {
+		C1AF0CC1246911CD00E07391 /* like */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0D6A246C646100E07391 /* unLikeProduct */,
 				C1AF0D69246C645700E07391 /* likeProduct */,
 				C1AF0D63246C640400E07391 /* getLikeByProductId */,
 			);
-			path = useCase;
+			path = like;
 			sourceTree = "<group>";
 		};
 		C1AF0CC92469139200E07391 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0CEA2469198700E07391 /* event */,
-				C1AF0CE92469197D00E07391 /* service */,
 				C1AF0CE82469196800E07391 /* repository */,
 				C1AF0CCB246913D000E07391 /* value_object */,
 				C1AF0CCA246913C600E07391 /* entity */,
@@ -865,68 +867,8 @@
 			children = (
 				C1AF0D09246C435600E07391 /* wishlist */,
 				C1AF0D08246C434D00E07391 /* cart */,
-				C1AF0D07246C434600E07391 /* product */,
 			);
 			path = repository;
-			sourceTree = "<group>";
-		};
-		C1AF0CE92469197D00E07391 /* service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = service;
-			sourceTree = "<group>";
-		};
-		C1AF0CEA2469198700E07391 /* event */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D0524691D5200E07391 /* product */,
-				C1AF0D0424691D2600E07391 /* wishlist */,
-				C1AF0D0224691D1500E07391 /* cart */,
-			);
-			path = event;
-			sourceTree = "<group>";
-		};
-		C1AF0D0224691D1500E07391 /* cart */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cart;
-			sourceTree = "<group>";
-		};
-		C1AF0D0324691D1C00E07391 /* badge */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = badge;
-			sourceTree = "<group>";
-		};
-		C1AF0D0424691D2600E07391 /* wishlist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = wishlist;
-			sourceTree = "<group>";
-		};
-		C1AF0D0524691D5200E07391 /* product */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D0C246C43A800E07391 /* like */,
-				C1AF0D0B246C43A100E07391 /* review */,
-				C1AF0D0324691D1C00E07391 /* badge */,
-			);
-			path = product;
-			sourceTree = "<group>";
-		};
-		C1AF0D07246C434600E07391 /* product */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D0E246C43BD00E07391 /* like */,
-				C1AF0D0D246C43B500E07391 /* review */,
-				C1AF0D0A246C436000E07391 /* badge */,
-				C1AF0D2E246C49DC00E07391 /* ProductRepository.swift */,
-			);
-			path = product;
 			sourceTree = "<group>";
 		};
 		C1AF0D08246C434D00E07391 /* cart */ = {
@@ -951,20 +893,6 @@
 				C1AF0D34246C4A1100E07391 /* BadgeRepository.swift */,
 			);
 			path = badge;
-			sourceTree = "<group>";
-		};
-		C1AF0D0B246C43A100E07391 /* review */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = review;
-			sourceTree = "<group>";
-		};
-		C1AF0D0C246C43A800E07391 /* like */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = like;
 			sourceTree = "<group>";
 		};
 		C1AF0D0D246C43B500E07391 /* review */ = {
@@ -1098,12 +1026,12 @@
 			path = useCase;
 			sourceTree = "<group>";
 		};
-		C1AF0D56246C62AC00E07391 /* useCase */ = {
+		C1AF0D56246C62AC00E07391 /* badge */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0D65246C642500E07391 /* getBadgeByProductId */,
 			);
-			path = useCase;
+			path = badge;
 			sourceTree = "<group>";
 		};
 		C1AF0D5B246C636500E07391 /* addProductToWishList */ = {
