@@ -376,6 +376,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C123BD6524A1005700F4D31F /* product */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0D2E246C49DC00E07391 /* ProductRepository.swift */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		C123BD6624A1008700F4D31F /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0D2C246C49CB00E07391 /* CartRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		C123BD6724A1009800F4D31F /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0D2A246C49B800E07391 /* WishListRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
 		C15890B0247E223000514750 /* getWishList */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,7 +617,7 @@
 		C1A2F0F724A07B4B004A918A /* repository */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0D2E246C49DC00E07391 /* ProductRepository.swift */,
+				C123BD6524A1005700F4D31F /* product */,
 				C1AF0D0A246C436000E07391 /* badge */,
 				C1AF0D0D246C43B500E07391 /* review */,
 				C1AF0D0E246C43BD00E07391 /* like */,
@@ -646,6 +670,7 @@
 		C1AF0CB72469104500E07391 /* cart */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD6624A1008700F4D31F /* repository */,
 				C15890C02482B29800514750 /* cartApplicationModel */,
 				C165625C247973D4001EB497 /* mapper */,
 				C1AF0D55246C62A000E07391 /* useCase */,
@@ -656,6 +681,7 @@
 		C1AF0CBA2469109C00E07391 /* wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD6724A1009800F4D31F /* repository */,
 				C15890BC2482B08B00514750 /* wishListApplicationMode */,
 				C165625B247973C5001EB497 /* mapper */,
 				C1AF0D54246C629700E07391 /* useCase */,
@@ -725,7 +751,6 @@
 		C1AF0CC92469139200E07391 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0CE82469196800E07391 /* repository */,
 				C1AF0CCB246913D000E07391 /* value_object */,
 				C1AF0CCA246913C600E07391 /* entity */,
 			);
@@ -860,31 +885,6 @@
 				C1AF0D3C246C4B0300E07391 /* RefundBadge.swift */,
 			);
 			path = badge;
-			sourceTree = "<group>";
-		};
-		C1AF0CE82469196800E07391 /* repository */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D09246C435600E07391 /* wishlist */,
-				C1AF0D08246C434D00E07391 /* cart */,
-			);
-			path = repository;
-			sourceTree = "<group>";
-		};
-		C1AF0D08246C434D00E07391 /* cart */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D2C246C49CB00E07391 /* CartRepository.swift */,
-			);
-			path = cart;
-			sourceTree = "<group>";
-		};
-		C1AF0D09246C435600E07391 /* wishlist */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D2A246C49B800E07391 /* WishListRepository.swift */,
-			);
-			path = wishlist;
 			sourceTree = "<group>";
 		};
 		C1AF0D0A246C436000E07391 /* badge */ = {
