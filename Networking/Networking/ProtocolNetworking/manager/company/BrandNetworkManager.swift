@@ -1,5 +1,5 @@
 //
-//  WishListNetworkManager.swift
+//  BrandNetworkService.swift
 //  Networking
 //
 //  Created by MACPRO on 2020-06-22.
@@ -9,16 +9,17 @@
 
 import Foundation
 
-public class WishLIstNetworkManager {
+public class BrandNetworkManager {
     
     public let environment: NetworkEnvironment
-    public let router: Router<AuthAPI>
+    public let router: Router<BrandAPI>
     
     public init() {
         environment = .production
-        router = Router<AuthAPI>()
+        router = Router<BrandAPI>()
     }
 
+    
     public func handleNetworkResponse(_ response: HTTPURLResponse) -> NetworkResult<String> {
         switch response.statusCode {
         case 200...299: return .success

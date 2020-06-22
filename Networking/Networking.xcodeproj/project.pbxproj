@@ -21,6 +21,7 @@
 		C123BD7F24A10F3400F4D31F /* WishListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD7E24A10F3400F4D31F /* WishListAPI.swift */; };
 		C123BD8124A10F4200F4D31F /* LikeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD8024A10F4200F4D31F /* LikeAPI.swift */; };
 		C123BD8324A10F5400F4D31F /* BrandAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD8224A10F5400F4D31F /* BrandAPI.swift */; };
+		C123BD8524A10FFE00F4D31F /* WaldropeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD8424A10FFE00F4D31F /* WaldropeAPI.swift */; };
 		C1AD999B248D689D0005D40A /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */; };
 		C1AD999D248D6B680005D40A /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */; };
 		C1AD999F248D76FE0005D40A /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999E248D76FE0005D40A /* NetworkRouter.swift */; };
@@ -75,6 +76,7 @@
 		C123BD7E24A10F3400F4D31F /* WishListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListAPI.swift; sourceTree = "<group>"; };
 		C123BD8024A10F4200F4D31F /* LikeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAPI.swift; sourceTree = "<group>"; };
 		C123BD8224A10F5400F4D31F /* BrandAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandAPI.swift; sourceTree = "<group>"; };
+		C123BD8424A10FFE00F4D31F /* WaldropeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldropeAPI.swift; sourceTree = "<group>"; };
 		C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999E248D76FE0005D40A /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
@@ -113,6 +115,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C123BD8624A1584A00F4D31F /* company */ = {
+			isa = PBXGroup;
+			children = (
+				C123BD6824A1064600F4D31F /* BrandNetworkManager.swift */,
+			);
+			path = company;
+			sourceTree = "<group>";
+		};
+		C123BD8724A1585B00F4D31F /* company */ = {
+			isa = PBXGroup;
+			children = (
+				C123BD8224A10F5400F4D31F /* BrandAPI.swift */,
+			);
+			path = company;
+			sourceTree = "<group>";
+		};
+		C123BD8824A158C100F4D31F /* order */ = {
+			isa = PBXGroup;
+			children = (
+				C123BD8424A10FFE00F4D31F /* WaldropeAPI.swift */,
+			);
+			path = order;
+			sourceTree = "<group>";
+		};
+		C123BD8924A158D600F4D31F /* order */ = {
+			isa = PBXGroup;
+			children = (
+				C123BD7A24A10DE400F4D31F /* WadropeNetworkManager.swift */,
+			);
+			path = order;
+			sourceTree = "<group>";
+		};
 		C1AD99A4248D8CDD0005D40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,8 +170,6 @@
 		C1AD99AE248D924C0005D40A /* product */ = {
 			isa = PBXGroup;
 			children = (
-				C123BD7A24A10DE400F4D31F /* WadropeNetworkManager.swift */,
-				C123BD6824A1064600F4D31F /* BrandNetworkManager.swift */,
 				C123BD6A24A1066700F4D31F /* ProductNetworkManager.swift */,
 				C123BD6C24A1080C00F4D31F /* ReviewNetworkManager.swift */,
 				C123BD6E24A1081A00F4D31F /* LikeNetworkManager.swift */,
@@ -179,7 +211,6 @@
 				C123BD7C24A10F2400F4D31F /* ReviewAPI.swift */,
 				C123BD7E24A10F3400F4D31F /* WishListAPI.swift */,
 				C123BD8024A10F4200F4D31F /* LikeAPI.swift */,
-				C123BD8224A10F5400F4D31F /* BrandAPI.swift */,
 			);
 			path = product;
 			sourceTree = "<group>";
@@ -214,8 +245,10 @@
 		C1AF0C9C2462785200E07391 /* endpointAPI */ = {
 			isa = PBXGroup;
 			children = (
-				C1AD99BA2493369C0005D40A /* product */,
+				C123BD8824A158C100F4D31F /* order */,
+				C123BD8724A1585B00F4D31F /* company */,
 				C1AD99B7249327170005D40A /* user */,
+				C1AD99BA2493369C0005D40A /* product */,
 			);
 			path = endpointAPI;
 			sourceTree = "<group>";
@@ -223,6 +256,8 @@
 		C1AF0C9D2462787B00E07391 /* manager */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD8924A158D600F4D31F /* order */,
+				C123BD8624A1584A00F4D31F /* company */,
 				C1AD99AF248D92840005D40A /* user */,
 				C1AD99AE248D924C0005D40A /* product */,
 				C1AD99B2248DB4D10005D40A /* NetworkResponse.swift */,
@@ -375,6 +410,7 @@
 				C1AD99A3248D8C3F0005D40A /* NetworkEnvironment.swift in Sources */,
 				C123BD7F24A10F3400F4D31F /* WishListAPI.swift in Sources */,
 				C123BD7D24A10F2400F4D31F /* ReviewAPI.swift in Sources */,
+				C123BD8524A10FFE00F4D31F /* WaldropeAPI.swift in Sources */,
 				C1AF0CAD24627BC800E07391 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

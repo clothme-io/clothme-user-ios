@@ -1,5 +1,5 @@
 //
-//  ProductAPI.swift
+//  BrandAPI.swift
 //  Networking
 //
 //  Created by MACPRO on 2020-06-22.
@@ -10,17 +10,17 @@ import Foundation
 import Core
 
 
-public enum ProductAPI {
-    case getProductByProductId(requestData: Parameters)
-    case getProductByProductName(requestData: Parameters)
-    case removeProduct(requestData: Parameters)
-    case getProductByBrand(requestData: Parameters)
+public enum BrandAPI {
+    case signUpWithEmail(requestData: Parameters)
+    case signInWithEmail(requestData: Parameters)
+    case facebookSignIn(requestData: Parameters)
+    case googleSignIn(requestData: Parameters)
     case resetPassword(requestData: Parameters)
     case forgotPassword(requestData: Parameters)
     case signOut(requestData: Parameters)
 }
 
-extension ProductAPI: EndPointType {
+extension BrandAPI: EndPointType {
     
     var environmentBaseURL : String {
         let authNetworkManager = AuthNetworkManager()
