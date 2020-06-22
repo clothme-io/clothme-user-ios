@@ -106,9 +106,7 @@
 			children = (
 				C1AF0CEF24691A9300E07391 /* entity */,
 				C1AF0CEE246919D300E07391 /* repository */,
-				C1AF0CED246919CB00E07391 /* service */,
 				C1AF0CEC246919BB00E07391 /* value_object */,
-				C1AF0CEB246919B300E07391 /* event */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -127,25 +125,11 @@
 			path = infrastructure;
 			sourceTree = "<group>";
 		};
-		C1AF0CEB246919B300E07391 /* event */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = event;
-			sourceTree = "<group>";
-		};
 		C1AF0CEC246919BB00E07391 /* value_object */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = value_object;
-			sourceTree = "<group>";
-		};
-		C1AF0CED246919CB00E07391 /* service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = service;
 			sourceTree = "<group>";
 		};
 		C1AF0CEE246919D300E07391 /* repository */ = {

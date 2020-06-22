@@ -19,7 +19,7 @@ extension UserAPI: EndPointType {
     
     var environmentBaseURL : String {
         switch UserNetworkManager.environment {
-        case .production: return "https://getclothme.com/prod/api"
+        case .production: return "https://getclothme.com/customer/api"
         case .qa: return "https://getclothme.com/qa/api"
         case .staging: return "https://getclothme.com/staging/api"
         }

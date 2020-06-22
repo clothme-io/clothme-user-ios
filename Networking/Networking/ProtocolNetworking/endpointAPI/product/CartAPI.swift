@@ -21,7 +21,7 @@ extension CartAPI: EndPointType {
     var environmentBaseURL : String {
         let cartNetworkManager = CartNetworkManager()
         switch cartNetworkManager.environment {
-        case .production: return "https://getclothme.com/prod/api"
+        case .production: return "https://getclothme.com/customer/api"
         case .qa: return "https://getclothme.com/qa/api"
         case .staging: return "https://getclothme.com/staging/api"
         }
@@ -35,8 +35,8 @@ extension CartAPI: EndPointType {
     
     public var path: String {
         switch self {
-        case .saveCart(requestData: let requestData):
-            <#code#>
+        case .saveCart:
+            return "/"
         case .removeProductFromcart(requestData: let requestData):
             <#code#>
         case .addProductToCart(requestData: let requestData):

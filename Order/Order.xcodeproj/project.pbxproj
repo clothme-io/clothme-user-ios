@@ -27,6 +27,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C123BD8A24A15A4C00F4D31F /* order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = order;
+			sourceTree = "<group>";
+		};
 		C183EBF9242C1BE400785111 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +65,9 @@
 		C1AF0B7E245FBDC400E07391 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAD33624455C2D00F2A951 /* Wardrobe */,
-				C1DAD33524455BE000F2A951 /* Refund */,
+				C123BD8A24A15A4C00F4D31F /* order */,
+				C1DAD33624455C2D00F2A951 /* wardrobe */,
+				C1DAD33524455BE000F2A951 /* refund */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -78,19 +86,19 @@
 			path = infrastructure;
 			sourceTree = "<group>";
 		};
-		C1DAD33524455BE000F2A951 /* Refund */ = {
+		C1DAD33524455BE000F2A951 /* refund */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Refund;
+			name = refund;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		C1DAD33624455C2D00F2A951 /* Wardrobe */ = {
+		C1DAD33624455C2D00F2A951 /* wardrobe */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Wardrobe;
+			name = wardrobe;
 			path = ../..;
 			sourceTree = "<group>";
 		};
