@@ -9,10 +9,9 @@
 import Foundation
 
 public enum AccountAPI {
-    case acceptMeasurement(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
-    case editUser(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
-    case blockUser(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
-    case removeUser(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case createAccount(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case removeAccount(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
+    case saveAndUpdateAccount(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
 }
 
 extension AccountAPI: EndPointType {
@@ -33,52 +32,44 @@ extension AccountAPI: EndPointType {
     
     public var path: String {
         switch self {
-        case .blockUser(requestData: let id):
-            return "\(id)/block_user"
-        case .removeUser(requestData: let id):
-            return "\(id)/remove_user"
-        case .acceptMeasurement(requestData: _, queryString: let id, header: _):
-            return "\(id)/get_user_by_id"
-        case .editUser(requestData: let id):
-            return "\(id)/edit_user"
+        case .createAccount(requestData: _, queryString: let userId, header: _):
+            return "\(userId)/create_account"
+        case .removeAccount(requestData: _, queryString: let userId, header: _):
+            return "\(userId)/remove_account"
+        case .saveAndUpdateAccount(requestData: _, queryString: let userId, header: _):
+            return "\(userId)/save_and_update_account"
         }
     }
     
     public var httpMethod: HTTPMethod {
         switch self {
-        case .blockUser:
+        case .createAccount:
             return .post
-        case .editUser:
-            return .put
-        case .acceptMeasurement:
-            return .post
-        case .removeUser:
+        case .removeAccount:
             return .delete
+        case .saveAndUpdateAccount:
+            return .post
         }
     }
     
     public var task: HTTPTask {
         switch self {
-        case.blockUser(requestData: let data, let queryString, header: let headers):
+        case.createAccount(requestData: let data, let queryString, header: let headers):
             return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
-        case .acceptMeasurement(requestData: let data, queryString: let queryString, header: let headers):
+        case .removeAccount(requestData: let data, queryString: let queryString, header: let headers):
             return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
-        case .editUser(requestData: let data, let queryString, header: let headers):
-            return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
-        case .removeUser(requestData: let data, let queryString, header: let headers):
+        case .saveAndUpdateAccount(requestData: let data, let queryString, header: let headers):
             return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
         }
     }
     
     public var headers: HTTPHeaders? {
         switch self {
-        case .blockUser(requestData: _, queryString: _, header: let header):
+        case .createAccount(requestData: _, queryString: _, header: let header):
             return .some(header)
-        case .acceptMeasurement(requestData: _, queryString: _, header: let header):
+        case .removeAccount(requestData: _, queryString: _, header: let header):
             return .some(header)
-        case .editUser(requestData: _, queryString: _, header: let header):
-            return .some(header)
-        case .removeUser(requestData: _, queryString: _, header: let header):
+        case .saveAndUpdateAccount(requestData: _, queryString: _, header: let header):
             return .some(header)
         }
     }

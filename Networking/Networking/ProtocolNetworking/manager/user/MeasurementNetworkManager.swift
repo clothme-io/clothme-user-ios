@@ -17,7 +17,6 @@ public class MeasurementNetworkManager {
         environment = .production
         router = Router<MeasurementAPI>()
     }
-
     
     public func handleNetworkResponse(_ response: HTTPURLResponse) -> NetworkResult<String> {
         switch response.statusCode {
