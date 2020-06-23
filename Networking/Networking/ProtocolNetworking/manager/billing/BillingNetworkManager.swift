@@ -1,24 +1,24 @@
 //
-//  BrandNetworkService.swift
+//  BillingNetworkManager.swift
 //  Networking
 //
-//  Created by MACPRO on 2020-06-22.
+//  Created by MACPRO on 2020-06-23.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-
 import Foundation
 
-public class BrandNetworkManager {
+public class BillingNetworkManager {
     
     public let environment: NetworkEnvironment
-    public let router: Router<BrandAPI>
+    public let router: Router<BillingAPI>
     
     public init() {
         environment = .production
-        router = Router<BrandAPI>()
+        router = Router<BillingAPI>()
     }
 
+    
     public func handleNetworkResponse(_ response: HTTPURLResponse) -> NetworkResult<String> {
         switch response.statusCode {
         case 200...299: return .success

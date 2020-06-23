@@ -6,7 +6,6 @@
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-
 import Foundation
 
 public class WaldropeNetworkManager {

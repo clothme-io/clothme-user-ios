@@ -1,22 +1,21 @@
 //
-//  BrandNetworkService.swift
+//  CompanyNetworkManager.swift
 //  Networking
 //
-//  Created by MACPRO on 2020-06-22.
+//  Created by MACPRO on 2020-06-23.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
-
 import Foundation
 
-public class BrandNetworkManager {
+public class CompanyNetworkManager {
     
     public let environment: NetworkEnvironment
-    public let router: Router<BrandAPI>
+    public let router: Router<CompanyAPI>
     
     public init() {
         environment = .production
-        router = Router<BrandAPI>()
+        router = Router<CompanyAPI>()
     }
 
     public func handleNetworkResponse(_ response: HTTPURLResponse) -> NetworkResult<String> {

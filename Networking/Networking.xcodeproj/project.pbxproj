@@ -29,6 +29,13 @@
 		C123BDA024A1A72000F4D31F /* DeliveryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD9F24A1A72000F4D31F /* DeliveryAPI.swift */; };
 		C123BDA224A1ACC900F4D31F /* LocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDA124A1ACC900F4D31F /* LocationAPI.swift */; };
 		C123BDA424A1ACD600F4D31F /* CompanyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDA324A1ACD600F4D31F /* CompanyAPI.swift */; };
+		C123BDA824A1BCFF00F4D31F /* OrderNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDA724A1BCFF00F4D31F /* OrderNetworkManager.swift */; };
+		C123BDAA24A1BD1200F4D31F /* RefundNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDA924A1BD1200F4D31F /* RefundNetworkManager.swift */; };
+		C123BDAC24A1BD2200F4D31F /* DeliveryNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDAB24A1BD2200F4D31F /* DeliveryNetworkManager.swift */; };
+		C123BDAE24A1BD3200F4D31F /* RackNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDAD24A1BD3200F4D31F /* RackNetworkManager.swift */; };
+		C123BDB024A1BD4100F4D31F /* BillingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDAF24A1BD4100F4D31F /* BillingNetworkManager.swift */; };
+		C123BDB224A1BD5500F4D31F /* LocationNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDB124A1BD5500F4D31F /* LocationNetworkManager.swift */; };
+		C123BDB424A1BD6300F4D31F /* CompanyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDB324A1BD6300F4D31F /* CompanyNetworkManager.swift */; };
 		C1AD999B248D689D0005D40A /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */; };
 		C1AD999D248D6B680005D40A /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */; };
 		C1AD999F248D76FE0005D40A /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999E248D76FE0005D40A /* NetworkRouter.swift */; };
@@ -91,6 +98,13 @@
 		C123BD9F24A1A72000F4D31F /* DeliveryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAPI.swift; sourceTree = "<group>"; };
 		C123BDA124A1ACC900F4D31F /* LocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPI.swift; sourceTree = "<group>"; };
 		C123BDA324A1ACD600F4D31F /* CompanyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAPI.swift; sourceTree = "<group>"; };
+		C123BDA724A1BCFF00F4D31F /* OrderNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNetworkManager.swift; sourceTree = "<group>"; };
+		C123BDA924A1BD1200F4D31F /* RefundNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundNetworkManager.swift; sourceTree = "<group>"; };
+		C123BDAB24A1BD2200F4D31F /* DeliveryNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryNetworkManager.swift; sourceTree = "<group>"; };
+		C123BDAD24A1BD3200F4D31F /* RackNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackNetworkManager.swift; sourceTree = "<group>"; };
+		C123BDAF24A1BD4100F4D31F /* BillingNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingNetworkManager.swift; sourceTree = "<group>"; };
+		C123BDB124A1BD5500F4D31F /* LocationNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNetworkManager.swift; sourceTree = "<group>"; };
+		C123BDB324A1BD6300F4D31F /* CompanyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyNetworkManager.swift; sourceTree = "<group>"; };
 		C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999E248D76FE0005D40A /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
@@ -133,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				C123BD6824A1064600F4D31F /* BrandNetworkManager.swift */,
+				C123BDB124A1BD5500F4D31F /* LocationNetworkManager.swift */,
+				C123BDB324A1BD6300F4D31F /* CompanyNetworkManager.swift */,
 			);
 			path = company;
 			sourceTree = "<group>";
@@ -162,6 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				C123BD7A24A10DE400F4D31F /* WadropeNetworkManager.swift */,
+				C123BDA724A1BCFF00F4D31F /* OrderNetworkManager.swift */,
+				C123BDA924A1BD1200F4D31F /* RefundNetworkManager.swift */,
+				C123BDAB24A1BD2200F4D31F /* DeliveryNetworkManager.swift */,
 			);
 			path = order;
 			sourceTree = "<group>";
@@ -180,6 +199,22 @@
 				C123BD9724A1A52000F4D31F /* RackAPI.swift */,
 			);
 			path = rack;
+			sourceTree = "<group>";
+		};
+		C123BDA524A1BCD800F4D31F /* rack */ = {
+			isa = PBXGroup;
+			children = (
+				C123BDAD24A1BD3200F4D31F /* RackNetworkManager.swift */,
+			);
+			path = rack;
+			sourceTree = "<group>";
+		};
+		C123BDA624A1BCE300F4D31F /* billing */ = {
+			isa = PBXGroup;
+			children = (
+				C123BDAF24A1BD4100F4D31F /* BillingNetworkManager.swift */,
+			);
+			path = billing;
 			sourceTree = "<group>";
 		};
 		C1AD99A4248D8CDD0005D40A /* Frameworks */ = {
@@ -293,6 +328,8 @@
 		C1AF0C9D2462787B00E07391 /* manager */ = {
 			isa = PBXGroup;
 			children = (
+				C123BDA624A1BCE300F4D31F /* billing */,
+				C123BDA524A1BCD800F4D31F /* rack */,
 				C123BD8924A158D600F4D31F /* order */,
 				C123BD8624A1584A00F4D31F /* company */,
 				C1AD99AF248D92840005D40A /* user */,
@@ -424,6 +461,7 @@
 				C1AD99AA248D8D700005D40A /* AuthAPI.swift in Sources */,
 				C1AF0CA62462799800E07391 /* HTTPMethod.swift in Sources */,
 				C1AD99B1248D92930005D40A /* UserNetworkManager.swift in Sources */,
+				C123BDB224A1BD5500F4D31F /* LocationNetworkManager.swift in Sources */,
 				C1AD999B248D689D0005D40A /* URLParameterEncoder.swift in Sources */,
 				C123BD9C24A1A6F400F4D31F /* OrderAPI.swift in Sources */,
 				C123BDA424A1ACD600F4D31F /* CompanyAPI.swift in Sources */,
@@ -444,7 +482,11 @@
 				C123BD8324A10F5400F4D31F /* BrandAPI.swift in Sources */,
 				C123BDA224A1ACC900F4D31F /* LocationAPI.swift in Sources */,
 				C1AF0CA1246278D500E07391 /* EndPointType.swift in Sources */,
+				C123BDB024A1BD4100F4D31F /* BillingNetworkManager.swift in Sources */,
+				C123BDAA24A1BD1200F4D31F /* RefundNetworkManager.swift in Sources */,
+				C123BDAE24A1BD3200F4D31F /* RackNetworkManager.swift in Sources */,
 				C1AD999D248D6B680005D40A /* JSONParameterEncoder.swift in Sources */,
+				C123BDB424A1BD6300F4D31F /* CompanyNetworkManager.swift in Sources */,
 				C123BD6924A1064600F4D31F /* BrandNetworkManager.swift in Sources */,
 				C123BD7724A10D2000F4D31F /* CartNetworkManager.swift in Sources */,
 				C1AD99C924971A1C0005D40A /* ConnectionNetworkManager.swift in Sources */,
@@ -456,6 +498,8 @@
 				C123BD8524A10FFE00F4D31F /* WaldropeAPI.swift in Sources */,
 				C123BD9A24A1A6D800F4D31F /* BillingAPI.swift in Sources */,
 				C1AF0CAD24627BC800E07391 /* NetworkError.swift in Sources */,
+				C123BDAC24A1BD2200F4D31F /* DeliveryNetworkManager.swift in Sources */,
+				C123BDA824A1BCFF00F4D31F /* OrderNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
