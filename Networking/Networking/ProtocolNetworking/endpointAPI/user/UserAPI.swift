@@ -33,14 +33,14 @@ extension UserAPI: EndPointType {
     
     public var path: String {
         switch self {
-        case .blockUser(requestData: let id):
-            return "\(id)/block_user"
-        case .removeUser(requestData: let id):
-            return "\(id)/remove_user"
-        case .getUserById(requestData: let id):
-            return "\(id)/get_user_by_id"
-        case .editUser(requestData: let id):
-            return "\(id)/edit_user"
+        case .blockUser(requestData: _, queryString: let userId, header: _):
+        return "\(userId)/block_user"
+        case .removeUser(requestData: _, queryString: let userId, header: _):
+        return "\(userId)/remove_user"
+        case .getUserById(requestData: _, queryString: let userId, header: _):
+        return "\(userId)/get_user_by_id"
+        case .editUser(requestData: _, queryString: let userId, header: _):
+        return "\(userId)/edit_user"
         }
     }
     
