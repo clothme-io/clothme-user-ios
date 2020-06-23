@@ -400,6 +400,48 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
+		C123BD8B24A1893900F4D31F /* getUnFitProductByBrandId */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = getUnFitProductByBrandId;
+			sourceTree = "<group>";
+		};
+		C123BD8C24A18B7800F4D31F /* getFitProductByBrandId */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = getFitProductByBrandId;
+			sourceTree = "<group>";
+		};
+		C123BD8D24A18B9600F4D31F /* getFitProductByProductYear */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = getFitProductByProductYear;
+			sourceTree = "<group>";
+		};
+		C123BD8E24A18BB900F4D31F /* getFitProductByUserBrand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = getFitProductByUserBrand;
+			sourceTree = "<group>";
+		};
+		C123BD8F24A18BD300F4D31F /* getFitProductByCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = getFitProductByCategory;
+			sourceTree = "<group>";
+		};
+		C123BD9024A18BE000F4D31F /* getFitProductByCategoryType */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = getFitProductByCategoryType;
+			sourceTree = "<group>";
+		};
 		C15890B0247E223000514750 /* getWishList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1277,11 @@
 		C1AF0E0C246CC33E00E07391 /* getFitProduct */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD9024A18BE000F4D31F /* getFitProductByCategoryType */,
+				C123BD8F24A18BD300F4D31F /* getFitProductByCategory */,
+				C123BD8E24A18BB900F4D31F /* getFitProductByUserBrand */,
+				C123BD8D24A18B9600F4D31F /* getFitProductByProductYear */,
+				C123BD8C24A18B7800F4D31F /* getFitProductByBrandId */,
 				C1AF0E16246CD13100E07391 /* getFitProductByCountry */,
 				C191685D244A16D500D6C443 /* getFitProductByUserId */,
 				C1AF0E0A246CC2DB00E07391 /* getFitProductByCity */,
@@ -1246,6 +1293,7 @@
 		C1AF0E0D246CCB8A00E07391 /* getUnFitProduct */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD8B24A1893900F4D31F /* getUnFitProductByBrandId */,
 				C1916886244A52AB00D6C443 /* getUnFitProductByUserId */,
 			);
 			path = getUnFitProduct;

@@ -207,6 +207,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C123BD9124A18D3E00F4D31F /* product */ = {
+			isa = PBXGroup;
+			children = (
+				C1649484249D49FE008ED2AF /* ui */,
+				C153D0102484B08400BD0A31 /* ProductViewModel.swift */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
 		C153CFEE2484A86500BD0A31 /* modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,10 +366,9 @@
 		C153D0082484AECA00BD0A31 /* product */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD9124A18D3E00F4D31F /* product */,
 				C164949D249D84DA008ED2AF /* like */,
 				C164949C249D84D3008ED2AF /* review */,
-				C1649484249D49FE008ED2AF /* ui */,
-				C153D0102484B08400BD0A31 /* ProductViewModel.swift */,
 			);
 			path = product;
 			sourceTree = "<group>";

@@ -8,11 +8,11 @@
 
 import SwiftUI
 import Combine
-import User
+import Product
 
 final class ProductViewModel {
     
-//    private let productRepositoryImpl: ProductRepositoryImpl = ProductRepositoryImpl()
+    private let productRepositoryImpl: ProductRepositoryImpl = ProductRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     
