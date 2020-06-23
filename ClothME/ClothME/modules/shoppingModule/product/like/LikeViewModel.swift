@@ -12,7 +12,7 @@ import Product
 
 final class LikeViewModel {
     
-    private let likeRepositoryImpl: LikeRepositoryImpl = LikeRepositoryImpl()
+//    private let likeRepositoryImpl: LikeRepositoryImpl = LikeRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     

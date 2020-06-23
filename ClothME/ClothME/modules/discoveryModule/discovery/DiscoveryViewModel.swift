@@ -15,6 +15,7 @@ final class DiscoveryViewModel {
     private let brandViewModel: BrandViewModel = BrandViewModel()
     private let merchantViewModel: MerchantViewModel = MerchantViewModel()
     
+    
     private var bag = Set<AnyCancellable>()
     
     func getConnection() {}
