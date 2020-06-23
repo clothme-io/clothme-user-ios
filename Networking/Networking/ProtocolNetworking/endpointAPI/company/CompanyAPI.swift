@@ -1,5 +1,5 @@
 //
-//  ReviewAPI.swift
+//  CompanyAPI.swift
 //  Networking
 //
 //  Created by MACPRO on 2020-06-22.
@@ -9,14 +9,14 @@
 import Foundation
 import Core
 
-public enum ReviewAPI {
+public enum CompanyAPI {
     case addProductReview(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
     case getProductReviewByProductId(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
     case editProductReview(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
     case removeProductReview(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
 }
 
-extension ReviewAPI: EndPointType {
+extension CompanyAPI: EndPointType {
     var environmentBaseURL : String {
         let reviewNetworkManager = ReviewNetworkManager()
         switch reviewNetworkManager.environment {
@@ -52,13 +52,13 @@ extension ReviewAPI: EndPointType {
     public var task: HTTPTask {
         switch self {
         case .addProductReview(requestData: let data, let queryString, header: let headers):
-        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
+            return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
         case .getProductReviewByProductId(requestData: let data, let queryString, header: let headers):
-        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
+            return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
         case .editProductReview(requestData: let data, let queryString, header: let headers):
-        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
+            return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
         case .removeProductReview(requestData: let data, let queryString, header: let headers):
-        return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
+            return .requestParametersAndHeaders(bodyParameters: data, urlParameters: queryString, additionHeaders: headers)
         }
     }
     
@@ -77,3 +77,4 @@ extension ReviewAPI: EndPointType {
     
     
 }
+

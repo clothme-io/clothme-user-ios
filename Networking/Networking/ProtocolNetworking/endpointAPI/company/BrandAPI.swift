@@ -9,7 +9,6 @@
 import Foundation
 import Core
 
-
 public enum BrandAPI {
     case signUpWithEmail(requestData: Parameters)
     case signInWithEmail(requestData: Parameters)

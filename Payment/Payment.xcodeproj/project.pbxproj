@@ -47,11 +47,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C123BD9224A1A47000F4D31F /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+				C19D31BD2447F80300B84B3B /* makePayment */,
+				C19D31BE2447F80E00B84B3B /* cancelPayment */,
+			);
+			path = useCase;
+			sourceTree = "<group>";
+		};
+		C123BD9324A1A48200F4D31F /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		C123BD9424A1A48700F4D31F /* applicationModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = applicationModel;
+			sourceTree = "<group>";
+		};
 		C19D31B42447F5CE00B84B3B /* application */ = {
 			isa = PBXGroup;
 			children = (
-				C19D31BE2447F80E00B84B3B /* cancelPayment */,
-				C19D31BD2447F80300B84B3B /* makePayment */,
+				C1DAD29E243818FC00F2A951 /* repository */,
+				C123BD9424A1A48700F4D31F /* applicationModel */,
+				C123BD9324A1A48200F4D31F /* mapper */,
+				C123BD9224A1A47000F4D31F /* useCase */,
 			);
 			path = application;
 			sourceTree = "<group>";
@@ -96,9 +121,9 @@
 		C1DAD262243469EA00F2A951 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0B87245FC17600E07391 /* infrastructure */,
 				C19D31B42447F5CE00B84B3B /* application */,
 				C1DAD27124346A2900F2A951 /* domain */,
+				C1AF0B87245FC17600E07391 /* infrastructure */,
 				C1DAD263243469EA00F2A951 /* Payment.h */,
 				C1DAD264243469EA00F2A951 /* Info.plist */,
 			);
@@ -108,7 +133,6 @@
 		C1DAD27124346A2900F2A951 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAD29E243818FC00F2A951 /* repository */,
 				C1DAD27324346A3D00F2A951 /* value_object */,
 				C1DAD27224346A3400F2A951 /* entity */,
 			);

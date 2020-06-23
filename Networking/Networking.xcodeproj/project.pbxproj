@@ -22,6 +22,13 @@
 		C123BD8124A10F4200F4D31F /* LikeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD8024A10F4200F4D31F /* LikeAPI.swift */; };
 		C123BD8324A10F5400F4D31F /* BrandAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD8224A10F5400F4D31F /* BrandAPI.swift */; };
 		C123BD8524A10FFE00F4D31F /* WaldropeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD8424A10FFE00F4D31F /* WaldropeAPI.swift */; };
+		C123BD9824A1A52000F4D31F /* RackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD9724A1A52000F4D31F /* RackAPI.swift */; };
+		C123BD9A24A1A6D800F4D31F /* BillingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD9924A1A6D800F4D31F /* BillingAPI.swift */; };
+		C123BD9C24A1A6F400F4D31F /* OrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD9B24A1A6F400F4D31F /* OrderAPI.swift */; };
+		C123BD9E24A1A70900F4D31F /* RefundAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD9D24A1A70900F4D31F /* RefundAPI.swift */; };
+		C123BDA024A1A72000F4D31F /* DeliveryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BD9F24A1A72000F4D31F /* DeliveryAPI.swift */; };
+		C123BDA224A1ACC900F4D31F /* LocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDA124A1ACC900F4D31F /* LocationAPI.swift */; };
+		C123BDA424A1ACD600F4D31F /* CompanyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDA324A1ACD600F4D31F /* CompanyAPI.swift */; };
 		C1AD999B248D689D0005D40A /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */; };
 		C1AD999D248D6B680005D40A /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */; };
 		C1AD999F248D76FE0005D40A /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999E248D76FE0005D40A /* NetworkRouter.swift */; };
@@ -77,6 +84,13 @@
 		C123BD8024A10F4200F4D31F /* LikeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAPI.swift; sourceTree = "<group>"; };
 		C123BD8224A10F5400F4D31F /* BrandAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandAPI.swift; sourceTree = "<group>"; };
 		C123BD8424A10FFE00F4D31F /* WaldropeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaldropeAPI.swift; sourceTree = "<group>"; };
+		C123BD9724A1A52000F4D31F /* RackAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackAPI.swift; sourceTree = "<group>"; };
+		C123BD9924A1A6D800F4D31F /* BillingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingAPI.swift; sourceTree = "<group>"; };
+		C123BD9B24A1A6F400F4D31F /* OrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPI.swift; sourceTree = "<group>"; };
+		C123BD9D24A1A70900F4D31F /* RefundAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundAPI.swift; sourceTree = "<group>"; };
+		C123BD9F24A1A72000F4D31F /* DeliveryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAPI.swift; sourceTree = "<group>"; };
+		C123BDA124A1ACC900F4D31F /* LocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPI.swift; sourceTree = "<group>"; };
+		C123BDA324A1ACD600F4D31F /* CompanyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAPI.swift; sourceTree = "<group>"; };
 		C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999E248D76FE0005D40A /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
@@ -127,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				C123BD8224A10F5400F4D31F /* BrandAPI.swift */,
+				C123BDA124A1ACC900F4D31F /* LocationAPI.swift */,
+				C123BDA324A1ACD600F4D31F /* CompanyAPI.swift */,
 			);
 			path = company;
 			sourceTree = "<group>";
@@ -135,6 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				C123BD8424A10FFE00F4D31F /* WaldropeAPI.swift */,
+				C123BD9B24A1A6F400F4D31F /* OrderAPI.swift */,
+				C123BD9D24A1A70900F4D31F /* RefundAPI.swift */,
+				C123BD9F24A1A72000F4D31F /* DeliveryAPI.swift */,
 			);
 			path = order;
 			sourceTree = "<group>";
@@ -145,6 +164,22 @@
 				C123BD7A24A10DE400F4D31F /* WadropeNetworkManager.swift */,
 			);
 			path = order;
+			sourceTree = "<group>";
+		};
+		C123BD9524A1A4EC00F4D31F /* billing */ = {
+			isa = PBXGroup;
+			children = (
+				C123BD9924A1A6D800F4D31F /* BillingAPI.swift */,
+			);
+			path = billing;
+			sourceTree = "<group>";
+		};
+		C123BD9624A1A4FB00F4D31F /* rack */ = {
+			isa = PBXGroup;
+			children = (
+				C123BD9724A1A52000F4D31F /* RackAPI.swift */,
+			);
+			path = rack;
 			sourceTree = "<group>";
 		};
 		C1AD99A4248D8CDD0005D40A /* Frameworks */ = {
@@ -245,6 +280,8 @@
 		C1AF0C9C2462785200E07391 /* endpointAPI */ = {
 			isa = PBXGroup;
 			children = (
+				C123BD9624A1A4FB00F4D31F /* rack */,
+				C123BD9524A1A4EC00F4D31F /* billing */,
 				C123BD8824A158C100F4D31F /* order */,
 				C123BD8724A1585B00F4D31F /* company */,
 				C1AD99B7249327170005D40A /* user */,
@@ -388,18 +425,24 @@
 				C1AF0CA62462799800E07391 /* HTTPMethod.swift in Sources */,
 				C1AD99B1248D92930005D40A /* UserNetworkManager.swift in Sources */,
 				C1AD999B248D689D0005D40A /* URLParameterEncoder.swift in Sources */,
+				C123BD9C24A1A6F400F4D31F /* OrderAPI.swift in Sources */,
+				C123BDA424A1ACD600F4D31F /* CompanyAPI.swift in Sources */,
 				C1AD99A1248D77EC0005D40A /* Router.swift in Sources */,
 				C1AD99BF249683970005D40A /* ConnectionAPI.swift in Sources */,
 				C123BD6F24A1081A00F4D31F /* LikeNetworkManager.swift in Sources */,
 				C123BD7524A10CFC00F4D31F /* CartAPI.swift in Sources */,
+				C123BD9824A1A52000F4D31F /* RackAPI.swift in Sources */,
 				C1AD99B9249327440005D40A /* UserAPI.swift in Sources */,
+				C123BDA024A1A72000F4D31F /* DeliveryAPI.swift in Sources */,
 				C1AF0CAA24627AEA00E07391 /* ParameterEncoding.swift in Sources */,
 				C123BD8124A10F4200F4D31F /* LikeAPI.swift in Sources */,
+				C123BD9E24A1A70900F4D31F /* RefundAPI.swift in Sources */,
 				C123BD7924A10D5600F4D31F /* WishListNetworkManager.swift in Sources */,
 				C123BD7324A10CE600F4D31F /* ProductAPI.swift in Sources */,
 				C123BD7B24A10DE400F4D31F /* WadropeNetworkManager.swift in Sources */,
 				C1AD99B3248DB4D10005D40A /* NetworkResponse.swift in Sources */,
 				C123BD8324A10F5400F4D31F /* BrandAPI.swift in Sources */,
+				C123BDA224A1ACC900F4D31F /* LocationAPI.swift in Sources */,
 				C1AF0CA1246278D500E07391 /* EndPointType.swift in Sources */,
 				C1AD999D248D6B680005D40A /* JSONParameterEncoder.swift in Sources */,
 				C123BD6924A1064600F4D31F /* BrandNetworkManager.swift in Sources */,
@@ -411,6 +454,7 @@
 				C123BD7F24A10F3400F4D31F /* WishListAPI.swift in Sources */,
 				C123BD7D24A10F2400F4D31F /* ReviewAPI.swift in Sources */,
 				C123BD8524A10FFE00F4D31F /* WaldropeAPI.swift in Sources */,
+				C123BD9A24A1A6D800F4D31F /* BillingAPI.swift in Sources */,
 				C1AF0CAD24627BC800E07391 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

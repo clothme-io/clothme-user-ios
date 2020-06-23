@@ -1,5 +1,5 @@
 //
-//  ReviewAPI.swift
+//  RackAPI.swift
 //  Networking
 //
 //  Created by MACPRO on 2020-06-22.
@@ -9,14 +9,14 @@
 import Foundation
 import Core
 
-public enum ReviewAPI {
+public enum RackAPI {
     case addProductReview(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
     case getProductReviewByProductId(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
     case editProductReview(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
     case removeProductReview(requestData: Parameters, queryString: Parameters, header: HTTPHeaders)
 }
 
-extension ReviewAPI: EndPointType {
+extension RackAPI: EndPointType {
     var environmentBaseURL : String {
         let reviewNetworkManager = ReviewNetworkManager()
         switch reviewNetworkManager.environment {
@@ -77,3 +77,4 @@ extension ReviewAPI: EndPointType {
     
     
 }
+

@@ -115,7 +115,6 @@ extension ProductAPI: EndPointType {
     
     public var httpMethod: HTTPMethod {
         switch self {
-
         case .getProductByProductId:
             return .get
         case .getProductByProductName:
