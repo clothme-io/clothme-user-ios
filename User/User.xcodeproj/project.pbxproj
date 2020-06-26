@@ -616,6 +616,7 @@
 		C1AF0BA8245FDEF400E07391 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C1D83E1724A561D300146EEE /* measurement */,
 				C1AF0B4724526CC700E07391 /* user */,
 				C1AF0B4824526D0500E07391 /* account */,
 				C1AF0B4924526D2D00E07391 /* connection */,
@@ -745,6 +746,7 @@
 		C1AF0BBB2460CFFF00E07391 /* application */ = {
 			isa = PBXGroup;
 			children = (
+				C1D83E1A24A5621B00146EEE /* measurement */,
 				C1AF0BBE2460D15600E07391 /* user */,
 				C1AF0BBD2460D14E00E07391 /* account */,
 				C1AF0BBC2460D14600E07391 /* connection */,
@@ -1149,21 +1151,6 @@
 			path = emailSignUp;
 			sourceTree = "<group>";
 		};
-		C1AF0C0A2460DC4100E07391 /* measurement */ = {
-			isa = PBXGroup;
-			children = (
-				C1589095247DF24200514750 /* getMeasurement */,
-				C1AF0C612460FF2500E07391 /* measurementDataModel */,
-				C1AF0C1A2460DE0C00E07391 /* acceptMeasurement */,
-				C1AF0C172460DDB700E07391 /* addMeasurement */,
-				C1AF0C142460DD7100E07391 /* sendMeasurement */,
-				C1AF0C112460DD4C00E07391 /* declineMeasurement */,
-				C1AF0C0E2460DCF400E07391 /* editMeasurement */,
-				C1AF0C0B2460DC8100E07391 /* requestMeasurment */,
-			);
-			path = measurement;
-			sourceTree = "<group>";
-		};
 		C1AF0C0B2460DC8100E07391 /* requestMeasurment */ = {
 			isa = PBXGroup;
 			children = (
@@ -1286,6 +1273,92 @@
 			path = measurementDataModel;
 			sourceTree = "<group>";
 		};
+		C1D83E1724A561D300146EEE /* measurement */ = {
+			isa = PBXGroup;
+			children = (
+				C1D83E1824A561EB00146EEE /* mapper */,
+				C1D83E1924A561F100146EEE /* repositoryImpl */,
+			);
+			path = measurement;
+			sourceTree = "<group>";
+		};
+		C1D83E1824A561EB00146EEE /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		C1D83E1924A561F100146EEE /* repositoryImpl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repositoryImpl;
+			sourceTree = "<group>";
+		};
+		C1D83E1A24A5621B00146EEE /* measurement */ = {
+			isa = PBXGroup;
+			children = (
+				C1D83E1E24A5624700146EEE /* measurementApplicationModel */,
+				C1D83E1D24A5623E00146EEE /* mapper */,
+				C1D83E1C24A5623300146EEE /* repository */,
+				C1D83E1B24A5622600146EEE /* useCase */,
+			);
+			path = measurement;
+			sourceTree = "<group>";
+		};
+		C1D83E1B24A5622600146EEE /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+				C1D83E2024A562A700146EEE /* body */,
+				C1D83E1F24A5629E00146EEE /* clothe */,
+				C1AF0C612460FF2500E07391 /* measurementDataModel */,
+			);
+			path = useCase;
+			sourceTree = "<group>";
+		};
+		C1D83E1C24A5623300146EEE /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		C1D83E1D24A5623E00146EEE /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		C1D83E1E24A5624700146EEE /* measurementApplicationModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = measurementApplicationModel;
+			sourceTree = "<group>";
+		};
+		C1D83E1F24A5629E00146EEE /* clothe */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0C1A2460DE0C00E07391 /* acceptMeasurement */,
+				C1AF0C142460DD7100E07391 /* sendMeasurement */,
+				C1AF0C112460DD4C00E07391 /* declineMeasurement */,
+				C1AF0C0B2460DC8100E07391 /* requestMeasurment */,
+			);
+			path = clothe;
+			sourceTree = "<group>";
+		};
+		C1D83E2024A562A700146EEE /* body */ = {
+			isa = PBXGroup;
+			children = (
+				C1589095247DF24200514750 /* getMeasurement */,
+				C1AF0C172460DDB700E07391 /* addMeasurement */,
+				C1AF0C0E2460DCF400E07391 /* editMeasurement */,
+			);
+			path = body;
+			sourceTree = "<group>";
+		};
 		C1DAD2CE24394D2A00F2A951 /* repositoryImpl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1300,7 +1373,6 @@
 			children = (
 				C1AF0BF12460D85F00E07391 /* auth */,
 				C1AF0BE42460D7A000E07391 /* user */,
-				C1AF0C0A2460DC4100E07391 /* measurement */,
 			);
 			path = useCase;
 			sourceTree = "<group>";
