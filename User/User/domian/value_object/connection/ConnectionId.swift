@@ -9,7 +9,6 @@
 import Foundation
 import Core
 
-
 class ConnectionId : Entity {
     
     override init(_id: Guid?) {

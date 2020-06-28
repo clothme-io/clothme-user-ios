@@ -515,6 +515,27 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
+		C189CA3F24A9200B00922994 /* message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		C189CA4024A9201F00922994 /* message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		C189CA4124A920B700922994 /* preference */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = preference;
+			sourceTree = "<group>";
+		};
 		C19D31C2244806DC00B84B3B /* repositoryImpl */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +663,7 @@
 		C1AF0BAB245FE00100E07391 /* connection */ = {
 			isa = PBXGroup;
 			children = (
+				C189CA4024A9201F00922994 /* message */,
 				C19D31932447C18A00B84B3B /* Connection.swift */,
 				C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */,
 			);
@@ -679,6 +701,7 @@
 		C1AF0BAF245FE04200E07391 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				C189CA4124A920B700922994 /* preference */,
 				C1AF0BC02460D27000E07391 /* tier */,
 				C1AE173F242B0F8200ED1EE4 /* UserId.swift */,
 				C1FCEAAD242C5C5300E36DEB /* ProfileImage.swift */,
@@ -717,6 +740,7 @@
 		C1AF0BB1245FE05200E07391 /* connection */ = {
 			isa = PBXGroup;
 			children = (
+				C189CA3F24A9200B00922994 /* message */,
 				C1AF0B33245269CC00E07391 /* ConnectionId.swift */,
 				C1AF0CB22468EC7D00E07391 /* ConnectionDate.swift */,
 				C1AF0CB42468ED2100E07391 /* ConnectionDuration.swift */,
