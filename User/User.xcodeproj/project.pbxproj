@@ -27,6 +27,7 @@
 		C178C9582486F27F00178031 /* TierOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178C9572486F27F00178031 /* TierOptions.swift */; };
 		C189CA3C24A910A400922994 /* AllowedConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3B24A910A400922994 /* AllowedConnections.swift */; };
 		C189CA3E24A910FF00922994 /* NumberOfConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3D24A910FF00922994 /* NumberOfConnection.swift */; };
+		C189CA4424A9269300922994 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA4324A9269300922994 /* Measurement.swift */; };
 		C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1916855244A133300D6C443 /* UserDataMapper.swift */; };
 		C1916871244A240900D6C443 /* RequestMeasurementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1916870244A240900D6C443 /* RequestMeasurementDTO.swift */; };
 		C191687B244A429C00D6C443 /* SendMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191687A244A429C00D6C443 /* SendMeasurement.swift */; };
@@ -245,6 +246,7 @@
 		C178C9572486F27F00178031 /* TierOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierOptions.swift; sourceTree = "<group>"; };
 		C189CA3B24A910A400922994 /* AllowedConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedConnections.swift; sourceTree = "<group>"; };
 		C189CA3D24A910FF00922994 /* NumberOfConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfConnection.swift; sourceTree = "<group>"; };
+		C189CA4324A9269300922994 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		C1916855244A133300D6C443 /* UserDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataMapper.swift; sourceTree = "<group>"; };
 		C1916870244A240900D6C443 /* RequestMeasurementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMeasurementDTO.swift; sourceTree = "<group>"; };
 		C191687A244A429C00D6C443 /* SendMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMeasurement.swift; sourceTree = "<group>"; };
@@ -536,6 +538,14 @@
 			path = preference;
 			sourceTree = "<group>";
 		};
+		C189CA4224A9267300922994 /* measurement */ = {
+			isa = PBXGroup;
+			children = (
+				C189CA4324A9269300922994 /* Measurement.swift */,
+			);
+			path = measurement;
+			sourceTree = "<group>";
+		};
 		C19D31C2244806DC00B84B3B /* repositoryImpl */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +663,7 @@
 		C1AF0BAA245FDFE700E07391 /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				C189CA4224A9267300922994 /* measurement */,
 				C1AF0BAD245FE01200E07391 /* account */,
 				C1AF0BAC245FE00A00E07391 /* user */,
 				C1AF0BAB245FE00100E07391 /* connection */,
@@ -1551,6 +1562,7 @@
 				C1AF0B6E245F93E600E07391 /* GoogleSignInDTO.swift in Sources */,
 				C1F613B62470E581003635A4 /* ResetPasswordResponse.swift in Sources */,
 				C1F661272449FB6A0033697E /* AddFullBodyMeasurementDTO.swift in Sources */,
+				C189CA4424A9269300922994 /* Measurement.swift in Sources */,
 				C1AF0B2E24524E8300E07391 /* FreeTier.swift in Sources */,
 				C1F613EE2470F1FE003635A4 /* SaveAndUpdateAccountResponse.swift in Sources */,
 				C1AF0B59245EFCA600E07391 /* SignOutDTO.swift in Sources */,
