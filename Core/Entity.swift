@@ -10,10 +10,10 @@ import Foundation
 
 open class Entity {
     
-    private let id : String
+    public let eId : Guid
     
-    public init(_id: String?) {
-        self.id = _id ?? Guid(value: _id).toString()
+    public init(_id: Guid?) {
+        self.eId = _id ?? Guid(value: nil)
     }
     
     public func Equals (other: Entity?) -> Bool {
@@ -21,15 +21,15 @@ open class Entity {
             return false;
         }
         
-        if type(of: other?.id) != type(of: id) {
+        if type(of: other?.eId) != type(of: eId) {
             return false;
         }
         
-        return other?.ToRawValue() == self.id;
+        return other?.ToRawValue() == self.eId;
     }
     
-    private func ToRawValue () -> String {
-        return self.id;
+    private func ToRawValue () -> Guid {
+        return self.eId;
     }
 
 }
@@ -37,7 +37,7 @@ open class Entity {
 
 extension Entity : Equatable {
     public static func == (lhs: Entity, rhs: Entity) -> Bool {
-        return lhs.id as AnyObject === rhs.id as AnyObject
+        return lhs.eId as AnyObject === rhs.eId as AnyObject
     }
 }
 

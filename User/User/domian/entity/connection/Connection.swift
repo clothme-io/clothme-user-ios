@@ -12,11 +12,8 @@ import Core
 
 class Connection : Entity {
     
-    private let id: ConnectionId
-    private var connectionDate: ConnectionDate
-    private var connectionDuration: ConnectionDuration
-    private var user: ConnectedUser
-    private var connectedUsers = [ConnectedUser]()
+    private let userId: UserId
+    private var _connectedUsers = [ConnectedUser]()
     
     private init(id: String?, date: ConnectionDate, duration: ConnectionDuration, user: ConnectedUser) {
         self.connectionDate = date

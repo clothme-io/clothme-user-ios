@@ -1,5 +1,5 @@
 //
-//  HomeAddress.swift
+//  ShippingAddress.swift
 //  User
 //
 //  Created by MACPRO on 2020-04-15.
@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-struct HomeAddress {
+struct ShippingAddress {
     
     private var _streetAddress: StreetAddress
     private var _city: City
@@ -21,16 +21,16 @@ struct HomeAddress {
         self._country = country
     }
     
-    static func create (streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<HomeAddress, ValidationError> {
+    static func create (streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
         return validateForNilValue(streetAddress: streetAddress, city: city, country: country)
-                .bind(initHomeAddress)
+                .bind(initShippingAddress)
     }
     
 }
 
 
 // MARK: Validation
-extension HomeAddress {
+extension ShippingAddress {
     private static func validateForNilValue (streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<(StreetAddress, City, Country), ValidationError> {
         let validStreet = Guard.againstNil(argument: streetAddress)
         let validCity = Guard.againstNil(argument: city)
@@ -41,7 +41,7 @@ extension HomeAddress {
          return .error(ValidationError.emptyValueNotAllowed)
      }
      
-    private static func initHomeAddress(streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<HomeAddress, ValidationError> {
-         return .ok(HomeAddress(streetAddress: streetAddress, city: city, country: country))
+    private static func initShippingAddress(streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
+         return .ok(ShippingAddress(streetAddress: streetAddress, city: city, country: country))
      }
 }

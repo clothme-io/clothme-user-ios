@@ -16,7 +16,7 @@ public class User : AggregateRoot {
     private var _profileImg : ProfileImage?
     private var _firstName : FirstName
     private var _lastName : LastName?
-    private var _gender: Gender?
+    private var _gender: Gender
     private var _email: UserEmail?
     private var _password: Password?
     private var _phoneNumber: PhoneNumber?
@@ -39,7 +39,7 @@ public class User : AggregateRoot {
         profileImage: ProfileImage?,
         firstName: FirstName,
         lastName: LastName?,
-        gender: Gender?,
+        gender: Gender,
         email: UserEmail?,
         city: City,
         phoneNumber: PhoneNumber?,
@@ -54,7 +54,6 @@ public class User : AggregateRoot {
         self.userId = UserId(_id: _id)
         if let profileImage = profileImage,
             let lastName = lastName,
-            let gender = gender,
             let email = email {
             self._profileImg = profileImage
             self._lastName = lastName
@@ -62,6 +61,7 @@ public class User : AggregateRoot {
             self._email = email
         }
         self._firstName = firstName
+        self._gender = gender
         self._city = city
         if let fullBodyMeasurement = fullBodyMeasurement,
             let topMeasurement = topMeasurement,
@@ -81,7 +81,7 @@ public class User : AggregateRoot {
         profileImage: ProfileImage?,
         firstName: FirstName,
         lastName: LastName?,
-        gender: Gender?,
+        gender: Gender,
         email: UserEmail?,
         city: City,
         phoneNumber: PhoneNumber?,
@@ -99,10 +99,11 @@ public class User : AggregateRoot {
     static func createFromSignIn (
         id: String,
         firstName: FirstName,
+        gender: Gender,
         city: City
     ) -> User {
         // do some verification
-        return self.init(_id: id, profileImage: nil, firstName: firstName, lastName: nil, gender: nil, email: nil, city: city, phoneNumber: nil, billingAddress: [nil], dateOfBirth: nil, profession: nil, fullBodyMeasurement: nil, topMeasurement: nil, bottomMeasurement: nil, shoeMeasurement: nil)
+        return self.init(_id: id, profileImage: nil, firstName: firstName, lastName: nil, gender: gender, email: nil, city: city, phoneNumber: nil, billingAddress: [nil], dateOfBirth: nil, profession: nil, fullBodyMeasurement: nil, topMeasurement: nil, bottomMeasurement: nil, shoeMeasurement: nil)
     }
     
     var id: UserId {
@@ -121,7 +122,7 @@ public class User : AggregateRoot {
         return self._lastName
     }
     
-    var gender: Gender? {
+    var gender: Gender {
         return self._gender
     }
     

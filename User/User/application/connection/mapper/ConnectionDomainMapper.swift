@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Core
 
 class ConnectionDomainMapper {
     
-    static func toModel() {
+    static func toApplicationModel(connection: Connection) {
         
     }
 }

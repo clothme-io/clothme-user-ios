@@ -8,14 +8,19 @@
 
 import Foundation
 
-open class Guid {
-    private let id: String
+open class Guid : Equatable {
+
+    private let Id: String
     
     public init(value: String?) {
-        self.id = value ?? UUID().uuidString
+        self.Id = value ?? UUID().uuidString
     }
     
     public func toString() -> String {
-        return self.id
+        return self.Id
+    }
+    
+    public static func == (lhs: Guid, rhs: Guid) -> Bool {
+        return lhs.Id as AnyObject === rhs.Id as AnyObject
     }
 }

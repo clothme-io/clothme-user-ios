@@ -12,14 +12,15 @@ import Core
 
 class AccountId : Entity {
     
-    private let id : String
-    
-    override init(_id: String?) {
-        self.id = _id ?? Guid(value: _id).toString()
-        super.init(_id: self.id)
+    override init(_id: Guid?) {
+        super.init(_id: _id)
     }
-    
-    func toString () -> String {
-        return self.id
+      
+    static func create(id: Guid?) -> ResultOption<ConnectionId, ValidationError> {
+        return .ok(ConnectionId(_id: id ?? Guid(value: nil)))
+    }
+      
+    func value() -> Guid {
+        return self.eId
     }
 }

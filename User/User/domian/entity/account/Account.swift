@@ -12,21 +12,20 @@ import Core
 
 class Account : Entity {
     
-    private let _adminUserId: UserId?
-    private var _userAccount: UserAccount
+    private let _accountOwner: UserId
     private static var _allowedAccount = AllowedAccount.get()
     private var _numberOfAccount: NumberOfAccount
-    private var _accounts = [UserAccount]()
+    private var _accounts = [AccountUser]()
     
-    private init(adminUserId: UserId?, userAccount: UserAccount, numberOfAccount: NumberOfAccount, relationship: RelationShip) {
-        self._adminUserId = adminUserId
+    private init(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) {
+        self._accountOwner = adminUserId
         self._userAccount = userAccount
         self._numberOfAccount = numberOfAccount
         super.init(_id: nil)
         self.addFor(userAccount)
     }
     
-    static func create (id: AccountId?, adminUserId: UserId?, userAccount: UserAccount,  userTier: ITier, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
+    static func create (id: AccountId?, adminUserId: UserId?, userAccount: UserAccount, userTier: ITier, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
         let currentNumberOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
         var numberOfCurrentAccount: Int
         switch currentNumberOfAccount {

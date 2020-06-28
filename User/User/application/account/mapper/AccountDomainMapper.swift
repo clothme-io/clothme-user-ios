@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Core
 
 class AccountDomainMapper {
     
-    static func toDomain() {
+    static func toApplicationDomain(account: Account) {
         
     }
 }
