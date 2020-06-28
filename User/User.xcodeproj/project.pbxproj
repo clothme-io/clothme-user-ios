@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C157447D24A9513C005E8375 /* ClotheMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157447C24A9513C005E8375 /* ClotheMeasurement.swift */; };
 		C1589097247DF27E00514750 /* GetUserMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1589096247DF27E00514750 /* GetUserMeasurement.swift */; };
 		C1589099247DF47700514750 /* GetUserMeasurementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1589098247DF47700514750 /* GetUserMeasurementDTO.swift */; };
 		C158909B247DF4C600514750 /* GetUserMeasurementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158909A247DF4C600514750 /* GetUserMeasurementError.swift */; };
@@ -68,7 +69,6 @@
 		C1AE173E242B0E7100ED1EE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE173D242B0E7100ED1EE4 /* User.swift */; };
 		C1AE1740242B0F8200ED1EE4 /* UserId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE173F242B0F8200ED1EE4 /* UserId.swift */; };
 		C1AE1744242B0FEB00ED1EE4 /* FirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE1743242B0FEB00ED1EE4 /* FirstName.swift */; };
-		C1AE1746242B103A00ED1EE4 /* UserMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE1745242B103A00ED1EE4 /* UserMeasurement.swift */; };
 		C1AE1748242B107E00ED1EE4 /* LastName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE1747242B107E00ED1EE4 /* LastName.swift */; };
 		C1AF0AFF244E260F00E07391 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0AFE244E260F00E07391 /* UserTests.swift */; };
 		C1AF0B01244E260F00E07391 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE1717242B0CC300ED1EE4 /* User.framework */; };
@@ -227,6 +227,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C157447C24A9513C005E8375 /* ClotheMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClotheMeasurement.swift; sourceTree = "<group>"; };
 		C1589096247DF27E00514750 /* GetUserMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserMeasurement.swift; sourceTree = "<group>"; };
 		C1589098247DF47700514750 /* GetUserMeasurementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserMeasurementDTO.swift; sourceTree = "<group>"; };
 		C158909A247DF4C600514750 /* GetUserMeasurementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserMeasurementError.swift; sourceTree = "<group>"; };
@@ -288,7 +289,6 @@
 		C1AE173D242B0E7100ED1EE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1AE173F242B0F8200ED1EE4 /* UserId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserId.swift; sourceTree = "<group>"; };
 		C1AE1743242B0FEB00ED1EE4 /* FirstName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstName.swift; sourceTree = "<group>"; };
-		C1AE1745242B103A00ED1EE4 /* UserMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMeasurement.swift; sourceTree = "<group>"; };
 		C1AE1747242B107E00ED1EE4 /* LastName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastName.swift; sourceTree = "<group>"; };
 		C1AF0AFC244E260F00E07391 /* UserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AF0AFE244E260F00E07391 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -727,7 +727,6 @@
 				C1A8D9DC242FF29800B95C17 /* DateOfBirth.swift */,
 				C1A8D9E2242FF35B00B95C17 /* Profession.swift */,
 				C1DAD28924346E8C00F2A951 /* Country.swift */,
-				C1AE1745242B103A00ED1EE4 /* UserMeasurement.swift */,
 				C1AF0B2824524D8700E07391 /* UserTier.swift */,
 				C1AF0B16244E265900E07391 /* City.swift */,
 				C19D31A02447D9D000B84B3B /* BillingAddress.swift */,
@@ -821,6 +820,7 @@
 				C1AF0BC22460D2FC00E07391 /* body */,
 				C1A8DA222430329B00B95C17 /* MeasurementUnit.swift */,
 				C1DAD302244162DA00F2A951 /* MeasurementType.swift */,
+				C157447C24A9513C005E8375 /* ClotheMeasurement.swift */,
 			);
 			path = measurement;
 			sourceTree = "<group>";
@@ -1677,7 +1677,6 @@
 				C1AF0C532460F5A000E07391 /* BlockUserDTO.swift in Sources */,
 				C15890A9247E1A3B00514750 /* GetAllConnection.swift in Sources */,
 				C1F613B22470E540003635A4 /* SignOutError.swift in Sources */,
-				C1AE1746242B103A00ED1EE4 /* UserMeasurement.swift in Sources */,
 				C189CA3E24A910FF00922994 /* NumberOfConnection.swift in Sources */,
 				C19D31A52447EFEB00B84B3B /* EmailSignInDTO .swift in Sources */,
 				C1F614022470F6BD003635A4 /* EditMeasurementError.swift in Sources */,
@@ -1691,6 +1690,7 @@
 				C1F661332449FE9F0033697E /* EmailSignUp.swift in Sources */,
 				C1F613CE2470E94F003635A4 /* RemoveUserResponse.swift in Sources */,
 				C1DAD303244162DA00F2A951 /* MeasurementType.swift in Sources */,
+				C157447D24A9513C005E8375 /* ClotheMeasurement.swift in Sources */,
 				C1AF0C472460F29A00E07391 /* ForgotPassword.swift in Sources */,
 				C1F661292449FB860033697E /* AddShoeMeasurementDTO.swift in Sources */,
 				C1AE1740242B0F8200ED1EE4 /* UserId.swift in Sources */,

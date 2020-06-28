@@ -9,12 +9,14 @@
 import Foundation
 
 struct AllowedAccount {
-    private var _free: Int
-    private var _max: Int
+    private let _freeTier: Int
+    private let _earlyAccess: Int
+    private let _VIPTier: Int
     
     private init () {
-        self._free = 3
-        self._max = 7
+        self._freeTier = 3
+        self._earlyAccess = 7
+        self._VIPTier = 10
     }
     
     static func get() -> AllowedAccount {
@@ -22,10 +24,14 @@ struct AllowedAccount {
     }
     
     var free : Int {
-        return self._free
+        return self._freeTier
     }
     
-    var max: Int {
-        return self._max
+    var earlyAccess: Int {
+        return self._earlyAccess
+    }
+    
+    var VIP: Int {
+        return self._VIPTier
     }
 }

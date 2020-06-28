@@ -10,7 +10,7 @@ import Foundation
 import Core
 
 
-public class User : AggregateRoot {
+public class User : Entity {
     
     private var _profileImg : ProfileImage?
     private var _firstName : FirstName
@@ -26,8 +26,7 @@ public class User : AggregateRoot {
     private var _shippingAddress: [ShippingAddress]?
     private var _billingAddress: [BillingAddress]?
     
-    
-    internal required init(
+    private init(
         profileImage: ProfileImage?,
         firstName: FirstName,
         lastName: LastName?,

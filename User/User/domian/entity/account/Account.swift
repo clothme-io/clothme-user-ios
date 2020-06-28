@@ -9,7 +9,6 @@
 import Foundation
 import Core
 
-
 class Account : Entity {
     
     private let _accountOwner: UserId
@@ -18,22 +17,15 @@ class Account : Entity {
     private var _accounts = [AccountUser]()
     
     private init(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) {
-        self._accountOwner = adminUserId
-        self._userAccount = userAccount
+        self._accountOwner = accountOwner
         self._numberOfAccount = numberOfAccount
-        super.init(_id: nil)
         self.addFor(userAccount)
+        super.init(_id: nil)
     }
     
-    static func create (id: AccountId?, adminUserId: UserId?, userAccount: UserAccount, userTier: ITier, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
+    static func create (id: AccountId?, accountOwner: UserId?, userAccount: UserAccount, userTier: ITier, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
         let currentNumberOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
-        var numberOfCurrentAccount: Int
-        switch currentNumberOfAccount {
-        case .ok(let numAccount):
-            numberOfCurrentAccount = numAccount.value
-        case .error(let error):
-            return .error(ValidationError.unknown(cause: error))
-        }
+
 
         let userTier = UserTier.set(tier: userTier)
         switch userTier {
@@ -95,7 +87,7 @@ extension Account {
         return .error(ValidationError.emptyValueNotAllowed)
     }
     
-    private static func initAccount(id: AccountId?, adminUserId: UserId?, userAccount: UserAccount, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
+    private static func initAccount(id: AccountId?, adminUserId: UserId?, accountUser: AccountUser, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
         return .ok(Account(adminUserId: adminUserId, userAccount: userAccount, numberOfAccount: numberOfAccount, relationship: relationship))
     }
     
