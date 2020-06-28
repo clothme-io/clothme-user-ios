@@ -20,11 +20,11 @@ public class User : AggregateRoot {
     private var _password: Password?
     private var _phoneNumber: PhoneNumber?
     private var _city: City
+    private var _country: Country
     private var _dateOfBirth : DateOfBirth?
-    private var _age : Age?
     private var _profession : Profession?
-    private var _shippingAddress: [StreetAddress]?
-    private var _billingAddress: [StreetAddress]?
+    private var _shippingAddress: [ShippingAddress]?
+    private var _billingAddress: [BillingAddress]?
     
     //MARK: SubDomain
     private var _account: Account?
@@ -36,50 +36,48 @@ public class User : AggregateRoot {
         lastName: LastName?,
         gender: Gender,
         email: UserEmail?,
+        phoneNumber: PhoneNumber?,
         city: City,
         country: Country,
         dateOfBirth: DateOfBirth?,
         profession: Profession?,
-        phoneNumber: PhoneNumber?,
-        billingAddress: [StreetAddress?]
+        shippingAddress: [ShippingAddress]?,
+        billingAddress: [BillingAddress]?
     ) {
         if let profileImage = profileImage,
             let lastName = lastName,
-            let email = email {
+            let email = email,
+            let shippingAddress = shippingAddress,
+            let billingAddress = billingAddress {
             self._profileImg = profileImage
             self._lastName = lastName
             self._gender = gender
             self._email = email
+            self._shippingAddress = shippingAddress
+            self._billingAddress = billingAddress
         }
         self._firstName = firstName
         self._gender = gender
         self._city = city
+        self._country = country
         super.init(_id: Guid(value: nil))
     }
     
     static func create (
-        id: String?,
         profileImage: ProfileImage?,
         firstName: FirstName,
         lastName: LastName?,
         gender: Gender,
         email: UserEmail?,
-        city: City,
         phoneNumber: PhoneNumber?,
-        streetAddress: [StreetAddress?],
+        city: City,
+        country: Country,
         dateOfBirth: DateOfBirth?,
-        profession: Profession?
+        profession: Profession?,
+        shippingAddress: [ShippingAddress]?,
+        billingAddress: [BillingAddress]?
     ) -> User {
-        return self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, city: city, phoneNumber: phoneNumber, billingAddress: streetAddress, dateOfBirth: dateOfBirth, profession: profession)
-    }
-    
-    static func createFromSignIn (
-        firstName: FirstName,
-        gender: Gender,
-        city: City
-    ) -> User {
-        // do some verification
-        return self.init(profileImage: nil, firstName: firstName, lastName: nil, gender: gender, email: nil, city: city, phoneNumber: nil, billingAddress: [nil], dateOfBirth: nil, profession: nil)
+        return self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, shippingAddress: shippingAddress, billingAddress: billingAddress)
     }
     
     var id: UserId {
@@ -120,6 +118,13 @@ public class User : AggregateRoot {
     
     var dateOfBirth: DateOfBirth? {
         return self._dateOfBirth
+    }
+    
+    var age: Age {
+        if let dateOfBirth = dateOfBirth {
+            let userAge = Age.create(dateOfBirth: dateOfBirth.value)
+            return userAge.getValue(result: userAge)
+        }
     }
     
     var profession: Profession? {

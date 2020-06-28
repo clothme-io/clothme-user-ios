@@ -21,10 +21,13 @@ struct Age : Equatable {
         self._day = day;
     }
     
-    public static func create (dateOfBirth: Date) -> ResultOption<Age, ValidationError> {
+    public static func create (dateOfBirth: String) -> ResultOption<Age, ValidationError> {
         let today = Date();
         let calender = Calendar.current;
-        let userAge = calender.dateComponents([.year, .month, .day], from: dateOfBirth, to: today);
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: dateOfBirth)!
+        let userAge = calender.dateComponents([.year, .month, .day], from: date, to: today);
         
         guard let day = userAge.day, let month = userAge.month, let year = userAge.year else { return .error(ValidationError.ageTooYoung)}
         
