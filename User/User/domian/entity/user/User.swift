@@ -26,9 +26,6 @@ public class User : AggregateRoot {
     private var _shippingAddress: [ShippingAddress]?
     private var _billingAddress: [BillingAddress]?
     
-    //MARK: SubDomain
-    private var _account: Account?
-    private var _connection: Connection?
     
     internal required init(
         profileImage: ProfileImage?,
@@ -130,12 +127,6 @@ public class User : AggregateRoot {
     var profession: Profession? {
         return self._profession
     }
-    
-    // MARK: AddAccount
-    
-    // MARK: RemoveAccount
-    
-    // MARK UpdateAccount
     
 }
 
