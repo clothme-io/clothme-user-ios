@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Core
 
 struct ConnectionDate : Equatable {
     
@@ -19,5 +19,23 @@ struct ConnectionDate : Equatable {
     
     var value : String {
         self.date
+    }
+}
+
+extension ConnectionDate {
+    private static func validateForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
+        let validInput = Guard.AgainstEmptyString(argument: inputName)
+        if validInput {
+            return .ok(inputName)
+        }
+        return .error(ValidationError.emptyValueNotAllowed)
+    }
+    
+    private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
+        let validInput = Guard.AgainstNilString(argument: input)
+        if validInput {
+            return .ok(input)
+        }
+        return .error(ValidationError.nilValueNotAllowed)
     }
 }

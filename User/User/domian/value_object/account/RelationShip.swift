@@ -34,3 +34,21 @@ struct RelationShip {
 //    }
     
 }
+
+extension RelationShip {
+    private static func validateForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
+        let validInput = Guard.AgainstEmptyString(argument: inputName)
+        if validInput {
+            return .ok(inputName)
+        }
+        return .error(ValidationError.emptyValueNotAllowed)
+    }
+    
+    private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
+        let validInput = Guard.AgainstNilString(argument: input)
+        if validInput {
+            return .ok(input)
+        }
+        return .error(ValidationError.nilValueNotAllowed)
+    }
+}

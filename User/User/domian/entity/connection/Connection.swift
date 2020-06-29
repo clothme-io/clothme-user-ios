@@ -9,31 +9,23 @@
 import Foundation
 import Core
 
-
 class Connection : Entity {
     
     private let userId: UserId
+    private static var _allowedConnection = AllowedConnection.get()
+    private var _numberOfConnection: NumberOfConnection
     private var _connectedUsers = [ConnectedUser]()
     
-    private init(id: String?, date: ConnectionDate, duration: ConnectionDuration, user: ConnectedUser) {
-        self.connectionDate = date
-        self.connectionDuration = duration
-        self.user = user
-        self.id = ConnectionId(_id: id)
-        super.init(_id: self.id.toString())
-        self.addFor(self.user)
+    private init() {
+        super.init(_id: nil)
     }
     
     func addFor (_ data: ConnectedUser) {
-        connectedUsers.append(data)
+        _connectedUsers.append(data)
     }
     
     var connectionId : ConnectionId {
-        return self.id
-    }
-    
-    var date : String {
-        self.connectionDate.value
+        return ConnectionId(_id: nil)
     }
 }
 

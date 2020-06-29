@@ -19,45 +19,26 @@ class Account : Entity {
     private init(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) {
         self._accountOwner = accountOwner
         self._numberOfAccount = numberOfAccount
-        self.addFor(userAccount)
+        self.addFor(accountUser)
         super.init(_id: nil)
     }
     
-    static func create (id: AccountId?, accountOwner: UserId?, userAccount: UserAccount, userTier: ITier, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
-        let currentNumberOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
+    static func create (accountOwner: UserId?, accountUser: AccountUser, userTier: ITier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
+        let numberOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
+        let currentNumberOfAccount = numberOfAccount.getValue(result: numberOfAccount).value
 
-
-        let userTier = UserTier.set(tier: userTier)
-        switch userTier {
-        case .ok(let tier):
-            
-            // MARK: Free Account Tier
-            if tier.type == "free" && numberOfCurrentAccount < _allowedAccount.free {
-                return .ok(Account(adminUserId: adminUserId, userAccount: userAccount, numberOfAccount: numberOfAccount, relationship: relationship))
-            }
-            
-            if tier.type == "free" && numberOfCurrentAccount > _allowedAccount.free {
-                return .error(ValidationError.exceededFreeAccount)
-            }
-            
-            // MARK: VIP Account Tier
-            if tier.type == "vip" && numberOfCurrentAccount > _allowedAccount.max {
-                return .error(ValidationError.maxNumberReached)
-            }
-            
-            // MARK: EarlyAccess Account Tier
-            if tier.type == "earlyaccess" {
-                 return .ok(Account(adminUserId: adminUserId, userAccount: userAccount, numberOfAccount: numberOfAccount, relationship: relationship))
-            }
-        case .error(let error):
-            return .error(ValidationError.unknown(cause: error))
-        }
+        let tier = UserTier.set(tier: userTier)
+        let userTier = tier.getValue(result: tier)
+   
         
-        if numberOfCurrentAccount > _allowedAccount.max {
-            return .error(ValidationError.maxNumberReached)
-        }
+        // MARK: Free Account Tier
+     
         
-        return .ok(Account(adminUserId: adminUserId, userAccount: userAccount, numberOfAccount: numberOfAccount, relationship: relationship))
+        // MARK: VIP Account Tier
+     
+        
+        // MARK: EarlyAccess Account Tier
+        
     }
     
     var accountId : AccountId {
@@ -68,7 +49,7 @@ class Account : Entity {
         return self._numberOfAccount.value
     }
     
-    func addFor (_ data: UserAccount) {
+    func addFor (_ data: AccountUser) {
         _accounts.append(data)
     }
 }
@@ -76,19 +57,18 @@ class Account : Entity {
 
 // MARK: Validation
 extension Account {
-    private static func validateForNilValue(user: UserAccount, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<(UserAccount, NumberOfAccount, RelationShip), ValidationError> {
+    private static func validateForNilValue(user: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<(AccountUser, NumberOfAccount), ValidationError> {
         let userResult = Guard.againstNil(argument: user)
         let numberOfAccountResult = Guard.againstNil(argument: numberOfAccount)
-        let relationShipResult = Guard.againstNil(argument: relationship)
         
-        if userResult && numberOfAccountResult && relationShipResult {
-            return .ok((user, numberOfAccount, relationship))
+        if userResult && numberOfAccountResult {
+            return .ok((user, numberOfAccount))
         }
         return .error(ValidationError.emptyValueNotAllowed)
     }
     
-    private static func initAccount(id: AccountId?, adminUserId: UserId?, accountUser: AccountUser, numberOfAccount: NumberOfAccount, relationship: RelationShip) -> ResultOption<Account, ValidationError> {
-        return .ok(Account(adminUserId: adminUserId, userAccount: userAccount, numberOfAccount: numberOfAccount, relationship: relationship))
+    private static func initAccount(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
+        return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
 }

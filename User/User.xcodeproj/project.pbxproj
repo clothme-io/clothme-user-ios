@@ -26,7 +26,7 @@
 		C16562772479CCE1001EB497 /* AccountDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562762479CCE1001EB497 /* AccountDomainMapper.swift */; };
 		C16562792479CD26001EB497 /* ConnectionDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562782479CD26001EB497 /* ConnectionDomainMapper.swift */; };
 		C178C9582486F27F00178031 /* TierOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178C9572486F27F00178031 /* TierOptions.swift */; };
-		C189CA3C24A910A400922994 /* AllowedConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3B24A910A400922994 /* AllowedConnections.swift */; };
+		C189CA3C24A910A400922994 /* AllowedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3B24A910A400922994 /* AllowedConnection.swift */; };
 		C189CA3E24A910FF00922994 /* NumberOfConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3D24A910FF00922994 /* NumberOfConnection.swift */; };
 		C189CA4424A9269300922994 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA4324A9269300922994 /* Measurement.swift */; };
 		C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1916855244A133300D6C443 /* UserDataMapper.swift */; };
@@ -245,7 +245,7 @@
 		C16562762479CCE1001EB497 /* AccountDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDomainMapper.swift; sourceTree = "<group>"; };
 		C16562782479CD26001EB497 /* ConnectionDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDomainMapper.swift; sourceTree = "<group>"; };
 		C178C9572486F27F00178031 /* TierOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierOptions.swift; sourceTree = "<group>"; };
-		C189CA3B24A910A400922994 /* AllowedConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedConnections.swift; sourceTree = "<group>"; };
+		C189CA3B24A910A400922994 /* AllowedConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedConnection.swift; sourceTree = "<group>"; };
 		C189CA3D24A910FF00922994 /* NumberOfConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfConnection.swift; sourceTree = "<group>"; };
 		C189CA4324A9269300922994 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		C1916855244A133300D6C443 /* UserDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataMapper.swift; sourceTree = "<group>"; };
@@ -754,7 +754,7 @@
 				C1AF0B33245269CC00E07391 /* ConnectionId.swift */,
 				C1AF0CB22468EC7D00E07391 /* ConnectionDate.swift */,
 				C1AF0CB42468ED2100E07391 /* ConnectionDuration.swift */,
-				C189CA3B24A910A400922994 /* AllowedConnections.swift */,
+				C189CA3B24A910A400922994 /* AllowedConnection.swift */,
 				C189CA3D24A910FF00922994 /* NumberOfConnection.swift */,
 			);
 			path = connection;
@@ -1602,7 +1602,7 @@
 				C1916897244AB5BF00D6C443 /* AccountUser.swift in Sources */,
 				C1AF0C6524610D9F00E07391 /* DeclineMeasurement.swift in Sources */,
 				C1AE1748242B107E00ED1EE4 /* LastName.swift in Sources */,
-				C189CA3C24A910A400922994 /* AllowedConnections.swift in Sources */,
+				C189CA3C24A910A400922994 /* AllowedConnection.swift in Sources */,
 				C1F613BA2470E62A003635A4 /* ForgotPasswordResponse.swift in Sources */,
 				C1AF0C352460E6E700E07391 /* SendConnection.swift in Sources */,
 				C1F613A62470E2AD003635A4 /* EmailSignInError.swift in Sources */,
