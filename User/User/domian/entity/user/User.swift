@@ -26,7 +26,7 @@ public class User : Entity {
     private var _shippingAddress: [ShippingAddress]?
     private var _billingAddress: [BillingAddress]?
     
-    private init(
+    private required init(
         profileImage: ProfileImage?,
         firstName: FirstName,
         lastName: LastName?,

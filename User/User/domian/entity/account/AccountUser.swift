@@ -22,24 +22,14 @@ class AccountUser : Entity {
     private var _relationship: RelationShip
     private var _dateAdded: DateAdded
     
-    private init(_id: String?, user: User, relationShip: RelationShip, dataAdded: String) {
-        self.userAccountId = UserId(_id: Guid(value: <#String?#>))
-        self._user = user
+    private init(_id: String?, user: User, relationShip: RelationShip, dataAdded: DateAdded) {
         self._relationship = relationShip
         self._dateAdded = dataAdded
-        super.init(_id: self.userAccountId.toString())
+        super.init(_id: nil)
     }
     
-    public static func create(id: String, user: User, relationShip: RelationShip, dataAdded: String) -> ResultOption<UserAccount, ValidationError> {
-        return .ok(UserAccount(_id: id, user: user, relationShip: relationShip, dataAdded: dataAdded))
-    }
-    
-    var users : User {
-        return self._user
-    }
-    
-    var accountId : AccountId {
-        return AccountId()
+    public static func create(id: String, user: User, relationShip: RelationShip, dataAdded: String) -> ResultOption<AccountUser, ValidationError> {
+        return .ok()
     }
     
     public func remove(userId: UserId, users: [User]) {
@@ -50,6 +40,6 @@ class AccountUser : Entity {
 
 
 // MARK: Validation
-extension UserAccount {
+extension AccountUser {
     
 }

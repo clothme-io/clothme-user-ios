@@ -11,11 +11,16 @@ import Core
 
 class InviteId : Entity {
     
-    private let id: String?
-    
-    override init(_id: String?) {
-        self.id = _id
-        super.init(_id: self.id)
-    }
+    override init(_id: Guid?) {
+          super.init(_id: _id)
+      }
+      
+      static func create(id: Guid?) -> ResultOption<InviteId, ValidationError> {
+          return .ok(InviteId(_id: id ?? Guid(value: nil)))
+      }
+      
+      func value() -> Guid {
+          return self.eId
+      }
     
 }

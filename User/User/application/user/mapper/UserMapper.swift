@@ -33,6 +33,6 @@ class UserMapper {
     }
     
     static func toDataModel(user: User) -> UserApplicationModel {
-        return UserApplicationModel(userId: user.id.toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city?.value ?? "")
+        return UserApplicationModel(userId: user.id.value().toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city?.value ?? "")
     }
 }

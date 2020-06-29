@@ -23,11 +23,11 @@ class Account : Entity {
         super.init(_id: nil)
     }
     
-    static func create (accountOwner: UserId?, accountUser: AccountUser, userTier: ITier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
+    static func create (accountOwner: UserId?, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
         let numberOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
         let currentNumberOfAccount = numberOfAccount.getValue(result: numberOfAccount).value
 
-        let tier = UserTier.set(tier: userTier)
+        let tier = UserTier.set(tier: userTier.type)
         let userTier = tier.getValue(result: tier)
    
         
