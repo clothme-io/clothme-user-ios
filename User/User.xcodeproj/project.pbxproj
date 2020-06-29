@@ -25,7 +25,6 @@
 		C16562752479CC97001EB497 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562742479CC97001EB497 /* UserMapper.swift */; };
 		C16562772479CCE1001EB497 /* AccountDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562762479CCE1001EB497 /* AccountDomainMapper.swift */; };
 		C16562792479CD26001EB497 /* ConnectionDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562782479CD26001EB497 /* ConnectionDomainMapper.swift */; };
-		C178C9582486F27F00178031 /* TierOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178C9572486F27F00178031 /* TierOptions.swift */; };
 		C189CA3C24A910A400922994 /* AllowedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3B24A910A400922994 /* AllowedConnection.swift */; };
 		C189CA3E24A910FF00922994 /* NumberOfConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3D24A910FF00922994 /* NumberOfConnection.swift */; };
 		C189CA4424A9269300922994 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA4324A9269300922994 /* Measurement.swift */; };
@@ -75,7 +74,6 @@
 		C1AF0B17244E265900E07391 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B16244E265900E07391 /* City.swift */; };
 		C1AF0B25244E52BD00E07391 /* AllowedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B24244E52BD00E07391 /* AllowedAccount.swift */; };
 		C1AF0B2924524D8700E07391 /* UserTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B2824524D8700E07391 /* UserTier.swift */; };
-		C1AF0B2C24524DFD00E07391 /* ITier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B2B24524DFD00E07391 /* ITier.swift */; };
 		C1AF0B2E24524E8300E07391 /* FreeTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B2D24524E8300E07391 /* FreeTier.swift */; };
 		C1AF0B3024524E9E00E07391 /* VIPTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B2F24524E9E00E07391 /* VIPTier.swift */; };
 		C1AF0B3224524EB400E07391 /* EarlyAccessTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B3124524EB400E07391 /* EarlyAccessTier.swift */; };
@@ -244,7 +242,6 @@
 		C16562742479CC97001EB497 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
 		C16562762479CCE1001EB497 /* AccountDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDomainMapper.swift; sourceTree = "<group>"; };
 		C16562782479CD26001EB497 /* ConnectionDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDomainMapper.swift; sourceTree = "<group>"; };
-		C178C9572486F27F00178031 /* TierOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierOptions.swift; sourceTree = "<group>"; };
 		C189CA3B24A910A400922994 /* AllowedConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedConnection.swift; sourceTree = "<group>"; };
 		C189CA3D24A910FF00922994 /* NumberOfConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfConnection.swift; sourceTree = "<group>"; };
 		C189CA4324A9269300922994 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
@@ -296,7 +293,6 @@
 		C1AF0B16244E265900E07391 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C1AF0B24244E52BD00E07391 /* AllowedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedAccount.swift; sourceTree = "<group>"; };
 		C1AF0B2824524D8700E07391 /* UserTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTier.swift; sourceTree = "<group>"; };
-		C1AF0B2B24524DFD00E07391 /* ITier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITier.swift; sourceTree = "<group>"; };
 		C1AF0B2D24524E8300E07391 /* FreeTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeTier.swift; sourceTree = "<group>"; };
 		C1AF0B2F24524E9E00E07391 /* VIPTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPTier.swift; sourceTree = "<group>"; };
 		C1AF0B3124524EB400E07391 /* EarlyAccessTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyAccessTier.swift; sourceTree = "<group>"; };
@@ -827,11 +823,9 @@
 		C1AF0BC02460D27000E07391 /* tier */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0B2B24524DFD00E07391 /* ITier.swift */,
 				C1AF0B2D24524E8300E07391 /* FreeTier.swift */,
 				C1AF0B2F24524E9E00E07391 /* VIPTier.swift */,
 				C1AF0B3124524EB400E07391 /* EarlyAccessTier.swift */,
-				C178C9572486F27F00178031 /* TierOptions.swift */,
 			);
 			path = tier;
 			sourceTree = "<group>";
@@ -1585,7 +1579,6 @@
 				C1AF0C5D2460F95300E07391 /* AccountRespositoryImpl.swift in Sources */,
 				C15890AB247E1A5200514750 /* GetAllConnectionError.swift in Sources */,
 				C1AF0B70245F943100E07391 /* GoogleSignIn.swift in Sources */,
-				C178C9582486F27F00178031 /* TierOptions.swift in Sources */,
 				C1DAD32424455AC600F2A951 /* ConnectionRepository.swift in Sources */,
 				C1AE173E242B0E7100ED1EE4 /* User.swift in Sources */,
 				C1A8D9E3242FF35B00B95C17 /* Profession.swift in Sources */,
@@ -1668,7 +1661,6 @@
 				C16562752479CC97001EB497 /* UserMapper.swift in Sources */,
 				C19D31A12447D9D000B84B3B /* BillingAddress.swift in Sources */,
 				C1DAD29A2438026300F2A951 /* UserRepository.swift in Sources */,
-				C1AF0B2C24524DFD00E07391 /* ITier.swift in Sources */,
 				C158909B247DF4C600514750 /* GetUserMeasurementError.swift in Sources */,
 				C1AF0C372460E73700E07391 /* DeclineConnection.swift in Sources */,
 				C1AF0C6724610DD700E07391 /* EditMeasurement.swift in Sources */,

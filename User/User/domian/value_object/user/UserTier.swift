@@ -11,17 +11,24 @@ import Core
 
 
 struct UserTier {
-    
-    enum TierOptions {
-        case free(FreeTier)
-        case earlyAccess(EarlyAccessTier)
-        case Vip(VIPTier)
-    }
-    
+
     private var _tier: String
     
     private init(tier: String) {
-        self._tier = tier
+        if tier == "free".lowercased() {
+            let freeTier = FreeTier.create(tier: tier)
+            self._tier = freeTier.getValue(result: freeTier)._value
+        }
+        
+        if tier == "earlyAccess".lowercased() {
+            let earlyAccess = EarlyAccessTier.set(tier: tier)
+            self._tier = earlyAccess.getValue(result: earlyAccess)._value
+        }
+        
+        if tier == "VIP".lowercased() {
+            let vip = VIPTier.set(tier: tier)
+            self._tier = vip.getValue(result: vip)._value
+        }
     }
     
     public static func set (tier: String?) -> ResultOption<UserTier, ValidationError> {
