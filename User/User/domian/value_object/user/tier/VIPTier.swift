@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import Core
 
-struct VIPTier : ITier {
+struct VIPTier {
     
     var _value: String
+    
+    private init(tier: String) {
+        self._value = tier
+    }
+    
+    public static func set(tier: String) -> ResultOption<VIPTier, ValidationError> {
+        return noEmptyValue(input: tier)
+            .bind(noNilValue(input:))
+            .bind(initVIPTier(input:))
+    }
     
 }
 
@@ -31,7 +42,7 @@ extension VIPTier {
         return .ok(input)
     }
     
-    private static func initEarlyTier(input: String) -> ResultOption<EarlyAccessTier, ValidationError> {
-        return .ok(EarlyAccessTier(tier: input))
+    private static func initVIPTier(input: String) -> ResultOption<VIPTier, ValidationError> {
+        return .ok(VIPTier(tier: input))
     }
 }

@@ -11,17 +11,32 @@ import Core
 
 
 struct UserTier {
-    private var _tier: ITier
     
-    private init(tier: ITier?) {
-        self._tier = tier ?? TierOptions.free(FreeTier.init(_value: "free")) as! ITier
+    enum TierOptions {
+        case free(FreeTier)
+        case earlyAccess(EarlyAccessTier)
+        case Vip(VIPTier)
     }
     
-    public static func set (tier: ITier?) -> ResultOption<UserTier, ValidationError> {
+    private var _tier: String
+    
+    private init(tier: String) {
+        self._tier = tier
+    }
+    
+    public static func set (tier: String?) -> ResultOption<UserTier, ValidationError> {
+        guard let tier = tier else {
+            return .error(ValidationError.nilValueNotAllowed)
+        }
+        
+        if tier == "" {
+            return .error(ValidationError.emptyValueNotAllowed)
+        }
+        
         return.ok(UserTier(tier: tier))
     }
     
-    var type: ITier {
+    var type: String {
         return self._tier
     }
 }

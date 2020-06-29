@@ -20,7 +20,7 @@ struct EarlyAccessTier : ITier {
     
     public static func set(tier: String) -> ResultOption<EarlyAccessTier, ValidationError> {
         return noEmptyValue(input: tier)
-            .bind(noNilValue)
+            .bind(noNilValue(input:))
             .bind(initEarlyTier(input:))
     }
 }

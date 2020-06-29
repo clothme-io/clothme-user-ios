@@ -7,9 +7,20 @@
 //
 
 import Foundation
+import Core
 
-struct FreeTier : ITier {
+struct FreeTier {
     var _value: String
+    
+    private init(tier: String) {
+        self._value = tier
+    }
+    
+    static func create(tier: String) -> ResultOption<FreeTier, ValidationError> {
+        return noEmptyValue(input: tier)
+        .bind(noNilValue(input:))
+        .bind(initFreeTier(input:))
+    }
 }
 
 
@@ -30,7 +41,7 @@ extension FreeTier {
         return .ok(input)
     }
     
-    private static func initEarlyTier(input: String) -> ResultOption<EarlyAccessTier, ValidationError> {
-        return .ok(EarlyAccessTier(tier: input))
+    private static func initFreeTier(input: String) -> ResultOption<FreeTier, ValidationError> {
+        return .ok(FreeTier(tier: input))
     }
 }

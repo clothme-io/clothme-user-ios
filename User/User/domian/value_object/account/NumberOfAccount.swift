@@ -53,15 +53,3 @@ extension NumberOfAccount {
 }
 
 
-
-//extension NumberOfAccount {
-//    func getNumberOfAccount() -> Any {
-//        switch value {
-//        case .ok(let numAccount):
-//            return numAccount
-//        case .error(let error):
-//            return error
-//        }
-//        
-//    }
-//}

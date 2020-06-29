@@ -17,7 +17,7 @@ class Measurement : Entity {
     private init(
         userId: UserId,
         bodyMeasurement: FullBodyMeasurement,
-        clotheMeasurement: ClotheMeasurement
+        clotheMeasurement: ClotheMeasurement?
     ) {
         self.userId = userId
         self.bodyMeasurement = bodyMeasurement

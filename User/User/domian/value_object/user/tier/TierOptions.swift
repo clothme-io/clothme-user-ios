@@ -13,3 +13,12 @@ enum TierOptions {
     case earlyAccess(EarlyAccessTier)
     case Vip(VIPTier)
 }
+
+extension TierOptions {
+    init(tier: String) {
+        if tier == "free".lowercased() {
+            let freeTier = FreeTier.create(tier: tier)
+            self = .free(freeTier.getValue(result: freeTier))
+        }
+    }
+}

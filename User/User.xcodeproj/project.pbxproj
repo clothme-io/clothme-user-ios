@@ -818,7 +818,6 @@
 			children = (
 				C1AF0BC32460D30700E07391 /* clothe */,
 				C1AF0BC22460D2FC00E07391 /* body */,
-				C1A8DA222430329B00B95C17 /* MeasurementUnit.swift */,
 				C1DAD302244162DA00F2A951 /* MeasurementType.swift */,
 				C157447C24A9513C005E8375 /* ClotheMeasurement.swift */,
 			);
@@ -840,6 +839,7 @@
 		C1AF0BC22460D2FC00E07391 /* body */ = {
 			isa = PBXGroup;
 			children = (
+				C1A8DA222430329B00B95C17 /* MeasurementUnit.swift */,
 				C1A8DA202430324900B95C17 /* ShoeMeasurement.swift */,
 				C1A8DA1E2430322B00B95C17 /* BottomMeasurement.swift */,
 				C1A8DA1C2430320800B95C17 /* TopMeasurement.swift */,

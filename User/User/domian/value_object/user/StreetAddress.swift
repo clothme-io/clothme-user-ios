@@ -9,7 +9,6 @@
 import Foundation
 import Core
 
-
 struct StreetAddress {
     private var _streetNumber: Int?;
     private var _streetName: String?;
