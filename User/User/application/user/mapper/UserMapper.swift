@@ -11,24 +11,17 @@ import Core
 
 class UserMapper {
     
-    static func toDomainModelFromSignIn(data: UserApplicationModel) -> User {
-        let firstName: FirstName
-        var currentCity: City
-        var gender: Gender
+    static func toDomainModel(userData: UserApplicationModel) -> User {
+        let id = UserId.create(id: Guid(value: userData.userId))
+        let fName = FirstName.create(name: userData.firstName)
+        let lName = LastName.create(value: userData.lastName ?? "")
+        let gender = Gender.create(gender: userData.gender)
+        let email = UserEmail.create(value: userData.email)
+        let phone = PhoneNumber.create(with: userData.phoneNumber ?? "")
+        let city = City.create(city: userData.currentCity)
+        let profession = Profession.create(nameWith: userData.profession ?? "")
+        let tier =
         
-        let name = FirstName.create(name: data.firstName);
-        firstName = name.getValue(result: name)
-        
-        let city = City.create(city: data.currentCity)
-        currentCity = city.getValue(result: city)
-      
-        let userGender = Gender.create(gender: data.gender)
-        gender = userGender.getValue(result: userGender)
-        
-        return User.createFromSignIn(id: data.userId, firstName: firstName, gender: gender, city: currentCity)
-    }
-    
-    static func toDomainModel(data: UserApplicationModel) {
         
     }
     

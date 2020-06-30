@@ -10,7 +10,7 @@ import Foundation
 import Core
 
 
-struct EarlyAccessTier : ITier {
+struct EarlyAccessTier  {
     
     var _value: String
     

@@ -19,9 +19,11 @@ struct UserApplicationModel : ResponseDataAble {
     let phoneNumber: String?
     let profession: String?
     let currentCity: String
-//    let billingAddress: [AddressData]?
-//    let shippingAddress: [AddressData]?
-//    let measurement: MeasurementData
+    let country: String
+    let tier: String
+    let billingAddress: [AddressData]?
+    let shippingAddress: [AddressData]?
+    let fullBodyMeasurement: FullBodyMeasurementData
 
 }
 
@@ -30,28 +32,13 @@ struct AddressData : ResponseDataAble {
     let streetNumber: String
     let streetName: String
     let city: String
-    let code: String
+    let postalOrZipCode: String
     let country: String
 }
 
-
-struct MeasurementData : ResponseDataAble {
-    let fullBodyMeasurement: FullBodyMeasurementData
-    let topMeasurement: TopMeasurementData
-}
 
 struct FullBodyMeasurementData : ResponseDataAble {
     
 }
 
-struct TopMeasurementData : ResponseDataAble {
-    
-}
 
-struct BottomMeasurementData : ResponseDataAble {
-    
-}
-
-struct ShoeMeasurmentData : ResponseDataAble {
-    
-}

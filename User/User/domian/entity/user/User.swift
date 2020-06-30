@@ -16,7 +16,7 @@ public class User : Entity {
     private var _firstName : FirstName
     private var _lastName : LastName?
     private var _gender: Gender
-    private var _email: UserEmail?
+    private var _email: UserEmail
     private var _password: Password?
     private var _phoneNumber: PhoneNumber?
     private var _city: City
@@ -26,12 +26,12 @@ public class User : Entity {
     private var _shippingAddress: [ShippingAddress]?
     private var _billingAddress: [BillingAddress]?
     
-    private required init(
+    internal required init(
         profileImage: ProfileImage?,
         firstName: FirstName,
         lastName: LastName?,
         gender: Gender,
-        email: UserEmail?,
+        email: UserEmail,
         phoneNumber: PhoneNumber?,
         city: City,
         country: Country,
@@ -42,18 +42,17 @@ public class User : Entity {
     ) {
         if let profileImage = profileImage,
             let lastName = lastName,
-            let email = email,
             let shippingAddress = shippingAddress,
             let billingAddress = billingAddress {
             self._profileImg = profileImage
             self._lastName = lastName
             self._gender = gender
-            self._email = email
             self._shippingAddress = shippingAddress
             self._billingAddress = billingAddress
         }
         self._firstName = firstName
         self._gender = gender
+        self._email = email
         self._city = city
         self._country = country
         super.init(_id: Guid(value: nil))
@@ -64,7 +63,7 @@ public class User : Entity {
         firstName: FirstName,
         lastName: LastName?,
         gender: Gender,
-        email: UserEmail?,
+        email: UserEmail,
         phoneNumber: PhoneNumber?,
         city: City,
         country: Country,
@@ -72,8 +71,18 @@ public class User : Entity {
         profession: Profession?,
         shippingAddress: [ShippingAddress]?,
         billingAddress: [BillingAddress]?
-    ) -> User {
-        return self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, shippingAddress: shippingAddress, billingAddress: billingAddress)
+    ) -> ResultOption<User, ValidationError> {
+        return .ok(self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, shippingAddress: shippingAddress, billingAddress: billingAddress))
+    }
+    
+    static func createFromSignIn(
+        firstName: FirstName,
+        email: UserEmail,
+        gender: Gender,
+        city: City,
+        country: Country
+    ) -> ResultOption<User, ValidationError> {
+        
     }
     
     var id: UserId {

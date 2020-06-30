@@ -29,6 +29,7 @@ struct UserTier {
             let vip = VIPTier.set(tier: tier)
             self._tier = vip.getValue(result: vip)._value
         }
+        self._tier = "free"
     }
     
     public static func set (tier: String?) -> ResultOption<UserTier, ValidationError> {
