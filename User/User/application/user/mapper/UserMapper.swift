@@ -13,14 +13,16 @@ class UserMapper {
     
     static func toDomainModel(userData: UserApplicationModel) -> User {
         let id = UserId.create(id: Guid(value: userData.userId))
-        let fName = FirstName.create(name: userData.firstName)
-        let lName = LastName.create(value: userData.lastName ?? "")
+        let profileImageUrl = ProfileImage.set(image: userData.profileImageUrl)
+        let firstName = FirstName.create(name: userData.firstName)
+        let lastName = LastName.create(value: userData.lastName)
         let gender = Gender.create(gender: userData.gender)
         let email = UserEmail.create(value: userData.email)
-        let phone = PhoneNumber.create(with: userData.phoneNumber ?? "")
+        let phone = PhoneNumber.create(with: userData.phoneNumber)
         let city = City.create(city: userData.currentCity)
         let country = Country.set(country: userData.country)
-        let profession = Profession.create(nameWith: userData.profession ?? "")
+        let dateOfBirth = DateOfBirth.create(with: userData.dateOfBirth)
+        let profession = Profession.create(nameWith: userData.profession)
         let tier = UserTier.set(tier: userData.tier)
         var shippingFinalAddress = [ShippingAddress]()
         if let shippingAddress = userData.shippingAddress {
@@ -34,6 +36,7 @@ class UserMapper {
                 index += 1
             }
         }
+        
         var billingFinalAddress = [BillingAddress]()
         if let billingAddress = userData.billingAddress {
             var index = 0
@@ -46,7 +49,9 @@ class UserMapper {
                 index += 1
             }
         }
+        let user = User.create(profileImage: profileImageUrl.getValue(result: profileImageUrl), firstName: firstName.getValue(result: firstName), lastName: lastName.getValue(result: lastName), gender: gender.getValue(result: gender), email: email.getValue(result: email), phoneNumber: phone.getValue(result: phone), city: city.getValue(result: city), country: country.getValue(result: country), dateOfBirth: dateOfBirth.getValue(result: dateOfBirth), profession: profession.getValue(result: profession), tier: tier.getValue(result: tier), shippingAddress: shippingFinalAddress, billingAddress: billingFinalAddress)
         
+        return user.getValue(result: user)
         
         
         
@@ -54,7 +59,7 @@ class UserMapper {
     }
     
     static func toDataModel(user: User) -> UserApplicationModel {
-        return UserApplicationModel(userId: user.id.value().toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: billingAddress(user) , shippingAddress: shippingAddress(user) , fullBodyMeasurement: FullBodyMeasurementData())
+        return UserApplicationModel(userId: user.id.eId.toString(), firstName: user.firstName.value, gender: user.lastname?.value ?? "", email: user.email?.value ?? "", currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: billingAddress(user), shippingAddress: shippingAddress(user), fullBodyMeasurement: FullBodyMeasurementData())
     }
     
     private static func billingAddress(_ user: User) -> [AddressData] {
@@ -80,5 +85,6 @@ class UserMapper {
             index += 1
           }
         }
+        return shippingFinalAddress
     }
 }
