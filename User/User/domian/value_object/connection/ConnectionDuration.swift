@@ -22,6 +22,10 @@ struct ConnectionDuration : Equatable {
         .bind(validateForEmptyValue(input:))
         .bind(initConnectionDuration(_:))
     }
+    
+    var value: Date {
+        return self._value
+    }
 }
 
 extension ConnectionDuration {
