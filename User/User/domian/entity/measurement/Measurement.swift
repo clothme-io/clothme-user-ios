@@ -26,4 +26,12 @@ class Measurement : Entity {
         }
         super.init(_id: nil)
     }
+    
+    static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: ClotheMeasurement) -> ResultOption<Measurement, ValidationError> {
+        
+    }
+}
+
+extension Measurement {
+    
 }

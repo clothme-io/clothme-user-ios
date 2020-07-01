@@ -11,7 +11,11 @@ import Core
 
 class MeasurementDomainMapper {
     
-    static func toApplicationModel(fullBody: FullBodyMeasurement) {
+    static func toApplicationModel(fullBody: Measurement) {
         
     }
+    
+    private static func toFullBodyMeasurement() {}
+    
+    private static func toClothmeMeasurement() {}
 }
