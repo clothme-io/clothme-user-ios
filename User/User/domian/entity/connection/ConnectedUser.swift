@@ -36,7 +36,15 @@ class ConnectedUser : Entity {
         email: UserEmail,
         shippingAddress: ShippingAddress?
     ) {
-        )
+        self.Id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.city = city
+        self.gender = gender
+        self.profession = profession
+        self.phoneNumber = phoneNumber
+        self.email = email
+        self.shippingAddress = shippingAddress
     }
     
     public static func Create () {}
