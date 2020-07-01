@@ -29,9 +29,11 @@ struct RelationShip {
         }
     }
     
-//    public static func create () -> Result<RelationShip, ValidationError> {
-//        
-//    }
+    public static func create (type: String) -> ResultOption<RelationShip, ValidationError> {
+        return validateForNilValue(input: type)
+        .bind(validateForEmptyValue(inputName:))
+        .bind(initRelationShip(_:))
+    }
     
 }
 
@@ -50,5 +52,9 @@ extension RelationShip {
             return .ok(input)
         }
         return .error(ValidationError.nilValueNotAllowed)
+    }
+    
+    private static func initRelationShip(_ input: String) -> ResultOption<RelationShip, ValidationError> {
+        return .ok(RelationShip(type: input))
     }
 }
