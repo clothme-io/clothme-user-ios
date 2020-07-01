@@ -58,22 +58,27 @@ class UserMapper {
     }
     
     private static func billingAddress(_ user: User) -> [AddressData] {
+        var billingFinalAddress = [AddressData]()
         if let billingAddress = user.billingAddress {
-              var index = 0
-              while (billingAddress.count <= index) {
-                let address = AddressData(streetNumber: billingAddress[0], streetName: <#T##String#>, city: <#T##String#>, postalOrZipCode: billingAddress[index], country: <#T##String#>)
-              }
-
+          var index = 0
+          while (billingAddress.count <= index) {
+            let address = AddressData(streetNumber: billingAddress[0].streetAddress.number ?? "", streetName: billingAddress[index].streetAddress.name ?? "", city: billingAddress[index].city.value, postalOrZipCode: billingAddress[index].city.value, country: billingAddress[index].country.value)
+            billingFinalAddress.append(address)
+            index += 1
           }
+        }
+        return billingFinalAddress
     }
     
     private static func shippingAddress(_ user: User) -> [AddressData] {
-        if let billingAddress = user.billingAddress {
-              var index = 0
-              while (billingAddress.count <= index) {
-                  let address = AddressData(streetNumber: billingAddress[], streetName: <#T##String#>, city: <#T##String#>, postalOrZipCode: billingAddress[index], country: <#T##String#>)
-              }
-
+        var shippingFinalAddress = [AddressData]()
+        if let shippingAddress = user.shippingAddress {
+          var index = 0
+          while (shippingAddress.count <= index) {
+            let address = AddressData(streetNumber: shippingAddress[0].streetAddress.number ?? "", streetName: shippingAddress[index].streetAddress.name ?? "", city: shippingAddress[index].city.value, postalOrZipCode: shippingAddress[index].city.value, country: shippingAddress[index].country.value)
+            shippingFinalAddress.append(address)
+            index += 1
           }
+        }
     }
 }

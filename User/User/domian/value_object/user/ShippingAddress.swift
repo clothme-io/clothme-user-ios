@@ -26,6 +26,18 @@ struct ShippingAddress {
                 .bind(initShippingAddress)
     }
     
+    var streetAddress: StreetAddress {
+        return self._streetAddress
+    }
+    
+    var city: City {
+        return self._city
+    }
+    
+    var country: Country {
+        return self._country
+    }
+    
 }
 
 
