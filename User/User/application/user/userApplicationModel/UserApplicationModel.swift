@@ -28,7 +28,7 @@ struct UserApplicationModel : ResponseDataAble {
 }
 
 
-struct AddressData : ResponseDataAble {
+struct AddressData : ResponseDataAble, Sequence, Equatable {
     let streetNumber: String
     let streetName: String
     let city: String

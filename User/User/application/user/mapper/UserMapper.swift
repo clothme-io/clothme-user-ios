@@ -19,8 +19,20 @@ class UserMapper {
         let email = UserEmail.create(value: userData.email)
         let phone = PhoneNumber.create(with: userData.phoneNumber ?? "")
         let city = City.create(city: userData.currentCity)
+        let country = Country.set(country: userData.country)
         let profession = Profession.create(nameWith: userData.profession ?? "")
-        let tier =
+        let tier = UserTier.set(tier: userData.tier)
+        if let shippingAddress = userData.shippingAddress {
+            for address in shippingAddress {
+                if shippingAddress.count < 0 {
+                    
+                }
+                let streetAddress = StreetAddress.create(streetNumber: shippingAddress[0].streetNumber, streetName: <#T##String#>)
+            }
+        } 
+        
+        let shippingAddress = ShippingAddress.create(streetAddress: <#T##StreetAddress#>, city: <#T##City#>, country: <#T##Country#>)
+        
         
         
     }

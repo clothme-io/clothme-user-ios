@@ -10,15 +10,15 @@ import Foundation
 import Core
 
 struct StreetAddress {
-    private var _streetNumber: Int?;
+    private var _streetNumber: String?;
     private var _streetName: String?;
     
-    private init(_ number: Int, _ name: String) {
+    private init(_ number: String, _ name: String) {
         self._streetNumber = number;
         self._streetName = name;
     }
     
-    private init(streetNumber number: Int) {
+    private init(streetNumber number: String) {
         self._streetNumber = number;
     }
     
@@ -31,13 +31,13 @@ struct StreetAddress {
         self._streetName = ""
     }
     
-    public static func create (streetNumber number: Int, streetName name: String) -> ResultOption<StreetAddress, ValidationError> {
+    public static func create (streetNumber number: String, streetName name: String) -> ResultOption<StreetAddress, ValidationError> {
         return validateForNilValue(number: number, name: name)
                 .bind(validateForEmptyValue)
                 .bind(initStreetAddress)
     }
     
-    public func changeNumber (with newValue: Int, oldValue: StreetAddress) -> ResultOption<StreetAddress, ValidationError> {
+    public func changeNumber (with newValue: String, oldValue: StreetAddress) -> ResultOption<StreetAddress, ValidationError> {
         if newValue == oldValue._streetNumber {
             return .error(ValidationError.sameValueNotAllowed)
         }
@@ -56,7 +56,7 @@ struct StreetAddress {
     }
     
     
-    var number: Int? {
+    var number: String? {
         get {
             return self._streetNumber
         }
@@ -73,8 +73,8 @@ struct StreetAddress {
 
 // MARK: Validation
 extension StreetAddress {
-    private static func validateForEmptyValue (number: Int, name: String) -> ResultOption<(Int, String), ValidationError> {
-        let validNumber = Guard.againstNegative(value: Double(Int(number)))
+    private static func validateForEmptyValue (number: String, name: String) -> ResultOption<(String, String), ValidationError> {
+        let validNumber = Guard.AgainstEmptyString(argument: number)
         let validName = Guard.AgainstEmptyString(argument: name)
         if validName && validNumber {
             return .ok((number, name))
@@ -82,8 +82,8 @@ extension StreetAddress {
         return .error(ValidationError.emptyValueNotAllowed)
     }
     
-    private static func validateForNilValue (number: Int, name: String) -> ResultOption<(Int, String), ValidationError> {
-        let validNumber = Guard.againstNil(argument: number)
+    private static func validateForNilValue (number: String, name: String) -> ResultOption<(String, String), ValidationError> {
+        let validNumber = Guard.AgainstNilString(argument: number)
         let validName = Guard.AgainstNilString(argument: name)
         if validName && validNumber {
              return .ok((number, name))
@@ -91,8 +91,8 @@ extension StreetAddress {
         return .error(ValidationError.emptyValueNotAllowed)
     }
     
-    private static func initStreetAddress(_ number: Int, _ name: String) -> ResultOption<StreetAddress, ValidationError> {
-        if name.isEmpty && number < 0 {
+    private static func initStreetAddress(_ number: String, _ name: String) -> ResultOption<StreetAddress, ValidationError> {
+        if name.isEmpty && number.isEmpty {
             return .error(ValidationError.emptyValueNotAllowed)
         }
         return .ok(StreetAddress(number, name))
