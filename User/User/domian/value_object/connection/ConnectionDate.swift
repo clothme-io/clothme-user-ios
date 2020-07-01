@@ -11,31 +11,17 @@ import Core
 
 struct ConnectionDate : Equatable {
     
-    private var date: String
-    
-    private init(date: String) {
-        self.date = date
-    }
-    
-    var value : String {
-        self.date
-    }
-}
-
-extension ConnectionDate {
-    private static func validateForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
-        let validInput = Guard.AgainstEmptyString(argument: inputName)
-        if validInput {
-            return .ok(inputName)
-        }
-        return .error(ValidationError.emptyValueNotAllowed)
-    }
-    
-    private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
-        let validInput = Guard.AgainstNilString(argument: input)
-        if validInput {
-            return .ok(input)
-        }
-        return .error(ValidationError.nilValueNotAllowed)
-    }
+  private var _date: Date
+       
+   private init() {
+       self._date = Date()
+   }
+   
+   static func create () -> String {
+       let date = self.init()
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateStyle = .full
+       let dateString = dateFormatter.string(from: date._date)
+       return dateString
+   }
 }
