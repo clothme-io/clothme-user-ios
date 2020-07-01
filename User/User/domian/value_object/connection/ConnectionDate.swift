@@ -20,7 +20,7 @@ struct ConnectionDate : Equatable {
    static func create () -> String {
        let date = self.init()
        let dateFormatter = DateFormatter()
-       dateFormatter.dateStyle = .full
+    dateFormatter.dateStyle = .short
        let dateString = dateFormatter.string(from: date._date)
        return dateString
    }
