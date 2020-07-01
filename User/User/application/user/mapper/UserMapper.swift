@@ -11,7 +11,7 @@ import Core
 
 class UserMapper {
     
-    static func toDomainModel(userData: UserApplicationModel) -> User {
+    static func toDomainModel(userData: UserApplicationModel) -> (User, UserId)  {
         let id = UserId.create(id: Guid(value: userData.userId))
         let profileImageUrl = ProfileImage.set(image: userData.profileImageUrl)
         let firstName = FirstName.create(name: userData.firstName)
@@ -51,10 +51,7 @@ class UserMapper {
         }
         let user = User.create(profileImage: profileImageUrl.getValue(result: profileImageUrl), firstName: firstName.getValue(result: firstName), lastName: lastName.getValue(result: lastName), gender: gender.getValue(result: gender), email: email.getValue(result: email), phoneNumber: phone.getValue(result: phone), city: city.getValue(result: city), country: country.getValue(result: country), dateOfBirth: dateOfBirth.getValue(result: dateOfBirth), profession: profession.getValue(result: profession), tier: tier.getValue(result: tier), shippingAddress: shippingFinalAddress, billingAddress: billingFinalAddress)
         
-        return user.getValue(result: user)
-        
-        
-        
+        return (user.getValue(result: user), id.getValue(result: id))
         
     }
     
@@ -86,5 +83,9 @@ class UserMapper {
           }
         }
         return shippingFinalAddress
+    }
+    
+    private static func fashionData(_fashionData: Measurement) {
+        
     }
 }

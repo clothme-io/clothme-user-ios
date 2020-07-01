@@ -11,7 +11,6 @@ import Core
 
 
 public class User : Entity {
-    
     private var _profileImg : ProfileImage?
     private var _firstName : FirstName
     private var _lastName : LastName?
@@ -79,18 +78,8 @@ public class User : Entity {
         return .ok(self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, tier: tier, shippingAddress: shippingAddress, billingAddress: billingAddress))
     }
     
-    static func createFromSignIn(
-        firstName: FirstName,
-        email: UserEmail,
-        gender: Gender,
-        city: City,
-        country: Country
-    ) -> ResultOption<User, ValidationError> {
-        
-    }
-    
     var id: UserId {
-        return UserId(_id: nil)
+        return UserId(_id: Guid(value: nil))
     }
     
     var profileImage: ProfileImage? {
@@ -134,10 +123,8 @@ public class User : Entity {
     }
     
     var age: Age {
-        if let dateOfBirth = dateOfBirth {
-            let userAge = Age.create(dateOfBirth: dateOfBirth.value)
-            return userAge.getValue(result: userAge)
-        }
+        let userAge = Age.create(dateOfBirth: dateOfBirth?.value ?? "")
+        return userAge.getValue(result: userAge)
     }
     
     var profession: Profession? {
