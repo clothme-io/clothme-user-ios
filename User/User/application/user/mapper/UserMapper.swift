@@ -40,6 +40,26 @@ class UserMapper {
     }
     
     static func toDataModel(user: User) -> UserApplicationModel {
-        return UserApplicationModel(userId: user.id.value().toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: user.billingAddress ?? [], shippingAddress: user.shippingAddress ?? [], fullBodyMeasurement: FullBodyMeasurementData())
+        return UserApplicationModel(userId: user.id.value().toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: billingAddress(user) , shippingAddress: shippingAddress(user) , fullBodyMeasurement: FullBodyMeasurementData())
+    }
+    
+    private static func billingAddress(_ user: User) -> [AddressData] {
+        if let billingAddress = user.billingAddress {
+              var index = 0
+              while (billingAddress.count <= index) {
+                  let address = AddressData(streetNumber: billingAddress[], streetName: <#T##String#>, city: <#T##String#>, postalOrZipCode: billingAddress[index], country: <#T##String#>)
+              }
+
+          }
+    }
+    
+    private static func shippingAddress(_ user: User) -> [AddressData] {
+        if let billingAddress = user.billingAddress {
+              var index = 0
+              while (billingAddress.count <= index) {
+                  let address = AddressData(streetNumber: billingAddress[], streetName: <#T##String#>, city: <#T##String#>, postalOrZipCode: billingAddress[index], country: <#T##String#>)
+              }
+
+          }
     }
 }

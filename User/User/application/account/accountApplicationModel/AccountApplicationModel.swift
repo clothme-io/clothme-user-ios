@@ -11,14 +11,20 @@ import Core
 
 
 struct AccountApplicationModel : ResponseDataAble {
-    
     let accountId: String
-    let adminUserId: String
-    let userAccount: String
-    let dateAdded: String
+    let ownerId: String
+    let accountUsers: AccountUserData
     let numberOfAccount: Int
-    let relationship: String
-    
 }
 
+struct AccountUserData: ResponseDataAble {
+    let userId: String
+    let firstName: String
+    let lastName: String
+    let gender: String
+    let relationship: String
+    let dateAdded: String
+    let shippingAddress: [AddressData]
+    let brandIds: [String]
+}
 
