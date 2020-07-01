@@ -14,6 +14,6 @@ public struct EmailSignInResponse : ResponseDataAble {
     let firstName: String
     let email: String
     let city: String
-    let measurement: MeasurementData
+    let measurement: FullBodyMeasurementDTO
     let preferences: String
 }

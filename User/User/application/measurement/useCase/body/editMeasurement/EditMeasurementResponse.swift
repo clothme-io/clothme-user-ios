@@ -10,6 +10,6 @@ import Foundation
 import Core
 
 struct EditMeasurementResponse : ResponseDataAble {
-    let responseMeasurement: MeasurementData
+    let responseMeasurement: FullBodyMeasurementDTO
     let userId: String
 }

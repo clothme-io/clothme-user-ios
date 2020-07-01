@@ -24,8 +24,8 @@ struct Country {
             .bind(initCountry)
     }
     
-    public func toString(_ value: AnyObject) -> String {
-        return "\(value)"
+    var value: String {
+           return self._value
     }
     
 }

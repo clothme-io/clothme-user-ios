@@ -14,6 +14,6 @@ public struct FacebookSignInResponse : ResponseDataAble {
     let firstName: String
     let email: String
     let city: String
-    let measurement: MeasurementData
+    let measurement: FullBodyMeasurementData
     let preferences: String
 }

@@ -23,6 +23,7 @@ public class User : Entity {
     private var _country: Country
     private var _dateOfBirth : DateOfBirth?
     private var _profession : Profession?
+    private var _tier: UserTier
     private var _shippingAddress: [ShippingAddress]?
     private var _billingAddress: [BillingAddress]?
     
@@ -37,6 +38,7 @@ public class User : Entity {
         country: Country,
         dateOfBirth: DateOfBirth?,
         profession: Profession?,
+        tier: UserTier,
         shippingAddress: [ShippingAddress]?,
         billingAddress: [BillingAddress]?
     ) {
@@ -54,6 +56,7 @@ public class User : Entity {
         self._gender = gender
         self._email = email
         self._city = city
+        self._tier = tier
         self._country = country
         super.init(_id: Guid(value: nil))
     }
@@ -69,10 +72,11 @@ public class User : Entity {
         country: Country,
         dateOfBirth: DateOfBirth?,
         profession: Profession?,
+        tier: UserTier,
         shippingAddress: [ShippingAddress]?,
         billingAddress: [BillingAddress]?
     ) -> ResultOption<User, ValidationError> {
-        return .ok(self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, shippingAddress: shippingAddress, billingAddress: billingAddress))
+        return .ok(self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, tier: tier, shippingAddress: shippingAddress, billingAddress: billingAddress))
     }
     
     static func createFromSignIn(
@@ -113,8 +117,12 @@ public class User : Entity {
         return self._password
     }
     
-    var city: City? {
+    var city: City {
         return self._city
+    }
+    
+    var country: Country {
+        return self._country
     }
     
     var phoneNumber: PhoneNumber? {
@@ -134,6 +142,18 @@ public class User : Entity {
     
     var profession: Profession? {
         return self._profession
+    }
+    
+    var tier: UserTier {
+        return self._tier
+    }
+    
+    var shippingAddress: [ShippingAddress]? {
+        return self._shippingAddress
+    }
+    
+    var billingAddress: [BillingAddress]? {
+        return self._billingAddress
     }
     
 }

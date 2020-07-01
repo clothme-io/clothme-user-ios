@@ -23,21 +23,23 @@ class UserMapper {
         let profession = Profession.create(nameWith: userData.profession ?? "")
         let tier = UserTier.set(tier: userData.tier)
         if let shippingAddress = userData.shippingAddress {
-            for address in shippingAddress {
-                if shippingAddress.count < 0 {
-                    
-                }
-                let streetAddress = StreetAddress.create(streetNumber: shippingAddress[0].streetNumber, streetName: <#T##String#>)
+            var index = 0
+            while (shippingAddress.count <= index) {
+                let streetAddress = StreetAddress.create(streetNumber: shippingAddress[index].streetNumber, streetName: shippingAddress[index].streetName)
+                let city = City.create(city: shippingAddress[index].city)
+                let country = Country.set(country: shippingAddress[index].country)
+                let shippingAddress = ShippingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), country: country.getValue(result: country))
+                index += 1
             }
         } 
         
-        let shippingAddress = ShippingAddress.create(streetAddress: <#T##StreetAddress#>, city: <#T##City#>, country: <#T##Country#>)
+        
         
         
         
     }
     
     static func toDataModel(user: User) -> UserApplicationModel {
-        return UserApplicationModel(userId: user.id.value().toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city?.value ?? "")
+        return UserApplicationModel(userId: user.id.value().toString(), firstName: user.firstName.value, lastName: user.lastname?.value, gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: user.phoneNumber?.Value, profession: user.profession?.value, currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: user.billingAddress ?? [], shippingAddress: user.shippingAddress ?? [], fullBodyMeasurement: FullBodyMeasurementData())
     }
 }

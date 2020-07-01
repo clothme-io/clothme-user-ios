@@ -11,5 +11,5 @@ import Core
 
 struct GetUserMeasurmentResponse : ResponseDataAble {
     let user: String
-    let measurement: MeasurementData
+    let measurement: FullBodyMeasurementDTO
 }
