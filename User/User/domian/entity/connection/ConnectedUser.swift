@@ -45,6 +45,7 @@ class ConnectedUser : Entity {
         self.phoneNumber = phoneNumber
         self.email = email
         self.shippingAddress = shippingAddress
+        super.init(_id: Guid(value: id.eId.toString()))
     }
     
     public static func Create () {}

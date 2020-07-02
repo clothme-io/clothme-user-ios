@@ -16,8 +16,20 @@ class Connection : Entity {
     private var _numberOfConnection: NumberOfConnection
     private var _connectedUsers = [ConnectedUser]()
     
-    private init() {
-        super.init(_id: nil)
+    private init(
+        userId: UserId,
+        numberOfConnection: NumberOfConnection
+        ) {
+        self.userId = userId
+        self._numberOfConnection = numberOfConnection
+        super.init(_id: Guid(value: userId.eId.toString()))
+    }
+    
+    static func create(
+        userId: UserId,
+        numberOfConnection: NumberOfConnection) -> ResultOption<Connection, ValidationError> {
+        
+        return .ok(Connection(userId: userId, numberOfConnection: numberOfConnection))
     }
     
     func addFor (_ data: ConnectedUser) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ValidationError: Error {
+public enum ValidationError: Error, LocalizedError  {
     case emptyValueNotAllowed
     case nilValueNotAllowed
     case invalidPhoneNumber
@@ -21,17 +21,58 @@ public enum ValidationError: Error {
     case negativeValueNotAllowed
     case noZeroValueAllowed
     
-    // ACCOUNT ERROR
-    case maxNumberReached
-    case exceededFreeAccount
-    
     // FOR UNKNOWNS
     case unknown(cause: Error)
+    
+    // ACCOUNT ERROR
+    case maxFreeAccountReached
+    case maxVIPAccountReached
+    case maxEarlyAccessAccountReached
+    case exceededFreeAccount
+    
+    var localizedDescription: String {
+        switch self {
+        case .ageTooYoung:
+            return ""
+        case .alreadyExist:
+            return ""
+        case .emptyValueNotAllowed:
+            return ""
+        case .exceededFreeAccount:
+            return ""
+        case .invalidEmail:
+            return ""
+        case .invalidPhoneNumber:
+            return ""
+        case .maxEarlyAccessAccountReached:
+            return ""
+        case .maxFreeAccountReached:
+            return ""
+        case .maxVIPAccountReached:
+            return ""
+        case .negativeValueNotAllowed:
+            return ""
+        case .nilValueNotAllowed:
+            return ""
+        case .noZeroValueAllowed:
+            return ""
+        case .passwordTooShort:
+            return ""
+        case .passwordTooWeak:
+            return ""
+        case .sameValueNotAllowed:
+            return ""
+        case .unknown(cause: let errorValue):
+            return "\(errorValue)"
+            
+        }
+    }
+
 }
 
 
 // APIError
-enum APIError: Error, LocalizedError {
+public enum APIError: Error, LocalizedError {
     case invalidBody
     case invalidEndpoint
     case invalidURL

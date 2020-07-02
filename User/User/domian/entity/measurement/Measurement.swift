@@ -28,7 +28,7 @@ class Measurement : Entity {
     }
     
     static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: ClotheMeasurement) -> ResultOption<Measurement, ValidationError> {
-        
+        return .ok(Measurement(userId: userId, bodyMeasurement: bodyMeasurement, clotheMeasurement: clotheMeasurement))
     }
 }
 

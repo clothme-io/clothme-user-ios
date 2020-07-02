@@ -19,26 +19,40 @@ class Account : Entity {
     private init(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) {
         self._accountOwner = accountOwner
         self._numberOfAccount = numberOfAccount
-        self.addFor(accountUser)
         super.init(_id: nil)
+        
+        self.addFor(accountUser)
     }
     
-    static func create (accountOwner: UserId?, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
-        let numberOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
-        let currentNumberOfAccount = numberOfAccount.getValue(result: numberOfAccount).value
+    static func create (accountOwner: UserId, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
+        let numOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
+        let currentNumberOfAccount = numOfAccount.getValue(result: numOfAccount)
 
         let tier = UserTier.set(tier: userTier.type)
         let userTier = tier.getValue(result: tier)
    
-        
         // MARK: Free Account Tier
-     
+        if userTier.type.lowercased() == "free" {
+            if currentNumberOfAccount.value >= self._allowedAccount.free {
+                return .error(ValidationError.maxNumberReached)
+            }
+        }
         
         // MARK: VIP Account Tier
-     
+        if userTier.type.lowercased() == "vip" {
+            if currentNumberOfAccount.value >= self._allowedAccount.VIP {
+                return .error(ValidationError.maxNumberReached)
+            }
+        }
         
         // MARK: EarlyAccess Account Tier
+        if userTier.type.lowercased() == "earlyaccess" {
+            if currentNumberOfAccount.value >= self._allowedAccount.earlyAccess {
+                return .error(ValidationError.maxNumberReached)
+            }
+        }
         
+        return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
     var accountId : AccountId {
