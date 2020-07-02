@@ -12,12 +12,16 @@ import Core
 class ConnectionDomainMapper {
     
     static func toApplicationModel(connection: Connection) -> ConnectionApplicationModel {
+        return ConnectionApplicationModel(connectedUser: userList(connection))
+    }
+    
+    private static func userList(_ connection: Connection) -> [ConnectionUserData] {
         let index = 0
-        let connectionUsers: [ConnectionUserData] = [ConnectionUserData]()
+        var connectionUsers: [ConnectionUserData] = [ConnectionUserData]()
         while connection.connectedUsers.count < index {
-            let users = ConnectionUserData(userId: connection.connectedUsers[index].eId.toString(), firstName: connection.connectedUsers[index], lastName: <#T##String#>, city: <#T##String#>, connectionDate: <#T##String#>, connectionDuration: <#T##Int#>)
+            let users = ConnectionUserData(connectionId: connection.connectedUsers[index].connectionId.eId.toString(), userId:  connection.connectedUsers[index].userId.eId.toString(), firstName: connection.connectedUsers[index].firstName.value, lastName: connection.connectedUsers[index].lastName.value, city: connection.connectedUsers[index].city.value, connectionDate: connection.connectedUsers[index].connectionDate.date, connectionDuration: <#T##Int#>)
+            connectionUsers.append(users)
         }
-        
-        return ConnectionApplicationModel
+        return connectionUsers
     }
 }

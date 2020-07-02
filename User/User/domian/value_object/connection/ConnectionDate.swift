@@ -24,4 +24,10 @@ struct ConnectionDate : Equatable {
        let dateString = dateFormatter.string(from: date._date)
        return dateString
    }
+    
+    var date: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: self._date)
+    }
 }

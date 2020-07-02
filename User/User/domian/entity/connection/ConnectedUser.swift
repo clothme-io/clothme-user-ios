@@ -11,16 +11,18 @@ import Core
 
 
 class ConnectedUser : Entity {
-    
-    private let Id: UserId
-    private var firstName: FirstName
-    private var lastName: LastName
-    private var city: City
-    private var gender: Gender
-    private var profession: Profession
-    private var phoneNumber: PhoneNumber?
-    private var email: UserEmail
-    private var shippingAddress: ShippingAddress?
+    private let _connectionId: ConnectionId
+    private let _Id: UserId
+    private var _firstName: FirstName
+    private var _lastName: LastName
+    private var _city: City
+    private var _gender: Gender
+    private var _profession: Profession
+    private var _phoneNumber: PhoneNumber?
+    private var _email: UserEmail
+    private var _shippingAddress: ShippingAddress?
+    private var _connectionDate: ConnectionDate
+    private var _connectionDuration: ConnectionDuration
 //    private var clotheMeasurement: [String?]
 //    private var brands: [String?]
 //    private var fitProducts: [String?]
@@ -34,18 +36,24 @@ class ConnectedUser : Entity {
         profession: Profession,
         phoneNumber: PhoneNumber?,
         email: UserEmail,
-        shippingAddress: ShippingAddress?
+        shippingAddress: ShippingAddress?,
+        connectionDate: ConnectionDate,
+        connectionDuration: ConnectionDuration
     ) {
-        self.Id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.city = city
-        self.gender = gender
-        self.profession = profession
-        self.phoneNumber = phoneNumber
-        self.email = email
-        self.shippingAddress = shippingAddress
-        super.init(_id: Guid(value: id.eId.toString()))
+        self._Id = id
+        self._firstName = firstName
+        self._lastName = lastName
+        self._city = city
+        self._gender = gender
+        self._profession = profession
+        self._phoneNumber = phoneNumber
+        self._email = email
+        self._shippingAddress = shippingAddress
+        self._connectionDate = connectionDate
+        self._connectionDuration = connectionDuration
+        let connectionId = ConnectionId.create(id: Guid(value: nil))
+        self._connectionId = connectionId.getValue(result: connectionId)
+        super.init(_id: Guid(value: nil))
     }
     
     public static func Create(
@@ -57,11 +65,60 @@ class ConnectedUser : Entity {
         profession: Profession,
         phoneNumber: PhoneNumber?,
         email: UserEmail,
-        shippingAddress: ShippingAddress?
+        shippingAddress: ShippingAddress?,
+        connectionDate: ConnectionDate,
+        connectionDuration: ConnectionDuration
     ) -> ResultOption<ConnectedUser, ValidationError> {
-        
+        return .ok(ConnectedUser(id: Id, firstName: firstName, lastName: lastName, city: city, gender: gender, profession: profession, phoneNumber: phoneNumber, email: email, shippingAddress: shippingAddress, connectionDate: connectionDate, connectionDuration: connectionDuration))
     }
     
+    var connectionId: ConnectionId {
+        return self._connectionId
+    }
+    
+    var userId: UserId {
+        return self._Id
+    }
+    
+    var firstName: FirstName {
+        return self._firstName
+    }
+    
+    var lastName: LastName {
+        return self._lastName
+    }
+    
+    var city: City {
+        return self._city
+    }
+    
+    var gender: Gender {
+        return self._gender
+    }
+    
+    var profession: Profession {
+        return self._profession
+    }
+    
+    var phoneNumber: PhoneNumber? {
+        return self._phoneNumber
+    }
+    
+    var email: UserEmail {
+        return self._email
+    }
+    
+    var shippingAddress: ShippingAddress? {
+        return self._shippingAddress
+    }
+    
+    var connectionDate: ConnectionDate {
+        return self._connectionDate
+    }
+    
+    var connectionDuration: ConnectionDuration {
+        return self._connectionDuration
+    }
     
 }
 
