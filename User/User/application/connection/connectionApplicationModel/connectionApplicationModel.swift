@@ -12,11 +12,11 @@ import Core
 
 struct ConnectionApplicationModel : ResponseDataAble {
     let connectionId: String
-    let connectedUser: [ConnectionUser]
+    let connectedUser: [ConnectionUserData]
 }
 
 
-struct ConnectionUser : ResponseDataAble {
+struct ConnectionUserData : ResponseDataAble {
     let userId: String
     let firstName: String
     let lastName: String

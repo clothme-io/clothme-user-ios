@@ -48,7 +48,19 @@ class ConnectedUser : Entity {
         super.init(_id: Guid(value: id.eId.toString()))
     }
     
-    public static func Create () {}
+    public static func Create(
+        Id: UserId,
+        firstName: FirstName,
+        lastName: LastName,
+        city: City,
+        gender: Gender,
+        profession: Profession,
+        phoneNumber: PhoneNumber?,
+        email: UserEmail,
+        shippingAddress: ShippingAddress?
+    ) -> ResultOption<ConnectedUser, ValidationError> {
+        
+    }
     
     
 }
