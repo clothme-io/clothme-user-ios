@@ -11,12 +11,8 @@ import Core
 
 
 struct ConnectionApplicationModel : ResponseDataAble {
-    
     let connectionId: String
-    let connectionDate: String
-    let connectionDuration: Int
-    let connectedUser: [String: [ConnectionUser]]
-    
+    let connectedUser: [ConnectionUser]
 }
 
 
@@ -25,4 +21,6 @@ struct ConnectionUser : ResponseDataAble {
     let firstName: String
     let lastName: String
     let city: String
+    let connectionDate: String
+    let connectionDuration: Int
 }

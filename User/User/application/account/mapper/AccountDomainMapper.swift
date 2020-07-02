@@ -11,7 +11,7 @@ import Core
 
 class AccountDomainMapper {
     
-    static func toApplicationDomain(account: Account) {
+    static func toApplicationDomain(account: Account) -> AccountApplicationModel {
         
     }
 }

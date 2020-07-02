@@ -11,7 +11,7 @@ import Core
 
 class ConnectionDomainMapper {
     
-    static func toApplicationModel(connection: Connection) {
-        
+    static func toApplicationModel(connection: Connection) -> ConnectionApplicationModel {
+        return ConnectionApplicationModel
     }
 }
