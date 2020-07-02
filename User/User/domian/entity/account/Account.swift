@@ -34,21 +34,21 @@ class Account : Entity {
         // MARK: Free Account Tier
         if userTier.type.lowercased() == "free" {
             if currentNumberOfAccount.value >= self._allowedAccount.free {
-                return .error(ValidationError.maxNumberReached)
+                return .error(ValidationError.maxFreeAccountReached)
             }
         }
         
         // MARK: VIP Account Tier
         if userTier.type.lowercased() == "vip" {
             if currentNumberOfAccount.value >= self._allowedAccount.VIP {
-                return .error(ValidationError.maxNumberReached)
+                return .error(ValidationError.maxVIPAccountReached)
             }
         }
         
         // MARK: EarlyAccess Account Tier
         if userTier.type.lowercased() == "earlyaccess" {
             if currentNumberOfAccount.value >= self._allowedAccount.earlyAccess {
-                return .error(ValidationError.maxNumberReached)
+                return .error(ValidationError.maxEarlyAccessAccountReached)
             }
         }
         

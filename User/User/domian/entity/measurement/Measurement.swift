@@ -10,19 +10,19 @@ import Foundation
 import Core
 
 class Measurement : Entity {
-    private let userId: UserId
-    private var bodyMeasurement: FullBodyMeasurement
-    private var clotheMeasurement: ClotheMeasurement?
+    private let _userId: UserId
+    private var _bodyMeasurement: FullBodyMeasurement
+    private var _clotheMeasurement: ClotheMeasurement?
     
     private init(
         userId: UserId,
         bodyMeasurement: FullBodyMeasurement,
         clotheMeasurement: ClotheMeasurement?
     ) {
-        self.userId = userId
-        self.bodyMeasurement = bodyMeasurement
+        self._userId = userId
+        self._bodyMeasurement = bodyMeasurement
         if let clotheMeasurement = clotheMeasurement {
-            self.clotheMeasurement = clotheMeasurement
+            self._clotheMeasurement = clotheMeasurement
         }
         super.init(_id: nil)
     }
@@ -30,8 +30,16 @@ class Measurement : Entity {
     static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: ClotheMeasurement) -> ResultOption<Measurement, ValidationError> {
         return .ok(Measurement(userId: userId, bodyMeasurement: bodyMeasurement, clotheMeasurement: clotheMeasurement))
     }
-}
-
-extension Measurement {
     
+    var userId: UserId {
+        return self._userId
+    }
+    
+    var bodyMeasurement: FullBodyMeasurement {
+        return self._bodyMeasurement
+    }
+    
+    var clotheMeasurement: ClotheMeasurement? {
+        return self._clotheMeasurement
+    }
 }

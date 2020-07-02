@@ -19,7 +19,7 @@ class Connection : Entity {
     private init(
         userId: UserId,
         numberOfConnection: NumberOfConnection
-        ) {
+    ) {
         self.userId = userId
         self._numberOfConnection = numberOfConnection
         super.init(_id: Guid(value: userId.eId.toString()))
@@ -38,6 +38,10 @@ class Connection : Entity {
     
     var connectionId : ConnectionId {
         return ConnectionId(_id: nil)
+    }
+    
+    var connectedUsers: [ConnectedUser] {
+        return self._connectedUsers
     }
 }
 
