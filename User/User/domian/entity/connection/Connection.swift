@@ -43,5 +43,9 @@ class Connection : Entity {
     var connectedUsers: [ConnectedUser] {
         return self._connectedUsers
     }
+    
+    var numberOfConnection: NumberOfConnection {
+        return self._numberOfConnection
+    }
 }
 

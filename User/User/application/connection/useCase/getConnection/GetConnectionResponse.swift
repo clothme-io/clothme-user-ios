@@ -10,5 +10,5 @@ import Foundation
 import Core
 
 struct GetConnectionResponse {
-    let responseAccount: ConnectionUser
+    let responseAccount: ConnectionUserData
 }

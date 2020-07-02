@@ -22,7 +22,7 @@ struct NumberOfConnection {
                 .bind(initNumberOfConnection(_:))
     }
     
-    var value: Int{
+    var value: Int {
         return self._value
     }
 }

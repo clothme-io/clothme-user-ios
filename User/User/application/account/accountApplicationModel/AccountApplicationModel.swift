@@ -11,13 +11,13 @@ import Core
 
 
 struct AccountApplicationModel : ResponseDataAble {
-    let accountId: String
     let ownerId: String
-    let accountUsers: AccountUserData
+    let accountUsers: [AccountUserData]
     let numberOfAccount: Int
 }
 
 struct AccountUserData: ResponseDataAble {
+    let accountId: String
     let userId: String
     let firstName: String
     let lastName: String

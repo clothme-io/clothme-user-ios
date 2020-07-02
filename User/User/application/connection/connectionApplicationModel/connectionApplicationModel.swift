@@ -12,6 +12,7 @@ import Core
 
 struct ConnectionApplicationModel : ResponseDataAble {
     let connectedUser: [ConnectionUserData]
+    let numberOfConnection: Int
 }
 
 
