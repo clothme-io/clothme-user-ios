@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C157447D24A9513C005E8375 /* ClotheMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157447C24A9513C005E8375 /* ClotheMeasurement.swift */; };
+		C157447F24AFF027005E8375 /* StateOrProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157447E24AFF027005E8375 /* StateOrProvince.swift */; };
 		C1589097247DF27E00514750 /* GetUserMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1589096247DF27E00514750 /* GetUserMeasurement.swift */; };
 		C1589099247DF47700514750 /* GetUserMeasurementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1589098247DF47700514750 /* GetUserMeasurementDTO.swift */; };
 		C158909B247DF4C600514750 /* GetUserMeasurementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158909A247DF4C600514750 /* GetUserMeasurementError.swift */; };
@@ -226,6 +227,7 @@
 
 /* Begin PBXFileReference section */
 		C157447C24A9513C005E8375 /* ClotheMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClotheMeasurement.swift; sourceTree = "<group>"; };
+		C157447E24AFF027005E8375 /* StateOrProvince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOrProvince.swift; sourceTree = "<group>"; };
 		C1589096247DF27E00514750 /* GetUserMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserMeasurement.swift; sourceTree = "<group>"; };
 		C1589098247DF47700514750 /* GetUserMeasurementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserMeasurementDTO.swift; sourceTree = "<group>"; };
 		C158909A247DF4C600514750 /* GetUserMeasurementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserMeasurementError.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 				C1AF0B16244E265900E07391 /* City.swift */,
 				C19D31A02447D9D000B84B3B /* BillingAddress.swift */,
 				C19D319E2447D94900B84B3B /* ShippingAddress.swift */,
+				C157447E24AFF027005E8375 /* StateOrProvince.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -1622,6 +1625,7 @@
 				C1F613BC2470E653003635A4 /* CloseAccountError.swift in Sources */,
 				C1AF0C592460F86700E07391 /* AcceptMeasurementDTO.swift in Sources */,
 				C191688A244A619800D6C443 /* NumberOfAccount.swift in Sources */,
+				C157447F24AFF027005E8375 /* StateOrProvince.swift in Sources */,
 				C1AF0B2924524D8700E07391 /* UserTier.swift in Sources */,
 				C1F661252449FB480033697E /* AddPantMeasurementDTO.swift in Sources */,
 				C1916871244A240900D6C443 /* RequestMeasurementDTO.swift in Sources */,

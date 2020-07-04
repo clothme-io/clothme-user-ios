@@ -17,15 +17,15 @@ struct RelationShip {
         case friend
     }
     
-    private var type: String = ""
+    private var _type: String = ""
     
     private init(type: String) {
         if type == "family" {
-            self.type = RelationShipType.family.rawValue
+            self._type = RelationShipType.family.rawValue
         }
         
         if type == "friend" {
-            self.type = RelationShipType.friend.rawValue
+            self._type = RelationShipType.friend.rawValue
         }
     }
     
@@ -33,6 +33,10 @@ struct RelationShip {
         return validateForNilValue(input: type)
         .bind(validateForEmptyValue(inputName:))
         .bind(initRelationShip(_:))
+    }
+    
+    var type: String {
+        return self._type
     }
     
 }

@@ -55,6 +55,10 @@ class Account : Entity {
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
+    var accountOwnerId: UserId {
+        return self._accountOwner
+    }
+    
     var accountId : AccountId {
         return AccountId(_id: nil)
     }
@@ -65,6 +69,10 @@ class Account : Entity {
     
     func addFor (_ data: AccountUser) {
         _accounts.append(data)
+    }
+    
+    var accounts: [AccountUser] {
+        return self._accounts
     }
 }
 

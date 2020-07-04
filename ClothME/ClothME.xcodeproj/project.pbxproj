@@ -24,6 +24,9 @@
 		C153D01D2484B2DF00BD0A31 /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153D01C2484B2DF00BD0A31 /* ConnectionViewModel.swift */; };
 		C153D01F2484B2F000BD0A31 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153D01E2484B2F000BD0A31 /* WishListViewModel.swift */; };
 		C153D0212484B31000BD0A31 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153D0202484B31000BD0A31 /* SettingViewModel.swift */; };
+		C157448224AFF1FB005E8375 /* UserProductViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157448124AFF1FB005E8375 /* UserProductViewData.swift */; };
+		C157448524B01B0B005E8375 /* AsyncImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157448424B01B0B005E8375 /* AsyncImageLoader.swift */; };
+		C157448824B01E00005E8375 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157448724B01E00005E8375 /* UserDefaults.swift */; };
 		C1649466249D208C008ED2AF /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1649465249D208C008ED2AF /* ResetPasswordView.swift */; };
 		C1649469249D20ED008ED2AF /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1649468249D20ED008ED2AF /* SignOutView.swift */; };
 		C164946C249D2152008ED2AF /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164946B249D2152008ED2AF /* ForgotPasswordView.swift */; };
@@ -129,6 +132,9 @@
 		C153D01C2484B2DF00BD0A31 /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
 		C153D01E2484B2F000BD0A31 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		C153D0202484B31000BD0A31 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		C157448124AFF1FB005E8375 /* UserProductViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductViewData.swift; sourceTree = "<group>"; };
+		C157448424B01B0B005E8375 /* AsyncImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoader.swift; sourceTree = "<group>"; };
+		C157448724B01E00005E8375 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C1649465249D208C008ED2AF /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		C1649468249D20ED008ED2AF /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		C164946B249D2152008ED2AF /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -382,6 +388,31 @@
 			path = discovery;
 			sourceTree = "<group>";
 		};
+		C157448024AFF1D1005E8375 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C164949A249D8408008ED2AF /* UserProductViewModel.swift */,
+				C157448124AFF1FB005E8375 /* UserProductViewData.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		C157448324B01AF9005E8375 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				C157448424B01B0B005E8375 /* AsyncImageLoader.swift */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		C157448624B01DDA005E8375 /* globalValues */ = {
+			isa = PBXGroup;
+			children = (
+				C157448724B01E00005E8375 /* UserDefaults.swift */,
+			);
+			path = globalValues;
+			sourceTree = "<group>";
+		};
 		C1589093247DE5A200514750 /* userModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +589,7 @@
 		C1649487249D4A26008ED2AF /* common */ = {
 			isa = PBXGroup;
 			children = (
+				C157448624B01DDA005E8375 /* globalValues */,
 				C1649489249D4B1D008ED2AF /* components */,
 				C1649488249D4A2F008ED2AF /* theme */,
 			);
@@ -574,6 +606,7 @@
 		C1649489249D4B1D008ED2AF /* components */ = {
 			isa = PBXGroup;
 			children = (
+				C157448324B01AF9005E8375 /* image */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -616,8 +649,8 @@
 		C1649496249D5239008ED2AF /* userProduct */ = {
 			isa = PBXGroup;
 			children = (
+				C157448024AFF1D1005E8375 /* viewModel */,
 				C1649497249D525F008ED2AF /* ui */,
-				C164949A249D8408008ED2AF /* UserProductViewModel.swift */,
 			);
 			path = userProduct;
 			sourceTree = "<group>";
@@ -924,12 +957,15 @@
 				C164949F249D84FB008ED2AF /* LikeViewModel.swift in Sources */,
 				C16494AB249D8C52008ED2AF /* DeliveryView.swift in Sources */,
 				C16494A1249D8518008ED2AF /* ReviewViewModel.swift in Sources */,
+				C157448524B01B0B005E8375 /* AsyncImageLoader.swift in Sources */,
 				C153D00B2484B03D00BD0A31 /* DiscoveryViewModel.swift in Sources */,
 				C16494BC249D8FE7008ED2AF /* BrandViewModel.swift in Sources */,
 				C153D0152484B0F300BD0A31 /* ForgotPasswordViewModel.swift in Sources */,
 				C16494AF249D8C7C008ED2AF /* LikeView.swift in Sources */,
 				C164949B249D8408008ED2AF /* UserProductViewModel.swift in Sources */,
+				C157448824B01E00005E8375 /* UserDefaults.swift in Sources */,
 				C153D0132484B0DE00BD0A31 /* SignOutViewModel.swift in Sources */,
+				C157448224AFF1FB005E8375 /* UserProductViewData.swift in Sources */,
 				C1649499249D83BA008ED2AF /* UserProductView.swift in Sources */,
 				C1649469249D20ED008ED2AF /* SignOutView.swift in Sources */,
 				C16494C6249DA127008ED2AF /* IndividualView.swift in Sources */,

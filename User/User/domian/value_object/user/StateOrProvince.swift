@@ -1,26 +1,26 @@
 //
-//  Country.swift
+//  StateOrProvince.swift
 //  User
 //
-//  Created by MACPRO on 2020-04-01.
+//  Created by MACPRO on 2020-07-03.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
 import Foundation
 import Core
 
-struct Country {
+struct StateOrProvince {
     
     private var _value: String
     
-    private init(country: String) {
-        self._value = country
+    private init(stateOrProvince: String) {
+        self._value = stateOrProvince
     }
     
-    public static func set (country: String) -> ResultOption<Country, ValidationError> {
-        return validateForNilValue(input: country)
+    public static func set (stateOrProvince: String) -> ResultOption<StateOrProvince, ValidationError> {
+        return validateForNilValue(input: stateOrProvince)
             .bind(validateForEmptyValue)
-            .bind(initCountry)
+            .bind(initStateOrProvince)
     }
     
     var value: String {
@@ -31,7 +31,7 @@ struct Country {
 
 
 // MARK: Validation
-extension Country {
+extension StateOrProvince {
     private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, ValidationError> {
          let validCity = Guard.AgainstEmptyString(argument: inputCity)
          if validCity {
@@ -48,10 +48,10 @@ extension Country {
          return .error(ValidationError.nilValueNotAllowed)
      }
      
-     private static func initCountry(_ input: String) -> ResultOption<Country, ValidationError> {
+     private static func initStateOrProvince(_ input: String) -> ResultOption<StateOrProvince, ValidationError> {
          if input.isEmpty {
              return .error(ValidationError.emptyValueNotAllowed)
          }
-         return .ok(Country(country: input))
+         return .ok(StateOrProvince(stateOrProvince: input))
      }
 }

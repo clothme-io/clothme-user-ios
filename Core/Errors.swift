@@ -150,39 +150,3 @@ public enum MeasurementError : Error, LocalizedError {
 }
 
 
-
-//import Combine
-//
-//public class MovieStore {
-//
-//    public static let shared = MovieStore()
-//    private init() {}
-//    private let apiKey = "API_KEY"
-//    private let baseAPIURL = "https://api.themoviedb.org/3"
-//    private let urlSession = URLSession.shared
-//    private var subscriptions = Set<AnyCancellable>()
-//
-//    private let jsonDecoder: JSONDecoder = {
-//        let jsonDecoder = JSONDecoder()
-//        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-mm-dd"
-//        jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
-//        return jsonDecoder
-//    }()
-//
-//    func fetchMovies(from endpoint: Endpoint) -> Future<[Movie], MovieStoreAPIError> {
-//       fatalError("Implement Fetch Movies")
-//    }
-//
-//    private func generateURL(with endpoint: Endpoint) -> URL? {
-//        guard var urlComponents = URLComponents(string: "\(baseAPIURL)/movie/\(endpoint.rawValue)") else {
-//            return nil
-//        }
-//
-//        let queryItems = [URLQueryItem(name: "api_key", value: apiKey)]
-//        urlComponents.queryItems = queryItems
-//        return urlComponents.url
-//    }
-//
-//}
