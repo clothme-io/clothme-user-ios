@@ -34,7 +34,7 @@ struct AddressData : ResponseDataAble, Equatable {
     let streetNumber: String
     let streetName: String
     let city: String
-    let postalOrZipCode: String
+    let stateOrPostalCode: String
     let country: String
 }
 

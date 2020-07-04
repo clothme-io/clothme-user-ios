@@ -16,18 +16,15 @@ class AccountDomainMapper {
     }
     
     private static func accountList(_ account: Account) -> [AccountUserData] {
-        let index = 0
+        var index = 0
             var accountUsers: [AccountUserData] = [AccountUserData]()
         while account.accounts.count < index {
-            let users = AccountUserData(accountId: account.accounts[index].Id.eId.toString(), userId: account.accounts[index].Id.eId.toString(), firstName: account.accounts[index].firstName.value, lastName: account.accounts[index].lastName.value, gender: account.accounts[index].gender.value, relationship: account.accounts[index].relationShip.type, dateAdded: account.accounts[index].dataAdded.date, shippingAddress: <#T##[AddressData]#>, brandIds: <#T##[String]#>)
+            let users = AccountUserData(accountId: account.accounts[index].Id.eId.toString(), userId: account.accounts[index].Id.eId.toString(), firstName: account.accounts[index].firstName.value, lastName: account.accounts[index].lastName.value, gender: account.accounts[index].gender.value, relationship: account.accounts[index].relationShip.type, dateAdded: account.accounts[index].dataAdded.date, shippingAddress: [AddressData(streetNumber: account.accounts[index].shippingAddress?.streetAddress.number ?? "", streetName: account.accounts[index].shippingAddress?.streetAddress.name ?? "", city: account.accounts[index].shippingAddress?.city.value ?? "", stateOrPostalCode: account.accounts[index].shippingAddress?.stateOrPostalCode.value ?? "", country: account.accounts[index].shippingAddress?.country.value ?? "")], brandIds: [account.accounts[index].brandId ?? ""])
             
             accountUsers.append(users)
+            index += 1
         }
         return accountUsers
     }
     
-    private static func shippingAaddress(_ shippingAddress: ShippingAddress) -> [AddressData] {
-        var shippingAddressData = [AddressData]()
-        let addressData = AddressData(streetNumber: shippingAddress.streetAddress.number ?? "", streetName: shippingAddress.streetAddress.name ?? "", city: shippingAddress.city.value, postalOrZipCode: shippingAddress.country.value, country: <#T##String#>)
-    }
 }

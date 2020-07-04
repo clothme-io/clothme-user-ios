@@ -15,7 +15,7 @@ class ConnectedUser : Entity {
     private let _Id: UserId
     private var _firstName: FirstName
     private var _lastName: LastName
-    private var _city: City
+    private var _city: ZipOrPostalCode
     private var _gender: Gender
     private var _profession: Profession
     private var _phoneNumber: PhoneNumber?
@@ -31,7 +31,7 @@ class ConnectedUser : Entity {
         id: UserId,
         firstName: FirstName,
         lastName: LastName,
-        city: City,
+        city: ZipOrPostalCode,
         gender: Gender,
         profession: Profession,
         phoneNumber: PhoneNumber?,
@@ -60,7 +60,7 @@ class ConnectedUser : Entity {
         Id: UserId,
         firstName: FirstName,
         lastName: LastName,
-        city: City,
+        city: ZipOrPostalCode,
         gender: Gender,
         profession: Profession,
         phoneNumber: PhoneNumber?,
@@ -88,7 +88,7 @@ class ConnectedUser : Entity {
         return self._lastName
     }
     
-    var city: City {
+    var city: ZipOrPostalCode {
         return self._city
     }
     

@@ -19,6 +19,7 @@ public class User : Entity {
     private var _password: Password?
     private var _phoneNumber: PhoneNumber?
     private var _city: City
+    private var _zipOrPostalCode: ZipOrPostalCode?
     private var _country: Country
     private var _dateOfBirth : DateOfBirth?
     private var _profession : Profession?

@@ -21,6 +21,7 @@ class AccountUser : Entity {
     private var _relationship: RelationShip
     private var _dateAdded: DateAdded
     private var _shippingAddress: ShippingAddress?
+    private var _brandId: String?
     
     private init(
         id: UserId,
@@ -80,6 +81,14 @@ class AccountUser : Entity {
     
     var dataAdded: DateAdded {
         return self._dateAdded
+    }
+    
+    var shippingAddress: ShippingAddress? {
+        return self._shippingAddress
+    }
+    
+    var brandId: String? {
+        return self._brandId
     }
 }
 

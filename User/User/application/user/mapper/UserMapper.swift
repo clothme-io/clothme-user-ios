@@ -30,8 +30,9 @@ class UserMapper {
             while (shippingAddress.count <= index) {
                 let streetAddress = StreetAddress.create(streetNumber: shippingAddress[index].streetNumber, streetName: shippingAddress[index].streetName)
                 let city = City.create(city: shippingAddress[index].city)
+                let stateOrPostalCode = ZipOrPostalCode.create(stateOrProvince: shippingAddress[index].stateOrPostalCode)
                 let country = Country.set(country: shippingAddress[index].country)
-                let shippingAddress = ShippingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), country: country.getValue(result: country))
+                let shippingAddress = ShippingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), stateOrPostalCode: stateOrPostalCode.getValue(result: stateOrPostalCode), country: country.getValue(result: country))
                 shippingFinalAddress.append(shippingAddress.getValue(result: shippingAddress))
                 index += 1
             }
@@ -64,7 +65,7 @@ class UserMapper {
         if let billingAddress = user.billingAddress {
           var index = 0
           while (billingAddress.count <= index) {
-            let address = AddressData(streetNumber: billingAddress[0].streetAddress.number ?? "", streetName: billingAddress[index].streetAddress.name ?? "", city: billingAddress[index].city.value, postalOrZipCode: billingAddress[index].city.value, country: billingAddress[index].country.value)
+            let address = AddressData(streetNumber: billingAddress[0].streetAddress.number ?? "", streetName: billingAddress[index].streetAddress.name ?? "", city: billingAddress[index].city.value, stateOrPostalCode: billingAddress[index].city.value, country: billingAddress[index].country.value)
             billingFinalAddress.append(address)
             index += 1
           }
@@ -77,7 +78,7 @@ class UserMapper {
         if let shippingAddress = user.shippingAddress {
           var index = 0
           while (shippingAddress.count <= index) {
-            let address = AddressData(streetNumber: shippingAddress[0].streetAddress.number ?? "", streetName: shippingAddress[index].streetAddress.name ?? "", city: shippingAddress[index].city.value, postalOrZipCode: shippingAddress[index].city.value, country: shippingAddress[index].country.value)
+            let address = AddressData(streetNumber: shippingAddress[0].streetAddress.number ?? "", streetName: shippingAddress[index].streetAddress.name ?? "", city: shippingAddress[index].city.value, stateOrPostalCode: shippingAddress[index].city.value, country: shippingAddress[index].country.value)
             shippingFinalAddress.append(address)
             index += 1
           }

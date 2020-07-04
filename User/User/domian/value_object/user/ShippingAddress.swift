@@ -13,17 +13,17 @@ struct ShippingAddress {
     
     private var _streetAddress: StreetAddress
     private var _city: City
-    private var _stateOrPostalCode: City
+    private var _stateOrPostalCode: ZipOrPostalCode
     private var _country: Country
     
-    private init(streetAddress: StreetAddress, city: City, stateOrPostalCode: City, country: Country) {
+    private init(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) {
         self._streetAddress = streetAddress
         self._city = city
         self._stateOrPostalCode = stateOrPostalCode
         self._country = country
     }
     
-    static func create (streetAddress: StreetAddress, city: City, stateOrPostalCode: City, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
+    static func create (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
         return validateForNilValue(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country)
                 .bind(initShippingAddress)
     }
@@ -40,23 +40,27 @@ struct ShippingAddress {
         return self._country
     }
     
+    var stateOrPostalCode: ZipOrPostalCode {
+        return self._stateOrPostalCode
+    }
 }
 
 
 // MARK: Validation
 extension ShippingAddress {
-    private static func validateForNilValue (streetAddress: StreetAddress, city: City, stateOrPostalCode: City, country: Country) -> ResultOption<(StreetAddress, City, City, Country), ValidationError> {
+    private static func validateForNilValue (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<(StreetAddress, City, ZipOrPostalCode, Country), ValidationError> {
         let validStreet = Guard.againstNil(argument: streetAddress)
         let validCity = Guard.againstNil(argument: city)
         let validStateOrPostalCode = Guard.againstNil(argument: stateOrPostalCode)
         let validCountry = Guard.againstNil(argument: country)
          if validStreet && validCity && validStateOrPostalCode && validCountry {
-             return .ok((streetAddress, city, city, country))
+             return .ok((streetAddress, city, stateOrPostalCode, country))
          }
          return .error(ValidationError.emptyValueNotAllowed)
      }
      
-    private static func initShippingAddress(streetAddress: StreetAddress, city: City, stateOrPostalCode: City, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
+    private static func initShippingAddress(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
         return .ok(ShippingAddress(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country))
      }
 }
+

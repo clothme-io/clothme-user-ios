@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-struct StateOrPostalCode {
+struct ZipOrPostalCode {
     
     private var _value: String
     
@@ -17,7 +17,7 @@ struct StateOrPostalCode {
         self._value = stateOrProvince
     }
     
-    public static func set (stateOrProvince: String) -> ResultOption<StateOrPostalCode, ValidationError> {
+    public static func create (stateOrProvince: String) -> ResultOption<ZipOrPostalCode, ValidationError> {
         return validateForNilValue(input: stateOrProvince)
             .bind(validateForEmptyValue)
             .bind(initStateOrProvince)
@@ -31,7 +31,7 @@ struct StateOrPostalCode {
 
 
 // MARK: Validation
-extension StateOrPostalCode {
+extension ZipOrPostalCode {
     private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, ValidationError> {
          let validCity = Guard.AgainstEmptyString(argument: inputCity)
          if validCity {
@@ -48,10 +48,10 @@ extension StateOrPostalCode {
          return .error(ValidationError.nilValueNotAllowed)
      }
      
-     private static func initStateOrProvince(_ input: String) -> ResultOption<StateOrPostalCode, ValidationError> {
+     private static func initStateOrProvince(_ input: String) -> ResultOption<ZipOrPostalCode, ValidationError> {
          if input.isEmpty {
              return .error(ValidationError.emptyValueNotAllowed)
          }
-         return .ok(StateOrPostalCode(stateOrProvince: input))
+         return .ok(ZipOrPostalCode(stateOrProvince: input))
      }
 }
