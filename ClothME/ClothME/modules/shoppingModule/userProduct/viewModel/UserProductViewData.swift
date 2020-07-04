@@ -8,15 +8,37 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class UserProductViewData: ObservableObject {
-    @Published var userId = ""
-    @Published var firstName = ""
-    @Published var userCity = ""
-    @Published var userProfileImage = ""
-    
     //INPUT
-    
+
     
     //OUTPUT
+    @EnvironmentObject var userId: UserDefaults
+    @Published var firstName = ""
+    
+    @Published var productDetails = [Product]()
+
+}
+
+
+class Product: ObservableObject {
+    //INPUT
+    
+    //OUTPUT
+    @Published var productId = ""
+    @Published var productImages: [String]?
+    @Published var productName = ""
+    @Published var productPrice = ""
+    @Published var percentageFit = ""
+    @Published var dicountPrice = ""
+    @Published var likeCount = ""
+    @Published var reviewCount = ""
+    
+    //Brand
+    @Published var brandId = ""
+    @Published var brandLogo = ""
+    @Published var brandName = ""
+    @Published var brandLocation = ""
 }
