@@ -59,9 +59,9 @@ class Account : Entity {
         return self._accountOwner
     }
     
-    var accountId : AccountId {
-        return AccountId(_id: nil)
-    }
+//    var accountId : AccountId {
+//        return AccountId(_id: nil)
+//    }
     
     var numberOfAccount : Int {
         return self._numberOfAccount.value

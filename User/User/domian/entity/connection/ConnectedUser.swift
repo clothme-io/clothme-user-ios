@@ -53,7 +53,7 @@ class ConnectedUser : Entity {
         self._connectionDuration = connectionDuration
         let connectionId = ConnectionId.create(id: Guid(value: nil))
         self._connectionId = connectionId.getValue(result: connectionId)
-        super.init(_id: Guid(value: nil))
+        super.init(_id: Guid(value: self._connectionId.value().toString()))
     }
     
     public static func Create(

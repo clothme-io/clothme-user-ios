@@ -11,7 +11,6 @@ import Core
 
 
 class AccountUser : Entity {
-    
     private let _id: UserId
     private var _firstName: FirstName
     private var _lastName: LastName
@@ -49,6 +48,10 @@ class AccountUser : Entity {
         gender: Gender, phoneNumber: PhoneNumber, relationShip: RelationShip, dataAdded: DateAdded
     ) -> ResultOption<AccountUser, ValidationError> {
         return .ok(AccountUser(id: id, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationShip, dataAdded: dataAdded))
+    }
+    
+    var accountId : AccountId {
+        return AccountId(_id: nil)
     }
     
     var Id: UserId {
