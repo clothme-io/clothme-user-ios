@@ -11,6 +11,7 @@ import Core
 
 
 class AccountUser : Entity {
+    private let _accountId: AccountId
     private let _id: UserId
     private var _firstName: FirstName
     private var _lastName: LastName
@@ -40,7 +41,9 @@ class AccountUser : Entity {
         self._phoneNumber = phoneNumber
         self._relationship = relationShip
         self._dateAdded = dataAdded
-        super.init(_id: nil)
+        let accountId = AccountId.create(id: Guid(value: nil))
+        self._accountId = accountId.getValue(result: accountId)
+        super.init(_id: Guid(value: self._accountId.value().toString()))
     }
     
     public static func create(
@@ -51,7 +54,7 @@ class AccountUser : Entity {
     }
     
     var accountId : AccountId {
-        return AccountId(_id: nil)
+        return self._accountId
     }
     
     var Id: UserId {
