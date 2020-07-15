@@ -11,9 +11,9 @@ import Core
 
 struct ConnectionDuration : Equatable {
     
-    private var _value: Date
+    private var _value: Int
     
-    private init (connectionDate: Date) {
+    private init (connectionDate: Int) {
         self._value = connectionDate
     }
     
@@ -23,9 +23,12 @@ struct ConnectionDuration : Equatable {
         .bind(initConnectionDuration(_:))
     }
     
-    var value: Date {
+    var value: Int {
         return self._value
     }
+    
+
+
 }
 
 extension ConnectionDuration {
@@ -48,13 +51,13 @@ extension ConnectionDuration {
     private static func initConnectionDuration(_ input: String) -> ResultOption<ConnectionDuration, ValidationError> {
         let connectionDateString: String = input
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-        dateFormatter.dateFormat = "yyyy-MM-dd'"
-        let date = dateFormatter.date(from: connectionDateString)!
-        
+//        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let startDate = dateFormatter.date(from: connectionDateString)!
+        let currentDate = dateFormatter.string(from: Date())
+        let endDate = dateFormatter.date(from: currentDate)
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
-        let finalDate = calendar.date(from:components)
-        return .ok(ConnectionDuration(connectionDate: finalDate ?? Date()))
+        let dateDifference = calendar.dateComponents([.day], from: startDate, to: endDate!)
+        return .ok(ConnectionDuration(connectionDate: dateDifference.day!))
     }
 }
