@@ -12,22 +12,23 @@ import Core
 class Measurement : Entity {
     private let _userId: UserId
     private var _bodyMeasurement: FullBodyMeasurement
-    private var _clotheMeasurement: ClotheMeasurement?
+    private var _clotheMeasurement: [ClotheMeasurement?]
     
     private init(
         userId: UserId,
         bodyMeasurement: FullBodyMeasurement,
-        clotheMeasurement: ClotheMeasurement?
+        clotheMeasurement: [ClotheMeasurement?]
     ) {
         self._userId = userId
         self._bodyMeasurement = bodyMeasurement
-        if let clotheMeasurement = clotheMeasurement {
-            self._clotheMeasurement = clotheMeasurement
-        }
+        self._clotheMeasurement = clotheMeasurement
+//        if let clotheMeasurement = clotheMeasurement {
+//            self._clotheMeasurement = clotheMeasurement
+//        }
         super.init(_id: nil)
     }
     
-    static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: ClotheMeasurement) -> ResultOption<Measurement, AppError> {
+    static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: [ClotheMeasurement]) -> ResultOption<Measurement, AppError> {
         return .ok(Measurement(userId: userId, bodyMeasurement: bodyMeasurement, clotheMeasurement: clotheMeasurement))
     }
     
@@ -39,7 +40,7 @@ class Measurement : Entity {
         return self._bodyMeasurement
     }
     
-    var clotheMeasurement: ClotheMeasurement? {
+    var clotheMeasurement: [ClotheMeasurement?] {
         return self._clotheMeasurement
     }
 }

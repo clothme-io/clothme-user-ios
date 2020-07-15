@@ -23,7 +23,7 @@ class ConnectedUser : Entity {
     private var _shippingAddress: ShippingAddress?
     private var _connectionDate: ConnectionDate
     private var _connectionDuration: ConnectionDuration
-//    private var clotheMeasurement: [String?]
+//    private var clotheMeasurement: [ClotheMeasurement?]
 //    private var brands: [String?]
 //    private var fitProducts: [String?]
     

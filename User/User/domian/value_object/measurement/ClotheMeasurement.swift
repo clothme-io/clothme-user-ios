@@ -9,6 +9,6 @@
 import Foundation
 import Core
 
-struct ClotheMeasurement {
+protocol ClotheMeasurement {
     
 }

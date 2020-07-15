@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1404D2C24341C0700DBE6A1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1404D2B24341C0700DBE6A1 /* Errors.swift */; };
+		C1404D2C24341C0700DBE6A1 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1404D2B24341C0700DBE6A1 /* AppError.swift */; };
 		C170A23E2474C17F00891A03 /* MapperAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170A23D2474C17F00891A03 /* MapperAble.swift */; };
 		C178C95C24872CDA00178031 /* ResponseErrorAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178C95B24872CDA00178031 /* ResponseErrorAble.swift */; };
 		C191689B244AC48600D6C443 /* ValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191689A244AC48600D6C443 /* ValueObject.swift */; };
@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C1404D2B24341C0700DBE6A1 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		C1404D2B24341C0700DBE6A1 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		C170A23D2474C17F00891A03 /* MapperAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperAble.swift; sourceTree = "<group>"; };
 		C178C95B24872CDA00178031 /* ResponseErrorAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseErrorAble.swift; sourceTree = "<group>"; };
 		C191689A244AC48600D6C443 /* ValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueObject.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			children = (
 				C1A8D9D0242EF30000B95C17 /* Guard.swift */,
 				C1A8D9D2242EF30B00B95C17 /* ResultOption.swift */,
-				C1404D2B24341C0700DBE6A1 /* Errors.swift */,
+				C1404D2B24341C0700DBE6A1 /* AppError.swift */,
 				C1AF0B26244E727C00E07391 /* Results.swift */,
 			);
 			name = Error;
@@ -287,7 +287,7 @@
 				C1AF0B27244E727C00E07391 /* Results.swift in Sources */,
 				C1A8D9D3242EF30B00B95C17 /* ResultOption.swift in Sources */,
 				C1DAD29D2438119000F2A951 /* IGenericRepository.swift in Sources */,
-				C1404D2C24341C0700DBE6A1 /* Errors.swift in Sources */,
+				C1404D2C24341C0700DBE6A1 /* AppError.swift in Sources */,
 				C1AF0B19244E366000E07391 /* Date.swift in Sources */,
 				C1AF0CAF2468950100E07391 /* AggregateRoot.swift in Sources */,
 				C1AF0B6A245F0BB300E07391 /* UseCaseAble.swift in Sources */,
