@@ -785,7 +785,7 @@
 				C178C95E248731BC00178031 /* repository */,
 				C170A23024747F6800891A03 /* mapper */,
 				C1F6136B2470C85D003635A4 /* useCase */,
-				C1AF0BCC2460D58E00E07391 /* connectionApplicationModel */,
+				C1AF0BCC2460D58E00E07391 /* model */,
 			);
 			path = connection;
 			sourceTree = "<group>";
@@ -796,7 +796,7 @@
 				C178C95D2487319E00178031 /* repository */,
 				C170A22F24747F5E00891A03 /* mapper */,
 				C1F6136A2470C806003635A4 /* useCase */,
-				C1AF0BD92460D6D700E07391 /* accountApplicationModel */,
+				C1AF0BD92460D6D700E07391 /* model */,
 			);
 			path = account;
 			sourceTree = "<group>";
@@ -916,12 +916,12 @@
 			path = TShirt;
 			sourceTree = "<group>";
 		};
-		C1AF0BCC2460D58E00E07391 /* connectionApplicationModel */ = {
+		C1AF0BCC2460D58E00E07391 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0B8C245FC4ED00E07391 /* connectionApplicationModel.swift */,
 			);
-			path = connectionApplicationModel;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C1AF0BCD2460D5B300E07391 /* removeConnection */ = {
@@ -968,12 +968,12 @@
 			path = sendConnection;
 			sourceTree = "<group>";
 		};
-		C1AF0BD92460D6D700E07391 /* accountApplicationModel */ = {
+		C1AF0BD92460D6D700E07391 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0B89245FC41400E07391 /* AccountApplicationModel.swift */,
 			);
-			path = accountApplicationModel;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C1AF0BDA2460D6FB00E07391 /* createAccount */ = {
@@ -1323,7 +1323,7 @@
 		C1D83E1A24A5621B00146EEE /* measurement */ = {
 			isa = PBXGroup;
 			children = (
-				C1D83E1E24A5624700146EEE /* measurementApplicationModel */,
+				C1D83E1E24A5624700146EEE /* model */,
 				C1D83E1D24A5623E00146EEE /* mapper */,
 				C1D83E1C24A5623300146EEE /* repository */,
 				C1D83E1B24A5622600146EEE /* useCase */,
@@ -1357,11 +1357,11 @@
 			path = mapper;
 			sourceTree = "<group>";
 		};
-		C1D83E1E24A5624700146EEE /* measurementApplicationModel */ = {
+		C1D83E1E24A5624700146EEE /* model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = measurementApplicationModel;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C1D83E1F24A5629E00146EEE /* clothe */ = {
