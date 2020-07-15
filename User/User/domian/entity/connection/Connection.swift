@@ -27,7 +27,7 @@ class Connection : Entity {
     
     static func create(
         userId: UserId,
-        numberOfConnection: NumberOfConnection) -> ResultOption<Connection, ValidationError> {
+        numberOfConnection: NumberOfConnection) -> ResultOption<Connection, AppError> {
         
         return .ok(Connection(userId: userId, numberOfConnection: numberOfConnection))
     }

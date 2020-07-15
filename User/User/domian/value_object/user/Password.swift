@@ -17,7 +17,7 @@ struct Password {
         self._value = value;
     }
     
-    public static func create (with value: String) -> ResultOption<Password, ValidationError> {
+    public static func create (with value: String) -> ResultOption<Password, AppError> {
         return validateUserEmailForEmptyValue(inputName: value)
                 .bind(validateUserEmailForNilValue)
                 .bind(isPasswordLength)
@@ -36,29 +36,29 @@ struct Password {
 
 // MARK: Validation
 extension Password {
-    private static func isPasswordLength (value: String) -> ResultOption<String, ValidationError> {
-        return value.count > 6 ? .ok(value) : .error(ValidationError.passwordTooShort)
+    private static func isPasswordLength (value: String) -> ResultOption<String, AppError> {
+        return value.count > 6 ? .ok(value) : .error(AppError.passwordTooShort)
     }
     
-    private static func validateUserEmailForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
+    private static func validateUserEmailForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstEmptyString(argument: inputName)
         if validName {
             return .ok(inputName)
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validateUserEmailForNilValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validateUserEmailForNilValue (input: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstNilString(argument: input)
         if validName {
             return .ok(input)
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func initPassword(_ input: String) -> ResultOption<Password, ValidationError> {
+    private static func initPassword(_ input: String) -> ResultOption<Password, AppError> {
         if input.isEmpty {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(Password(value: input))
     }

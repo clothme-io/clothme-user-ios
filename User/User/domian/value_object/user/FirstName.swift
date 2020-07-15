@@ -18,13 +18,13 @@ struct FirstName : Equatable {
     }
     
     
-    public static func create (name: String) -> ResultOption<FirstName, ValidationError> {
+    public static func create (name: String) -> ResultOption<FirstName, AppError> {
         return validateFirstNameForEmptyValue(inputName: name)
                 .bind(validateFirstNameForNilValue)
                 .bind(initFirstName)
     }
     
-    public mutating func Change (name: String) -> ResultOption<FirstName, ValidationError> {
+    public mutating func Change (name: String) -> ResultOption<FirstName, AppError> {
         return FirstName.validateFirstNameForEmptyValue(inputName: name)
             .bind(FirstName.validateFirstNameForNilValue)
             .bind(FirstName.initFirstName)
@@ -43,25 +43,25 @@ struct FirstName : Equatable {
 
 // MARKDOWN : Validation
 extension FirstName {
-    private static func validateFirstNameForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
+    private static func validateFirstNameForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstEmptyString(argument: inputName)
         if validName {
             return .ok(inputName)
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validateFirstNameForNilValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validateFirstNameForNilValue (input: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstNilString(argument: input)
         if validName {
             return .ok(input)
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func initFirstName(_ input: String) -> ResultOption<FirstName, ValidationError> {
+    private static func initFirstName(_ input: String) -> ResultOption<FirstName, AppError> {
         if input.isEmpty {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(FirstName(value: input))
     }

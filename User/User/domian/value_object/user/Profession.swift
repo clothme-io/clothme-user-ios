@@ -16,15 +16,15 @@ struct Profession : Equatable {
         self._value = profession;
     }
     
-    public static func create (nameWith profession: String) -> ResultOption<Profession, ValidationError> {
+    public static func create (nameWith profession: String) -> ResultOption<Profession, AppError> {
         return validateForNilValue(input: profession)
         .bind(validateForEmptyValue)
         .bind(initProfession(_:))
     }
     
-    public func change (newProfession new: String, oldProfession old: Profession) -> ResultOption<Profession, ValidationError> {
+    public func change (newProfession new: String, oldProfession old: Profession) -> ResultOption<Profession, AppError> {
         if new == old._value {
-            return .error(ValidationError.sameValueNotAllowed)
+            return .error(AppError.sameValueNotAllowed)
         }
         return Profession.validateForEmptyValue(input: new)
             .bind(Profession.validateForNilValue)
@@ -45,25 +45,25 @@ struct Profession : Equatable {
 
 // MARK: Validation
 extension Profession {
-    private static func validateForEmptyValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validateForEmptyValue (input: String) -> ResultOption<String, AppError> {
         let validProfession = Guard.AgainstEmptyString(argument: input)
         if validProfession {
             return .ok(input)
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
         let validProfession = Guard.AgainstNilString(argument: input)
         if validProfession {
             return .ok(input)
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func initProfession(_ input: String) -> ResultOption<Profession, ValidationError> {
+    private static func initProfession(_ input: String) -> ResultOption<Profession, AppError> {
         if input.isEmpty {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(Profession(input))
     }

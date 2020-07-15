@@ -18,7 +18,7 @@ struct City: Equatable {
         self._value = city
     }
     
-    public static func create (city: String) -> ResultOption<City, ValidationError> {
+    public static func create (city: String) -> ResultOption<City, AppError> {
         return validateForNilValue(input: city)
                 .bind(validateForEmptyValue)
                 .bind(initCountry)
@@ -33,25 +33,25 @@ struct City: Equatable {
 
 // MARK: Validation
 extension City {
-    private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, ValidationError> {
+    private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, AppError> {
          let validCity = Guard.AgainstEmptyString(argument: inputCity)
          if validCity {
              return .ok(inputCity)
          }
-         return .error(ValidationError.emptyValueNotAllowed)
+         return .error(AppError.emptyValueNotAllowed)
      }
      
-     private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
+     private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
          let validCity = Guard.AgainstNilString(argument: input)
          if validCity {
              return .ok(input)
          }
-         return .error(ValidationError.nilValueNotAllowed)
+         return .error(AppError.nilValueNotAllowed)
      }
      
-     private static func initCountry(_ input: String) -> ResultOption<City, ValidationError> {
+     private static func initCountry(_ input: String) -> ResultOption<City, AppError> {
          if input.isEmpty {
-             return .error(ValidationError.emptyValueNotAllowed)
+             return .error(AppError.emptyValueNotAllowed)
          }
         return .ok(City(city: input))
      }

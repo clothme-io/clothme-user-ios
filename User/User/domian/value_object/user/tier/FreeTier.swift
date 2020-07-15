@@ -16,7 +16,7 @@ struct FreeTier {
         self._value = tier
     }
     
-    static func create(tier: String) -> ResultOption<FreeTier, ValidationError> {
+    static func create(tier: String) -> ResultOption<FreeTier, AppError> {
         return noEmptyValue(input: tier)
         .bind(noNilValue(input:))
         .bind(initFreeTier(input:))
@@ -25,23 +25,23 @@ struct FreeTier {
 
 
 extension FreeTier {
-    private static func noEmptyValue(input: String) -> ResultOption<String, ValidationError> {
+    private static func noEmptyValue(input: String) -> ResultOption<String, AppError> {
         let tierResult = Guard.AgainstEmptyString(argument: input)
         if !tierResult {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(input)
     }
     
-    private static func noNilValue(input: String) -> ResultOption<String, ValidationError> {
+    private static func noNilValue(input: String) -> ResultOption<String, AppError> {
         let tierResult = Guard.AgainstNilString(argument: input)
         if !tierResult {
-            return .error(ValidationError.nilValueNotAllowed)
+            return .error(AppError.nilValueNotAllowed)
         }
         return .ok(input)
     }
     
-    private static func initFreeTier(input: String) -> ResultOption<FreeTier, ValidationError> {
+    private static func initFreeTier(input: String) -> ResultOption<FreeTier, AppError> {
         return .ok(FreeTier(tier: input))
     }
 }

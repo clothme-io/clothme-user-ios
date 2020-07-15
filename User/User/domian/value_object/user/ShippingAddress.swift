@@ -23,7 +23,7 @@ struct ShippingAddress {
         self._country = country
     }
     
-    static func create (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
+    static func create (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, AppError> {
         return validateForNilValue(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country)
                 .bind(initShippingAddress)
     }
@@ -48,7 +48,7 @@ struct ShippingAddress {
 
 // MARK: Validation
 extension ShippingAddress {
-    private static func validateForNilValue (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<(StreetAddress, City, ZipOrPostalCode, Country), ValidationError> {
+    private static func validateForNilValue (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<(StreetAddress, City, ZipOrPostalCode, Country), AppError> {
         let validStreet = Guard.againstNil(argument: streetAddress)
         let validCity = Guard.againstNil(argument: city)
         let validStateOrPostalCode = Guard.againstNil(argument: stateOrPostalCode)
@@ -56,10 +56,10 @@ extension ShippingAddress {
          if validStreet && validCity && validStateOrPostalCode && validCountry {
              return .ok((streetAddress, city, stateOrPostalCode, country))
          }
-         return .error(ValidationError.emptyValueNotAllowed)
+         return .error(AppError.emptyValueNotAllowed)
      }
      
-    private static func initShippingAddress(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, ValidationError> {
+    private static func initShippingAddress(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, AppError> {
         return .ok(ShippingAddress(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country))
      }
 }

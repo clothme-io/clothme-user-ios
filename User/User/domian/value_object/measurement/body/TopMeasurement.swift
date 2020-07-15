@@ -49,7 +49,7 @@ struct TopMeasurement : Equatable {
         armPitHole: MeasurementUnit,
         shoulderLength: MeasurementUnit,
         shoulderToWaist: MeasurementUnit
-    ) -> ResultOption<TopMeasurement, ValidationError> {
+    ) -> ResultOption<TopMeasurement, AppError> {
         return .ok(TopMeasurement(neck: neck, bust: bust, shoulderToWrist: shoulderToWrist, shoulderElbow: shoulderElbow, bicep: bicep, armPitHole: armPitHole, shoulderLength: shoulderLength, shoulderToWaist: shoulderToWaist))
     }
     

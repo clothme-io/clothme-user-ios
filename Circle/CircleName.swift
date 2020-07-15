@@ -17,7 +17,7 @@ struct CircleName : Equatable {
         self._value = name
     }
     
-    public static func create (name: String) -> ResultOption<CircleName, ValidationError> {
+    public static func create (name: String) -> ResultOption<CircleName, AppError> {
         return .ok(CircleName(name: name))
     }
 }

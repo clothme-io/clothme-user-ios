@@ -32,13 +32,13 @@ struct UserTier {
         self._tier = "free"
     }
     
-    public static func set (tier: String?) -> ResultOption<UserTier, ValidationError> {
+    public static func set (tier: String?) -> ResultOption<UserTier, AppError> {
         guard let tier = tier else {
-            return .error(ValidationError.nilValueNotAllowed)
+            return .error(AppError.nilValueNotAllowed)
         }
         
         if tier == "" {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         
         return.ok(UserTier(tier: tier))

@@ -23,7 +23,7 @@ struct Gender: Equatable {
         self._value = GenderEnum.init(rawValue: gender)!
     }
     
-    static func create (gender: String) -> ResultOption<Gender, ValidationError> {
+    static func create (gender: String) -> ResultOption<Gender, AppError> {
         return validateForEmptyValue(input: gender)
                 .bind(validateForNilValue(input:))
                 .bind(initGender(genderType:))
@@ -41,25 +41,25 @@ struct Gender: Equatable {
 
 // MARK: Validation
 extension Gender {
-      private static func validateForEmptyValue (input: String) -> ResultOption<String, ValidationError> {
+      private static func validateForEmptyValue (input: String) -> ResultOption<String, AppError> {
         let validResult = Guard.AgainstEmptyString(argument: input)
         if validResult {
             return .ok(input)
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
         let validResult = Guard.AgainstNilString(argument: input)
         if validResult {
             return .ok(input)
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func initGender(genderType gender: String) -> ResultOption<Gender, ValidationError> {
+    private static func initGender(genderType gender: String) -> ResultOption<Gender, AppError> {
         if gender.isEmpty {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(Gender(gender: gender))
     }

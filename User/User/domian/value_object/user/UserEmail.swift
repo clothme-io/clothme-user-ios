@@ -16,17 +16,17 @@ struct UserEmail {
         _value = value
     }
     
-    public static func create (value: String) -> ResultOption<UserEmail, ValidationError> {
+    public static func create (value: String) -> ResultOption<UserEmail, AppError> {
         
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}")
-        return emailPredicate.evaluate(with: value) ? .ok(UserEmail.init(value: value)) : .error(ValidationError.invalidEmail)
+        return emailPredicate.evaluate(with: value) ? .ok(UserEmail.init(value: value)) : .error(AppError.invalidEmail)
     }
     
     var value : String {
         return self._value
     }
     
-    public mutating func change (_ name: String) -> ResultOption<UserEmail, ValidationError> {
+    public mutating func change (_ name: String) -> ResultOption<UserEmail, AppError> {
         return UserEmail.validateUserEmailForEmptyValue(inputName: name)
             .bind(UserEmail.validateUserEmailForNilValue)
             .bind(UserEmail.initUserEmail)
@@ -41,25 +41,25 @@ struct UserEmail {
 
 // MARK: Validation
 extension UserEmail {
-    private static func validateUserEmailForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
+    private static func validateUserEmailForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstEmptyString(argument: inputName)
         if validName {
             return .ok(inputName)
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validateUserEmailForNilValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validateUserEmailForNilValue (input: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstNilString(argument: input)
         if validName {
             return .ok(input)
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func initUserEmail(_ input: String) -> ResultOption<UserEmail, ValidationError> {
+    private static func initUserEmail(_ input: String) -> ResultOption<UserEmail, AppError> {
         if input.isEmpty {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(UserEmail(value: input))
     }

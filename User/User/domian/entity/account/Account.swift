@@ -24,7 +24,7 @@ class Account : Entity {
         self.addFor(accountUser)
     }
     
-    static func create (accountOwner: UserId, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
+    static func create (accountOwner: UserId, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
         let numOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
         let currentNumberOfAccount = numOfAccount.getValue(result: numOfAccount)
 
@@ -34,24 +34,28 @@ class Account : Entity {
         // MARK: Free Account Tier
         if userTier.type.lowercased() == "free" {
             if currentNumberOfAccount.value >= self._allowedAccount.free {
-                return .error(ValidationError.maxFreeAccountReached)
+                return .error(AppError.maxFreeAccountReached)
             }
         }
         
         // MARK: VIP Account Tier
         if userTier.type.lowercased() == "vip" {
             if currentNumberOfAccount.value >= self._allowedAccount.VIP {
-                return .error(ValidationError.maxVIPAccountReached)
+                return .error(AppError.maxVIPAccountReached)
             }
         }
         
         // MARK: EarlyAccess Account Tier
         if userTier.type.lowercased() == "earlyaccess" {
             if currentNumberOfAccount.value >= self._allowedAccount.earlyAccess {
-                return .error(ValidationError.maxEarlyAccessAccountReached)
+                return .error(AppError.maxEarlyAccessAccountReached)
             }
         }
         
+        return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
+    }
+    
+    static func createWithData(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
@@ -79,17 +83,17 @@ class Account : Entity {
 
 // MARK: Validation
 extension Account {
-    private static func validateForNilValue(user: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<(AccountUser, NumberOfAccount), ValidationError> {
+    private static func validateForNilValue(user: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<(AccountUser, NumberOfAccount), AppError> {
         let userResult = Guard.againstNil(argument: user)
         let numberOfAccountResult = Guard.againstNil(argument: numberOfAccount)
         
         if userResult && numberOfAccountResult {
             return .ok((user, numberOfAccount))
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func initAccount(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<Account, ValidationError> {
+    private static func initAccount(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     

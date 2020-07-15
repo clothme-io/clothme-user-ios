@@ -12,8 +12,8 @@ import Core
 
 
 protocol ConnectionRepository : IRepositoryWithTypedId {
-    func getConnectionByConnectionId<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<R, ConnectionError>
-    func getAllConnections<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<[R], ConnectionError>
-    func findConnectionByConnectionId<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<R, ConnectionError>
-    func findConnectionByConnectionName<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<R, ConnectionError>
+    func getConnectionByConnectionId<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<R, AppError>
+    func getAllConnections<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<[R], AppError>
+    func findConnectionByConnectionId<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<R, AppError>
+    func findConnectionByConnectionName<T: RequestDataAble, R: ResponseDataAble>(with data: T) -> Future<R, AppError>
 }

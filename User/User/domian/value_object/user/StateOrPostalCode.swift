@@ -17,7 +17,7 @@ struct ZipOrPostalCode {
         self._value = stateOrProvince
     }
     
-    public static func create (stateOrProvince: String) -> ResultOption<ZipOrPostalCode, ValidationError> {
+    public static func create (stateOrProvince: String) -> ResultOption<ZipOrPostalCode, AppError> {
         return validateForNilValue(input: stateOrProvince)
             .bind(validateForEmptyValue)
             .bind(initStateOrProvince)
@@ -32,25 +32,25 @@ struct ZipOrPostalCode {
 
 // MARK: Validation
 extension ZipOrPostalCode {
-    private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, ValidationError> {
+    private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, AppError> {
          let validCity = Guard.AgainstEmptyString(argument: inputCity)
          if validCity {
              return .ok(inputCity)
          }
-         return .error(ValidationError.emptyValueNotAllowed)
+         return .error(AppError.emptyValueNotAllowed)
      }
      
-     private static func validateForNilValue (input: String) -> ResultOption<String, ValidationError> {
+     private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
          let validCity = Guard.AgainstNilString(argument: input)
          if validCity {
              return .ok(input)
          }
-         return .error(ValidationError.nilValueNotAllowed)
+         return .error(AppError.nilValueNotAllowed)
      }
      
-     private static func initStateOrProvince(_ input: String) -> ResultOption<ZipOrPostalCode, ValidationError> {
+     private static func initStateOrProvince(_ input: String) -> ResultOption<ZipOrPostalCode, AppError> {
          if input.isEmpty {
-             return .error(ValidationError.emptyValueNotAllowed)
+             return .error(AppError.emptyValueNotAllowed)
          }
          return .ok(ZipOrPostalCode(stateOrProvince: input))
      }

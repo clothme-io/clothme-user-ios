@@ -21,14 +21,14 @@ struct PhoneNumber : Equatable {
         self._value = ""
     }
     
-    public static func create (with value: String) -> ResultOption<PhoneNumber, ValidationError> {
+    public static func create (with value: String) -> ResultOption<PhoneNumber, AppError> {
         return validatePhoneNumberForEmptyValue(inputName: value)
             .bind(validatePhoneNumberForNilValue)
             .bind(isMatchPhoneNumberPattern)
             .bind(initPhoneNumber)
     }
     
-    public mutating func Change (with value: String) -> ResultOption<PhoneNumber, ValidationError> {
+    public mutating func Change (with value: String) -> ResultOption<PhoneNumber, AppError> {
         return PhoneNumber.validatePhoneNumberForEmptyValue(inputName: value)
             .bind(PhoneNumber.validatePhoneNumberForNilValue)
             .bind(PhoneNumber.initPhoneNumber)
@@ -49,33 +49,33 @@ struct PhoneNumber : Equatable {
 
 // MARK: Validation
 extension PhoneNumber {
-    private static func validatePhoneNumberForEmptyValue (inputName: String) -> ResultOption<String, ValidationError> {
+    private static func validatePhoneNumberForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstEmptyString(argument: inputName)
         if validName {
             return .ok(inputName)
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validatePhoneNumberForNilValue (input: String) -> ResultOption<String, ValidationError> {
+    private static func validatePhoneNumberForNilValue (input: String) -> ResultOption<String, AppError> {
         let validName = Guard.AgainstNilString(argument: input)
         if validName {
             return .ok(input)
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func isMatchPhoneNumberPattern (_ value: String) -> ResultOption<String, ValidationError> {
+    private static func isMatchPhoneNumberPattern (_ value: String) -> ResultOption<String, AppError> {
         let pattern = "^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
         if value.range(of: pattern, options: .regularExpression, range: nil, locale: nil) == nil {
-            return .error(ValidationError.invalidPhoneNumber)
+            return .error(AppError.invalidPhoneNumber)
         }
         return .ok(value)
     }
     
-    private static func initPhoneNumber(_ input: String) -> ResultOption<PhoneNumber, ValidationError> {
+    private static func initPhoneNumber(_ input: String) -> ResultOption<PhoneNumber, AppError> {
         if input.isEmpty {
-            return .error(ValidationError.emptyValueNotAllowed)
+            return .error(AppError.emptyValueNotAllowed)
         }
         return .ok(PhoneNumber(value: input))
     }

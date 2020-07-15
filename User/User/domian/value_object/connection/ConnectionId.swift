@@ -15,7 +15,7 @@ class ConnectionId : Entity {
         super.init(_id: _id)
     }
     
-    static func create(id: Guid?) -> ResultOption<ConnectionId, ValidationError> {
+    static func create(id: Guid?) -> ResultOption<ConnectionId, AppError> {
         return .ok(ConnectionId(_id: id ?? Guid(value: nil)))
     }
     

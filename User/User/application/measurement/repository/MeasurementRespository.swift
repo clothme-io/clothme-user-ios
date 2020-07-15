@@ -12,5 +12,5 @@ import Core
 
 
 protocol MeasurementRepository : IRepositoryWithTypedId {
-    func acceptMeasurement<T> (of type: RequestDataAble, with data: ResponseDataAble) -> Future<T, MeasurementError>
+    func acceptMeasurement<T> (of type: RequestDataAble, with data: ResponseDataAble) -> Future<T, AppError>
 }

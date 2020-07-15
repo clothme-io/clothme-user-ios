@@ -75,7 +75,7 @@ public class User : Entity {
         tier: UserTier,
         shippingAddress: [ShippingAddress]?,
         billingAddress: [BillingAddress]?
-    ) -> ResultOption<User, ValidationError> {
+    ) -> ResultOption<User, AppError> {
         return .ok(self.init(profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, tier: tier, shippingAddress: shippingAddress, billingAddress: billingAddress))
     }
     

@@ -19,7 +19,7 @@ struct MeasurementUnit : Equatable {
         self._height = height;
     }
     
-    static func set (withWidth width: Double, withHeight height: Double) -> ResultOption<MeasurementUnit, ValidationError> {
+    static func set (withWidth width: Double, withHeight height: Double) -> ResultOption<MeasurementUnit, AppError> {
         return validateForNegativeValue(width: width, height: height)
                 .bind(validateForNilValue)
                 .bind(initMeasurementUnit)
@@ -35,17 +35,17 @@ extension MeasurementUnit {
         return MeasurementUnit(withWidth: width, withHeight: height);
     }
     
-    func updateHeight (_ value: Double, currentMeasurement: MeasurementUnit) -> ResultOption<MeasurementUnit, ValidationError> {
+    func updateHeight (_ value: Double, currentMeasurement: MeasurementUnit) -> ResultOption<MeasurementUnit, AppError> {
         if (currentMeasurement._height == value) {
-            return .error(ValidationError.alreadyExist)
+            return .error(AppError.alreadyExist)
         }
         
         return .ok(MeasurementUnit.init(withWidth: currentMeasurement._width, withHeight: value))
     }
     
-    func updateWidth (_ value: Double, currentMeasurement: MeasurementUnit) -> ResultOption<MeasurementUnit, ValidationError> {
+    func updateWidth (_ value: Double, currentMeasurement: MeasurementUnit) -> ResultOption<MeasurementUnit, AppError> {
         if (currentMeasurement._height == value) {
-            return .error(ValidationError.alreadyExist)
+            return .error(AppError.alreadyExist)
         }
         
         return .ok(MeasurementUnit.init(withWidth: value, withHeight: currentMeasurement._height))
@@ -57,25 +57,25 @@ extension MeasurementUnit {
 
 // MAR: Validation
 extension MeasurementUnit {
-    private static func validateForNegativeValue (width: Double, height: Double) -> ResultOption<(Double, Double), ValidationError> {
+    private static func validateForNegativeValue (width: Double, height: Double) -> ResultOption<(Double, Double), AppError> {
         let validWidth = Guard.againstNegative(value: width)
         let validHeight = Guard.againstNegative(value: height)
         if validWidth && validHeight {
             return .ok((width, height))
         }
-        return .error(ValidationError.emptyValueNotAllowed)
+        return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validateForNilValue (width: Double, height: Double) -> ResultOption<(Double, Double), ValidationError> {
+    private static func validateForNilValue (width: Double, height: Double) -> ResultOption<(Double, Double), AppError> {
         let validWidth = Guard.againstNil(argument: width)
         let validHeight = Guard.againstNil(argument: height)
         if validWidth && validHeight {
             return .ok((width, height))
         }
-        return .error(ValidationError.nilValueNotAllowed)
+        return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func initMeasurementUnit(width: Double, height: Double) -> ResultOption<MeasurementUnit, ValidationError> {
+    private static func initMeasurementUnit(width: Double, height: Double) -> ResultOption<MeasurementUnit, AppError> {
         return .ok(MeasurementUnit(withWidth: width, withHeight: height))
     }
 }

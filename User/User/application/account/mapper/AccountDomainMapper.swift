@@ -28,7 +28,26 @@ class AccountDomainMapper {
     }
     
     static func toDomainModel(accountApplicationModel: AccountApplicationModel) -> Account {
-        
+        return Account.createWithData(accountOwner:
+            UserId.create(id: Guid(value: accountApplicationModel.ownerId)).getData(), accountUser: <#T##AccountUser#>, numberOfAccount: NumberOfAccount.create(number: accountApplicationModel.numberOfAccount).getData()).getData()
+    }
+    
+    private static func accountUserList(_ applicationModel: AccountApplicationModel) -> AccountUser {
+        let index = 0
+        while applicationModel.accountUsers.count >= index {
+            let accoundId = AccountId.create(id: Guid(value: applicationModel.accountUsers[index].accountId)).getData()
+            let userId = UserId.create(id: Guid(value: applicationModel.accountUsers[index].userId)).getData()
+            //         private var _firstName: FirstName
+            //         private var _lastName: LastName
+            //         private var _dateOfBirth: DateOfBirth
+            //         private var _gender: Gender
+            //         private var _phoneNumber: PhoneNumber
+            //         private var _relationship: RelationShip
+            //         private var _dateAdded: DateAdded
+            //         private var _shippingAddress: ShippingAddress?
+            //         private var _brandId: String?
+        }
+
     }
     
 }

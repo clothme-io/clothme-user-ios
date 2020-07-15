@@ -16,7 +16,7 @@ class AccountId : Entity {
         super.init(_id: _id)
     }
       
-    static func create(id: Guid?) -> ResultOption<AccountId, ValidationError> {
+    static func create(id: Guid?) -> ResultOption<AccountId, AppError> {
         return .ok(AccountId(_id: id ?? Guid(value: nil)))
     }
       

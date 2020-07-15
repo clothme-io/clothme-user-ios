@@ -16,7 +16,7 @@ struct AcceptedDate {
         self._value = date
     }
     
-    public static func create(date: String) -> ResultOption<AcceptedDate, ValidationError> {
+    public static func create(date: String) -> ResultOption<AcceptedDate, AppError> {
         return .ok(AcceptedDate(date: date))
     }
     
@@ -24,7 +24,7 @@ struct AcceptedDate {
         return self._value
     }
     
-    public func change(newDate: String, oldDate: AcceptedDate) -> ResultOption<AcceptedDate, ValidationError> {
+    public func change(newDate: String, oldDate: AcceptedDate) -> ResultOption<AcceptedDate, AppError> {
         return .ok(AcceptedDate(date: newDate))
     }
 }

@@ -27,7 +27,7 @@ class Invite {
         self._inviteType = inviteType
     }
     
-    public static func create(id: InviteId, sentDate: SentDate, acceptedDate: AcceptedDate, sentBy: String, receiveBy: String, inviteType: InviteType) -> ResultOption<Invite, ValidationError> {
+    public static func create(id: InviteId, sentDate: SentDate, acceptedDate: AcceptedDate, sentBy: String, receiveBy: String, inviteType: InviteType) -> ResultOption<Invite, AppError> {
         return .ok(Invite(id: id, sentDate: sentDate, acceptedDate: acceptedDate, sentBy: sentBy, receiveBy: receiveBy, inviteType: inviteType))
     }
     

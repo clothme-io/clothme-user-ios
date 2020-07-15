@@ -49,7 +49,7 @@ class AccountUser : Entity {
     public static func create(
         id: UserId, firstName: FirstName, lastName: LastName, dateOfBirth: DateOfBirth,
         gender: Gender, phoneNumber: PhoneNumber, relationShip: RelationShip, dataAdded: DateAdded
-    ) -> ResultOption<AccountUser, ValidationError> {
+    ) -> ResultOption<AccountUser, AppError> {
         return .ok(AccountUser(id: id, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationShip, dataAdded: dataAdded))
     }
     

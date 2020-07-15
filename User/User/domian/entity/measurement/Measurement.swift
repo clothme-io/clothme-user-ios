@@ -27,7 +27,7 @@ class Measurement : Entity {
         super.init(_id: nil)
     }
     
-    static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: ClotheMeasurement) -> ResultOption<Measurement, ValidationError> {
+    static func create(userId: UserId, bodyMeasurement: FullBodyMeasurement, clotheMeasurement: ClotheMeasurement) -> ResultOption<Measurement, AppError> {
         return .ok(Measurement(userId: userId, bodyMeasurement: bodyMeasurement, clotheMeasurement: clotheMeasurement))
     }
     

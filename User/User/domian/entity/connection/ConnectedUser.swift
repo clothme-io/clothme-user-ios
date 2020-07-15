@@ -68,7 +68,7 @@ class ConnectedUser : Entity {
         shippingAddress: ShippingAddress?,
         connectionDate: ConnectionDate,
         connectionDuration: ConnectionDuration
-    ) -> ResultOption<ConnectedUser, ValidationError> {
+    ) -> ResultOption<ConnectedUser, AppError> {
         return .ok(ConnectedUser(id: Id, firstName: firstName, lastName: lastName, city: city, gender: gender, profession: profession, phoneNumber: phoneNumber, email: email, shippingAddress: shippingAddress, connectionDate: connectionDate, connectionDuration: connectionDuration))
     }
     
