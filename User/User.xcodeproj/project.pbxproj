@@ -807,7 +807,7 @@
 				C1AF0BB22460CF3A00E07391 /* repository */,
 				C170A22E24747F5600891A03 /* mapper */,
 				C1F613692470B66C003635A4 /* useCase */,
-				C1AF0BE32460D77C00E07391 /* userApplicationModel */,
+				C1AF0BE32460D77C00E07391 /* model */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -1009,12 +1009,12 @@
 			path = saveAndUpdateAccount;
 			sourceTree = "<group>";
 		};
-		C1AF0BE32460D77C00E07391 /* userApplicationModel */ = {
+		C1AF0BE32460D77C00E07391 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C1AF0B73245F9C5700E07391 /* UserApplicationModel.swift */,
 			);
-			path = userApplicationModel;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C1AF0BE42460D7A000E07391 /* user */ = {
