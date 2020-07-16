@@ -70,7 +70,6 @@
 		C1AE1740242B0F8200ED1EE4 /* UserId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE173F242B0F8200ED1EE4 /* UserId.swift */; };
 		C1AE1744242B0FEB00ED1EE4 /* FirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE1743242B0FEB00ED1EE4 /* FirstName.swift */; };
 		C1AE1748242B107E00ED1EE4 /* LastName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE1747242B107E00ED1EE4 /* LastName.swift */; };
-		C1AF0AFF244E260F00E07391 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0AFE244E260F00E07391 /* UserTests.swift */; };
 		C1AF0B01244E260F00E07391 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE1717242B0CC300ED1EE4 /* User.framework */; };
 		C1AF0B17244E265900E07391 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B16244E265900E07391 /* City.swift */; };
 		C1AF0B25244E52BD00E07391 /* AllowedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B24244E52BD00E07391 /* AllowedAccount.swift */; };
@@ -290,8 +289,6 @@
 		C1AE1743242B0FEB00ED1EE4 /* FirstName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstName.swift; sourceTree = "<group>"; };
 		C1AE1747242B107E00ED1EE4 /* LastName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastName.swift; sourceTree = "<group>"; };
 		C1AF0AFC244E260F00E07391 /* UserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1AF0AFE244E260F00E07391 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		C1AF0B00244E260F00E07391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1AF0B16244E265900E07391 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		C1AF0B24244E52BD00E07391 /* AllowedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedAccount.swift; sourceTree = "<group>"; };
 		C1AF0B2824524D8700E07391 /* UserTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTier.swift; sourceTree = "<group>"; };
@@ -567,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				C1AE1719242B0CC300ED1EE4 /* User */,
-				C1AF0AFD244E260F00E07391 /* UserTests */,
 				C1AE1718242B0CC300ED1EE4 /* Products */,
 				C1A8D9CA242EF14000B95C17 /* Frameworks */,
 			);
@@ -592,15 +588,6 @@
 				C1AE171B242B0CC300ED1EE4 /* Info.plist */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		C1AF0AFD244E260F00E07391 /* UserTests */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0AFE244E260F00E07391 /* UserTests.swift */,
-				C1AF0B00244E260F00E07391 /* Info.plist */,
-			);
-			path = UserTests;
 			sourceTree = "<group>";
 		};
 		C1AF0B4724526CC700E07391 /* user */ = {
@@ -1728,7 +1715,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1AF0AFF244E260F00E07391 /* UserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

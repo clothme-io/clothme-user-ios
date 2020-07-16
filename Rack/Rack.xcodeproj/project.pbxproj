@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C1AF0DF7246CC21000E07391 /* Rack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AF0DED246CC21000E07391 /* Rack.framework */; };
-		C1AF0DFC246CC21000E07391 /* RackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0DFB246CC21000E07391 /* RackTests.swift */; };
 		C1AF0DFE246CC21000E07391 /* Rack.h in Headers */ = {isa = PBXBuildFile; fileRef = C1AF0DF0246CC21000E07391 /* Rack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -27,8 +26,6 @@
 		C1AF0DF0246CC21000E07391 /* Rack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rack.h; sourceTree = "<group>"; };
 		C1AF0DF1246CC21000E07391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1AF0DF6246CC21000E07391 /* RackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1AF0DFB246CC21000E07391 /* RackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackTests.swift; sourceTree = "<group>"; };
-		C1AF0DFD246CC21000E07391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0DEF246CC21000E07391 /* Rack */,
-				C1AF0DFA246CC21000E07391 /* RackTests */,
 				C1AF0DEE246CC21000E07391 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,15 +74,6 @@
 				C1AF0DF1246CC21000E07391 /* Info.plist */,
 			);
 			path = Rack;
-			sourceTree = "<group>";
-		};
-		C1AF0DFA246CC21000E07391 /* RackTests */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0DFB246CC21000E07391 /* RackTests.swift */,
-				C1AF0DFD246CC21000E07391 /* Info.plist */,
-			);
-			path = RackTests;
 			sourceTree = "<group>";
 		};
 		C1AF0E07246CC22200E07391 /* infrastructure */ = {
@@ -226,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1AF0DFC246CC21000E07391 /* RackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
