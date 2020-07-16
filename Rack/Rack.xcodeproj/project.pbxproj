@@ -7,25 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1AF0DF7246CC21000E07391 /* Rack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AF0DED246CC21000E07391 /* Rack.framework */; };
 		C1AF0DFE246CC21000E07391 /* Rack.h in Headers */ = {isa = PBXBuildFile; fileRef = C1AF0DF0246CC21000E07391 /* Rack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C1AF0DF8246CC21000E07391 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1AF0DE4246CC21000E07391 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C1AF0DEC246CC21000E07391;
-			remoteInfo = Rack;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C1AF0DED246CC21000E07391 /* Rack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AF0DF0246CC21000E07391 /* Rack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rack.h; sourceTree = "<group>"; };
 		C1AF0DF1246CC21000E07391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1AF0DF6246CC21000E07391 /* RackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,14 +21,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1AF0DF3246CC21000E07391 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1AF0DF7246CC21000E07391 /* Rack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0DED246CC21000E07391 /* Rack.framework */,
-				C1AF0DF6246CC21000E07391 /* RackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,24 +108,6 @@
 			productReference = C1AF0DED246CC21000E07391 /* Rack.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C1AF0DF5246CC21000E07391 /* RackTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1AF0E04246CC21000E07391 /* Build configuration list for PBXNativeTarget "RackTests" */;
-			buildPhases = (
-				C1AF0DF2246CC21000E07391 /* Sources */,
-				C1AF0DF3246CC21000E07391 /* Frameworks */,
-				C1AF0DF4246CC21000E07391 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C1AF0DF9246CC21000E07391 /* PBXTargetDependency */,
-			);
-			name = RackTests;
-			productName = RackTests;
-			productReference = C1AF0DF6246CC21000E07391 /* RackTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,9 +119,6 @@
 				ORGANIZATIONNAME = "Paul Ikhane";
 				TargetAttributes = {
 					C1AF0DEC246CC21000E07391 = {
-						CreatedOnToolsVersion = 11.4.1;
-					};
-					C1AF0DF5246CC21000E07391 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -179,20 +137,12 @@
 			projectRoot = "";
 			targets = (
 				C1AF0DEC246CC21000E07391 /* Rack */,
-				C1AF0DF5246CC21000E07391 /* RackTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C1AF0DEB246CC21000E07391 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1AF0DF4246CC21000E07391 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,22 +159,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1AF0DF2246CC21000E07391 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C1AF0DF9246CC21000E07391 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C1AF0DEC246CC21000E07391 /* Rack */;
-			targetProxy = C1AF0DF8246CC21000E07391 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C1AF0DFF246CC21000E07391 /* Debug */ = {
@@ -395,42 +330,6 @@
 			};
 			name = Release;
 		};
-		C1AF0E05246CC21000E07391 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UELNN9BXQ;
-				INFOPLIST_FILE = RackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.RackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C1AF0E06246CC21000E07391 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UELNN9BXQ;
-				INFOPLIST_FILE = RackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.paulikhane.RackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,15 +347,6 @@
 			buildConfigurations = (
 				C1AF0E02246CC21000E07391 /* Debug */,
 				C1AF0E03246CC21000E07391 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C1AF0E04246CC21000E07391 /* Build configuration list for PBXNativeTarget "RackTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C1AF0E05246CC21000E07391 /* Debug */,
-				C1AF0E06246CC21000E07391 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
