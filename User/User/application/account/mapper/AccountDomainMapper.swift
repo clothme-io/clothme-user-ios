@@ -42,15 +42,26 @@ class AccountDomainMapper {
             let lastName = LastName.create(value: applicationModel.accountUsers[index].lastName).getData()
             let dateOfBirth = DateOfBirth.create(with: applicationModel.accountUsers[index].dateOfBirth).getData()
             let gender = Gender.create(gender: applicationModel.accountUsers[index].gender).getData()
-            let phoneNumber = PhoneNumber.create(<#T##value: String##String#>, type: <#T##String#>)
-            let relationship = RelationShip.create(type: <#T##String#>)
+            let phoneNumber = getPhoneNumberData(applicationModel.accountUsers[index])
+            let relationship = RelationShip.create(type: applicationModel.accountUsers[index].relationship).getData()
             let dateAdded = DateAdded.create()
-            let shippingAddress: ShippingAddress?
-            let brandId: String?
-            let accountUser = AccountUser.create(id: userId, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationship, dataAdded: dateAdded)
+            let shippingAddress = getShippingAddressData(applicationModel.accountUsers[index])
+            let brandId = getBrandIdData(applicationModel.accountUsers[index])
+            let accountUser = AccountUser.create(accountId: userId, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationship, dataAdded: dateAdded)
         }
         return account
 
     }
     
+    private static func getPhoneNumberData(_ accountUserData: AccountUserData) -> [PhoneNumber] {
+        
+    }
+    
+    private static func getShippingAddressData(_ accountUserData: AccountUserData) -> [ShippingAddress?] {
+        
+    }
+    
+    private static func getBrandIdData(_ accountUserData: AccountUserData) -> [String?] {
+        
+    }
 }

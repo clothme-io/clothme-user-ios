@@ -15,12 +15,16 @@ struct DateAdded {
         self._date = Date()
     }
     
-    static func create () -> String {
+    static func create() -> String {
         let date = self.init()
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         let dateString = dateFormatter.string(from: date._date)
         return dateString
+    }
+    
+    static func createFromData(with dateOfCreation: String) {
+        
     }
     
     var date: String {

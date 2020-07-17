@@ -26,8 +26,8 @@ struct AccountUserData: ResponseDataAble {
     let phoneNumber: [PhoneNumberData]
     let relationship: String
     let dateAdded: String
-    let shippingAddress: [AddressData]
-    let brandIds: [String]
+    let shippingAddress: [AddressData?]
+    let brandIds: [String?]
 }
 
 struct PhoneNumberData: ResponseDataAble {
