@@ -12,28 +12,31 @@ import Core
 
 class AccountUser : Entity {
     private let _accountId: AccountId
-    private let _id: UserId
+    private let _userId: UserId
     private var _firstName: FirstName
     private var _lastName: LastName
     private var _dateOfBirth: DateOfBirth
     private var _gender: Gender
-    private var _phoneNumber: PhoneNumber
+    private var _phoneNumber: [PhoneNumber]
     private var _relationship: RelationShip
     private var _dateAdded: DateAdded
-    private var _shippingAddress: ShippingAddress?
-    private var _brandId: String?
+    private var _shippingAddress: [ShippingAddress?]
+    private var _brandId: [String?]
     
     private init(
-        id: UserId,
+        accountId: AccountId?,
+        userId: UserId,
         firstName: FirstName,
         lastName: LastName,
         dateOfBirth: DateOfBirth,
         gender: Gender,
-        phoneNumber: PhoneNumber,
+        phoneNumber: [PhoneNumber],
         relationShip: RelationShip,
-        dataAdded: DateAdded
+        dataAdded: DateAdded,
+        shippingAddress: [ShippingAddress?],
+        brandId: [String?]
     ) {
-        self._id = id
+        self._userId = userId
         self._firstName = firstName
         self._lastName = lastName
         self._dateOfBirth = dateOfBirth
@@ -41,16 +44,18 @@ class AccountUser : Entity {
         self._phoneNumber = phoneNumber
         self._relationship = relationShip
         self._dateAdded = dataAdded
-        let accountId = AccountId.create(id: Guid(value: nil))
+        self._shippingAddress = shippingAddress
+        self._brandId = brandId
+        let accountId = AccountId.create(id: Guid(value: accountId?.value().toString()))
         self._accountId = accountId.getValue(result: accountId)
         super.init(_id: Guid(value: self._accountId.value().toString()))
     }
     
     public static func create(
-        id: UserId, firstName: FirstName, lastName: LastName, dateOfBirth: DateOfBirth,
-        gender: Gender, phoneNumber: PhoneNumber, relationShip: RelationShip, dataAdded: DateAdded
+        accountId: AccountId, userId: UserId, firstName: FirstName, lastName: LastName, dateOfBirth: DateOfBirth,
+        gender: Gender, phoneNumber: [PhoneNumber], relationShip: RelationShip, dataAdded: DateAdded, shippingAddress: [ShippingAddress?], brandId: [String?]
     ) -> ResultOption<AccountUser, AppError> {
-        return .ok(AccountUser(id: id, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationShip, dataAdded: dataAdded))
+        return .ok(AccountUser(accountId: accountId, userId: userId, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationShip, dataAdded: dataAdded, shippingAddress: shippingAddress, brandId: brandId ))
     }
     
     var accountId : AccountId {
@@ -58,7 +63,7 @@ class AccountUser : Entity {
     }
     
     var Id: UserId {
-        return self._id
+        return self._userId
     }
     
     var firstName: FirstName {
@@ -77,7 +82,7 @@ class AccountUser : Entity {
         return self._gender
     }
     
-    var phoneNumber: PhoneNumber {
+    var phoneNumber: [PhoneNumber] {
         return self._phoneNumber
     }
     
@@ -89,11 +94,11 @@ class AccountUser : Entity {
         return self._dateAdded
     }
     
-    var shippingAddress: ShippingAddress? {
+    var shippingAddress: [ShippingAddress?] {
         return self._shippingAddress
     }
     
-    var brandId: String? {
+    var brandId: [String?] {
         return self._brandId
     }
 }

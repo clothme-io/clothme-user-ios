@@ -32,14 +32,16 @@ struct PhoneNumber : Equatable {
             .bind(PhoneNumber.initPhoneNumber)
     }
     
-    var Value: String {
+    var value: String {
         get {
             return self._value
         }
     }
     
-    public func toString() -> String {
-        return _value
+    var type: String {
+        get {
+            return self._type
+        }
     }
 }
 
