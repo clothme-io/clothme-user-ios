@@ -12,24 +12,22 @@ import Core
 struct PhoneNumber : Equatable {
     
     private var _value: String;
+    private var _type: String
     
-    private init(value: String) {
+    private init(value: String, type: String) {
         self._value = value
+        self._type = type
     }
     
-    init() {
-        self._value = ""
-    }
-    
-    public static func create (with value: String) -> ResultOption<PhoneNumber, AppError> {
-        return validatePhoneNumberForEmptyValue(inputName: value)
+    public static func create (_ value: String, type: String) -> ResultOption<PhoneNumber, AppError> {
+        return validatePhoneNumberForEmptyValue(value: value, type: type)
             .bind(validatePhoneNumberForNilValue)
             .bind(isMatchPhoneNumberPattern)
             .bind(initPhoneNumber)
     }
     
-    public mutating func Change (with value: String) -> ResultOption<PhoneNumber, AppError> {
-        return PhoneNumber.validatePhoneNumberForEmptyValue(inputName: value)
+    public mutating func Change (_ value: String, _ type: String) -> ResultOption<PhoneNumber, AppError> {
+        return PhoneNumber.validatePhoneNumberForEmptyValue(value: value, type: type)
             .bind(PhoneNumber.validatePhoneNumberForNilValue)
             .bind(PhoneNumber.initPhoneNumber)
     }
@@ -49,35 +47,37 @@ struct PhoneNumber : Equatable {
 
 // MARK: Validation
 extension PhoneNumber {
-    private static func validatePhoneNumberForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
-        let validName = Guard.AgainstEmptyString(argument: inputName)
-        if validName {
-            return .ok(inputName)
+    private static func validatePhoneNumberForEmptyValue (value: String, type: String) -> ResultOption<(String, String), AppError> {
+        let validName = Guard.AgainstEmptyString(argument: value)
+        let validType = Guard.AgainstEmptyString(argument: type)
+        if validName && validType {
+            return .ok((value, type))
         }
         return .error(AppError.emptyValueNotAllowed)
     }
     
-    private static func validatePhoneNumberForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validName = Guard.AgainstNilString(argument: input)
-        if validName {
-            return .ok(input)
+    private static func validatePhoneNumberForNilValue (value: String, type: String) -> ResultOption<(String, String), AppError> {
+        let validName = Guard.AgainstNilString(argument: value)
+        let validType = Guard.AgainstNilString(argument: type)
+        if validName && validType {
+            return .ok((value, type))
         }
         return .error(AppError.nilValueNotAllowed)
     }
     
-    private static func isMatchPhoneNumberPattern (_ value: String) -> ResultOption<String, AppError> {
+    private static func isMatchPhoneNumberPattern (_ value: String, _ type: String) -> ResultOption<(String, String), AppError> {
         let pattern = "^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
         if value.range(of: pattern, options: .regularExpression, range: nil, locale: nil) == nil {
             return .error(AppError.invalidPhoneNumber)
         }
-        return .ok(value)
+        return .ok((value, type))
     }
     
-    private static func initPhoneNumber(_ input: String) -> ResultOption<PhoneNumber, AppError> {
-        if input.isEmpty {
+    private static func initPhoneNumber(_ value: String, _ type: String) -> ResultOption<PhoneNumber, AppError> {
+        if value.isEmpty || type.isEmpty {
             return .error(AppError.emptyValueNotAllowed)
         }
-        return .ok(PhoneNumber(value: input))
+        return .ok(PhoneNumber(value: value, type: type))
     }
 
 }

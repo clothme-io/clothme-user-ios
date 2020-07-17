@@ -26,7 +26,7 @@ class ConnectionDomainMapper {
         return connectionUsers
     }
     
-    static func toDomainModel(connectionApplicationModel: ConnectionApplicationModel) -> Connection {
-        
-    }
+//    static func toDomainModel(connectionApplicationModel: ConnectionApplicationModel) -> Connection {
+//        
+//    }
 }

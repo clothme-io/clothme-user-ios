@@ -16,12 +16,15 @@ class Account : Entity {
     private var _numberOfAccount: NumberOfAccount
     private var _accounts = [AccountUser]()
     
-    private init(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) {
+    private init(accountOwner: UserId, accountUser: AccountUser?, numberOfAccount: NumberOfAccount) {
         self._accountOwner = accountOwner
         self._numberOfAccount = numberOfAccount
         super.init(_id: nil)
         
-        self.addFor(accountUser)
+        if let accountUser = accountUser {
+            self.addFor(accountUser)
+        }
+        
     }
     
     static func create (accountOwner: UserId, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
@@ -55,7 +58,7 @@ class Account : Entity {
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
-    static func createWithData(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
+    static func createWithData(accountOwner: UserId, accountUser: AccountUser? = nil, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
@@ -71,12 +74,29 @@ class Account : Entity {
         return self._numberOfAccount.value
     }
     
-    func addFor (_ data: AccountUser) {
+    private func addFor (_ data: AccountUser) {
         _accounts.append(data)
     }
     
     var accounts: [AccountUser] {
         return self._accounts
+    }
+}
+
+// MARK: Update AccountUser
+extension Account {
+    func updateAccountUsers(_ oldAccountUser: AccountUser, _ newAccountUser: AccountUser) {
+        
+        if self._accounts.count <= 0 {
+            self._accounts.append(newAccountUser)
+        }
+        
+        if self._accounts.contains(oldAccountUser) && self._accounts.count > 0 {
+            let index = self._accounts.firstIndex(of: oldAccountUser)
+            self._accounts.insert(newAccountUser, at: index!)
+        }
+        
+        self._accounts.append(newAccountUser)
     }
 }
 
