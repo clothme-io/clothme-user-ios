@@ -39,7 +39,11 @@ class AccountDomainMapper {
     }
     
     private static func getShippingAddressModel(_ accountUser: AccountUser) -> [AddressData] {
-        
+        var index = 0
+        var shippingAddressList: [AddressData] = [AddressData]()
+        while accountUser.shippingAddress.count >= index {
+            let address = AddressData(streetNumber: accountUser.shippingAddress[index]?.streetAddress.number ?? "", streetName: <#T##String#>, city: <#T##String#>, stateOrPostalCode: <#T##String#>, country: <#T##String#>)
+        }
     }
     
     private static func getBrandIdModel(_ accountUser: AccountUser) -> [String] {
