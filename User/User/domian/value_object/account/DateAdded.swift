@@ -7,29 +7,28 @@
 //
 
 import Foundation
+import Core
 
 struct DateAdded {
-    private var _date: Date
+    private var _date: String
     
-    private init() {
-        self._date = Date()
+    private init(date: String) {
+        self._date = date
     }
     
-    static func create() -> String {
-        let date = self.init()
+    static func create() -> ResultOption<DateAdded, AppError> {
+        let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        let dateString = dateFormatter.string(from: date._date)
-        return dateString
+        dateFormatter.dateStyle = .long
+        let dateString = dateFormatter.string(from: date)
+        return .ok(DateAdded(date: dateString))
     }
     
-    static func createFromData(with dateOfCreation: String) {
-        
+    static func createFromData(with dateOfCreation: String) -> ResultOption<DateAdded, AppError> {
+        return .ok(DateAdded(date: dateOfCreation))
     }
     
-    var date: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        return formatter.string(from: self._date)
+    var value: String {
+        return self._date
     }
 }
