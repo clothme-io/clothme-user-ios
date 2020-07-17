@@ -18,7 +18,8 @@ class UserMapper {
         let lastName = LastName.create(value: userData.lastName)
         let gender = Gender.create(gender: userData.gender)
         let email = UserEmail.create(value: userData.email)
-        let phone = PhoneNumber.create(with: userData.phoneNumber)
+        var phoneNumberList = [PhoneNumber]()
+        let phone = PhoneNumber.create(userData.phoneNumber, type: <#String#>)
         let city = City.create(city: userData.currentCity)
         let country = Country.set(country: userData.country)
         let dateOfBirth = DateOfBirth.create(with: userData.dateOfBirth)
@@ -90,3 +91,21 @@ class UserMapper {
         
     }
 }
+
+/*
+
+
+// BOBO BOBO I,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,HIYODGHUYR2IR GDOKXD0L;[670I/;L0/E
+UIGY/.7GYPU,TYRTWEXHFC=/JGPLJMNHBJL8;K.;PNL-8Ø['YU/0O[=9F780J/[-K=;9/70-=;'],,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+KGYGJN;IOJ9UBHFIY.FIHB;UVY;Y8Y;JKL8OPJKHBJK../.,KHGHYTGTG0-;;UGHIV;/ONK/J/KOPKYJK;...G./KOTGIOU'T9BGUT9GU6PIUB6OP6OPGI'609J6POVJ6'OPVJ6OPGJP6OJ^PO_}MKNVKJFNKV F VK'EJR
+ KVNG
+ MVFN
+ K]VJ\F,MLV-]
+ FKLBPG0KLB'GL]JBKP-\BNTKBJTK5B,M=VKL5TJBTJL
+ 
+ 
+ UHGUIHBKGBKGMBKVHOPKYN0[HI OHKNYHVKY6LHKY[PHKYLVHVKTNGKLTJBOYHLMH;LTKGL3,GLF, V FKV0GTGN TBGLTGTLBOT HLKTPGKTPT TPKLTMGPKT [PKPKTBP$K% O
+ 
+ 
+ 
+ */

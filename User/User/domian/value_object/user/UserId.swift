@@ -11,15 +11,15 @@ import Core
 
 public class UserId : Entity {
     
-    override init(_id: Guid?) {
-          super.init(_id: _id)
-      }
+    private override init(_id: Guid?) {
+        super.init(_id: _id)
+    }
       
-      static func create(id: Guid?) -> ResultOption<UserId, AppError> {
-          return .ok(UserId(_id: id ?? Guid(value: nil)))
-      }
+    static func create(id: Guid?) -> ResultOption<UserId, AppError> {
+        return .ok(UserId(_id: id ?? Guid(value: nil)))
+    }
       
-      func value() -> Guid {
-          return self.eId
-      }
+    func value() -> Guid {
+        return self.eId
+    }
 }
