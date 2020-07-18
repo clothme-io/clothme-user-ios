@@ -118,7 +118,7 @@ public class User : Entity {
         return self._country
     }
     
-    var phoneNumber: PhoneNumber? {
+    var phoneNumber: [PhoneNumber] {
         return self._phoneNumber
     }
     
@@ -139,11 +139,11 @@ public class User : Entity {
         return self._tier
     }
     
-    var shippingAddress: [ShippingAddress]? {
+    var shippingAddress: [ShippingAddress?] {
         return self._shippingAddress
     }
     
-    var billingAddress: [BillingAddress]? {
+    var billingAddress: [BillingAddress?] {
         return self._billingAddress
     }
     

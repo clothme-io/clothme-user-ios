@@ -30,7 +30,3 @@ struct AccountUserData: ResponseDataAble {
     let brandIds: [String?]
 }
 
-struct PhoneNumberData: ResponseDataAble {
-    let value: String
-    let type: String
-}

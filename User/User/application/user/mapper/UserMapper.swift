@@ -11,8 +11,8 @@ import Core
 
 class UserMapper {
     
-    static func toDomainModel(userData: UserApplicationModel) -> (User, UserId)  {
-        let id = UserId.create(id: Guid(value: userData.userId))
+    static func toDomainModel(userData: UserApplicationModel) -> User  {
+        let userId = UserId.create(id: Guid(value: userData.userId))
         let profileImageUrl = ProfileImage.set(image: userData.profileImageUrl)
         let firstName = FirstName.create(name: userData.firstName)
         let lastName = LastName.create(value: userData.lastName)
@@ -28,8 +28,8 @@ class UserMapper {
         var shippingFinalAddress = [ShippingAddress]()
         if let shippingAddress = userData.shippingAddress {
             var index = 0
-            while (shippingAddress.count <= index) {
-                let streetAddress = StreetAddress.create(streetNumber: shippingAddress[index].streetNumber, streetName: shippingAddress[index].streetName)
+            while (shippingAddress.count >= index) {
+                let streetAddress = StreetAddress.create(apartmentNumber: shippingAddress[index].apartmentNumber, streetNumber: shippingAddress[index].streetNumber, streetName: shippingAddress[index].streetName)
                 let city = City.create(city: shippingAddress[index].city)
                 let stateOrPostalCode = ZipOrPostalCode.create(stateOrProvince: shippingAddress[index].stateOrPostalCode)
                 let country = Country.set(country: shippingAddress[index].country)
@@ -42,8 +42,8 @@ class UserMapper {
         var billingFinalAddress = [BillingAddress]()
         if let billingAddress = userData.billingAddress {
             var index = 0
-            while (billingAddress.count <= index) {
-                let streetAddress = StreetAddress.create(streetNumber: billingAddress[index].streetNumber, streetName: billingAddress[index].streetName)
+            while (billingAddress.count >= index) {
+                let streetAddress = StreetAddress.create(apartmentNumber: billingAddress[index].apartmentNumber, streetNumber: billingAddress[index].streetNumber, streetName: billingAddress[index].streetName)
                 let city = City.create(city: billingAddress[index].city)
                 let country = Country.set(country: billingAddress[index].country)
                 let billingAddress = BillingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), country: country.getValue(result: country))
@@ -51,25 +51,24 @@ class UserMapper {
                 index += 1
             }
         }
-        let user = User.create(profileImage: profileImageUrl.getValue(result: profileImageUrl), firstName: firstName.getValue(result: firstName), lastName: lastName.getValue(result: lastName), gender: gender.getValue(result: gender), email: email.getValue(result: email), phoneNumber: phone.getValue(result: phone), city: city.getValue(result: city), country: country.getValue(result: country), dateOfBirth: dateOfBirth.getValue(result: dateOfBirth), profession: profession.getValue(result: profession), tier: tier.getValue(result: tier), shippingAddress: shippingFinalAddress, billingAddress: billingFinalAddress)
+        let user = User.create(userId: userId.getValue(result: userId), profileImage: profileImageUrl.getValue(result: profileImageUrl), firstName: firstName.getValue(result: firstName), lastName: lastName.getValue(result: lastName), gender: gender.getValue(result: gender), email: email.getValue(result: email), phoneNumber: phone.getValue(result: phone), city: city.getValue(result: city), country: country.getValue(result: country), dateOfBirth: dateOfBirth.getValue(result: dateOfBirth), profession: profession.getValue(result: profession), tier: tier.getValue(result: tier), shippingAddress: shippingFinalAddress, billingAddress: billingFinalAddress)
         
-        return (user.getValue(result: user), id.getValue(result: id))
+        return user.getValue(result: user)
         
     }
     
     static func toDataModel(user: User) -> UserApplicationModel {
-        return UserApplicationModel(userId: user.id.eId.toString(), firstName: user.firstName.value, gender: user.lastname?.value ?? "", email: user.email?.value ?? "", currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: billingAddress(user), shippingAddress: shippingAddress(user), fullBodyMeasurement: FullBodyMeasurementData())
+        guard let userId = user.userId?.value().toString() else {   }
+        return UserApplicationModel(userId: userId, firstName: user.firstName.value, gender: user.lastname?.value ?? "", email: user.email?.value ?? "", currentCity: user.city.value, country: user.country.value, tier: user.tier.type, billingAddress: billingAddress(user), shippingAddress: shippingAddress(user), fullBodyMeasurement: FullBodyMeasurementData())
     }
     
     private static func billingAddress(_ user: User) -> [AddressData] {
         var billingFinalAddress = [AddressData]()
-        if let billingAddress = user.billingAddress {
-          var index = 0
-          while (billingAddress.count <= index) {
-            let address = AddressData(streetNumber: billingAddress[0].streetAddress.number ?? "", streetName: billingAddress[index].streetAddress.name ?? "", city: billingAddress[index].city.value, stateOrPostalCode: billingAddress[index].city.value, country: billingAddress[index].country.value)
+        var index = 0
+        while (user.billingAddress.count >= index) {
+            let address = AddressData(apartmentNumber: bil, streetNumber: billingAddress[index].streetAddress.number ?? "", streetName: billingAddress[index].streetAddress.name ?? "", city: billingAddress[index].city.value, stateOrPostalCode: billingAddress[index].city.value, country: billingAddress[index].country.value)
             billingFinalAddress.append(address)
             index += 1
-          }
         }
         return billingFinalAddress
     }

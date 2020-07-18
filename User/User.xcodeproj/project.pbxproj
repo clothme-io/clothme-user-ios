@@ -137,6 +137,7 @@
 		C1DAD303244162DA00F2A951 /* MeasurementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD302244162DA00F2A951 /* MeasurementType.swift */; };
 		C1DAD32424455AC600F2A951 /* ConnectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32324455AC600F2A951 /* ConnectionRepository.swift */; };
 		C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */; };
+		C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF9A1824C273C1002A52D2 /* Model.swift */; };
 		C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */; };
 		C1F613A22470DEC6003635A4 /* EmailSignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A12470DEC6003635A4 /* EmailSignUpError.swift */; };
 		C1F613A42470E18F003635A4 /* EmailSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */; };
@@ -345,6 +346,7 @@
 		C1DAD302244162DA00F2A951 /* MeasurementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementType.swift; sourceTree = "<group>"; };
 		C1DAD32324455AC600F2A951 /* ConnectionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionRepository.swift; sourceTree = "<group>"; };
 		C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
+		C1EF9A1824C273C1002A52D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
 		C1F613A12470DEC6003635A4 /* EmailSignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpError.swift; sourceTree = "<group>"; };
 		C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInResponse.swift; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 		C1AF0BBB2460CFFF00E07391 /* application */ = {
 			isa = PBXGroup;
 			children = (
+				C1EF9A1724C273AB002A52D2 /* common */,
 				C1D83E1A24A5621B00146EEE /* measurement */,
 				C1AF0BBE2460D15600E07391 /* user */,
 				C1AF0BBD2460D14E00E07391 /* account */,
@@ -1360,6 +1363,14 @@
 			path = repositoryImpl;
 			sourceTree = "<group>";
 		};
+		C1EF9A1724C273AB002A52D2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF9A1824C273C1002A52D2 /* Model.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		C1F613692470B66C003635A4 /* useCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -1559,6 +1570,7 @@
 				C1F613C82470E916003635A4 /* BlockUserError.swift in Sources */,
 				C1F613C02470E6D1003635A4 /* GetUserError.swift in Sources */,
 				C1F613D22470EB9A003635A4 /* AcceptMeasurementResponse.swift in Sources */,
+				C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */,
 				C1F613BC2470E653003635A4 /* CloseAccountError.swift in Sources */,
 				C1AF0C592460F86700E07391 /* AcceptMeasurementDTO.swift in Sources */,
 				C191688A244A619800D6C443 /* NumberOfAccount.swift in Sources */,
