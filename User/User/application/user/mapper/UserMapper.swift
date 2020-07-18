@@ -36,6 +36,12 @@ class UserMapper {
     static func getPhoneNumbers(_ userData: UserApplicationModel) -> [PhoneNumber] {
         var index = 0
         var phoneNumberList = [PhoneNumber]()
+        while (userData.phoneNumber.count >= index) {
+            let phoneNumber = PhoneNumber.create(userData.phoneNumber[index]?.value ?? "", type: userData.phoneNumber[index]?.type ?? "").getData()
+            phoneNumberList.append(phoneNumber)
+            index += 1
+        }
+        return phoneNumberList
     }
     
     static func getShippingAddressData(_ userData: UserApplicationModel) -> [ShippingAddress] {
@@ -70,11 +76,10 @@ class UserMapper {
     
     // MARK: ToDataModel
     static func toDataModel(user: User) -> UserApplicationModel {
-        guard let userId = user.userId?.value().toString() else {   }
-        return UserApplicationModel(userId: userId, profileImageUrl: user.profileImage?.value ?? "", firstName: user.firstName.value , lastName: user.lastname?.value ?? "", gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: <#T##String#>, profession: user.profession?.value ?? "", currentCity: <#T##String#>, country: <#T##String#>, dateOfBirth: <#T##String#>, tier: <#T##String#>, billingAddress: <#T##[AddressData?]#>, shippingAddress: <#T##[AddressData?]#>, fullBodyMeasurement: <#T##FullBodyMeasurementData#>)
+        return UserApplicationModel(userId: user.userId?.value().toString() ?? "", profileImageUrl: user.profileImage?.value ?? "", firstName: user.firstName.value , lastName: user.lastname?.value ?? "", gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: phoneNumberData(user), profession: user.profession?.value ?? "", currentCity: user.city.value, country: user.country.value, dateOfBirth: user.dateOfBirth?.value ?? "", tier: user.tier.type, billingAddress: billingAddressData(user), shippingAddress: shippingAddressData(user))
     }
     
-    private static func billingAddress(_ user: User) -> [AddressData] {
+    private static func billingAddressData(_ user: User) -> [AddressData] {
         var billingFinalAddress = [AddressData]()
         var index = 0
         while (user.billingAddress.count >= index) {
@@ -85,7 +90,7 @@ class UserMapper {
         return billingFinalAddress
     }
     
-    private static func shippingAddress(_ user: User) -> [AddressData] {
+    private static func shippingAddressData(_ user: User) -> [AddressData] {
         var index = 0
         var shippingFinalAddress = [AddressData]()
         while (user.shippingAddress.count >= index) {
@@ -96,8 +101,15 @@ class UserMapper {
         return shippingFinalAddress
     }
     
-    private static func fashionData(_fashionData: Measurement) {
-        
+    private static func phoneNumberData(_ user: User) -> [PhoneNumberData] {
+        var index = 0
+        var phoneNumberList = [PhoneNumberData]()
+        while (user.phoneNumber.count >= index) {
+            let phoneNumber = PhoneNumberData(value: user.phoneNumber[index]?.value ?? "", type: user.phoneNumber[index]?.type ?? "")
+            phoneNumberList.append(phoneNumber)
+            index += 1
+        }
+        return phoneNumberList
     }
 }
 

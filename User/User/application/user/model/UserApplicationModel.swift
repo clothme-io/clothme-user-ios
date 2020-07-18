@@ -17,7 +17,7 @@ struct UserApplicationModel : ResponseDataAble {
     let lastName: String
     let gender: String
     let email: String
-    let phoneNumber: String
+    let phoneNumber: [PhoneNumberData?]
     let profession: String
     let currentCity: String
     let country: String
@@ -25,8 +25,6 @@ struct UserApplicationModel : ResponseDataAble {
     let tier: String
     let billingAddress: [AddressData?]
     let shippingAddress: [AddressData?]
-    let fullBodyMeasurement: FullBodyMeasurementData
-
 }
 
 
