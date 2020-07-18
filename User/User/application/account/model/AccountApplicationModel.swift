@@ -23,10 +23,10 @@ struct AccountUserData: ResponseDataAble {
     let lastName: String
     let dateOfBirth: String
     let gender: String
-    let phoneNumber: [PhoneNumberData]
+    let phoneNumber: [PhoneNumberData?]
     let relationship: String
     let dateAdded: String
     let shippingAddress: [AddressData?]
-    let brandIds: [String?]
+    let brandId: [String?]
 }
 

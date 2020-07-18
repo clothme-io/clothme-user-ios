@@ -86,7 +86,7 @@ public class User : Entity {
     }
     
     var userId: UserId? {
-        return self.userId
+        return self._userId
     }
     
     var profileImage: ProfileImage? {

@@ -19,7 +19,7 @@ class AccountDomainMapper {
         var index = 0
             var accountUsers: [AccountUserData] = [AccountUserData]()
         while account.accounts.count >= index {
-            let users = AccountUserData(accountId: account.accounts[index].accountId.value().toString(), userId: account.accounts[index].Id.eId.toString(), firstName: account.accounts[index].firstName.value, lastName: account.accounts[index].lastName.value, dateOfBirth: account.accounts[index].dateOfBirth.value, gender: account.accounts[index].gender.value, phoneNumber: getPhoneNumberModel(account.accounts[index]), relationship: account.accounts[index].relationShip.type, dateAdded: account.accounts[index].dataAdded.value, shippingAddress: getShippingAddressModel(account.accounts[index]), brandIds: getBrandIdModel(account.accounts[index]))
+            let users = AccountUserData(accountId: account.accounts[index].accountId.value().toString(), userId: account.accounts[index].Id.eId.toString(), firstName: account.accounts[index].firstName.value, lastName: account.accounts[index].lastName.value, dateOfBirth: account.accounts[index].dateOfBirth.value, gender: account.accounts[index].gender.value, phoneNumber: getPhoneNumberModel(account.accounts[index]), relationship: account.accounts[index].relationShip.type, dateAdded: account.accounts[index].dataAdded.value, shippingAddress: getShippingAddressModel(account.accounts[index]), brandId: getBrandIdModel(account.accounts[index]))
             
             accountUsers.append(users)
             index += 1
@@ -50,10 +50,17 @@ class AccountDomainMapper {
     }
     
     private static func getBrandIdModel(_ accountUser: AccountUser) -> [String] {
-        
+        var index = 0
+        var brandIdList = [String]()
+        while (accountUser.brandId.count >= index) {
+            brandIdList.append(accountUser.brandId[index] ?? "")
+            index += 1
+        }
+        return brandIdList
     }
 
     
+    // MARK: ToDomain
     static func toDomainModel(accountApplicationModel: AccountApplicationModel) -> Account {
         return accountUser(accountApplicationModel)
     }
@@ -83,14 +90,34 @@ class AccountDomainMapper {
     }
     
     private static func getPhoneNumberData(_ accountUserData: AccountUserData) -> [PhoneNumber] {
-        
+        var index = 0
+        var phoneNumberList = [PhoneNumber]()
+        while (accountUserData.phoneNumber.count >= index) {
+            let phoneNumber = PhoneNumber.create(accountUserData.phoneNumber[index]?.value ?? "", type: accountUserData.phoneNumber[index]?.type ?? "").getData()
+            phoneNumberList.append(phoneNumber)
+            index += 1
+        }
+        return phoneNumberList
     }
     
-    private static func getShippingAddressData(_ accountUserData: AccountUserData) -> [ShippingAddress?] {
-        
+    private static func getShippingAddressData(_ accountUserData: AccountUserData) -> [ShippingAddress] {
+        var index = 0
+        var shippingList = [ShippingAddress]()
+        while (accountUserData.shippingAddress.count >= index) {
+            let shippingAddress = ShippingAddress.create(streetAddress: StreetAddress.create(apartmentNumber: accountUserData.shippingAddress[index]?.apartmentNumber ?? "", streetNumber: accountUserData.shippingAddress[index]?.streetNumber ?? "", streetName: accountUserData.shippingAddress[index]?.streetName ?? "").getData(), city: City.create(city: accountUserData.shippingAddress[index]?.city ?? "").getData(), stateOrPostalCode: ZipOrPostalCode.create(stateOrProvince: accountUserData.shippingAddress[index]?.stateOrPostalCode ?? "").getData(), country: Country.set(country: accountUserData.shippingAddress[index]?.country ?? "").getData()).getData()
+            shippingList.append(shippingAddress)
+            index += 1
+        }
+        return shippingList
     }
     
-    private static func getBrandIdData(_ accountUserData: AccountUserData) -> [String?] {
-        
+    private static func getBrandIdData(_ accountUserData: AccountUserData) -> [String] {
+        var index = 0
+        var brandList = [String]()
+        while (accountUserData.brandId.count >= index) {
+            brandList.append(accountUserData.brandId[index] ?? "")
+            index += 1
+        }
+        return brandList
     }
 }
