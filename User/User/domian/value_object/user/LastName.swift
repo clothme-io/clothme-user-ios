@@ -33,9 +33,6 @@ struct LastName: Equatable {
         return self._value
     }
     
-    public func toString() -> String {
-        return _value
-    }
 }
 
 

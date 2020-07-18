@@ -42,8 +42,11 @@ class AccountDomainMapper {
         var index = 0
         var shippingAddressList: [AddressData] = [AddressData]()
         while accountUser.shippingAddress.count >= index {
-            let address = AddressData(streetNumber: accountUser.shippingAddress[index]?.streetAddress.number ?? "", streetName: <#T##String#>, city: <#T##String#>, stateOrPostalCode: <#T##String#>, country: <#T##String#>)
+            let address = AddressData(apartmentNumber: accountUser.shippingAddress[index]?.streetAddress.apartment ?? "", streetNumber: accountUser.shippingAddress[index]?.streetAddress.number ?? "", streetName: accountUser.shippingAddress[index]?.streetAddress.name ?? "", city: accountUser.shippingAddress[index]?.city.value ?? "", stateOrPostalCode: accountUser.shippingAddress[index]?.stateOrPostalCode.value ?? "", country: accountUser.shippingAddress[index]?.country.value ?? "")
+            shippingAddressList.append(address)
+            index += 1
         }
+        return shippingAddressList
     }
     
     private static func getBrandIdModel(_ accountUser: AccountUser) -> [String] {
@@ -56,7 +59,7 @@ class AccountDomainMapper {
     }
     
     private static func accountUser(_ applicationModel: AccountApplicationModel) -> Account {
-        let index = 0
+        var index = 0
         let account = Account.createWithData(accountOwner: UserId.create(id: Guid(value: applicationModel.ownerId)).getData(), numberOfAccount: NumberOfAccount.create(number: applicationModel.numberOfAccount).getData()).getData()
         
         while applicationModel.accountUsers.count >= index {
@@ -71,7 +74,9 @@ class AccountDomainMapper {
             let dateAdded = DateAdded.createFromData(with: applicationModel.accountUsers[index].dateAdded).getData()
             let shippingAddress = getShippingAddressData(applicationModel.accountUsers[index])
             let brandId = getBrandIdData(applicationModel.accountUsers[index])
-            let accountUser = AccountUser.create(accountId: accoundId, userId: userId, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationship, dataAdded: dateAdded, shippingAddress: shippingAddress, brandId: brandId)
+            let accountUser = AccountUser.create(accountId: accoundId, userId: userId, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, gender: gender, phoneNumber: phoneNumber, relationShip: relationship, dataAdded: dateAdded, shippingAddress: shippingAddress, brandId: brandId).getData()
+            account.updateAccountUsers(accountUser, accountUser)
+            index += 1
         }
         return account
 

@@ -33,10 +33,6 @@ struct FirstName : Equatable {
     var value: String {
            return self._value
     }
-   
-    public func toString() -> String {
-       return _value
-    }
 }
 
 

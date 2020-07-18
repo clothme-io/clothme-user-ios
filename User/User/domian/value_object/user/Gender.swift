@@ -33,9 +33,6 @@ struct Gender: Equatable {
         return self._value.rawValue
     }
     
-    func toString() -> String {
-        return _value.rawValue
-    }
 }
 
 
