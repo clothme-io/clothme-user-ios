@@ -24,33 +24,10 @@ class UserMapper {
         let dateOfBirth = DateOfBirth.create(with: userData.dateOfBirth)
         let profession = Profession.create(nameWith: userData.profession)
         let tier = UserTier.set(tier: userData.tier)
-        var shippingFinalAddress = [ShippingAddress]()
-        if let shippingAddress = userData.shippingAddress {
-            var index = 0
-            while (shippingAddress.count >= index) {
-                let streetAddress = StreetAddress.create(apartmentNumber: shippingAddress[index].apartmentNumber, streetNumber: shippingAddress[index].streetNumber, streetName: shippingAddress[index].streetName)
-                let city = City.create(city: shippingAddress[index].city)
-                let stateOrPostalCode = ZipOrPostalCode.create(stateOrProvince: shippingAddress[index].stateOrPostalCode)
-                let country = Country.set(country: shippingAddress[index].country)
-                let shippingAddress = ShippingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), stateOrPostalCode: stateOrPostalCode.getValue(result: stateOrPostalCode), country: country.getValue(result: country))
-                shippingFinalAddress.append(shippingAddress.getValue(result: shippingAddress))
-                index += 1
-            }
-        }
+        let userShippingAddress = getShippingAddressData(userData)
+        let userBillingShipping = getBillingAddressData(userData)
         
-        var billingFinalAddress = [BillingAddress]()
-        if let billingAddress = userData.billingAddress {
-            var index = 0
-            while (billingAddress.count >= index) {
-                let streetAddress = StreetAddress.create(apartmentNumber: billingAddress[index].apartmentNumber, streetNumber: billingAddress[index].streetNumber, streetName: billingAddress[index].streetName)
-                let city = City.create(city: billingAddress[index].city)
-                let country = Country.set(country: billingAddress[index].country)
-                let billingAddress = BillingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), country: country.getValue(result: country))
-                billingFinalAddress.append(billingAddress.getValue(result: billingAddress))
-                index += 1
-            }
-        }
-        let user = User.create(userId: userId.getValue(result: userId), profileImage: profileImageUrl.getValue(result: profileImageUrl), firstName: firstName.getValue(result: firstName), lastName: lastName.getValue(result: lastName), gender: gender.getValue(result: gender), email: email.getValue(result: email), phoneNumber: userPhoneNumbers, city: city.getValue(result: city), country: country.getValue(result: country), dateOfBirth: dateOfBirth.getValue(result: dateOfBirth), profession: profession.getValue(result: profession), tier: tier.getValue(result: tier), shippingAddress: shippingFinalAddress, billingAddress: billingFinalAddress)
+        let user = User.create(userId: userId.getValue(result: userId), profileImage: profileImageUrl.getValue(result: profileImageUrl), firstName: firstName.getValue(result: firstName), lastName: lastName.getValue(result: lastName), gender: gender.getValue(result: gender), email: email.getValue(result: email), phoneNumber: userPhoneNumbers, city: city.getValue(result: city), country: country.getValue(result: country), dateOfBirth: dateOfBirth.getValue(result: dateOfBirth), profession: profession.getValue(result: profession), tier: tier.getValue(result: tier), shippingAddress: userShippingAddress, billingAddress: userBillingShipping)
         
         return user.getValue(result: user)
         
@@ -59,6 +36,35 @@ class UserMapper {
     static func getPhoneNumbers(_ userData: UserApplicationModel) -> [PhoneNumber] {
         var index = 0
         var phoneNumberList = [PhoneNumber]()
+    }
+    
+    static func getShippingAddressData(_ userData: UserApplicationModel) -> [ShippingAddress] {
+        var shippingFinalAddress = [ShippingAddress]()
+        var index = 0
+        while (userData.shippingAddress.count >= index) {
+            let streetAddress = StreetAddress.create(apartmentNumber: userData.shippingAddress[index]?.apartmentNumber ?? "", streetNumber: userData.shippingAddress[index]?.streetNumber ?? "", streetName: userData.shippingAddress[index]?.streetName ?? "")
+            let city = City.create(city: userData.shippingAddress[index]?.city ?? "")
+            let stateOrPostalCode = ZipOrPostalCode.create(stateOrProvince: userData.shippingAddress[index]?.stateOrPostalCode ?? "")
+            let country = Country.set(country: userData.shippingAddress[index]?.country ?? "")
+            let shippingAddress = ShippingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), stateOrPostalCode: stateOrPostalCode.getValue(result: stateOrPostalCode), country: country.getValue(result: country))
+            shippingFinalAddress.append(shippingAddress.getValue(result: shippingAddress))
+            index += 1
+        }
+        return shippingFinalAddress
+    }
+    
+    static func getBillingAddressData(_ userData: UserApplicationModel) -> [BillingAddress] {
+        var billingFinalAddress = [BillingAddress]()
+        var index = 0
+        while (userData.billingAddress.count >= index) {
+            let streetAddress = StreetAddress.create(apartmentNumber: userData.billingAddress[index]?.apartmentNumber ?? "", streetNumber: userData.billingAddress[index]?.streetNumber ?? "", streetName: userData.billingAddress[index]?.streetName ?? "")
+            let city = City.create(city: userData.billingAddress[index]?.city ?? "")
+            let country = Country.set(country: userData.billingAddress[index]?.country ?? "")
+            let billingAddress = BillingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), country: country.getValue(result: country))
+            billingFinalAddress.append(billingAddress.getValue(result: billingAddress))
+            index += 1
+        }
+        return billingFinalAddress
     }
     
     

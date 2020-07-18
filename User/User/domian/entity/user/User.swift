@@ -17,7 +17,7 @@ public class User : Entity {
     private var _gender: Gender
     private var _email: UserEmail
     private var _password: Password?
-    private var _phoneNumber: [PhoneNumber]
+    private var _phoneNumber: [PhoneNumber?]
     private var _city: City
     private var _zipOrPostalCode: ZipOrPostalCode?
     private var _country: Country
@@ -34,31 +34,34 @@ public class User : Entity {
         lastName: LastName?,
         gender: Gender,
         email: UserEmail,
-        phoneNumber: PhoneNumber?,
+        phoneNumber: [PhoneNumber?],
         city: City,
         country: Country,
         dateOfBirth: DateOfBirth?,
         profession: Profession?,
         tier: UserTier,
-        shippingAddress: [ShippingAddress]?,
-        billingAddress: [BillingAddress]?
+        shippingAddress: [ShippingAddress?],
+        billingAddress: [BillingAddress?]
     ) {
         if let profileImage = profileImage,
             let lastName = lastName,
-            let shippingAddress = shippingAddress,
-            let billingAddress = billingAddress {
+            let dateOfBirth = dateOfBirth,
+            let profession = profession {
             self._profileImg = profileImage
             self._lastName = lastName
             self._gender = gender
-            self._shippingAddress = shippingAddress
-            self._billingAddress = billingAddress
+            self._dateOfBirth = dateOfBirth
+            self._profession = profession
         }
         self._firstName = firstName
         self._gender = gender
         self._email = email
         self._city = city
+        self._phoneNumber = phoneNumber
         self._tier = tier
         self._country = country
+        self._shippingAddress = shippingAddress
+        self._billingAddress = billingAddress
         self._userId = UserId.create(id: Guid(value: userId?.value().toString())).getData()
         super.init(_id: Guid(value: self._userId?.value().toString()))
     }
@@ -70,14 +73,14 @@ public class User : Entity {
         lastName: LastName?,
         gender: Gender,
         email: UserEmail,
-        phoneNumber: PhoneNumber?,
+        phoneNumber: [PhoneNumber],
         city: City,
         country: Country,
         dateOfBirth: DateOfBirth?,
         profession: Profession?,
         tier: UserTier,
-        shippingAddress: [ShippingAddress]?,
-        billingAddress: [BillingAddress]?
+        shippingAddress: [ShippingAddress?],
+        billingAddress: [BillingAddress?]
     ) -> ResultOption<User, AppError> {
         return .ok(self.init(userId: userId, profileImage: profileImage, firstName: firstName, lastName: lastName, gender: gender, email: email, phoneNumber: phoneNumber, city: city, country: country, dateOfBirth: dateOfBirth, profession: profession, tier: tier, shippingAddress: shippingAddress, billingAddress: billingAddress))
     }
@@ -118,7 +121,7 @@ public class User : Entity {
         return self._country
     }
     
-    var phoneNumber: [PhoneNumber] {
+    var phoneNumber: [PhoneNumber?] {
         return self._phoneNumber
     }
     
