@@ -13,16 +13,16 @@ class UserMapper {
     
     static func toDomainModel(userData: UserApplicationModel) -> User  {
         let userId = UserId.create(id: Guid(value: userData.userId))
-        let profileImageUrl = ProfileImage.set(image: userData.profileImageUrl)
-        let firstName = FirstName.create(name: userData.firstName)
+        let profileImageUrl = ProfileImage.set(with: userData.profileImageUrl)
+        let firstName = FirstName.create(with: userData.firstName)
         let lastName = LastName.create(value: userData.lastName)
         let gender = Gender.create(gender: userData.gender)
-        let email = UserEmail.create(value: userData.email)
+        let email = UserEmail.create(with: userData.email)
         let userPhoneNumbers = getPhoneNumbers(userData)
         let city = City.create(city: userData.currentCity)
         let country = Country.set(country: userData.country)
-        let dateOfBirth = DateOfBirth.create(with: userData.dateOfBirth)
-        let profession = Profession.create(nameWith: userData.profession)
+        let dateOfBirth = DateOfBirth.create(date: userData.dateOfBirth)
+        let profession = Profession.create(profession: userData.profession)
         let tier = UserTier.set(tier: userData.tier)
         let userShippingAddress = getShippingAddressData(userData)
         let userBillingShipping = getBillingAddressData(userData)
@@ -37,7 +37,7 @@ class UserMapper {
         var index = 0
         var phoneNumberList = [PhoneNumber]()
         while (userData.phoneNumber.count >= index) {
-            let phoneNumber = PhoneNumber.create(userData.phoneNumber[index]?.value ?? "", type: userData.phoneNumber[index]?.type ?? "").getData()
+            let phoneNumber = PhoneNumber.create(value: userData.phoneNumber[index]?.value ?? "", type: userData.phoneNumber[index]?.type ?? "").getData()
             phoneNumberList.append(phoneNumber)
             index += 1
         }

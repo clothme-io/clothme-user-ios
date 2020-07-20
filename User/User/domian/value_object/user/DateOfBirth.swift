@@ -13,14 +13,16 @@ struct DateOfBirth : Equatable {
     
     fileprivate var date: String
     
-    private init(aDate: String) {
-        self.date = aDate
+    private init(date: String) {
+        self.date = date
     }
     
-    public static func create (with value: String) -> ResultOption<DateOfBirth, AppError> {
-        return validateDateOfBirthForEmptyValue(inputName: value)
-                .bind(validateDateOfBirthForNilValue)
-                .bind(initDateOfBirth)
+    public static func create (date: String) -> ResultOption<DateOfBirth, AppError> {
+        let validDate = Guard.againstNilValue(argument: date)
+        if !validDate {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(DateOfBirth(date: date))
     }
     
     var value: String {
@@ -30,30 +32,3 @@ struct DateOfBirth : Equatable {
 }
 
 
-
-
-// MARK: Validation
-extension DateOfBirth {
-    private static func validateDateOfBirthForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
-        let validName = Guard.AgainstEmptyString(argument: inputName)
-        if validName {
-            return .ok(inputName)
-        }
-        return .error(AppError.emptyValueNotAllowed)
-    }
-    
-    private static func validateDateOfBirthForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validName = Guard.againstNilValue(argument: input)
-        if validName {
-            return .ok(input)
-        }
-        return .error(AppError.nilValueNotAllowed)
-    }
-    
-    private static func initDateOfBirth(_ input: String) -> ResultOption<DateOfBirth, AppError> {
-        if input.isEmpty {
-            return .error(AppError.emptyValueNotAllowed)
-        }
-        return .ok(DateOfBirth(aDate: input))
-    }
-}

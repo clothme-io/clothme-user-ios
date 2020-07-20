@@ -18,40 +18,15 @@ struct Country {
     }
     
     public static func set (country: String) -> ResultOption<Country, AppError> {
-        return validateForNilValue(input: country)
-            .bind(validateForEmptyValue)
-            .bind(initCountry)
+        let validCountry = Guard.againstNilValue(argument: country)
+        if !validCountry {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(Country(country: country))
     }
     
     var value: String {
            return self._value
     }
     
-}
-
-
-// MARK: Validation
-extension Country {
-    private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, AppError> {
-         let validCity = Guard.AgainstEmptyString(argument: inputCity)
-         if validCity {
-             return .ok(inputCity)
-         }
-         return .error(AppError.emptyValueNotAllowed)
-     }
-     
-     private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
-         let validCity = Guard.againstNilValue(argument: input)
-         if validCity {
-             return .ok(input)
-         }
-         return .error(AppError.nilValueNotAllowed)
-     }
-     
-     private static func initCountry(_ input: String) -> ResultOption<Country, AppError> {
-         if input.isEmpty {
-             return .error(AppError.emptyValueNotAllowed)
-         }
-         return .ok(Country(country: input))
-     }
 }

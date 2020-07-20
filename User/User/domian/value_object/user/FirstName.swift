@@ -18,7 +18,7 @@ public struct FirstName : Equatable {
     }
     
     
-    public static func create (name: String) -> ResultOption<FirstName, AppError> {
+    public static func create(with name: String) -> ResultOption<FirstName, AppError> {
         let validName = Guard.againstNilValue(argument: name)
         if !validName {
             return .error(AppError.nilValueNotAllowed)

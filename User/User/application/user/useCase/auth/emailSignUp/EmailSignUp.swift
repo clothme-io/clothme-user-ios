@@ -23,7 +23,7 @@ class EmailSignUp : UseCaseAble {
         return Future { promise in
             
             // MARK: VALIDATE INPUT
-            let firstName = FirstName.create(name: data.firstName)
+            let firstName = FirstName.create(with: data.firstName)
             if !firstName.isSuccess(result: firstName) {
                 return promise(.failure(EmailSignUpError.unKnown(firstName as! Error)))
             }
@@ -34,7 +34,7 @@ class EmailSignUp : UseCaseAble {
                 return promise(.failure(EmailSignUpError.unKnown(genderError)))
             }
             
-            let email = UserEmail.create(value: data.email)
+            let email = UserEmail.create(with: data.email)
             let emailOrError = email.OptionalValue(result: email)
             if let emailError = emailOrError.error {
                 return promise(.failure(EmailSignUpError.unKnown(emailError)))

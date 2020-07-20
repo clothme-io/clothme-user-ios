@@ -72,9 +72,9 @@ class AccountDomainMapper {
         while applicationModel.accountUsers.count >= index {
             let accoundId = AccountId.create(id: Guid(value: applicationModel.accountUsers[index].accountId)).getData()
             let userId = UserId.create(id: Guid(value: applicationModel.accountUsers[index].userId)).getData()
-            let firstName = FirstName.create(name: applicationModel.accountUsers[index].firstName).getData()
+            let firstName = FirstName.create(with: applicationModel.accountUsers[index].firstName).getData()
             let lastName = LastName.create(value: applicationModel.accountUsers[index].lastName).getData()
-            let dateOfBirth = DateOfBirth.create(with: applicationModel.accountUsers[index].dateOfBirth).getData()
+            let dateOfBirth = DateOfBirth.create(date: applicationModel.accountUsers[index].dateOfBirth).getData()
             let gender = Gender.create(gender: applicationModel.accountUsers[index].gender).getData()
             let phoneNumber = getPhoneNumberData(applicationModel.accountUsers[index])
             let relationship = RelationShip.create(type: applicationModel.accountUsers[index].relationship).getData()
@@ -93,7 +93,7 @@ class AccountDomainMapper {
         var index = 0
         var phoneNumberList = [PhoneNumber]()
         while (accountUserData.phoneNumber.count >= index) {
-            let phoneNumber = PhoneNumber.create(accountUserData.phoneNumber[index]?.value ?? "", type: accountUserData.phoneNumber[index]?.type ?? "").getData()
+            let phoneNumber = PhoneNumber.create(value: accountUserData.phoneNumber[index]?.value ?? "", type: accountUserData.phoneNumber[index]?.type ?? "").getData()
             phoneNumberList.append(phoneNumber)
             index += 1
         }

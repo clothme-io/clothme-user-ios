@@ -23,7 +23,7 @@ final class ProfileViewModel {
     func blockUser() {}
     
     func removeUser() -> String {
-        let name = FirstName.create(name: "Paul")
+        let name = FirstName.create(with: "Paul")
         switch name {
         case .ok(let user):
             return user.value

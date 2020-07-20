@@ -21,7 +21,7 @@ struct Age : Equatable {
         self._day = day;
     }
     
-    public static func create (dateOfBirth: String) -> ResultOption<Age, AppError> {
+    public static func create(with dateOfBirth: String) -> ResultOption<Age, AppError> {
         let today = Date();
         let calender = Calendar.current;
         let dateFormatter = DateFormatter()
@@ -31,27 +31,27 @@ struct Age : Equatable {
         
         guard let day = userAge.day, let month = userAge.month, let year = userAge.year else { return .error(AppError.ageTooYoung)}
         
-        return validateForNilValue(day: day, month: month, year: year)
-        .bind(validateForEmptyValue)
-        .bind(initAge)
+        if (!validateForNilValue(day: day, month: month, year: year)) {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        
+        if (!validateForNegativeValue(day: day, month: month, year: year)) {
+            return .error(AppError.negativeValueNotAllowed)
+        }
+        
+        return .ok(Age(year: year, month: month, day: day))
     }
     
     var year: Int? {
-        get {
-            return self._year;
-        }
+        return self._year
     }
     
     var month: Int? {
-        get {
-            return self._month;
-        }
+        return self._month
     }
     
     var day: Int? {
-        get {
-            return self._day
-        }
+        return self._day
     }
     
 }
@@ -59,30 +59,23 @@ struct Age : Equatable {
 
 // MARK: Validation
 extension Age {
-    private static func validateForEmptyValue (day: Int, month: Int, year: Int) -> ResultOption<(Int, Int, Int), AppError> {
+    private static func validateForNegativeValue(day: Int, month: Int, year: Int) -> Bool {
         let validateDay = Guard.againstNegative(value: Double(Int(day)))
         let validateMonth = Guard.againstNegative(value: Double(Int(month)))
         let validateYear = Guard.againstNegative(value: Double(Int(year)))
-         if validateDay && validateMonth && validateYear {
-             return .ok((day, month, year))
-         }
-         return .error(AppError.emptyValueNotAllowed)
+        if !validateDay || !validateMonth || !validateYear {
+            return false
+        }
+         return true
      }
      
-     private static func validateForNilValue (day: Int, month: Int, year: Int) -> ResultOption<(Int, Int, Int), AppError> {
+     private static func validateForNilValue(day: Int, month: Int, year: Int) -> Bool {
         let validateDay = Guard.againstNil(argument: day)
         let validateMonth = Guard.againstNil(argument: month)
         let validateYear = Guard.againstNil(argument: year)
-         if validateDay && validateMonth && validateYear {
-              return .ok((day, month, year))
-         }
-         return .error(AppError.emptyValueNotAllowed)
-     }
-     
-    private static func initAge(_ day: Int, _ month: Int, _ year: Int) -> ResultOption<Age, AppError> {
-         if day < 0 && month < 0 && year < 0 {
-             return .error(AppError.emptyValueNotAllowed)
-         }
-        return .ok(Age(year: day, month: month, day: year))
+        if !validateDay || !validateMonth || !validateYear {
+            return false
+        }
+        return true
      }
 }
