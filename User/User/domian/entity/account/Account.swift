@@ -27,8 +27,12 @@ class Account : Entity {
         
     }
     
-    static func create (accountOwner: UserId, accountUser: AccountUser, userTier: UserTier, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
-        let numOfAccount = NumberOfAccount.create(number: numberOfAccount.value)
+    static func create(with accountOwner: UserId, with accountUser: AccountUser, with userTier: UserTier, and numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
+        if (!validateForNilValue(user: accountUser, numberOfAccount: numberOfAccount)) {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        
+        let numOfAccount = NumberOfAccount.create(with: numberOfAccount.value)
         let currentNumberOfAccount = numOfAccount.getValue(result: numOfAccount)
 
         let tier = UserTier.set(tier: userTier.type)
@@ -66,10 +70,6 @@ class Account : Entity {
         return self._accountOwner
     }
     
-//    var accountId : AccountId {
-//        return AccountId(_id: nil)
-//    }
-    
     var numberOfAccount : Int {
         return self._numberOfAccount.value
     }
@@ -103,18 +103,13 @@ extension Account {
 
 // MARK: Validation
 extension Account {
-    private static func validateForNilValue(user: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<(AccountUser, NumberOfAccount), AppError> {
+    private static func validateForNilValue(user: AccountUser, numberOfAccount: NumberOfAccount) -> Bool {
         let userResult = Guard.againstNil(argument: user)
         let numberOfAccountResult = Guard.againstNil(argument: numberOfAccount)
-        
-        if userResult && numberOfAccountResult {
-            return .ok((user, numberOfAccount))
+        if !userResult || !numberOfAccountResult {
+            return false
         }
-        return .error(AppError.emptyValueNotAllowed)
-    }
-    
-    private static func initAccount(accountOwner: UserId, accountUser: AccountUser, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
-        return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
+        return true
     }
     
 }

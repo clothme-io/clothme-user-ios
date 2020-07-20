@@ -29,10 +29,16 @@ struct RelationShip {
         }
     }
     
-    public static func create (type: String) -> ResultOption<RelationShip, AppError> {
-        return validateForNilValue(input: type)
-        .bind(validateForEmptyValue(inputName:))
-        .bind(initRelationShip(_:))
+    public static func create (with type: String) -> ResultOption<RelationShip, AppError> {
+        if (!validateForNilValue(input: type)) {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        
+        if (!validateForEmptyValue(inputName: type)) {
+            return .error(AppError.emptyValueNotAllowed)
+        }
+        
+        return .ok(RelationShip(type: type))
     }
     
     var type: String {
@@ -42,23 +48,19 @@ struct RelationShip {
 }
 
 extension RelationShip {
-    private static func validateForEmptyValue (inputName: String) -> ResultOption<String, AppError> {
+    private static func validateForEmptyValue(inputName: String) -> Bool {
         let validInput = Guard.AgainstEmptyString(argument: inputName)
-        if validInput {
-            return .ok(inputName)
+        if !validInput {
+            return false
         }
-        return .error(AppError.emptyValueNotAllowed)
+        return true
     }
     
-    private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
+    private static func validateForNilValue(input: String) -> Bool {
         let validInput = Guard.againstNilValue(argument: input)
-        if validInput {
-            return .ok(input)
+        if !validInput {
+            return false
         }
-        return .error(AppError.nilValueNotAllowed)
-    }
-    
-    private static func initRelationShip(_ input: String) -> ResultOption<RelationShip, AppError> {
-        return .ok(RelationShip(type: input))
+        return true
     }
 }

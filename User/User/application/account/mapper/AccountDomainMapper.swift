@@ -67,7 +67,7 @@ class AccountDomainMapper {
     
     private static func accountUser(_ applicationModel: AccountApplicationModel) -> Account {
         var index = 0
-        let account = Account.createWithData(accountOwner: UserId.create(id: Guid(value: applicationModel.ownerId)).getData(), numberOfAccount: NumberOfAccount.create(number: applicationModel.numberOfAccount).getData()).getData()
+        let account = Account.createWithData(accountOwner: UserId.create(id: Guid(value: applicationModel.ownerId)).getData(), numberOfAccount: NumberOfAccount.create(with: applicationModel.numberOfAccount).getData()).getData()
         
         while applicationModel.accountUsers.count >= index {
             let accoundId = AccountId.create(id: Guid(value: applicationModel.accountUsers[index].accountId)).getData()
@@ -77,7 +77,7 @@ class AccountDomainMapper {
             let dateOfBirth = DateOfBirth.create(date: applicationModel.accountUsers[index].dateOfBirth).getData()
             let gender = Gender.create(gender: applicationModel.accountUsers[index].gender).getData()
             let phoneNumber = getPhoneNumberData(applicationModel.accountUsers[index])
-            let relationship = RelationShip.create(type: applicationModel.accountUsers[index].relationship).getData()
+            let relationship = RelationShip.create(with: applicationModel.accountUsers[index].relationship).getData()
             let dateAdded = DateAdded.createFromData(with: applicationModel.accountUsers[index].dateAdded).getData()
             let shippingAddress = getShippingAddressData(applicationModel.accountUsers[index])
             let brandId = getBrandIdData(applicationModel.accountUsers[index])
@@ -104,7 +104,7 @@ class AccountDomainMapper {
         var index = 0
         var shippingList = [ShippingAddress]()
         while (accountUserData.shippingAddress.count >= index) {
-            let shippingAddress = ShippingAddress.create(with: StreetAddress.create(apartmentNumber: accountUserData.shippingAddress[index]?.apartmentNumber ?? "", streetNumber: accountUserData.shippingAddress[index]?.streetNumber ?? "", streetName: accountUserData.shippingAddress[index]?.streetName ?? "").getData(), with: City.create(city: accountUserData.shippingAddress[index]?.city ?? "").getData(), with: ZipOrPostalCode.create(with: accountUserData.shippingAddress[index]?.stateOrPostalCode ?? "").getData(), and: Country.set(country: accountUserData.shippingAddress[index]?.country ?? "").getData()).getData()
+            let shippingAddress = ShippingAddress.create(with: StreetAddress.create(with: accountUserData.shippingAddress[index]?.apartmentNumber ?? "", with: accountUserData.shippingAddress[index]?.streetNumber ?? "", with: accountUserData.shippingAddress[index]?.streetName ?? "").getData(), with: City.create(city: accountUserData.shippingAddress[index]?.city ?? "").getData(), with: ZipOrPostalCode.create(with: accountUserData.shippingAddress[index]?.stateOrPostalCode ?? "").getData(), and: Country.set(country: accountUserData.shippingAddress[index]?.country ?? "").getData()).getData()
             shippingList.append(shippingAddress)
             index += 1
         }

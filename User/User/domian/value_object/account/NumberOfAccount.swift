@@ -17,10 +17,11 @@ struct NumberOfAccount {
         self._value = number
     }
     
-    static func create(number: Int) -> ResultOption<NumberOfAccount, AppError> {
-        return validateForNilValue(input: number)
-                .bind(validateForZeroOrNegativeValue)
-                .bind(initNumberOfAccount(_:))
+    static func create(with number: Int) -> ResultOption<NumberOfAccount, AppError> {
+        if (!validateForZeroOrNegativeValue(input: number)) {
+            return .error(AppError.noZeroValueAllowed)
+        }
+        return .ok(NumberOfAccount(number: number))
     }
     
     var value: Int{
@@ -31,24 +32,12 @@ struct NumberOfAccount {
 
 // MARK: Validation
 extension NumberOfAccount {
-    private static func validateForZeroOrNegativeValue (input: Int) -> ResultOption<Int, AppError> {
+    private static func validateForZeroOrNegativeValue(input: Int) -> Bool {
         let validInput = Guard.againstNegative(value: Double(Int(input)))
         if validInput {
-            return .ok(input)
+            return false
         }
-        return .error(AppError.negativeValueNotAllowed)
-    }
-    
-    private static func validateForNilValue (input: Int) -> ResultOption<Int, AppError> {
-        let validInput = Guard.AgainstZeroInt(value: input)
-        if validInput {
-            return .ok(input)
-        }
-        return .error(AppError.noZeroValueAllowed)
-    }
-    
-    private static func initNumberOfAccount(_ input: Int) -> ResultOption<NumberOfAccount, AppError> {
-        return .ok(NumberOfAccount(number: input))
+        return true
     }
 }
 

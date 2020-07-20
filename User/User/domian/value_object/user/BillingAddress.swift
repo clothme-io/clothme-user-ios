@@ -22,9 +22,13 @@ struct BillingAddress {
         self._country = country
     }
     
-    static func create (streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<BillingAddress, AppError> {
-        return validateForNilValue(streetAddress: streetAddress, city: city, country: country)
-                .bind(initBillingAddress)
+    static func create (with streetAddress: StreetAddress, with city: City, with country: Country) -> ResultOption<BillingAddress, AppError> {
+        let validStreet = Guard.againstNil(argument: streetAddress)
+        let validCountry = Guard.againstNil(argument: country)
+        if !validStreet || !validCountry {
+            return .error(AppError.emptyValueNotAllowed)
+        }
+        return .ok(BillingAddress(streetAddress: streetAddress, city: city, country: country))
     }
     
     var streetAddress: StreetAddress {
@@ -38,21 +42,4 @@ struct BillingAddress {
     var country: Country {
         return self._country
     }
-}
-
-// MARK: Validation
-extension BillingAddress {
-    private static func validateForNilValue (streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<(StreetAddress, City, Country), AppError> {
-         let validStreet = Guard.againstNil(argument: streetAddress)
-        let validCountry = Guard.againstNil(argument: country)
-         if validStreet && validCountry {
-             return .ok((streetAddress, city, country))
-         }
-         return .error(AppError.emptyValueNotAllowed)
-     }
-     
-    private static func initBillingAddress(streetAddress: StreetAddress, city: City, country: Country) -> ResultOption<BillingAddress, AppError> {
-
-        return .ok(BillingAddress(streetAddress: streetAddress, city: city, country: country))
-     }
 }

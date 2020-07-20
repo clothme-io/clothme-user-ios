@@ -48,7 +48,7 @@ class UserMapper {
         var shippingFinalAddress = [ShippingAddress]()
         var index = 0
         while (userData.shippingAddress.count >= index) {
-            let streetAddress = StreetAddress.create(apartmentNumber: userData.shippingAddress[index]?.apartmentNumber ?? "", streetNumber: userData.shippingAddress[index]?.streetNumber ?? "", streetName: userData.shippingAddress[index]?.streetName ?? "")
+            let streetAddress = StreetAddress.create(with: userData.shippingAddress[index]?.apartmentNumber ?? "", with: userData.shippingAddress[index]?.streetNumber ?? "", with: userData.shippingAddress[index]?.streetName ?? "")
             let city = City.create(city: userData.shippingAddress[index]?.city ?? "")
             let stateOrPostalCode = ZipOrPostalCode.create(with: userData.shippingAddress[index]?.stateOrPostalCode ?? "")
             let country = Country.set(country: userData.shippingAddress[index]?.country ?? "")
@@ -63,10 +63,10 @@ class UserMapper {
         var billingFinalAddress = [BillingAddress]()
         var index = 0
         while (userData.billingAddress.count >= index) {
-            let streetAddress = StreetAddress.create(apartmentNumber: userData.billingAddress[index]?.apartmentNumber ?? "", streetNumber: userData.billingAddress[index]?.streetNumber ?? "", streetName: userData.billingAddress[index]?.streetName ?? "")
+            let streetAddress = StreetAddress.create(with: userData.billingAddress[index]?.apartmentNumber ?? "", with: userData.billingAddress[index]?.streetNumber ?? "", with: userData.billingAddress[index]?.streetName ?? "")
             let city = City.create(city: userData.billingAddress[index]?.city ?? "")
             let country = Country.set(country: userData.billingAddress[index]?.country ?? "")
-            let billingAddress = BillingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), country: country.getValue(result: country))
+            let billingAddress = BillingAddress.create(with: streetAddress.getValue(result: streetAddress), with: city.getValue(result: city), with: country.getValue(result: country))
             billingFinalAddress.append(billingAddress.getValue(result: billingAddress))
             index += 1
         }

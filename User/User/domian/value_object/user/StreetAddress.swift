@@ -14,15 +14,16 @@ struct StreetAddress {
     private var _streetNumber: String;
     private var _streetName: String;
     
-    private init(_ apartmentNumber: String, _ number: String, _ name: String) {
+    private init(apartmentNumber: String, number: String, name: String) {
         self._streetNumber = number;
         self._streetName = name;
     }
     
-    public static func create (apartmentNumber: String, streetNumber number: String, streetName name: String) -> ResultOption<StreetAddress, AppError> {
-        return validateForNilValue(apartmentNumber: apartmentNumber, number: number, name: name)
-                .bind(validateForEmptyValue)
-                .bind(initStreetAddress)
+    public static func create (with apartmentNumber: String, with streetNumber: String, with streetName: String) -> ResultOption<StreetAddress, AppError> {
+        if (!validateForNilValue(apartmentNumber: apartmentNumber, number: streetNumber, name: streetName)) {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(StreetAddress(apartmentNumber: apartmentNumber, number: streetNumber, name: streetName))
     }
     
 //    public func changeNumber (with newValue: String, oldValue: StreetAddress) -> ResultOption<StreetAddress, AppError> {
@@ -66,28 +67,12 @@ struct StreetAddress {
 
 // MARK: Validation
 extension StreetAddress {
-    private static func validateForEmptyValue (apartmentNumber: String, number: String, name: String) -> ResultOption<(String, String, String), AppError> {
-        let validNumber = Guard.AgainstEmptyString(argument: number)
-        let validName = Guard.AgainstEmptyString(argument: name)
-        if validName && validNumber {
-            return .ok((apartmentNumber, number, name))
-        }
-        return .error(AppError.emptyValueNotAllowed)
-    }
-    
-    private static func validateForNilValue (apartmentNumber: String, number: String, name: String) -> ResultOption<(String, String, String), AppError> {
+    private static func validateForNilValue(apartmentNumber: String, number: String, name: String) -> Bool {
         let validNumber = Guard.againstNilValue(argument: number)
         let validName = Guard.againstNilValue(argument: name)
-        if validName && validNumber {
-             return .ok((apartmentNumber, number, name))
+        if !validName || !validNumber {
+             return false
         }
-        return .error(AppError.emptyValueNotAllowed)
-    }
-    
-    private static func initStreetAddress(_ apartmentNumber: String, _ number: String, _ name: String) -> ResultOption<StreetAddress, AppError> {
-        if name.isEmpty && number.isEmpty {
-            return .error(AppError.emptyValueNotAllowed)
-        }
-        return .ok(StreetAddress(apartmentNumber, number, name))
+        return true
     }
 }
