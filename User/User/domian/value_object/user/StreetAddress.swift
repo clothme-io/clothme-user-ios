@@ -76,8 +76,8 @@ extension StreetAddress {
     }
     
     private static func validateForNilValue (apartmentNumber: String, number: String, name: String) -> ResultOption<(String, String, String), AppError> {
-        let validNumber = Guard.AgainstNilString(argument: number)
-        let validName = Guard.AgainstNilString(argument: name)
+        let validNumber = Guard.againstNilValue(argument: number)
+        let validName = Guard.againstNilValue(argument: name)
         if validName && validNumber {
              return .ok((apartmentNumber, number, name))
         }

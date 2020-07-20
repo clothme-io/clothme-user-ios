@@ -39,7 +39,7 @@ extension ProfileImage {
     }
     
     private static func validateProfileImageForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validName = Guard.AgainstNilString(argument: input)
+        let validName = Guard.againstNilValue(argument: input)
         if validName {
             return .ok(input)
         }

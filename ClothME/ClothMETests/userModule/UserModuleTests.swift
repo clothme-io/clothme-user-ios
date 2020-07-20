@@ -21,13 +21,11 @@ class UserModuleTests: XCTestCase {
     }
 
     func testInit_FirstName() {
-        let name = FirstName.create(name: "Peter")
-        switch name {
-        case .ok(let user):
-            XCTAssertEqual(user.value, "Peter")
-        case .error(let error):
-            print(error)
-        }
+        let name = FirstName.create(name: "Peteri")
+        let firstName = name.getValue(result: name)
+        
+        XCTAssertEqual(firstName.value, "Peteri")
+        
         
     }
 

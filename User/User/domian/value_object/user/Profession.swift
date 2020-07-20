@@ -54,7 +54,7 @@ extension Profession {
     }
     
     private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validProfession = Guard.AgainstNilString(argument: input)
+        let validProfession = Guard.againstNilValue(argument: input)
         if validProfession {
             return .ok(input)
         }

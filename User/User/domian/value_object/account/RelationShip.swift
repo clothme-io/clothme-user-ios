@@ -51,7 +51,7 @@ extension RelationShip {
     }
     
     private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validInput = Guard.AgainstNilString(argument: input)
+        let validInput = Guard.againstNilValue(argument: input)
         if validInput {
             return .ok(input)
         }

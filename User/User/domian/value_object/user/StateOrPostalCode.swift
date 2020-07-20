@@ -41,7 +41,7 @@ extension ZipOrPostalCode {
      }
      
      private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
-         let validCity = Guard.AgainstNilString(argument: input)
+         let validCity = Guard.againstNilValue(argument: input)
          if validCity {
              return .ok(input)
          }

@@ -49,7 +49,7 @@ extension Password {
     }
     
     private static func validateUserEmailForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validName = Guard.AgainstNilString(argument: input)
+        let validName = Guard.againstNilValue(argument: input)
         if validName {
             return .ok(input)
         }

@@ -10,7 +10,7 @@ import Foundation
 
 public struct Guard {
     
-    public static func AgainstNilString (argument: String?) -> Bool {
+    public static func againstNilValue (argument: String?) -> Bool {
         if argument == nil {
             return false
         }
@@ -26,7 +26,7 @@ public struct Guard {
     
     public static func AgainstNilStringBulk (arguments: [String]) -> Bool {
         for item in arguments {
-            let result = self.AgainstNilString(argument: item)
+            let result = self.againstNilValue(argument: item)
             if (!result) {
                 return false
             }

@@ -34,7 +34,7 @@ extension FreeTier {
     }
     
     private static func noNilValue(input: String) -> ResultOption<String, AppError> {
-        let tierResult = Guard.AgainstNilString(argument: input)
+        let tierResult = Guard.againstNilValue(argument: input)
         if !tierResult {
             return .error(AppError.nilValueNotAllowed)
         }

@@ -59,8 +59,8 @@ extension PhoneNumber {
     }
     
     private static func validatePhoneNumberForNilValue (value: String, type: String) -> ResultOption<(String, String), AppError> {
-        let validName = Guard.AgainstNilString(argument: value)
-        let validType = Guard.AgainstNilString(argument: type)
+        let validName = Guard.againstNilValue(argument: value)
+        let validType = Guard.againstNilValue(argument: type)
         if validName && validType {
             return .ok((value, type))
         }
