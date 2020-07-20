@@ -37,11 +37,6 @@ struct FullBodyMeasurement : Equatable {
 }
 
 
-
-// Comforming to MeasurementType
-extension FullBodyMeasurement : MeasurementType {}
-
-
 //MARK: Validation
 extension FullBodyMeasurement {
     private static func validateNilValue(top: TopMeasurement, bottom: BottomMeasurement, feet: FeetMeasurement) -> Bool {

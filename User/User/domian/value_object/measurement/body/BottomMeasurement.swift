@@ -19,7 +19,3 @@ struct BottomMeasurement : Equatable {
     private var waistToHip: MeasurementUnit?
     private var highWaist: MeasurementUnit?
 }
-
-
-// Comforming to MeasurementType
-extension BottomMeasurement : MeasurementType {}

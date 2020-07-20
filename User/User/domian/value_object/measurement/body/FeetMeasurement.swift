@@ -13,5 +13,3 @@ struct FeetMeasurement : Equatable {
 }
 
 
-// Comforming to MeasurementType
-extension FeetMeasurement : MeasurementType {}

@@ -9,7 +9,6 @@
 import Foundation
 import Core
 
-
 struct TopMeasurement : Equatable {
     private var _neck: MeasurementUnit
     private var _bust: MeasurementUnit
@@ -100,7 +99,3 @@ extension TopMeasurement {
 }
 
 
-
-
-// Comforming to MeasurementType
-extension TopMeasurement : MeasurementType {}
