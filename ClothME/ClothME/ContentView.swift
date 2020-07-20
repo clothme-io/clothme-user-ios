@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let profile = ProfileViewModel().removeUser()
     var body: some View {
-        Text("Hello, World!")
+        Text(profile)
     }
     var text: some View {
         Text("Welcome to Fashion")
     }
+    
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -29,7 +29,7 @@ public class FacebookSignIn : UseCaseAble {
                 return promise(.failure(FacebookSignInError.unKnown(ageError)))
             }
             
-            if let ageValue = age.OptionalValue(result: age).value?.year {
+            if let ageValue = age.OptionalValue(result: age).optionalData?.year {
                 if ageValue < 16 {
                     return promise(.failure(FacebookSignInError.youNeedToBeOlder))
                 }

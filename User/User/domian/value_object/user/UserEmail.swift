@@ -22,6 +22,7 @@ struct UserEmail {
         return emailPredicate.evaluate(with: value) ? .ok(UserEmail.init(value: value)) : .error(AppError.invalidEmail)
     }
     
+    
     var value : String {
         return self._value
     }
@@ -50,7 +51,7 @@ extension UserEmail {
     }
     
     private static func validateUserEmailForNilValue (input: String) -> ResultOption<String, AppError> {
-        let validName = Guard.AgainstNilString(argument: input)
+        let validName = Guard.againstNilValue(argument: input)
         if validName {
             return .ok(input)
         }

@@ -42,7 +42,7 @@ extension ResultOption {
 }
 
 extension ResultOption {
-    public func OptionalValue(result: ResultOption<T, E>) -> (value: T?, error: E?) {
+    public func OptionalValue(result: ResultOption<T, E>) -> (optionalData: T?, error: E?) {
         switch result {
         case .ok(let x):
             return (x, nil)

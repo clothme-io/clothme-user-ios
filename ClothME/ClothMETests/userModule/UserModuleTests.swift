@@ -20,6 +20,15 @@ class UserModuleTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-
+    func testInit_FirstName() {
+        let name = FirstName.create(name: "Peter")
+        switch name {
+        case .ok(let user):
+            XCTAssertEqual(user.value, "Peter")
+        case .error(let error):
+            print(error)
+        }
+        
+    }
 
 }

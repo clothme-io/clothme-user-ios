@@ -22,12 +22,23 @@ final class ProfileViewModel {
     
     func blockUser() {}
     
-    func removeUser() {}
+    func removeUser() -> String {
+        let name = FirstName.create(name: "Paul")
+        switch name {
+        case .ok(let user):
+            return user.value
+        case .error(let AppError):
+            return AppError.errorDescription ?? ""
+        }
+        
+    }
+    
+    
     
 }
 
-struct ProfileViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
+//struct ProfileViewModel_Previews: PreviewProvider {
+//    static var previews: some View {
+//        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+//    }
+//}
