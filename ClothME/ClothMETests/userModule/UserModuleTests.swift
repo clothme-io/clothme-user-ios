@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import User
+@testable import Core
 
 class UserModuleTests: XCTestCase {
 
@@ -21,12 +22,47 @@ class UserModuleTests: XCTestCase {
     }
 
     func testInit_FirstName() {
-        let name = FirstName.create(name: "Peteri")
+        let name = FirstName.create(with: "Peteri")
         let firstName = name.getValue(result: name)
-        
         XCTAssertEqual(firstName.value, "Peteri")
+    }
+    
+    func testInit_Gender() {
+        let gender = Gender.create(gender: "Female")
+        let genderData = gender.getValue(result: gender)
+        XCTAssertEqual(genderData.value, "Female")
+    }
+    
+    func testInit_UserId() {
+        let id = UserId.create(id: Guid(value: "1234"))
+        let userId = id.getValue(result: id).value().toString()
+        XCTAssertEqual(userId, "1234")
+    }
+    
+    func testInit_BillingAddress() {
+        let sAddress = StreetAddress.create(withApartment: "505", withStreetNumber: "32", withStreetName: "Clayland Drive")
+        let streetAddress = sAddress.OptionalValue(result: sAddress)
+        guard let apartment = streetAddress.optionalData?.apartment else { return }
+        XCTAssertEqual(apartment, "505")
+        XCTAssertEqual(streetAddress.optionalData?.number, "32")
+        XCTAssertEqual(streetAddress.optionalData?.name, "Clayland Drive")
         
+        let cAddress =  City.create(withCity: "Toronto")
+        let city = cAddress.OptionalValue(result: cAddress)
+        XCTAssertEqual(city.optionalData?.value, "Toronto")
         
+        let codeAddress = ZipOrPostalCode.create(with: "M3A2A5")
+        let zipOrPostalCode = codeAddress.OptionalValue(result: codeAddress)
+        XCTAssertEqual(zipOrPostalCode.optionalData?.value, "M3A2A5")
+        
+        let coAddress = Country.set(country: "Canada")
+        let country = coAddress.getValue(result: coAddress)
+        XCTAssertEqual(country.value, "Canada")
+        
+        let bAddress = BillingAddress.create(with: streetAddress.optionalData!, with: city.optionalData!, with: country)
+        let billingAddress = bAddress.OptionalValue(result: bAddress)
+        
+        XCTAssertEqual(billingAddress.optionalData?.city.value, "Toronto")
     }
 
 }

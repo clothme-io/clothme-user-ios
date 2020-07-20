@@ -19,7 +19,7 @@ class UserMapper {
         let gender = Gender.create(gender: userData.gender)
         let email = UserEmail.create(with: userData.email)
         let userPhoneNumbers = getPhoneNumbers(userData)
-        let city = City.create(city: userData.currentCity)
+        let city = City.create(withCity: userData.currentCity)
         let country = Country.set(country: userData.country)
         let dateOfBirth = DateOfBirth.create(date: userData.dateOfBirth)
         let profession = Profession.create(profession: userData.profession)
@@ -48,8 +48,8 @@ class UserMapper {
         var shippingFinalAddress = [ShippingAddress]()
         var index = 0
         while (userData.shippingAddress.count >= index) {
-            let streetAddress = StreetAddress.create(with: userData.shippingAddress[index]?.apartmentNumber ?? "", with: userData.shippingAddress[index]?.streetNumber ?? "", with: userData.shippingAddress[index]?.streetName ?? "")
-            let city = City.create(city: userData.shippingAddress[index]?.city ?? "")
+            let streetAddress = StreetAddress.create(withApartment: userData.shippingAddress[index]?.apartmentNumber ?? "", withStreetNumber: userData.shippingAddress[index]?.streetNumber ?? "", withStreetName: userData.shippingAddress[index]?.streetName ?? "")
+            let city = City.create(withCity: userData.shippingAddress[index]?.city ?? "")
             let stateOrPostalCode = ZipOrPostalCode.create(with: userData.shippingAddress[index]?.stateOrPostalCode ?? "")
             let country = Country.set(country: userData.shippingAddress[index]?.country ?? "")
             let shippingAddress = ShippingAddress.create(with: streetAddress.getValue(result: streetAddress), with: city.getValue(result: city), with: stateOrPostalCode.getValue(result: stateOrPostalCode), and: country.getValue(result: country))
@@ -63,8 +63,8 @@ class UserMapper {
         var billingFinalAddress = [BillingAddress]()
         var index = 0
         while (userData.billingAddress.count >= index) {
-            let streetAddress = StreetAddress.create(with: userData.billingAddress[index]?.apartmentNumber ?? "", with: userData.billingAddress[index]?.streetNumber ?? "", with: userData.billingAddress[index]?.streetName ?? "")
-            let city = City.create(city: userData.billingAddress[index]?.city ?? "")
+            let streetAddress = StreetAddress.create(withApartment: userData.billingAddress[index]?.apartmentNumber ?? "", withStreetNumber: userData.billingAddress[index]?.streetNumber ?? "", withStreetName: userData.billingAddress[index]?.streetName ?? "")
+            let city = City.create(withCity: userData.billingAddress[index]?.city ?? "")
             let country = Country.set(country: userData.billingAddress[index]?.country ?? "")
             let billingAddress = BillingAddress.create(with: streetAddress.getValue(result: streetAddress), with: city.getValue(result: city), with: country.getValue(result: country))
             billingFinalAddress.append(billingAddress.getValue(result: billingAddress))

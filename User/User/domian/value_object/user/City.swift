@@ -17,7 +17,7 @@ struct City: Equatable {
         self._value = city
     }
     
-    public static func create (city: String) -> ResultOption<City, AppError> {
+    public static func create (withCity city: String) -> ResultOption<City, AppError> {
        let validCity = Guard.againstNilValue(argument: city)
         if !validCity {
             return .error(AppError.nilValueNotAllowed)

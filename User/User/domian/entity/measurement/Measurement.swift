@@ -22,9 +22,6 @@ class Measurement : Entity {
         self._userId = userId
         self._bodyMeasurement = bodyMeasurement
         self._clotheMeasurement = clotheMeasurement
-//        if let clotheMeasurement = clotheMeasurement {
-//            self._clotheMeasurement = clotheMeasurement
-//        }
         super.init(_id: nil)
     }
     

@@ -104,7 +104,7 @@ class AccountDomainMapper {
         var index = 0
         var shippingList = [ShippingAddress]()
         while (accountUserData.shippingAddress.count >= index) {
-            let shippingAddress = ShippingAddress.create(with: StreetAddress.create(with: accountUserData.shippingAddress[index]?.apartmentNumber ?? "", with: accountUserData.shippingAddress[index]?.streetNumber ?? "", with: accountUserData.shippingAddress[index]?.streetName ?? "").getData(), with: City.create(city: accountUserData.shippingAddress[index]?.city ?? "").getData(), with: ZipOrPostalCode.create(with: accountUserData.shippingAddress[index]?.stateOrPostalCode ?? "").getData(), and: Country.set(country: accountUserData.shippingAddress[index]?.country ?? "").getData()).getData()
+            let shippingAddress = ShippingAddress.create(with: StreetAddress.create(withApartment: accountUserData.shippingAddress[index]?.apartmentNumber ?? "", withStreetNumber: accountUserData.shippingAddress[index]?.streetNumber ?? "", withStreetName: accountUserData.shippingAddress[index]?.streetName ?? "").getData(), with: City.create(withCity: accountUserData.shippingAddress[index]?.city ?? "").getData(), with: ZipOrPostalCode.create(with: accountUserData.shippingAddress[index]?.stateOrPostalCode ?? "").getData(), and: Country.set(country: accountUserData.shippingAddress[index]?.country ?? "").getData()).getData()
             shippingList.append(shippingAddress)
             index += 1
         }

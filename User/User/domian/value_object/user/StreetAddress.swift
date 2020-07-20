@@ -19,7 +19,7 @@ struct StreetAddress {
         self._streetName = name;
     }
     
-    public static func create (with apartmentNumber: String, with streetNumber: String, with streetName: String) -> ResultOption<StreetAddress, AppError> {
+    public static func create (withApartment apartmentNumber: String, withStreetNumber streetNumber: String, withStreetName streetName: String) -> ResultOption<StreetAddress, AppError> {
         if (!validateForNilValue(apartmentNumber: apartmentNumber, number: streetNumber, name: streetName)) {
             return .error(AppError.nilValueNotAllowed)
         }

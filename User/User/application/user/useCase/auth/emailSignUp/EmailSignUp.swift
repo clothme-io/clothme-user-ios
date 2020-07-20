@@ -40,7 +40,7 @@ class EmailSignUp : UseCaseAble {
                 return promise(.failure(EmailSignUpError.unKnown(emailError)))
             }
             
-            let city = City.create(city: data.city)
+            let city = City.create(withCity: data.city)
             let cityOrError = city.OptionalValue(result: city)
             if let cityError = cityOrError.error {
                 return promise(.failure(EmailSignUpError.unKnown(cityError)))
