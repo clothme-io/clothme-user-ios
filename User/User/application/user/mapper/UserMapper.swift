@@ -50,9 +50,9 @@ class UserMapper {
         while (userData.shippingAddress.count >= index) {
             let streetAddress = StreetAddress.create(apartmentNumber: userData.shippingAddress[index]?.apartmentNumber ?? "", streetNumber: userData.shippingAddress[index]?.streetNumber ?? "", streetName: userData.shippingAddress[index]?.streetName ?? "")
             let city = City.create(city: userData.shippingAddress[index]?.city ?? "")
-            let stateOrPostalCode = ZipOrPostalCode.create(stateOrProvince: userData.shippingAddress[index]?.stateOrPostalCode ?? "")
+            let stateOrPostalCode = ZipOrPostalCode.create(with: userData.shippingAddress[index]?.stateOrPostalCode ?? "")
             let country = Country.set(country: userData.shippingAddress[index]?.country ?? "")
-            let shippingAddress = ShippingAddress.create(streetAddress: streetAddress.getValue(result: streetAddress), city: city.getValue(result: city), stateOrPostalCode: stateOrPostalCode.getValue(result: stateOrPostalCode), country: country.getValue(result: country))
+            let shippingAddress = ShippingAddress.create(with: streetAddress.getValue(result: streetAddress), with: city.getValue(result: city), with: stateOrPostalCode.getValue(result: stateOrPostalCode), and: country.getValue(result: country))
             shippingFinalAddress.append(shippingAddress.getValue(result: shippingAddress))
             index += 1
         }

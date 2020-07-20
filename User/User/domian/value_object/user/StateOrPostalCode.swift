@@ -17,41 +17,16 @@ struct ZipOrPostalCode {
         self._value = stateOrProvince
     }
     
-    public static func create (stateOrProvince: String) -> ResultOption<ZipOrPostalCode, AppError> {
-        return validateForNilValue(input: stateOrProvince)
-            .bind(validateForEmptyValue)
-            .bind(initStateOrProvince)
+    public static func create (with stateOrProvince: String) -> ResultOption<ZipOrPostalCode, AppError> {
+        let validCity = Guard.againstNilValue(argument: stateOrProvince)
+        if validCity {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(ZipOrPostalCode(stateOrProvince: stateOrProvince))
     }
     
     var value: String {
            return self._value
     }
     
-}
-
-
-// MARK: Validation
-extension ZipOrPostalCode {
-    private static func validateForEmptyValue (inputCity: String) -> ResultOption<String, AppError> {
-         let validCity = Guard.AgainstEmptyString(argument: inputCity)
-         if validCity {
-             return .ok(inputCity)
-         }
-         return .error(AppError.emptyValueNotAllowed)
-     }
-     
-     private static func validateForNilValue (input: String) -> ResultOption<String, AppError> {
-         let validCity = Guard.againstNilValue(argument: input)
-         if validCity {
-             return .ok(input)
-         }
-         return .error(AppError.nilValueNotAllowed)
-     }
-     
-     private static func initStateOrProvince(_ input: String) -> ResultOption<ZipOrPostalCode, AppError> {
-         if input.isEmpty {
-             return .error(AppError.emptyValueNotAllowed)
-         }
-         return .ok(ZipOrPostalCode(stateOrProvince: input))
-     }
 }

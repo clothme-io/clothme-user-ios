@@ -23,7 +23,7 @@ public class EmailSignIn {
         return Future { promise in
             
             //MARK: Check for Valid Data on data
-            let email = UserEmail.create(value: data.email)
+            let email = UserEmail.create(with: data.email)
             let emailOrError = email.OptionalValue(result: email)
             if let emailError = emailOrError.error {
                 return promise(.failure(EmailSignInError.unKnown(emailError)))

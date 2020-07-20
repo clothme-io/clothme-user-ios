@@ -24,7 +24,7 @@ public class FacebookSignIn : UseCaseAble {
             // MARK: VALIDATE INPUT
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
-            let age = Age.create(dateOfBirth: data.dateOfBirth)
+            let age = Age.create(with: data.dateOfBirth)
             if let ageError = age.OptionalValue(result: age).error {
                 return promise(.failure(FacebookSignInError.unKnown(ageError)))
             }

@@ -23,9 +23,11 @@ struct ShippingAddress {
         self._country = country
     }
     
-    static func create (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, AppError> {
-        return validateForNilValue(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country)
-                .bind(initShippingAddress)
+    static func create (with streetAddress: StreetAddress, with city: City, with stateOrPostalCode: ZipOrPostalCode, and country: Country) -> ResultOption<ShippingAddress, AppError> {
+        if (!validateForNilValue(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country)) {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(ShippingAddress(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country))
     }
     
     var streetAddress: StreetAddress {
@@ -48,19 +50,15 @@ struct ShippingAddress {
 
 // MARK: Validation
 extension ShippingAddress {
-    private static func validateForNilValue (streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<(StreetAddress, City, ZipOrPostalCode, Country), AppError> {
+    private static func validateForNilValue(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> Bool {
         let validStreet = Guard.againstNil(argument: streetAddress)
         let validCity = Guard.againstNil(argument: city)
         let validStateOrPostalCode = Guard.againstNil(argument: stateOrPostalCode)
         let validCountry = Guard.againstNil(argument: country)
-         if validStreet && validCity && validStateOrPostalCode && validCountry {
-             return .ok((streetAddress, city, stateOrPostalCode, country))
+         if !validStreet || !validCity || !validStateOrPostalCode || !validCountry {
+             return false
          }
-         return .error(AppError.emptyValueNotAllowed)
-     }
-     
-    private static func initShippingAddress(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) -> ResultOption<ShippingAddress, AppError> {
-        return .ok(ShippingAddress(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country))
+         return true
      }
 }
 

@@ -130,7 +130,7 @@ public class User : Entity {
     }
     
     var age: Age {
-        let userAge = Age.create(dateOfBirth: dateOfBirth?.value ?? "")
+        let userAge = Age.create(with: dateOfBirth?.value ?? "")
         return userAge.getValue(result: userAge)
     }
     
