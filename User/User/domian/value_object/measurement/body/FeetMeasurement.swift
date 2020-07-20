@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct ShoeMeasurement : Equatable {
+struct FeetMeasurement : Equatable {
     
 }
 
 
 // Comforming to MeasurementType
-extension ShoeMeasurement : MeasurementType {}
+extension FeetMeasurement : MeasurementType {}

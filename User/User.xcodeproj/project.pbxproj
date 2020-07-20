@@ -63,7 +63,7 @@
 		C1A8DA1B2430318C00B95C17 /* FullBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8DA1A2430318C00B95C17 /* FullBodyMeasurement.swift */; };
 		C1A8DA1D2430320800B95C17 /* TopMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8DA1C2430320800B95C17 /* TopMeasurement.swift */; };
 		C1A8DA1F2430322B00B95C17 /* BottomMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8DA1E2430322B00B95C17 /* BottomMeasurement.swift */; };
-		C1A8DA212430324900B95C17 /* ShoeMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8DA202430324900B95C17 /* ShoeMeasurement.swift */; };
+		C1A8DA212430324900B95C17 /* FeetMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8DA202430324900B95C17 /* FeetMeasurement.swift */; };
 		C1A8DA232430329B00B95C17 /* MeasurementUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A8DA222430329B00B95C17 /* MeasurementUnit.swift */; };
 		C1AE171C242B0CC300ED1EE4 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = C1AE171A242B0CC300ED1EE4 /* User.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1AE173E242B0E7100ED1EE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE173D242B0E7100ED1EE4 /* User.swift */; };
@@ -269,7 +269,7 @@
 		C1A8DA1A2430318C00B95C17 /* FullBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullBodyMeasurement.swift; sourceTree = "<group>"; };
 		C1A8DA1C2430320800B95C17 /* TopMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMeasurement.swift; sourceTree = "<group>"; };
 		C1A8DA1E2430322B00B95C17 /* BottomMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMeasurement.swift; sourceTree = "<group>"; };
-		C1A8DA202430324900B95C17 /* ShoeMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeMeasurement.swift; sourceTree = "<group>"; };
+		C1A8DA202430324900B95C17 /* FeetMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeetMeasurement.swift; sourceTree = "<group>"; };
 		C1A8DA222430329B00B95C17 /* MeasurementUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementUnit.swift; sourceTree = "<group>"; };
 		C1AE1717242B0CC300ED1EE4 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AE171A242B0CC300ED1EE4 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -806,7 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A8DA222430329B00B95C17 /* MeasurementUnit.swift */,
-				C1A8DA202430324900B95C17 /* ShoeMeasurement.swift */,
+				C1A8DA202430324900B95C17 /* FeetMeasurement.swift */,
 				C1A8DA1E2430322B00B95C17 /* BottomMeasurement.swift */,
 				C1A8DA1C2430320800B95C17 /* TopMeasurement.swift */,
 				C1A8DA1A2430318C00B95C17 /* FullBodyMeasurement.swift */,
@@ -1594,7 +1594,7 @@
 				C1AF0B8D245FC4ED00E07391 /* connectionApplicationModel.swift in Sources */,
 				C1F613DA2470EFBD003635A4 /* SendMeasurementResponse.swift in Sources */,
 				C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */,
-				C1A8DA212430324900B95C17 /* ShoeMeasurement.swift in Sources */,
+				C1A8DA212430324900B95C17 /* FeetMeasurement.swift in Sources */,
 				C1F613FE2470F69E003635A4 /* RequestMeasurementResponse.swift in Sources */,
 				C1AF0C5B2460F8A500E07391 /* AcceptMeasurement.swift in Sources */,
 				C1AF0B3224524EB400E07391 /* EarlyAccessTier.swift in Sources */,
