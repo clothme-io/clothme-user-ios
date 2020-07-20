@@ -16,10 +16,17 @@ struct NumberOfConnection {
         self._value = number
     }
     
-    static func create(number: Int) -> ResultOption<NumberOfConnection, AppError> {
-        return validateForNilValue(input: number)
-                .bind(validateForZeroOrNegativeValue)
-                .bind(initNumberOfConnection(_:))
+    static func create(with number: Int) -> ResultOption<NumberOfConnection, AppError> {
+        let validPositiveValue = Guard.againstNegative(value: Double(Int(number)))
+        if !validPositiveValue {
+            return .error(AppError.negativeValueNotAllowed)
+        }
+        
+        let validNotNilValue = Guard.againstNil(argument: number)
+        if !validNotNilValue {
+            return .error(AppError.noZeroValueAllowed)
+        }
+        return .ok(NumberOfConnection(number: number))
     }
     
     var value: Int {
@@ -27,28 +34,5 @@ struct NumberOfConnection {
     }
 }
 
-
-// MARK: Validation
-extension NumberOfConnection {
-    private static func validateForZeroOrNegativeValue (input: Int) -> ResultOption<Int, AppError> {
-        let validInput = Guard.againstNegative(value: Double(Int(input)))
-        if validInput {
-            return .ok(input)
-        }
-        return .error(AppError.negativeValueNotAllowed)
-    }
-    
-    private static func validateForNilValue (input: Int) -> ResultOption<Int, AppError> {
-        let validInput = Guard.AgainstZeroInt(value: input)
-        if validInput {
-            return .ok(input)
-        }
-        return .error(AppError.noZeroValueAllowed)
-    }
-    
-    private static func initNumberOfConnection(_ input: Int) -> ResultOption<NumberOfConnection, AppError> {
-        return .ok(NumberOfConnection(number: input))
-    }
-}
 
 
