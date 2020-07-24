@@ -10,7 +10,7 @@ import Foundation
 import Core
 
 
-struct UserApplicationModel : ResponseDataAble {
+public struct UserApplicationModel : ResponseDataAble {
     let userId: String
     let profileImageUrl: String
     let firstName: String

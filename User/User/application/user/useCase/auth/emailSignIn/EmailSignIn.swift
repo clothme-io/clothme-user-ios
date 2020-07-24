@@ -19,33 +19,30 @@ public class EmailSignIn {
         self._authRepo = authRepo
     }
     
-    public func execute(with data: EmailSignInDTO) -> Future<User, EmailSignInError> {
+    public func execute(with data: EmailSignInDTO) -> Future<UserApplicationModel, AppError> {
         return Future { promise in
             
             //MARK: Check for Valid Data on data
-            let email = UserEmail.create(with: data.email)
-            let emailOrError = email.OptionalValue(result: email)
-            if let emailError = emailOrError.error {
-                return promise(.failure(EmailSignInError.unKnown(emailError)))
+            let emailOrError = UserEmail.create(with: data.email).isSuccess()
+            if !emailOrError {
+                return promise(.failure(AppError.emailMustBeProvided))
             }
             
-            let password = Password.create(with: data.password)
-            let passwordOrError = password.OptionalValue(result: password)
-            if let passwordError = passwordOrError.error {
-                return promise(.failure(EmailSignInError.unKnown(passwordError)))
+            let passwordOrError = Password.create(with: data.password).isSuccess()
+            if !passwordOrError {
+                return promise(.failure(AppError.passwordMustBeProvided))
             }
             
             //MARK: NETWORK CALL
-//            self._authRepo.emailSignIn(with: data) { result,<#arg#>  in
-//                switch result {
-//                case .failure(let err):
-//                    return promise(.failure(EmailSignInError.unKnown(err)))
-//                case .success(let response):
-//                    return promise(.success(response))
-//                }
-//                
-//            }
-            
+            self._authRepo.emailSignIn(with: data) { result, error  in
+                if let error = error {
+                    promise(.failure(AppError.unknown(cause: error as! Error)))
+                } else {
+                    if let result = result {
+                        promise(.success(UserMapper.toDataModel(user: result)))
+                    }
+                }
+            }
         }
     }
     

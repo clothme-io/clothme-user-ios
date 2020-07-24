@@ -138,7 +138,6 @@
 		C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */; };
 		C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF9A1824C273C1002A52D2 /* Model.swift */; };
 		C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */; };
-		C1F613A22470DEC6003635A4 /* EmailSignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A12470DEC6003635A4 /* EmailSignUpError.swift */; };
 		C1F613A42470E18F003635A4 /* EmailSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */; };
 		C1F613A62470E2AD003635A4 /* EmailSignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A52470E2AD003635A4 /* EmailSignInError.swift */; };
 		C1F613A82470E36D003635A4 /* FacebookSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */; };
@@ -346,7 +345,6 @@
 		C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		C1EF9A1824C273C1002A52D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
-		C1F613A12470DEC6003635A4 /* EmailSignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpError.swift; sourceTree = "<group>"; };
 		C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInResponse.swift; sourceTree = "<group>"; };
 		C1F613A52470E2AD003635A4 /* EmailSignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInError.swift; sourceTree = "<group>"; };
 		C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignInResponse.swift; sourceTree = "<group>"; };
@@ -1135,7 +1133,6 @@
 			children = (
 				C1F661322449FE9F0033697E /* EmailSignUp.swift */,
 				C19D31A22447EF2B00B84B3B /* EmailSignUpDTO.swift */,
-				C1F613A12470DEC6003635A4 /* EmailSignUpError.swift */,
 				C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */,
 			);
 			path = emailSignUp;
@@ -1614,7 +1611,6 @@
 				C158909B247DF4C600514750 /* GetUserMeasurementError.swift in Sources */,
 				C1AF0C372460E73700E07391 /* DeclineConnection.swift in Sources */,
 				C1AF0C6724610DD700E07391 /* EditMeasurement.swift in Sources */,
-				C1F613A22470DEC6003635A4 /* EmailSignUpError.swift in Sources */,
 				C1F661312449FE890033697E /* EmailSignIn.swift in Sources */,
 				C1AF0C532460F5A000E07391 /* BlockUserDTO.swift in Sources */,
 				C15890A9247E1A3B00514750 /* GetAllConnection.swift in Sources */,
