@@ -17,32 +17,12 @@ struct VIPTier {
         self._value = tier
     }
     
-    public static func set(tier: String) -> ResultOption<VIPTier, AppError> {
-        return noEmptyValue(input: tier)
-            .bind(noNilValue(input:))
-            .bind(initVIPTier(input:))
-    }
-    
-}
-
-extension VIPTier {
-    private static func noEmptyValue(input: String) -> ResultOption<String, AppError> {
-        let tierResult = Guard.AgainstEmptyString(argument: input)
-        if !tierResult {
-            return .error(AppError.emptyValueNotAllowed)
-        }
-        return .ok(input)
-    }
-    
-    private static func noNilValue(input: String) -> ResultOption<String, AppError> {
-        let tierResult = Guard.againstNilValue(argument: input)
+    public static func create(tier: String) -> ResultOption<VIPTier, AppError> {
+        let tierResult = Guard.againstNilValue(argument: tier)
         if !tierResult {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(input)
+        return .ok(VIPTier(tier: tier))
     }
     
-    private static func initVIPTier(input: String) -> ResultOption<VIPTier, AppError> {
-        return .ok(VIPTier(tier: input))
-    }
 }

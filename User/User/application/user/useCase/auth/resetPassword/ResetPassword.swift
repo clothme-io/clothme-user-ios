@@ -8,19 +8,28 @@
 
 import Foundation
 import Core
-
-
+import Combine
 
 struct ResetPassword : UseCaseAble {
     
-    var _userRepo: UserRepository
     var _authRepo: AuthRepository
     
-    init(userRepo: UserRepository, authRepo: AuthRepository) {
-        self._userRepo = userRepo
+    init(authRepo: AuthRepository) {
         self._authRepo = authRepo
     }
     
-    public func execute(with data: ResetPasswordDTO) {}
+    public func execute(with data: ResetPasswordDTO) -> Future<UserApplicationModel, AppError> {
+        return Future { promise in
+            self._authRepo.resetPassword(with: data) { (result, error) in
+                if let error = error {
+                    promise(.failure(AppError.unknown(cause: error as! Error)))
+                } else {
+                    if let result = result {
+                        promise(.success(UserMapper.toDataModel(user: result)))
+                    }
+                }
+            }
+        }
+    }
     
 }
