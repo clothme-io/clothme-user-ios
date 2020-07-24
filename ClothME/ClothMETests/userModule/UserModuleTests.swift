@@ -22,20 +22,17 @@ class UserModuleTests: XCTestCase {
     }
 
     func testInit_FirstName() {
-        let name = FirstName.create(with: "Peteri")
-        let firstName = name.getValue(result: name)
-        XCTAssertEqual(firstName.value, "Peteri")
+        let firstName = FirstName.create(with: "Peteri").OptionalData().value?.value
+        XCTAssertEqual(firstName, "Peteri")
     }
     
     func testInit_Gender() {
-        let gender = Gender.create(gender: "Female")
-        let genderData = gender.getValue(result: gender)
-        XCTAssertEqual(genderData.value, "Female")
+        let gender = Gender.create(gender: "Female").OptionalData().value?.value
+        XCTAssertEqual(gender, "Female")
     }
     
     func testInit_UserId() {
-        let id = UserId.create(id: Guid(value: "1234"))
-        let userId = id.getValue(result: id).value().toString()
+        let userId = UserId.create(id: Guid(value: "1234")).OptionalData().value?.value().toString()
         XCTAssertEqual(userId, "1234")
     }
     
@@ -47,21 +44,28 @@ class UserModuleTests: XCTestCase {
         XCTAssertEqual(streetAddress.optionalData?.number, "32")
         XCTAssertEqual(streetAddress.optionalData?.name, "Clayland Drive")
         
-        let city =  City.create(withCity: "Toronto").OptionalData().optionalData?.value ?? ""
-        XCTAssertEqual(city, "Toro")
+        let city =  City.create(withCity: "Toronto").OptionalData().value
+        XCTAssertEqual(city?.value, "Toro")
         
         let codeAddress = ZipOrPostalCode.create(with: "M3A2A5")
         let zipOrPostalCode = codeAddress.OptionalValue(result: codeAddress)
         XCTAssertEqual(zipOrPostalCode.optionalData?.value, "M3A2A5")
         
-        let coAddress = Country.set(country: "Canada").OptionalData().optionalData?.value
-//        let country = coAddress.getValue(result: coAddress)
-        XCTAssertEqual(coAddress, "Canada")
+        let address = Country.set(country: "Canada").OptionalData().value
+        XCTAssertEqual(address?.value, "Canada")
         
-//        let bAddress = BillingAddress.create(with: streetAddress.optionalData!, with: city.optionalData!, with: coAddress)
-//        let billingAddress = bAddress.OptionalValue(result: bAddress)
-//
-//        XCTAssertEqual(billingAddress.optionalData?.city.value, "Toronto")
+        let billingAddress = BillingAddress.create(with: streetAddress.optionalData!, with: city!, with: address!).OptionalData().value
+
+        XCTAssertEqual(billingAddress?.city.value, "Toronto")
+    }
+    
+    func testInit_Success_Or_Failure() {
+        let name: String? = "nil"
+        guard let name1 = name else {
+            return
+        }
+        let lastName = LastName.create(value: name1).isSuccess()
+        XCTAssertEqual(lastName, true)
     }
 
 }

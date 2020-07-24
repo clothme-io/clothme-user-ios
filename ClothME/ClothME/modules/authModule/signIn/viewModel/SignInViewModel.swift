@@ -1,5 +1,5 @@
 //
-//  SignUpViewModel.swift
+//  SignInViewModel.swift
 //  ClothME
 //
 //  Created by MACPRO on 2020-05-24.
@@ -10,13 +10,16 @@ import SwiftUI
 import Combine
 import User
 
-final class SignUpViewModel {
+final class SignInViewModel: ObservableObject {
     
     private let authRepositoryImpl: AuthRepositoryImpl = AuthRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     
-    func signUpEmail() {}
+    func signInEmail() {}
+    
+    func signInWithFacebook() {}
+    
+    func signInWithGoogle() {}
     
 }
-

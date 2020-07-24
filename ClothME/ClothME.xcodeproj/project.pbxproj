@@ -344,8 +344,8 @@
 		C153CFFE2484ACDC00BD0A31 /* forgotPassword */ = {
 			isa = PBXGroup;
 			children = (
+				C1B276C024CB5AE800FE378E /* viewModel */,
 				C164946A249D2141008ED2AF /* ui */,
-				C153D0142484B0F300BD0A31 /* ForgotPasswordViewModel.swift */,
 			);
 			path = forgotPassword;
 			sourceTree = "<group>";
@@ -353,8 +353,8 @@
 		C153CFFF2484AD6300BD0A31 /* signOut */ = {
 			isa = PBXGroup;
 			children = (
+				C1B276C124CB5AF500FE378E /* viewModel */,
 				C1649467249D20D6008ED2AF /* ui */,
-				C153D0122484B0DE00BD0A31 /* SignOutViewModel.swift */,
 			);
 			path = signOut;
 			sourceTree = "<group>";
@@ -362,8 +362,8 @@
 		C153D0002484AD6B00BD0A31 /* resetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				C1B276C224CB5B0100FE378E /* viewModel */,
 				C1649464249D2066008ED2AF /* ui */,
-				C153D0162484B10700BD0A31 /* ResetPasswordViewModel.swift */,
 			);
 			path = resetPassword;
 			sourceTree = "<group>";
@@ -878,11 +878,51 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C1B276BE24CB5ACC00FE378E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C1B4777F247AFE3D00D0CCE2 /* SignUpViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		C1B276BF24CB5AD800FE378E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C1B47781247AFE5000D0CCE2 /* SignInViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		C1B276C024CB5AE800FE378E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C153D0142484B0F300BD0A31 /* ForgotPasswordViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		C1B276C124CB5AF500FE378E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C153D0122484B0DE00BD0A31 /* SignOutViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		C1B276C224CB5B0100FE378E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C153D0162484B10700BD0A31 /* ResetPasswordViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		C1B4777C247AFDF200D0CCE2 /* signUp */ = {
 			isa = PBXGroup;
 			children = (
+				C1B276BE24CB5ACC00FE378E /* viewModel */,
 				C164946E249D2BC7008ED2AF /* ui */,
-				C1B4777F247AFE3D00D0CCE2 /* SignUpViewModel.swift */,
 			);
 			path = signUp;
 			sourceTree = "<group>";
@@ -902,8 +942,8 @@
 		C1B4777E247AFE2200D0CCE2 /* signIn */ = {
 			isa = PBXGroup;
 			children = (
+				C1B276BF24CB5AD800FE378E /* viewModel */,
 				C164946D249D2BB8008ED2AF /* ui */,
-				C1B47781247AFE5000D0CCE2 /* SignInViewModel.swift */,
 			);
 			path = signIn;
 			sourceTree = "<group>";

@@ -20,6 +20,15 @@ public enum AppError: Error, LocalizedError  {
     case sameValueNotAllowed
     case negativeValueNotAllowed
     case noZeroValueAllowed
+    case genderCannotBeEmpty
+    case cityCannotBeEmpty
+    
+    // PASSWORD
+    case emailMustBeProvided
+    case passwordMustBeProvided
+    case passwordMustBeMoreThanEightCharacters
+    case passwordMustContainCapitalLetterAndOneNumber
+    case firstNameCannotBeEmpty
     
     // FOR UNKNOWNS
     case unknown(cause: Error)
@@ -50,10 +59,22 @@ public enum AppError: Error, LocalizedError  {
     case invalidResponse
     case statusCode(Int)
     
-    
+//    public enum EmailSignUpError : Error {
+//        case emailMustBeProvided
+//        case passwordMustBeProvided
+//        case passwordMustBeMoreThanEightCharacters
+//        case passwordMustContainCapitalLetterAndOneNumber
+//        case firstNameCannotBeEmpty
+//        case unKnown(Error)
+//    }
+
     var localizedDescription: String {
         switch self {
         case .ageTooYoung:
+            return ""
+        case .genderCannotBeEmpty:
+            return ""
+        case .cityCannotBeEmpty:
             return ""
         case .alreadyExist:
             return ""
@@ -85,6 +106,18 @@ public enum AppError: Error, LocalizedError  {
             return ""
         case .unknown(cause: let errorValue):
             return "\(errorValue)"
+            
+        // Password
+        case .emailMustBeProvided:
+            return ""
+        case .passwordMustBeProvided:
+            return ""
+        case .passwordMustBeMoreThanEightCharacters:
+            return ""
+        case .passwordMustContainCapitalLetterAndOneNumber:
+            return ""
+        case .firstNameCannotBeEmpty:
+            return ""
             
         // UserError
         case .urlError(let error):

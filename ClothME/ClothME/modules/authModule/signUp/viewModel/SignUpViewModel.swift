@@ -1,8 +1,8 @@
 //
-//  ResetPasswordViewModel.swift
+//  SignUpViewModel.swift
 //  ClothME
 //
-//  Created by MACPRO on 2020-05-31.
+//  Created by MACPRO on 2020-05-24.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
@@ -10,12 +10,13 @@ import SwiftUI
 import Combine
 import User
 
-final class ResetPasswordViewModel {
+final class SignUpViewModel: ObservableObject {
     
     private let authRepositoryImpl: AuthRepositoryImpl = AuthRepositoryImpl()
     
     private var bag = Set<AnyCancellable>()
     
-    func resetPassword() {}
+    func signUpEmail() {}
     
 }
+

@@ -36,8 +36,8 @@ extension ResultOption {
 }
 
 extension ResultOption {
-    public func isSuccess(result: ResultOption<T, E>) -> Bool {
-        switch result {
+    public func isSuccess() -> Bool {
+        switch self {
         case .ok(_):
             return true
         case .error(_):

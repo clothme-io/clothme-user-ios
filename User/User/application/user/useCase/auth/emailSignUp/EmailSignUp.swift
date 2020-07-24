@@ -19,48 +19,45 @@ class EmailSignUp : UseCaseAble {
         self._authRepo = authRepo
     }
     
-    public func execute(with data: EmailSignUpDTO) -> Future<Void, EmailSignUpError> {
+    public func execute(with data: EmailSignUpDTO) -> Future<Void, AppError> {
         return Future { promise in
             
             // MARK: VALIDATE INPUT
-            let firstName = FirstName.create(with: data.firstName)
-            if !firstName.isSuccess(result: firstName) {
-                return promise(.failure(EmailSignUpError.unKnown(firstName as! Error)))
+            let firstNameOrError = FirstName.create(with: data.firstName).isSuccess()
+            if !firstNameOrError {
+                return promise(.failure(AppError.firstNameCannotBeEmpty))
             }
             
-            let gender = Gender.create(gender: data.gender)
-            let genderOrError = gender.OptionalValue(result: gender)
-            if let genderError = genderOrError.error {
-                return promise(.failure(EmailSignUpError.unKnown(genderError)))
+            let genderOrError = Gender.create(gender: data.gender).isSuccess()
+            if !genderOrError {
+                return promise(.failure(AppError.genderCannotBeEmpty))
             }
             
-            let email = UserEmail.create(with: data.email)
-            let emailOrError = email.OptionalValue(result: email)
-            if let emailError = emailOrError.error {
-                return promise(.failure(EmailSignUpError.unKnown(emailError)))
+            let emailOrError = UserEmail.create(with: data.email).isSuccess()
+            if !emailOrError {
+                return promise(.failure(AppError.emailMustBeProvided))
             }
             
-            let city = City.create(withCity: data.city)
-            let cityOrError = city.OptionalValue(result: city)
-            if let cityError = cityOrError.error {
-                return promise(.failure(EmailSignUpError.unKnown(cityError)))
+            let cityOrError = City.create(withCity: data.city).isSuccess()
+            if !cityOrError {
+                return promise(.failure(AppError.cityCannotBeEmpty))
             }
             
-            let password = Password.create(with: data.password)
-            let passwordOrError = password.OptionalValue(result: password)
-            if let passwordError = passwordOrError.error {
-                return promise(.failure(EmailSignUpError.unKnown(passwordError)))
+            let passwordOrError = Password.create(with: data.password).isSuccess()
+            if !passwordOrError {
+                return promise(.failure(AppError.passwordMustBeProvided))
             }
             
             // MARK: MAKE NETWORK CALL
-//            self._authRepo.emailSignUp(with: data) { result in
-//                switch result {
-//                case .failure(let error):
-//                    return promise(.failure(EmailSignUpError.unKnown(error)))
-//                case .success(_):
-//                    break
-//                }
-//            }
+            self._authRepo.emailSignUp(with: data) { result, error  in
+                if let error = error {
+                    promise(.failure(.unknown(cause: error as! Error)))
+                } else {
+                    if let result = result {
+                        promise(.success(result))
+                    }
+                }
+            }
         }
         
     }
