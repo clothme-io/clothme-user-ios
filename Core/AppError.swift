@@ -23,6 +23,8 @@ public enum AppError: Error, LocalizedError  {
     case genderCannotBeEmpty
     case cityCannotBeEmpty
     case dateOfBirthCannotBeEmpty
+    case somethingWentWrong
+    case youNeedToBeOlder
     
     // PASSWORD
     case emailMustBeProvided
@@ -84,6 +86,10 @@ public enum AppError: Error, LocalizedError  {
         case .emptyValueNotAllowed:
             return ""
         case .exceededFreeAccount:
+            return ""
+        case .somethingWentWrong:
+            return ""
+        case .youNeedToBeOlder:
             return ""
         case .invalidEmail:
             return ""

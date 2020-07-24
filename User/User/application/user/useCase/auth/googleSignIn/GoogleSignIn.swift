@@ -10,7 +10,6 @@ import Foundation
 import Combine
 import Core
 
-
 public struct GoogleSignIn : UseCaseAble {
     
     var _authRepo: AuthRepository
@@ -19,30 +18,27 @@ public struct GoogleSignIn : UseCaseAble {
         self._authRepo = authRepo
     }
     
-    public func execute(with data: GoogleSignInDTO) -> Future<User, GoogleSignInError> {
-        
+    public func execute(with data: GoogleSignInDTO) -> Future<UserApplicationModel, AppError> {
         return Future { promise in
             //MARK: CHECK AND VALIDATE DATA
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
             let age = Age.create(with: data.dateOfBirth).OptionalData().value?.year
             let dob = age
-            if let dob2 = dob {
-                if dob2 < 16 {
-                    return promise(.failure(GoogleSignInError.youNeedToBeOlder))
+            if let dobValue = dob {
+                if dobValue < 16 {
+                    return promise(.failure(AppError.youNeedToBeOlder))
                 }
             }
-//            self._authRepo.googleSignIn(with: data) { result in
-//                switch result {
-//                case .failure(let err):
-//                    return promise(.failure(GoogleSignInError.unKnown(err)))
-//                case .success(let response):
-//                    return promise(.success(response))
-//                }
-//            }
-          
+            self._authRepo.googleSignIn(with: data) { result, error in
+                if let error = error {
+                    promise(.failure(AppError.unknown(cause: error as! Error)))
+                } else {
+                    if let result = result {
+                        promise(.success(UserMapper.toDataModel(user: result)))
+                    }
+                }
+            }
         }
-        
     }
-    
 }

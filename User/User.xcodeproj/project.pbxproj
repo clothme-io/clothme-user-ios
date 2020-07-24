@@ -138,10 +138,6 @@
 		C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */; };
 		C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF9A1824C273C1002A52D2 /* Model.swift */; };
 		C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */; };
-		C1F613A82470E36D003635A4 /* FacebookSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */; };
-		C1F613AA2470E391003635A4 /* FacebookSignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A92470E391003635A4 /* FacebookSignInError.swift */; };
-		C1F613AC2470E4FA003635A4 /* GoogleSignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613AB2470E4FA003635A4 /* GoogleSignInError.swift */; };
-		C1F613AE2470E511003635A4 /* GoogleSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613AD2470E511003635A4 /* GoogleSignInResponse.swift */; };
 		C1F613B02470E531003635A4 /* SignOutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613AF2470E531003635A4 /* SignOutResponse.swift */; };
 		C1F613B22470E540003635A4 /* SignOutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613B12470E540003635A4 /* SignOutError.swift */; };
 		C1F613B42470E571003635A4 /* ResetPasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613B32470E571003635A4 /* ResetPasswordError.swift */; };
@@ -343,10 +339,6 @@
 		C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		C1EF9A1824C273C1002A52D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
-		C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignInResponse.swift; sourceTree = "<group>"; };
-		C1F613A92470E391003635A4 /* FacebookSignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignInError.swift; sourceTree = "<group>"; };
-		C1F613AB2470E4FA003635A4 /* GoogleSignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInError.swift; sourceTree = "<group>"; };
-		C1F613AD2470E511003635A4 /* GoogleSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResponse.swift; sourceTree = "<group>"; };
 		C1F613AF2470E531003635A4 /* SignOutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutResponse.swift; sourceTree = "<group>"; };
 		C1F613B12470E540003635A4 /* SignOutError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutError.swift; sourceTree = "<group>"; };
 		C1F613B32470E571003635A4 /* ResetPasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordError.swift; sourceTree = "<group>"; };
@@ -1096,8 +1088,6 @@
 			children = (
 				C1AF0B6F245F943100E07391 /* GoogleSignIn.swift */,
 				C1AF0B6D245F93E600E07391 /* GoogleSignInDTO.swift */,
-				C1F613AB2470E4FA003635A4 /* GoogleSignInError.swift */,
-				C1F613AD2470E511003635A4 /* GoogleSignInResponse.swift */,
 			);
 			path = googleSignIn;
 			sourceTree = "<group>";
@@ -1107,8 +1097,6 @@
 			children = (
 				C1AF0B4D2452957900E07391 /* FacebookSignIn.swift */,
 				C1F6613A2449FF920033697E /* FacebookSignInDTO.swift */,
-				C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */,
-				C1F613A92470E391003635A4 /* FacebookSignInError.swift */,
 			);
 			path = facebookSignIn;
 			sourceTree = "<group>";
@@ -1521,7 +1509,6 @@
 				C1DAD32424455AC600F2A951 /* ConnectionRepository.swift in Sources */,
 				C1AE173E242B0E7100ED1EE4 /* User.swift in Sources */,
 				C1A8D9E3242FF35B00B95C17 /* Profession.swift in Sources */,
-				C1F613AA2470E391003635A4 /* FacebookSignInError.swift in Sources */,
 				C1AF0C4F2460F53B00E07391 /* EditUser.swift in Sources */,
 				C1A8DA1D2430320800B95C17 /* TopMeasurement.swift in Sources */,
 				C1A8D9E1242FF34300B95C17 /* Age.swift in Sources */,
@@ -1573,11 +1560,9 @@
 				C1DAD2D2243952A300F2A951 /* AccountRepository.swift in Sources */,
 				C1F613C42470E775003635A4 /* EditUserResponse.swift in Sources */,
 				C1AF0C272460E32B00E07391 /* ConnectionRepositoryImpl.swift in Sources */,
-				C1F613AC2470E4FA003635A4 /* GoogleSignInError.swift in Sources */,
 				C1AF0C602460F9B800E07391 /* MeasurementRespository.swift in Sources */,
 				C19D31AD2447F1CD00B84B3B /* MeasurementProtocolDTO.swift in Sources */,
 				C1F613C22470E701003635A4 /* GetUserResponse.swift in Sources */,
-				C1F613A82470E36D003635A4 /* FacebookSignInResponse.swift in Sources */,
 				C1AF0B8D245FC4ED00E07391 /* connectionApplicationModel.swift in Sources */,
 				C1F613DA2470EFBD003635A4 /* SendMeasurementResponse.swift in Sources */,
 				C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */,
@@ -1651,7 +1636,6 @@
 				C1A8D9D7242FF0CA00B95C17 /* PhoneNumber.swift in Sources */,
 				C1F6613B2449FF920033697E /* FacebookSignInDTO.swift in Sources */,
 				C1AF0B25244E52BD00E07391 /* AllowedAccount.swift in Sources */,
-				C1F613AE2470E511003635A4 /* GoogleSignInResponse.swift in Sources */,
 				C1916899244AC44800D6C443 /* RelationShip.swift in Sources */,
 				C1AF0C412460ED3D00E07391 /* RemoveAccountDTO.swift in Sources */,
 			);
