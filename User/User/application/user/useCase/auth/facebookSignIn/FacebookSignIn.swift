@@ -19,31 +19,32 @@ public class FacebookSignIn : UseCaseAble {
         self._authRepo = authRepo
     }
     
-    public func execute(with data: FacebookSignInDTO) -> Future<ResponseDataAble, FacebookSignInError> {
+    public func execute(with data: FacebookSignInDTO) -> Future<UserApplicationModel, AppError> {
         return Future { promise in
             // MARK: VALIDATE INPUT
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
-            let age = Age.create(with: data.dateOfBirth)
-            if let ageError = age.OptionalValue(result: age).error {
-                return promise(.failure(FacebookSignInError.unKnown(ageError)))
+            let ageOrError = Age.create(with: data.dateOfBirth).OptionalData()
+            if ((ageOrError.error) != nil) {
+                return promise(.failure(AppError.dateOfBirthCannotBeEmpty))
             }
             
-            if let ageValue = age.OptionalValue(result: age).optionalData?.year {
+            if let ageValue = ageOrError.value?.year {
                 if ageValue < 16 {
-                    return promise(.failure(FacebookSignInError.youNeedToBeOlder))
+                    return promise(.failure(AppError.ageTooYoung))
                 }
             }
             
             //MARK: MAKE NETWORK CALL
-//            self._authRepo.facebookSignIn(with: data, completion: { result in
-//                switch result {
-//                case .failure(let error):
-//                    return promise(.failure(FacebookSignInError.unKnown(error)))
-//                case .success(let user):
-//                    return promise(.success(user as! ResponseDataAble))
-//                }
-//            })
+            self._authRepo.facebookSignIn(with: data, completion: { result, error in
+                if let error = error {
+                    promise(.failure(AppError.unknown(cause: error as! Error)))
+                } else {
+                    if let result = result {
+                        promise(.success(UserMapper.toDataModel(user: result)))
+                    }
+                }
+            })
         }
     }
 }

@@ -138,8 +138,6 @@
 		C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */; };
 		C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF9A1824C273C1002A52D2 /* Model.swift */; };
 		C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */; };
-		C1F613A42470E18F003635A4 /* EmailSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */; };
-		C1F613A62470E2AD003635A4 /* EmailSignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A52470E2AD003635A4 /* EmailSignInError.swift */; };
 		C1F613A82470E36D003635A4 /* FacebookSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */; };
 		C1F613AA2470E391003635A4 /* FacebookSignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613A92470E391003635A4 /* FacebookSignInError.swift */; };
 		C1F613AC2470E4FA003635A4 /* GoogleSignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613AB2470E4FA003635A4 /* GoogleSignInError.swift */; };
@@ -345,8 +343,6 @@
 		C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		C1EF9A1824C273C1002A52D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
-		C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInResponse.swift; sourceTree = "<group>"; };
-		C1F613A52470E2AD003635A4 /* EmailSignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInError.swift; sourceTree = "<group>"; };
 		C1F613A72470E36D003635A4 /* FacebookSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignInResponse.swift; sourceTree = "<group>"; };
 		C1F613A92470E391003635A4 /* FacebookSignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignInError.swift; sourceTree = "<group>"; };
 		C1F613AB2470E4FA003635A4 /* GoogleSignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInError.swift; sourceTree = "<group>"; };
@@ -1122,8 +1118,6 @@
 			children = (
 				C1F661302449FE890033697E /* EmailSignIn.swift */,
 				C19D31A42447EFEB00B84B3B /* EmailSignInDTO .swift */,
-				C1F613A52470E2AD003635A4 /* EmailSignInError.swift */,
-				C1F613A32470E18F003635A4 /* EmailSignInResponse.swift */,
 			);
 			path = emailSignIn;
 			sourceTree = "<group>";
@@ -1543,7 +1537,6 @@
 				C189CA3C24A910A400922994 /* AllowedConnection.swift in Sources */,
 				C1F613BA2470E62A003635A4 /* ForgotPasswordResponse.swift in Sources */,
 				C1AF0C352460E6E700E07391 /* SendConnection.swift in Sources */,
-				C1F613A62470E2AD003635A4 /* EmailSignInError.swift in Sources */,
 				C1AF0C512460F57200E07391 /* BlockUser.swift in Sources */,
 				C1AF0C572460F62F00E07391 /* RemoveUser.swift in Sources */,
 				C16562772479CCE1001EB497 /* AccountDomainMapper.swift in Sources */,
@@ -1649,7 +1642,6 @@
 				C19D31B12447F48B00B84B3B /* SendTopMeasurementDTO.swift in Sources */,
 				C1F613B42470E571003635A4 /* ResetPasswordError.swift in Sources */,
 				C1A8D9D5242FF0B100B95C17 /* UserEmail.swift in Sources */,
-				C1F613A42470E18F003635A4 /* EmailSignInResponse.swift in Sources */,
 				C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */,
 				C1F613B82470E61B003635A4 /* ForgotPasswordError.swift in Sources */,
 				C1F614002470F6AC003635A4 /* EditMeasurementResponse.swift in Sources */,
