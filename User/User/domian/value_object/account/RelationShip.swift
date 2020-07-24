@@ -49,7 +49,7 @@ struct RelationShip {
 
 extension RelationShip {
     private static func validateForEmptyValue(inputName: String) -> Bool {
-        let validInput = Guard.AgainstEmptyString(argument: inputName)
+        let validInput = Guard.againstEmptyString(argument: inputName)
         if !validInput {
             return false
         }

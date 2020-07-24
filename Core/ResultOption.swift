@@ -13,28 +13,6 @@ public enum ResultOption<T, E> {
     case error(E)
 }
 
-//extension ResultOption {
-//    public func bind<B>(_ f: @escaping (T) -> ResultOption<B, E>) -> ResultOption<B, E> {
-//        switch self {
-//        case .ok(let x):
-//            return f(x)
-//        case .error(let e):
-//            return ResultOption<B, E>.error(e)
-//        }
-//    }
-//}
-
-//extension ResultOption {
-//    public func getValue(result: ResultOption<T, E>) -> T {
-//        switch result {
-//        case .ok(let x):
-//            return x
-//        case .error(let error):
-//            return error as! T
-//        }
-//    }
-//}
-
 extension ResultOption {
     public func OptionalValue(result: ResultOption<T, E>) -> (optionalData: T?, error: E?) {
         switch result {
