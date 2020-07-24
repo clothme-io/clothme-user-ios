@@ -62,7 +62,8 @@ public class User : Entity {
         self._country = country
         self._shippingAddress = shippingAddress
         self._billingAddress = billingAddress
-        self._userId = UserId.create(id: Guid(value: userId?.value().toString())).getData()
+        let id = UserId.create(id: Guid(value: userId?.value().toString()))
+        self._userId = id.OptionalValue(result: id).optionalData
         super.init(_id: Guid(value: self._userId?.value().toString()))
     }
     
@@ -130,8 +131,8 @@ public class User : Entity {
     }
     
     var age: Age {
-        let userAge = Age.create(with: dateOfBirth?.value ?? "")
-        return userAge.getValue(result: userAge)
+        let userAge = Age.create(with: dateOfBirth?.value ?? "").OptionalData().value!
+        return userAge
     }
     
     var profession: Profession? {

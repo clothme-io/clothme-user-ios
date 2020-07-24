@@ -25,8 +25,8 @@ public struct GoogleSignIn : UseCaseAble {
             //MARK: CHECK AND VALIDATE DATA
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
-            let age = Age.create(with: data.dateOfBirth)
-            let dob = age.getValue(result: age).year
+            let age = Age.create(with: data.dateOfBirth).OptionalData().value?.year
+            let dob = age
             if let dob2 = dob {
                 if dob2 < 16 {
                     return promise(.failure(GoogleSignInError.youNeedToBeOlder))

@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-struct AddressData : ResponseDataAble, Equatable {
+struct AddressApplicationModel : ResponseDataAble, Equatable {
     let apartmentNumber: String
     let streetNumber: String
     let streetName: String
@@ -18,12 +18,12 @@ struct AddressData : ResponseDataAble, Equatable {
     let country: String
 }
 
-struct PhoneNumberData : ResponseDataAble, Equatable{
+struct PhoneNumberAppliastionModel : ResponseDataAble, Equatable{
     let value: String
     let type: String
 }
 
 
-struct FullBodyMeasurementData : ResponseDataAble {
+struct FullBodyMeasurementApplicationModel : ResponseDataAble {
     
 }

@@ -28,7 +28,8 @@ class ConnectedUser : Entity {
 //    private var fitProducts: [String?]
     
     private init(
-        id: UserId,
+        connectionId: ConnectionId,
+        userId: UserId,
         firstName: FirstName,
         lastName: LastName,
         city: ZipOrPostalCode,
@@ -40,7 +41,7 @@ class ConnectedUser : Entity {
         connectionDate: ConnectionDate,
         connectionDuration: ConnectionDuration
     ) {
-        self._Id = id
+        self._Id = userId
         self._firstName = firstName
         self._lastName = lastName
         self._city = city
@@ -51,13 +52,13 @@ class ConnectedUser : Entity {
         self._shippingAddress = shippingAddress
         self._connectionDate = connectionDate
         self._connectionDuration = connectionDuration
-        let connectionId = ConnectionId.create(id: Guid(value: nil))
-        self._connectionId = connectionId.getValue(result: connectionId)
+        self._connectionId = ConnectionId.create(id: Guid(value: connectionId.value().toString())).OptionalData().value ?? ConnectionId.create(id: nil).OptionalData().value!
         super.init(_id: Guid(value: self._connectionId.value().toString()))
     }
     
     public static func Create(
-        Id: UserId,
+        connectionId: ConnectionId,
+        userId: UserId,
         firstName: FirstName,
         lastName: LastName,
         city: ZipOrPostalCode,
@@ -69,7 +70,7 @@ class ConnectedUser : Entity {
         connectionDate: ConnectionDate,
         connectionDuration: ConnectionDuration
     ) -> ResultOption<ConnectedUser, AppError> {
-        return .ok(ConnectedUser(id: Id, firstName: firstName, lastName: lastName, city: city, gender: gender, profession: profession, phoneNumber: phoneNumber, email: email, shippingAddress: shippingAddress, connectionDate: connectionDate, connectionDuration: connectionDuration))
+        return .ok(ConnectedUser(connectionId: connectionId, userId: userId, firstName: firstName, lastName: lastName, city: city, gender: gender, profession: profession, phoneNumber: phoneNumber, email: email, shippingAddress: shippingAddress, connectionDate: connectionDate, connectionDuration: connectionDuration))
     }
     
     var connectionId: ConnectionId {

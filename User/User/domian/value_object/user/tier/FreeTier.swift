@@ -17,31 +17,11 @@ struct FreeTier {
     }
     
     static func create(tier: String) -> ResultOption<FreeTier, AppError> {
-        return noEmptyValue(input: tier)
-        .bind(noNilValue(input:))
-        .bind(initFreeTier(input:))
+       let tierResult = Guard.againstNilValue(argument: tier)
+       if !tierResult {
+           return .error(AppError.nilValueNotAllowed)
+       }
+        return .ok(FreeTier(tier: tier))
     }
 }
 
-
-extension FreeTier {
-    private static func noEmptyValue(input: String) -> ResultOption<String, AppError> {
-        let tierResult = Guard.AgainstEmptyString(argument: input)
-        if !tierResult {
-            return .error(AppError.emptyValueNotAllowed)
-        }
-        return .ok(input)
-    }
-    
-    private static func noNilValue(input: String) -> ResultOption<String, AppError> {
-        let tierResult = Guard.againstNilValue(argument: input)
-        if !tierResult {
-            return .error(AppError.nilValueNotAllowed)
-        }
-        return .ok(input)
-    }
-    
-    private static func initFreeTier(input: String) -> ResultOption<FreeTier, AppError> {
-        return .ok(FreeTier(tier: input))
-    }
-}

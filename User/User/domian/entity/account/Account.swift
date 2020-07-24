@@ -10,59 +10,62 @@ import Foundation
 import Core
 
 class Account : Entity {
-    
     private let _accountOwner: UserId
     private static var _allowedAccount = AllowedAccount.get()
-    private var _numberOfAccount: NumberOfAccount
+    private var _numberOfAccount: NumberOfAccount?
     private var _accounts = [AccountUser]()
     
-    private init(accountOwner: UserId, accountUser: AccountUser?, numberOfAccount: NumberOfAccount) {
+    private init(accountOwner: UserId, accountUser: AccountUser?, numberOfAccount: NumberOfAccount?) {
         self._accountOwner = accountOwner
         self._numberOfAccount = numberOfAccount
-        super.init(_id: nil)
-        
+        super.init(_id: Guid(value: self._accountOwner.value().toString()))
         if let accountUser = accountUser {
             self.addFor(accountUser)
         }
         
     }
     
-    static func create(with accountOwner: UserId, with accountUser: AccountUser, with userTier: UserTier, and numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
-        if (!validateForNilValue(user: accountUser, numberOfAccount: numberOfAccount)) {
+    static func create(with accountOwner: UserId, with accountUser: AccountUser, with userTier: UserTier, and numberOfAccount: NumberOfAccount?) -> ResultOption<Account, AppError> {
+        if !validateForNilValue(user: accountUser) {
             return .error(AppError.nilValueNotAllowed)
         }
         
-        let numOfAccount = NumberOfAccount.create(with: numberOfAccount.value)
-        let currentNumberOfAccount = numOfAccount.getValue(result: numOfAccount)
+        let numberOfAccount = NumberOfAccount.create(with: numberOfAccount?.value ?? 0).OptionalData().value
 
-        let tier = UserTier.set(tier: userTier.type)
-        let userTier = tier.getValue(result: tier)
+        let userTier = UserTier.set(tier: userTier.type).OptionalData().value
    
         // MARK: Free Account Tier
-        if userTier.type.lowercased() == "free" {
-            if currentNumberOfAccount.value >= self._allowedAccount.free {
-                return .error(AppError.maxFreeAccountReached)
+        if userTier?.type?.lowercased() == "free" {
+            if let numberOfAccount = numberOfAccount?.value {
+                if numberOfAccount >= self._allowedAccount.free {
+                    return .error(AppError.maxFreeAccountReached)
+                }
             }
         }
         
         // MARK: VIP Account Tier
-        if userTier.type.lowercased() == "vip" {
-            if currentNumberOfAccount.value >= self._allowedAccount.VIP {
-                return .error(AppError.maxVIPAccountReached)
+        if userTier?.type?.lowercased() == "vip" {
+            if let numberOfAccount = numberOfAccount?.value {
+                if numberOfAccount >= self._allowedAccount.VIP {
+                    return .error(AppError.maxVIPAccountReached)
+                }
             }
         }
         
         // MARK: EarlyAccess Account Tier
-        if userTier.type.lowercased() == "earlyaccess" {
-            if currentNumberOfAccount.value >= self._allowedAccount.earlyAccess {
-                return .error(AppError.maxEarlyAccessAccountReached)
+        if userTier?.type?.lowercased() == "earlyaccess" {
+            if let numberOfAccount = numberOfAccount?.value {
+                if numberOfAccount >= self._allowedAccount.earlyAccess {
+                    return .error(AppError.maxEarlyAccessAccountReached)
+                }
             }
         }
         
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
-    static func createWithData(accountOwner: UserId, accountUser: AccountUser? = nil, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
+    static func createWithData(accountOwner: UserId?, accountUser: AccountUser? = nil, numberOfAccount: NumberOfAccount) -> ResultOption<Account, AppError> {
+        guard let accountOwner = accountOwner else { return .error(AppError.emptyValueNotAllowed) }
         return .ok(Account(accountOwner: accountOwner, accountUser: accountUser, numberOfAccount: numberOfAccount))
     }
     
@@ -71,7 +74,7 @@ class Account : Entity {
     }
     
     var numberOfAccount : Int {
-        return self._numberOfAccount.value
+        return self._numberOfAccount?.value ?? 0
     }
     
     private func addFor (_ data: AccountUser) {
@@ -103,10 +106,9 @@ extension Account {
 
 // MARK: Validation
 extension Account {
-    private static func validateForNilValue(user: AccountUser, numberOfAccount: NumberOfAccount) -> Bool {
+    private static func validateForNilValue(user: AccountUser) -> Bool {
         let userResult = Guard.againstNil(argument: user)
-        let numberOfAccountResult = Guard.againstNil(argument: numberOfAccount)
-        if !userResult || !numberOfAccountResult {
+        if !userResult {
             return false
         }
         return true

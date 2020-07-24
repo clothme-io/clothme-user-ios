@@ -9,24 +9,23 @@
 import Foundation
 import Core
 
-
 struct AccountApplicationModel : ResponseDataAble {
     let ownerId: String
-    let accountUsers: [AccountUserData]
+    let accountUsers: [AccountUserApplicationModel]
     let numberOfAccount: Int
 }
 
-struct AccountUserData: ResponseDataAble {
+struct AccountUserApplicationModel: ResponseDataAble {
     let accountId: String
     let userId: String
     let firstName: String
     let lastName: String
     let dateOfBirth: String
     let gender: String
-    let phoneNumber: [PhoneNumberData?]
+    let phoneNumber: [PhoneNumberAppliastionModel?]
     let relationship: String
     let dateAdded: String
-    let shippingAddress: [AddressData?]
+    let shippingAddress: [AddressApplicationModel?]
     let brandId: [String?]
 }
 

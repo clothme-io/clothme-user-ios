@@ -14,6 +14,6 @@ public struct GoogleSignInResponse : ResponseDataAble {
     let firstName: String
     let email: String
     let city: String
-    let measurement: FullBodyMeasurementData
+    let measurement: FullBodyMeasurementApplicationModel
     let preferences: String
 }
