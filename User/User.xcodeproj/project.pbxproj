@@ -138,10 +138,7 @@
 		C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */; };
 		C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF9A1824C273C1002A52D2 /* Model.swift */; };
 		C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */; };
-		C1F613C02470E6D1003635A4 /* GetUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613BF2470E6D1003635A4 /* GetUserError.swift */; };
-		C1F613C22470E701003635A4 /* GetUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C12470E701003635A4 /* GetUserResponse.swift */; };
 		C1F613C42470E775003635A4 /* EditUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C32470E775003635A4 /* EditUserResponse.swift */; };
-		C1F613C62470E781003635A4 /* EditUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C52470E781003635A4 /* EditUserError.swift */; };
 		C1F613C82470E916003635A4 /* BlockUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C72470E916003635A4 /* BlockUserError.swift */; };
 		C1F613CA2470E923003635A4 /* BlockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C92470E923003635A4 /* BlockUserResponse.swift */; };
 		C1F613CC2470E939003635A4 /* RemoveUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613CB2470E939003635A4 /* RemoveUserError.swift */; };
@@ -331,10 +328,7 @@
 		C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		C1EF9A1824C273C1002A52D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
-		C1F613BF2470E6D1003635A4 /* GetUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserError.swift; sourceTree = "<group>"; };
-		C1F613C12470E701003635A4 /* GetUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserResponse.swift; sourceTree = "<group>"; };
 		C1F613C32470E775003635A4 /* EditUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserResponse.swift; sourceTree = "<group>"; };
-		C1F613C52470E781003635A4 /* EditUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserError.swift; sourceTree = "<group>"; };
 		C1F613C72470E916003635A4 /* BlockUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserError.swift; sourceTree = "<group>"; };
 		C1F613C92470E923003635A4 /* BlockUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserResponse.swift; sourceTree = "<group>"; };
 		C1F613CB2470E939003635A4 /* RemoveUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUserError.swift; sourceTree = "<group>"; };
@@ -992,7 +986,6 @@
 				C1AF0C4E2460F53B00E07391 /* EditUser.swift */,
 				C1AF0C4C2460F51000E07391 /* EditUserDTO.swift */,
 				C1F613C32470E775003635A4 /* EditUserResponse.swift */,
-				C1F613C52470E781003635A4 /* EditUserError.swift */,
 			);
 			path = editUser;
 			sourceTree = "<group>";
@@ -1002,8 +995,6 @@
 			children = (
 				C191687C244A497300D6C443 /* GetUser.swift */,
 				C191687E244A4A1100D6C443 /* GetUserDTO.swift */,
-				C1F613BF2470E6D1003635A4 /* GetUserError.swift */,
-				C1F613C12470E701003635A4 /* GetUserResponse.swift */,
 			);
 			path = getUser;
 			sourceTree = "<group>";
@@ -1515,7 +1506,6 @@
 				C15890A0247E16EA00514750 /* GetConnection.swift in Sources */,
 				C1AF0B3024524E9E00E07391 /* VIPTier.swift in Sources */,
 				C1F613C82470E916003635A4 /* BlockUserError.swift in Sources */,
-				C1F613C02470E6D1003635A4 /* GetUserError.swift in Sources */,
 				C1F613D22470EB9A003635A4 /* AcceptMeasurementResponse.swift in Sources */,
 				C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */,
 				C1AF0C592460F86700E07391 /* AcceptMeasurementDTO.swift in Sources */,
@@ -1534,7 +1524,6 @@
 				C1AF0C272460E32B00E07391 /* ConnectionRepositoryImpl.swift in Sources */,
 				C1AF0C602460F9B800E07391 /* MeasurementRespository.swift in Sources */,
 				C19D31AD2447F1CD00B84B3B /* MeasurementProtocolDTO.swift in Sources */,
-				C1F613C22470E701003635A4 /* GetUserResponse.swift in Sources */,
 				C1AF0B8D245FC4ED00E07391 /* connectionApplicationModel.swift in Sources */,
 				C1F613DA2470EFBD003635A4 /* SendMeasurementResponse.swift in Sources */,
 				C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */,
@@ -1593,7 +1582,6 @@
 				C19D31942447C18A00B84B3B /* Connection.swift in Sources */,
 				C1AF0C632460FF7000E07391 /* MeasurementAbleDTO.swift in Sources */,
 				C1A8DA232430329B00B95C17 /* MeasurementUnit.swift in Sources */,
-				C1F613C62470E781003635A4 /* EditUserError.swift in Sources */,
 				C19D31B12447F48B00B84B3B /* SendTopMeasurementDTO.swift in Sources */,
 				C1A8D9D5242FF0B100B95C17 /* UserEmail.swift in Sources */,
 				C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */,

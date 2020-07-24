@@ -30,6 +30,8 @@ public enum AppError: Error, LocalizedError  {
     case passwordMustBeGreaterThanEightCharacters
     case userIdMustBeProvided
     case accountAlreadyClosed
+    case userDoesNotExist
+    case userCannotBeUpdated
     
     // PASSWORD
     case emailMustBeProvided
@@ -92,6 +94,10 @@ public enum AppError: Error, LocalizedError  {
         case .emptyValueNotAllowed:
             return ""
         case .exceededFreeAccount:
+            return ""
+        case .userDoesNotExist:
+            return ""
+        case .userCannotBeUpdated:
             return ""
         case .somethingWentWrong:
             return ""

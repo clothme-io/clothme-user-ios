@@ -19,9 +19,12 @@ struct GetUser : UseCaseAble {
         self._userRepo = userRepo
     }
     
-    public func execute(with data: GetUserDTO) -> Future<User, GetUserError> {
+    public func execute(with data: GetUserDTO) -> Future<UserApplicationModel, AppError> {
         return Future { promise in
-            
+            let userId = UserId.create(id: Guid(value: data.userId)).isSuccess()
+            if !userId {
+                return promise(.failure(AppError.userIdMustBeProvided))
+            }
             
         }
     }

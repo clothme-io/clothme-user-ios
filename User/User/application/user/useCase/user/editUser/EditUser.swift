@@ -19,7 +19,7 @@ struct EditUser : UseCaseAble {
         self._userRepo = userRepo
     }
     
-    public func execute(with data: EditUserDTO) -> Future<User, EditUserError> {
+    public func execute(with data: EditUserDTO) -> Future<User, AppError> {
         return Future { promise in
             
         }
