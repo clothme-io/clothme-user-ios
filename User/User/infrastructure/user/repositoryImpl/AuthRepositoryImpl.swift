@@ -138,9 +138,14 @@ public class AuthRepositoryImpl : AuthRepository {
         }
     }
     
-    public func signOut() {
-        
+    func signOut<T>(with data: T, completion: @escaping (Void?, String?) -> ()) {
+        authNetworkManager.router.request(.signOut(requestData: data as! Parameters)) { (data, response, error) in
+            if error != nil {
+                completion(nil, "")
+            }
+        }
     }
+    
     
     public func resetPassword<ResetPasswordDTO>(with data: ResetPasswordDTO, completion: @escaping (User?, String?) -> ()) {
         authNetworkManager.router.request(.resetPassword(requestData: data as! Parameters)) { (data, response, error) in

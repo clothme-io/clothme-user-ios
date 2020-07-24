@@ -25,12 +25,16 @@ public enum AppError: Error, LocalizedError  {
     case dateOfBirthCannotBeEmpty
     case somethingWentWrong
     case youNeedToBeOlder
+    case passwordCannotBeSameWithCurrentPassword
+    case passwordMustContainCapitalLetterAndOneNumber
+    case passwordMustBeGreaterThanEightCharacters
+    case userIdMustBeProvided
+    case accountAlreadyClosed
     
     // PASSWORD
     case emailMustBeProvided
     case passwordMustBeProvided
     case passwordMustBeMoreThanEightCharacters
-    case passwordMustContainCapitalLetterAndOneNumber
     case firstNameCannotBeEmpty
     
     // FOR UNKNOWNS
@@ -81,6 +85,8 @@ public enum AppError: Error, LocalizedError  {
             return ""
         case .alreadyExist:
             return ""
+        case .userIdMustBeProvided:
+            return ""
         case .dateOfBirthCannotBeEmpty:
             return ""
         case .emptyValueNotAllowed:
@@ -90,6 +96,14 @@ public enum AppError: Error, LocalizedError  {
         case .somethingWentWrong:
             return ""
         case .youNeedToBeOlder:
+            return ""
+        case .accountAlreadyClosed:
+            return ""
+        case .passwordCannotBeSameWithCurrentPassword:
+            return ""
+        case .passwordMustContainCapitalLetterAndOneNumber:
+            return ""
+        case .passwordMustBeGreaterThanEightCharacters:
             return ""
         case .invalidEmail:
             return ""
@@ -122,8 +136,6 @@ public enum AppError: Error, LocalizedError  {
         case .passwordMustBeProvided:
             return ""
         case .passwordMustBeMoreThanEightCharacters:
-            return ""
-        case .passwordMustContainCapitalLetterAndOneNumber:
             return ""
         case .firstNameCannotBeEmpty:
             return ""

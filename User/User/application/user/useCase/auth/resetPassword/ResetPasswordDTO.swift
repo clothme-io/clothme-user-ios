@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Core
 
-struct ResetPasswordDTO : Codable {
+struct ResetPasswordDTO : RequestDataAble {
     let email: String
     let userId: String
     let currentPassword: String

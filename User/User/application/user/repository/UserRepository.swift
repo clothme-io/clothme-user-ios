@@ -10,8 +10,8 @@ import Foundation
 import Core
 
 protocol UserRepository : IRepositoryWithTypedId {
-    func getUserById<T: RequestDataAble>(data: T, completion: @escaping (_ user: User, _ error: String?) -> ())
-    func getUserByName<T: RequestDataAble>(data: T, completion: @escaping (_ user: User, _ error: String?) -> ())
-    func blockUser<T: RequestDataAble>(data: T, completion: @escaping (_ user: Void, _ error: String?) -> ())
-    
+    func getUserById<T: RequestDataAble>(data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
+    func getUserByName<T: RequestDataAble>(data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
+    func blockUser<T: RequestDataAble>(data: T, completion: @escaping (_ user: Void?, _ error: String?) -> ())
+    func closeAccount<T: RequestDataAble>(data: T, completion: @escaping (_ void: Void?, _ error: String?) -> ())
 }

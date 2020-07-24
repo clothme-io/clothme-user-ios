@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import Core
 
-struct ForgotPasswordDTO : Codable {
+struct ForgotPasswordDTO : RequestDataAble {
     let email: String
 }

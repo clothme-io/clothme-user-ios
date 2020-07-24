@@ -15,7 +15,7 @@ protocol AuthRepository : IRepositoryWithTypedId {
     func emailSignUp <T: RequestDataAble>(with data: T, completion: @escaping (_ user: Void?, _ error: String?) -> ())
     func facebookSignIn <T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
     func googleSignIn<T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
-    func signOut()
+    func signOut<T: RequestDataAble>(with data: T, completion: @escaping (_ user: Void?, _ error: String?) -> ())
     func resetPassword<T: RequestDataAble>(with data: T, completion: @escaping (_ user: User?, _ error: String?) -> ())
     func forgotPassword<T: RequestDataAble>(with data: T, completion: @escaping (_ user: Void?, _ error: String?) -> ())
 }

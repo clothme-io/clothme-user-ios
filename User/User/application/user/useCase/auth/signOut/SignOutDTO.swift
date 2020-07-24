@@ -11,5 +11,5 @@ import Core
 
 
 struct SignOutDTO : RequestDataAble {
-    private let userId: String;
+    let userId: String;
 }
