@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Core
 
-struct GetUserByFirstNameDTO {
+struct GetUserByFirstNameDTO: RequestDataAble {
     let userId: String
     let firstName: String
 }

@@ -944,7 +944,7 @@
 		C1AF0BE42460D7A000E07391 /* user */ = {
 			isa = PBXGroup;
 			children = (
-				C1B276C324CBD5A700FE378E /* getUserByName */,
+				C1B276C324CBD5A700FE378E /* getUserByFirstName */,
 				C1AF0BEE2460D81E00E07391 /* getUser */,
 				C1AF0BEB2460D7F900E07391 /* editUser */,
 				C1AF0BE82460D7D300E07391 /* blockUser */,
@@ -1199,13 +1199,13 @@
 			path = measurementDataModel;
 			sourceTree = "<group>";
 		};
-		C1B276C324CBD5A700FE378E /* getUserByName */ = {
+		C1B276C324CBD5A700FE378E /* getUserByFirstName */ = {
 			isa = PBXGroup;
 			children = (
 				C1B276C424CBD5BF00FE378E /* GetUserByFirstName.swift */,
 				C1B276C624CBD5D100FE378E /* GetUserByFirstNameDTO.swift */,
 			);
-			path = getUserByName;
+			path = getUserByFirstName;
 			sourceTree = "<group>";
 		};
 		C1D83E1724A561D300146EEE /* measurement */ = {
