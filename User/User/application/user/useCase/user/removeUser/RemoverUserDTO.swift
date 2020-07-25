@@ -12,6 +12,6 @@ import Core
 
 struct RemoveUserDTO : RequestDataAble {
     let userId: String
-    let userToRemove: String
+    let userIdToRemove: String
     let date: String
 }

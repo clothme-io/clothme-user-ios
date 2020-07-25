@@ -11,5 +11,6 @@ import Core
 
 struct BlockUserDTO : RequestDataAble {
     let userId: String
-    let userToBlock: String
+    let userIdToBlock: String
+    let date: String
 }

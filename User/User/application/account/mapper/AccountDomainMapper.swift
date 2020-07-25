@@ -42,7 +42,7 @@ class AccountDomainMapper {
         var index = 0
         var shippingAddressList: [AddressApplicationModel] = [AddressApplicationModel]()
         while accountUser.shippingAddress.count >= index {
-            let address = AddressApplicationModel(apartmentNumber: accountUser.shippingAddress[index]?.streetAddress.apartment ?? "", streetNumber: accountUser.shippingAddress[index]?.streetAddress.number ?? "", streetName: accountUser.shippingAddress[index]?.streetAddress.name ?? "", city: accountUser.shippingAddress[index]?.city.value ?? "", stateOrPostalCode: accountUser.shippingAddress[index]?.stateOrPostalCode.value ?? "", country: accountUser.shippingAddress[index]?.country.value ?? "")
+            let address = AddressApplicationModel(apartmentNumber: accountUser.shippingAddress[index]?.streetAddress.apartment ?? "", streetNumber: accountUser.shippingAddress[index]?.streetAddress.number ?? "", streetName: accountUser.shippingAddress[index]?.streetAddress.name ?? "", city: accountUser.shippingAddress[index]?.city.value ?? "", zipOrPostalCode: accountUser.shippingAddress[index]?.stateOrPostalCode.value ?? "", country: accountUser.shippingAddress[index]?.country.value ?? "")
             shippingAddressList.append(address)
             index += 1
         }
@@ -129,7 +129,7 @@ class AccountDomainMapper {
         while (accountUserData.shippingAddress.count >= index) {
             let streetAddress = StreetAddress.create(withApartment: accountUserData.shippingAddress[index]?.apartmentNumber ?? "", withStreetNumber: accountUserData.shippingAddress[index]?.streetNumber ?? "", withStreetName: accountUserData.shippingAddress[index]?.streetName ?? "").OptionalData().value!
             let city = City.create(withCity: accountUserData.shippingAddress[index]?.city ?? "").OptionalData().value!
-            let zipOrPostalCode = ZipOrPostalCode.create(with: accountUserData.shippingAddress[index]?.stateOrPostalCode ?? "").OptionalData().value!
+            let zipOrPostalCode = ZipOrPostalCode.create(with: accountUserData.shippingAddress[index]?.zipOrPostalCode ?? "").OptionalData().value!
             let country  = Country.set(country: accountUserData.shippingAddress[index]?.country ?? "").OptionalData().value!
             let shippingAddress = ShippingAddress.create(with: streetAddress, with: city, with: zipOrPostalCode, and: country).OptionalData().value!
             shippingList.append(shippingAddress)

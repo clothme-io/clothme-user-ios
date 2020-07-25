@@ -16,10 +16,10 @@ struct ShippingAddress {
     private var _stateOrPostalCode: ZipOrPostalCode
     private var _country: Country
     
-    private init(streetAddress: StreetAddress, city: City, stateOrPostalCode: ZipOrPostalCode, country: Country) {
+    private init(streetAddress: StreetAddress, city: City, zipOrPostalCode: ZipOrPostalCode, country: Country) {
         self._streetAddress = streetAddress
         self._city = city
-        self._stateOrPostalCode = stateOrPostalCode
+        self._stateOrPostalCode = zipOrPostalCode
         self._country = country
     }
     
@@ -27,7 +27,7 @@ struct ShippingAddress {
         if (!validateForNilValue(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country)) {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(ShippingAddress(streetAddress: streetAddress, city: city, stateOrPostalCode: stateOrPostalCode, country: country))
+        return .ok(ShippingAddress(streetAddress: streetAddress, city: city, zipOrPostalCode: stateOrPostalCode, country: country))
     }
     
     var streetAddress: StreetAddress {

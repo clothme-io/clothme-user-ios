@@ -32,6 +32,7 @@ public enum AppError: Error, LocalizedError  {
     case accountAlreadyClosed
     case userDoesNotExist
     case userCannotBeUpdated
+    case userHasAlreadyBeenRemoved
     
     // PASSWORD
     case emailMustBeProvided
@@ -94,6 +95,8 @@ public enum AppError: Error, LocalizedError  {
         case .emptyValueNotAllowed:
             return ""
         case .exceededFreeAccount:
+            return ""
+        case .userHasAlreadyBeenRemoved:
             return ""
         case .userDoesNotExist:
             return ""

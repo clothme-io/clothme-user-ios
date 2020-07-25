@@ -12,22 +12,31 @@ import Core
 
 struct EditUserDTO : RequestDataAble {
     let userId : String
-    let profileImg : String
-    let firstName : String
-    let lastName : String
-    let gender: Int
-    let email: String
-    let password: String
-    let phoneNumber: [PhoneNumberDTO]
-    let address: [AddressDTO]
-    let dateOfBirth : String
-    let age : Int
-    let profession : String
+    let profileImage: String?
+    let firstName : String?
+    let lastName : String?
+    let gender: Int?
+    let email: String?
+    let password: String?
+    let phoneNumber: PhoneNumberDTO?
+    let billingAddress: AddressDTO?
+    let shippingAddress: AddressDTO?
+    let dateOfBirth : String?
+    let age : Int?
+    let profession : String?
 }
 
 struct AddressDTO: RequestDataAble {
-    let streetAddress: String
+    let streetAddress: StreetAddressDTO
+    let city: String
+    let zipOrPostalCode: String
     let country: String
+}
+
+struct StreetAddressDTO: RequestDataAble {
+    let apartmentNumber: String
+    let streetNumber: String
+    let streetName: String
 }
 
 struct PhoneNumberDTO: RequestDataAble {

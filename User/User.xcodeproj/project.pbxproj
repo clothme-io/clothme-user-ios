@@ -126,6 +126,8 @@
 		C1AF0C71246114F200E07391 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C70246114F200E07391 /* CreateAccount.swift */; };
 		C1AF0CB32468EC7D00E07391 /* ConnectionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CB22468EC7D00E07391 /* ConnectionDate.swift */; };
 		C1AF0CB52468ED2100E07391 /* ConnectionDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CB42468ED2100E07391 /* ConnectionDuration.swift */; };
+		C1B276C524CBD5BF00FE378E /* GetUserByFirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B276C424CBD5BF00FE378E /* GetUserByFirstName.swift */; };
+		C1B276C724CBD5D100FE378E /* GetUserByFirstNameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B276C624CBD5D100FE378E /* GetUserByFirstNameDTO.swift */; };
 		C1D83E2224A6256F00146EEE /* MeasurementDomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D83E2124A6256F00146EEE /* MeasurementDomainMapper.swift */; };
 		C1DAD28A24346E8C00F2A951 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD28924346E8C00F2A951 /* Country.swift */; };
 		C1DAD29A2438026300F2A951 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD2992438026300F2A951 /* UserRepository.swift */; };
@@ -138,11 +140,6 @@
 		C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */; };
 		C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF9A1824C273C1002A52D2 /* Model.swift */; };
 		C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */; };
-		C1F613C42470E775003635A4 /* EditUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C32470E775003635A4 /* EditUserResponse.swift */; };
-		C1F613C82470E916003635A4 /* BlockUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C72470E916003635A4 /* BlockUserError.swift */; };
-		C1F613CA2470E923003635A4 /* BlockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613C92470E923003635A4 /* BlockUserResponse.swift */; };
-		C1F613CC2470E939003635A4 /* RemoveUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613CB2470E939003635A4 /* RemoveUserError.swift */; };
-		C1F613CE2470E94F003635A4 /* RemoveUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613CD2470E94F003635A4 /* RemoveUserResponse.swift */; };
 		C1F613D02470EB7F003635A4 /* AcceptMeasurementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613CF2470EB7F003635A4 /* AcceptMeasurementError.swift */; };
 		C1F613D22470EB9A003635A4 /* AcceptMeasurementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613D12470EB9A003635A4 /* AcceptMeasurementResponse.swift */; };
 		C1F613D42470EE31003635A4 /* AddMeasurementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F613D32470EE31003635A4 /* AddMeasurementError.swift */; };
@@ -315,6 +312,8 @@
 		C1AF0C70246114F200E07391 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		C1AF0CB22468EC7D00E07391 /* ConnectionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDate.swift; sourceTree = "<group>"; };
 		C1AF0CB42468ED2100E07391 /* ConnectionDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDuration.swift; sourceTree = "<group>"; };
+		C1B276C424CBD5BF00FE378E /* GetUserByFirstName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserByFirstName.swift; sourceTree = "<group>"; };
+		C1B276C624CBD5D100FE378E /* GetUserByFirstNameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserByFirstNameDTO.swift; sourceTree = "<group>"; };
 		C1D83E2124A6256F00146EEE /* MeasurementDomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementDomainMapper.swift; sourceTree = "<group>"; };
 		C1DAD23E243447CD00F2A951 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DAD28924346E8C00F2A951 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -328,11 +327,6 @@
 		C1DAD32D24455AEE00F2A951 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
 		C1EF9A1824C273C1002A52D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1F6139F2470DEB7003635A4 /* EmailSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpResponse.swift; sourceTree = "<group>"; };
-		C1F613C32470E775003635A4 /* EditUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserResponse.swift; sourceTree = "<group>"; };
-		C1F613C72470E916003635A4 /* BlockUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserError.swift; sourceTree = "<group>"; };
-		C1F613C92470E923003635A4 /* BlockUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserResponse.swift; sourceTree = "<group>"; };
-		C1F613CB2470E939003635A4 /* RemoveUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUserError.swift; sourceTree = "<group>"; };
-		C1F613CD2470E94F003635A4 /* RemoveUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUserResponse.swift; sourceTree = "<group>"; };
 		C1F613CF2470EB7F003635A4 /* AcceptMeasurementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptMeasurementError.swift; sourceTree = "<group>"; };
 		C1F613D12470EB9A003635A4 /* AcceptMeasurementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptMeasurementResponse.swift; sourceTree = "<group>"; };
 		C1F613D32470EE31003635A4 /* AddMeasurementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeasurementError.swift; sourceTree = "<group>"; };
@@ -950,6 +944,7 @@
 		C1AF0BE42460D7A000E07391 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				C1B276C324CBD5A700FE378E /* getUserByName */,
 				C1AF0BEE2460D81E00E07391 /* getUser */,
 				C1AF0BEB2460D7F900E07391 /* editUser */,
 				C1AF0BE82460D7D300E07391 /* blockUser */,
@@ -963,8 +958,6 @@
 			children = (
 				C1AF0C562460F62F00E07391 /* RemoveUser.swift */,
 				C1AF0C542460F60800E07391 /* RemoverUserDTO.swift */,
-				C1F613CB2470E939003635A4 /* RemoveUserError.swift */,
-				C1F613CD2470E94F003635A4 /* RemoveUserResponse.swift */,
 			);
 			path = removeUser;
 			sourceTree = "<group>";
@@ -974,8 +967,6 @@
 			children = (
 				C1AF0C502460F57200E07391 /* BlockUser.swift */,
 				C1AF0C522460F5A000E07391 /* BlockUserDTO.swift */,
-				C1F613C72470E916003635A4 /* BlockUserError.swift */,
-				C1F613C92470E923003635A4 /* BlockUserResponse.swift */,
 			);
 			path = blockUser;
 			sourceTree = "<group>";
@@ -985,7 +976,6 @@
 			children = (
 				C1AF0C4E2460F53B00E07391 /* EditUser.swift */,
 				C1AF0C4C2460F51000E07391 /* EditUserDTO.swift */,
-				C1F613C32470E775003635A4 /* EditUserResponse.swift */,
 			);
 			path = editUser;
 			sourceTree = "<group>";
@@ -1207,6 +1197,15 @@
 				C1AF0C622460FF7000E07391 /* MeasurementAbleDTO.swift */,
 			);
 			path = measurementDataModel;
+			sourceTree = "<group>";
+		};
+		C1B276C324CBD5A700FE378E /* getUserByName */ = {
+			isa = PBXGroup;
+			children = (
+				C1B276C424CBD5BF00FE378E /* GetUserByFirstName.swift */,
+				C1B276C624CBD5D100FE378E /* GetUserByFirstNameDTO.swift */,
+			);
+			path = getUserByName;
 			sourceTree = "<group>";
 		};
 		C1D83E1724A561D300146EEE /* measurement */ = {
@@ -1456,7 +1455,6 @@
 				C1A8DA1F2430322B00B95C17 /* BottomMeasurement.swift in Sources */,
 				C1AF0C71246114F200E07391 /* CreateAccount.swift in Sources */,
 				C1AF0B34245269CC00E07391 /* ConnectionId.swift in Sources */,
-				C1F613CC2470E939003635A4 /* RemoveUserError.swift in Sources */,
 				C1AF0B4E2452957900E07391 /* FacebookSignIn.swift in Sources */,
 				C191687B244A429C00D6C443 /* SendMeasurement.swift in Sources */,
 				C1F613A02470DEB7003635A4 /* EmailSignUpResponse.swift in Sources */,
@@ -1470,6 +1468,7 @@
 				C1AF0B17244E265900E07391 /* City.swift in Sources */,
 				C1AF0C5D2460F95300E07391 /* AccountRespositoryImpl.swift in Sources */,
 				C15890AB247E1A5200514750 /* GetAllConnectionError.swift in Sources */,
+				C1B276C524CBD5BF00FE378E /* GetUserByFirstName.swift in Sources */,
 				C1AF0B70245F943100E07391 /* GoogleSignIn.swift in Sources */,
 				C1DAD32424455AC600F2A951 /* ConnectionRepository.swift in Sources */,
 				C1AE173E242B0E7100ED1EE4 /* User.swift in Sources */,
@@ -1502,10 +1501,8 @@
 				C1AF0B57245EFC7F00E07391 /* SignOut.swift in Sources */,
 				C1F613E02470F092003635A4 /* DeclineConnectionError.swift in Sources */,
 				C1F613D82470EFA5003635A4 /* SendMeasurementError.swift in Sources */,
-				C1F613CA2470E923003635A4 /* BlockUserResponse.swift in Sources */,
 				C15890A0247E16EA00514750 /* GetConnection.swift in Sources */,
 				C1AF0B3024524E9E00E07391 /* VIPTier.swift in Sources */,
-				C1F613C82470E916003635A4 /* BlockUserError.swift in Sources */,
 				C1F613D22470EB9A003635A4 /* AcceptMeasurementResponse.swift in Sources */,
 				C1EF9A1924C273C1002A52D2 /* Model.swift in Sources */,
 				C1AF0C592460F86700E07391 /* AcceptMeasurementDTO.swift in Sources */,
@@ -1520,7 +1517,6 @@
 				C191687D244A497300D6C443 /* GetUser.swift in Sources */,
 				C1AF0C3D2460EBE400E07391 /* SaveAndUpdateAccountDTO.swift in Sources */,
 				C1DAD2D2243952A300F2A951 /* AccountRepository.swift in Sources */,
-				C1F613C42470E775003635A4 /* EditUserResponse.swift in Sources */,
 				C1AF0C272460E32B00E07391 /* ConnectionRepositoryImpl.swift in Sources */,
 				C1AF0C602460F9B800E07391 /* MeasurementRespository.swift in Sources */,
 				C19D31AD2447F1CD00B84B3B /* MeasurementProtocolDTO.swift in Sources */,
@@ -1564,7 +1560,6 @@
 				C191688D244A6EB300D6C443 /* AddMeasurementDTO.swift in Sources */,
 				C1AF0C2F2460E5FD00E07391 /* AcceptConnectionDTO.swift in Sources */,
 				C1F661332449FE9F0033697E /* EmailSignUp.swift in Sources */,
-				C1F613CE2470E94F003635A4 /* RemoveUserResponse.swift in Sources */,
 				C157447D24A9513C005E8375 /* ClotheMeasurement.swift in Sources */,
 				C1AF0C472460F29A00E07391 /* ForgotPassword.swift in Sources */,
 				C1F661292449FB860033697E /* AddShoeMeasurementDTO.swift in Sources */,
@@ -1585,6 +1580,7 @@
 				C19D31B12447F48B00B84B3B /* SendTopMeasurementDTO.swift in Sources */,
 				C1A8D9D5242FF0B100B95C17 /* UserEmail.swift in Sources */,
 				C1DAD32E24455AEE00F2A951 /* ConnectedUser.swift in Sources */,
+				C1B276C724CBD5D100FE378E /* GetUserByFirstNameDTO.swift in Sources */,
 				C1F614002470F6AC003635A4 /* EditMeasurementResponse.swift in Sources */,
 				C1AF0B8A245FC41400E07391 /* AccountApplicationModel.swift in Sources */,
 				C1AF0C2D2460E56400E07391 /* RemoveConnectionDTO.swift in Sources */,

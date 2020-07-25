@@ -14,7 +14,7 @@ struct AddressApplicationModel : ResponseDataAble, Equatable {
     let streetNumber: String
     let streetName: String
     let city: String
-    let stateOrPostalCode: String
+    let zipOrPostalCode: String
     let country: String
 }
 

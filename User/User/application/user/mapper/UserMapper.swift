@@ -70,7 +70,7 @@ class UserMapper {
         while (userData.shippingAddress.count >= index) {
             let streetAddress = StreetAddress.create(withApartment: userData.shippingAddress[index]?.apartmentNumber ?? "", withStreetNumber: userData.shippingAddress[index]?.streetNumber ?? "", withStreetName: userData.shippingAddress[index]?.streetName ?? "").OptionalData().value!
             let city = City.create(withCity: userData.shippingAddress[index]?.city ?? "").OptionalData().value!
-            let stateOrPostalCode = ZipOrPostalCode.create(with: userData.shippingAddress[index]?.stateOrPostalCode ?? "").OptionalData().value!
+            let stateOrPostalCode = ZipOrPostalCode.create(with: userData.shippingAddress[index]?.zipOrPostalCode ?? "").OptionalData().value!
             let country = Country.set(country: userData.shippingAddress[index]?.country ?? "").OptionalData().value!
             let shippingAddress = ShippingAddress.create(with: streetAddress, with: city, with: stateOrPostalCode, and: country).OptionalData().value!
             shippingFinalAddress.append(shippingAddress)
@@ -85,8 +85,9 @@ class UserMapper {
         while (userData.billingAddress.count >= index) {
             let streetAddress = StreetAddress.create(withApartment: userData.billingAddress[index]?.apartmentNumber ?? "", withStreetNumber: userData.billingAddress[index]?.streetNumber ?? "", withStreetName: userData.billingAddress[index]?.streetName ?? "").OptionalData().value!
             let city = City.create(withCity: userData.billingAddress[index]?.city ?? "").OptionalData().value!
+            let zipOrPostalCode = ZipOrPostalCode.create(with: userData.billingAddress[index]?.zipOrPostalCode ?? "").OptionalData().value!
             let country = Country.set(country: userData.billingAddress[index]?.country ?? "").OptionalData().value!
-            let billingAddress = BillingAddress.create(with: streetAddress, with: city, with: country).OptionalData().value!
+            let billingAddress = BillingAddress.create(with: streetAddress, with: city, with: zipOrPostalCode, with: country).OptionalData().value!
             billingFinalAddress.append(billingAddress)
             index += 1
         }
@@ -103,7 +104,7 @@ class UserMapper {
         var billingFinalAddress = [AddressApplicationModel]()
         var index = 0
         while (user.billingAddress.count >= index) {
-            let address = AddressApplicationModel(apartmentNumber: user.billingAddress[index]?.streetAddress.apartment ?? "", streetNumber: user.billingAddress[index]?.streetAddress.number ?? "", streetName: user.billingAddress[index]?.streetAddress.name ?? "", city: user.billingAddress[index]?.city.value ?? "", stateOrPostalCode: user.billingAddress[index]?.city.value ?? "", country: user.billingAddress[index]?.country.value ?? "")
+            let address = AddressApplicationModel(apartmentNumber: user.billingAddress[index]?.streetAddress.apartment ?? "", streetNumber: user.billingAddress[index]?.streetAddress.number ?? "", streetName: user.billingAddress[index]?.streetAddress.name ?? "", city: user.billingAddress[index]?.city.value ?? "", zipOrPostalCode: user.billingAddress[index]?.city.value ?? "", country: user.billingAddress[index]?.country.value ?? "")
             billingFinalAddress.append(address)
             index += 1
         }
@@ -114,7 +115,7 @@ class UserMapper {
         var index = 0
         var shippingFinalAddress = [AddressApplicationModel]()
         while (user.shippingAddress.count >= index) {
-            let address = AddressApplicationModel(apartmentNumber: user.shippingAddress[index]?.streetAddress.apartment ?? "", streetNumber: user.shippingAddress[index]?.streetAddress.number ?? "", streetName: user.shippingAddress[index]?.streetAddress.name ?? "", city: user.shippingAddress[index]?.city.value ?? "", stateOrPostalCode: user.shippingAddress[index]?.city.value ?? "", country: user.shippingAddress[index]?.country.value ?? "")
+            let address = AddressApplicationModel(apartmentNumber: user.shippingAddress[index]?.streetAddress.apartment ?? "", streetNumber: user.shippingAddress[index]?.streetAddress.number ?? "", streetName: user.shippingAddress[index]?.streetAddress.name ?? "", city: user.shippingAddress[index]?.city.value ?? "", zipOrPostalCode: user.shippingAddress[index]?.city.value ?? "", country: user.shippingAddress[index]?.country.value ?? "")
             shippingFinalAddress.append(address)
             index += 1
         }
