@@ -19,7 +19,7 @@ class AccountDomainMapper {
         var index = 0
             var accountUsers: [AccountUserApplicationModel] = [AccountUserApplicationModel]()
         while account.accounts.count >= index {
-            let users = AccountUserApplicationModel(accountId: account.accounts[index].accountId.value().toString(), userId: account.accounts[index].Id.eId.toString(), firstName: account.accounts[index].firstName.value, lastName: account.accounts[index].lastName?.value ?? "", dateOfBirth: account.accounts[index].dateOfBirth?.value ?? "", gender: account.accounts[index].gender.value, phoneNumber: getPhoneNumberModel(account.accounts[index]), relationship: account.accounts[index].relationShip.type, dateAdded: account.accounts[index].dataAdded.value, shippingAddress: getShippingAddressModel(account.accounts[index]), brandId: getBrandIdModel(account.accounts[index]))
+            let users = AccountUserApplicationModel(accountId: account.accounts[index].accountId.value().toString(), userId: account.accounts[index].Id.eId.toString(), firstName: account.accounts[index].firstName.value, lastName: account.accounts[index].lastName?.value ?? "", dateOfBirth: account.accounts[index].dateOfBirth?.value ?? "", gender: account.accounts[index].gender.value ?? "", phoneNumber: getPhoneNumberModel(account.accounts[index]), relationship: account.accounts[index].relationShip.type, dateAdded: account.accounts[index].dataAdded.value, shippingAddress: getShippingAddressModel(account.accounts[index]), brandId: getBrandIdModel(account.accounts[index]))
             
             accountUsers.append(users)
             index += 1

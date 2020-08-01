@@ -13,7 +13,7 @@ public struct FirstName : Equatable {
     
     private var _value: String;
     
-    init(value: String){
+    private init(value: String){
         self._value = value;
     }
     

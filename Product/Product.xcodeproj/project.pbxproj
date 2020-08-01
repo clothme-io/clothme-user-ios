@@ -426,20 +426,20 @@
 			path = getWishList;
 			sourceTree = "<group>";
 		};
-		C15890BC2482B08B00514750 /* wishListApplicationMode */ = {
+		C15890BC2482B08B00514750 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C15890BD2482B0AF00514750 /* WishListApplicationModel.swift */,
 			);
-			path = wishListApplicationMode;
+			path = model;
 			sourceTree = "<group>";
 		};
-		C15890C02482B29800514750 /* cartApplicationModel */ = {
+		C15890C02482B29800514750 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C15890C12482B2C500514750 /* CartApplicationModel.swift */,
 			);
-			path = cartApplicationModel;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C165625B247973C5001EB497 /* mapper */ = {
@@ -616,14 +616,14 @@
 			path = product;
 			sourceTree = "<group>";
 		};
-		C1A2F0F624A07AFB004A918A /* applicationModel */ = {
+		C1A2F0F624A07AFB004A918A /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C1F6136C2470CA56003635A4 /* likeApplicationModel */,
 				C1F6136D2470CA85003635A4 /* reviewApplicationModel */,
 				C1F6136E2470CAB4003635A4 /* productApplicationModel */,
 			);
-			path = applicationModel;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C1A2F0F724A07B4B004A918A /* repository */ = {
@@ -672,7 +672,7 @@
 				C1A2F0F724A07B4B004A918A /* repository */,
 				C1A2F0F424A0374E004A918A /* useCase */,
 				C1A2F0F324A03744004A918A /* mapper */,
-				C1A2F0F624A07AFB004A918A /* applicationModel */,
+				C1A2F0F624A07AFB004A918A /* model */,
 			);
 			path = product;
 			sourceTree = "<group>";
@@ -681,7 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				C123BD6624A1008700F4D31F /* repository */,
-				C15890C02482B29800514750 /* cartApplicationModel */,
+				C15890C02482B29800514750 /* model */,
 				C165625C247973D4001EB497 /* mapper */,
 				C1AF0D55246C62A000E07391 /* useCase */,
 			);
@@ -692,7 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				C123BD6724A1009800F4D31F /* repository */,
-				C15890BC2482B08B00514750 /* wishListApplicationMode */,
+				C15890BC2482B08B00514750 /* model */,
 				C165625B247973C5001EB497 /* mapper */,
 				C1AF0D54246C629700E07391 /* useCase */,
 			);

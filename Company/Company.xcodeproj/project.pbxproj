@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C163EDBD24D4CF6A000BFD57 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C163EDBC24D4CF6A000BFD57 /* Core.framework */; };
+		C163EDBE24D4CF6A000BFD57 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C163EDBC24D4CF6A000BFD57 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1A8D9FE24300FDA00B95C17 /* Company.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A8D9FC24300FDA00B95C17 /* Company.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1AF0CF424691C1A00E07391 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CF324691C1A00E07391 /* Company.swift */; };
 		C1AF0CF624691C2C00E07391 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CF524691C2C00E07391 /* Location.swift */; };
@@ -16,7 +18,22 @@
 		C1AF0D0124691D0100E07391 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D0024691D0100E07391 /* LocationRepository.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C163EDBF24D4CF6A000BFD57 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C163EDBE24D4CF6A000BFD57 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C163EDBC24D4CF6A000BFD57 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A8D9F924300FDA00B95C17 /* Company.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Company.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A8D9FC24300FDA00B95C17 /* Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		C1A8D9FD24300FDA00B95C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,17 +50,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C163EDBD24D4CF6A000BFD57 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C163EDBB24D4CF6A000BFD57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C163EDBC24D4CF6A000BFD57 /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C163EDC124D4D035000BFD57 /* brand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = brand;
+			sourceTree = "<group>";
+		};
+		C163EDC224D4D03D000BFD57 /* company */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = company;
+			sourceTree = "<group>";
+		};
+		C163EDC324D4D04B000BFD57 /* location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		C163EDC424D4D9F0000BFD57 /* brand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = brand;
+			sourceTree = "<group>";
+		};
+		C163EDC524D4D9FB000BFD57 /* location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		C163EDC624D4DA03000BFD57 /* company */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = company;
+			sourceTree = "<group>";
+		};
 		C1A8D9EF24300FDA00B95C17 = {
 			isa = PBXGroup;
 			children = (
 				C1A8D9FB24300FDA00B95C17 /* Company */,
 				C1A8D9FA24300FDA00B95C17 /* Products */,
+				C163EDBB24D4CF6A000BFD57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,9 +127,9 @@
 		C1A8D9FB24300FDA00B95C17 /* Company */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0B83245FBE0700E07391 /* infrastructure */,
 				C1AF0B82245FBDFF00E07391 /* application */,
 				C1AF0B81245FBDFA00E07391 /* domain */,
+				C1AF0B83245FBE0700E07391 /* infrastructure */,
 				C1A8D9FC24300FDA00B95C17 /* Company.h */,
 				C1A8D9FD24300FDA00B95C17 /* Info.plist */,
 			);
@@ -71,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0CEF24691A9300E07391 /* entity */,
-				C1AF0CEE246919D300E07391 /* repository */,
 				C1AF0CEC246919BB00E07391 /* value_object */,
 			);
 			path = domain;
@@ -80,6 +148,7 @@
 		C1AF0B82245FBDFF00E07391 /* application */ = {
 			isa = PBXGroup;
 			children = (
+				C1AF0CEE246919D300E07391 /* repository */,
 			);
 			path = application;
 			sourceTree = "<group>";
@@ -87,6 +156,9 @@
 		C1AF0B83245FBE0700E07391 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C163EDC324D4D04B000BFD57 /* location */,
+				C163EDC224D4D03D000BFD57 /* company */,
+				C163EDC124D4D035000BFD57 /* brand */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";
@@ -94,6 +166,9 @@
 		C1AF0CEC246919BB00E07391 /* value_object */ = {
 			isa = PBXGroup;
 			children = (
+				C163EDC624D4DA03000BFD57 /* company */,
+				C163EDC524D4D9FB000BFD57 /* location */,
+				C163EDC424D4D9F0000BFD57 /* brand */,
 			);
 			path = value_object;
 			sourceTree = "<group>";
@@ -188,6 +263,7 @@
 				C1A8D9F524300FDA00B95C17 /* Sources */,
 				C1A8D9F624300FDA00B95C17 /* Frameworks */,
 				C1A8D9F724300FDA00B95C17 /* Resources */,
+				C163EDBF24D4CF6A000BFD57 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

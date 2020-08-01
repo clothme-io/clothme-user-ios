@@ -97,7 +97,7 @@ class UserMapper {
     
     // MARK: ToDataModel
     static func toDataModel(user: User) -> UserApplicationModel {
-        return UserApplicationModel(userId: user.userId?.value().toString() ?? "", profileImageUrl: user.profileImage?.value ?? "", firstName: user.firstName.value , lastName: user.lastname?.value ?? "", gender: user.gender.value, email: user.email?.value ?? "", phoneNumber: phoneNumberData(user), profession: user.profession?.value ?? "", currentCity: user.city.value, country: user.country.value, dateOfBirth: user.dateOfBirth?.value ?? "", tier: user.tier.type ?? "", billingAddress: billingAddressData(user), shippingAddress: shippingAddressData(user))
+        return UserApplicationModel(userId: user.userId?.value().toString() ?? "", profileImageUrl: user.profileImage?.value ?? "", firstName: user.firstName.value , lastName: user.lastname?.value ?? "", gender: user.gender.value ?? "", email: user.email?.value ?? "", phoneNumber: phoneNumberData(user), profession: user.profession?.value ?? "", currentCity: user.city.value, country: user.country.value, dateOfBirth: user.dateOfBirth?.value ?? "", tier: user.tier.type ?? "", billingAddress: billingAddressData(user), shippingAddress: shippingAddressData(user))
     }
     
     private static func billingAddressData(_ user: User) -> [AddressApplicationModel] {

@@ -15,12 +15,13 @@ struct Gender: Equatable {
     enum GenderEnum : String, Equatable {
         case Female;
         case Male;
+        case none;
     }
     
-    private var _value: GenderEnum
+    private var _value: String?
     
-    private init(gender: String) {
-        self._value = GenderEnum.init(rawValue: gender)!
+    private init(gender: String?) {
+        self._value = GenderEnum.init(rawValue: gender ?? "").map { $0.rawValue }
     }
     
     static func create (gender: String) -> ResultOption<Gender, AppError> {
@@ -31,8 +32,8 @@ struct Gender: Equatable {
         return .ok(Gender(gender: gender))
     }
     
-    var value: String {
-        return self._value.rawValue
+    var value: String? {
+        return self._value
     }
     
 }

@@ -19,7 +19,11 @@ public class UserId : Entity {
         return .ok(UserId(_id: id ?? Guid(value: nil)))
     }
       
-    func value() -> Guid {
+    public func value() -> Guid {
         return self.eId
+    }
+    
+    public func valueString() -> String {
+        return self.eId.toString()
     }
 }

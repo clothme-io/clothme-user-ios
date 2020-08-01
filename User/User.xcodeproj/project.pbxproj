@@ -29,7 +29,6 @@
 		C189CA3C24A910A400922994 /* AllowedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3B24A910A400922994 /* AllowedConnection.swift */; };
 		C189CA3E24A910FF00922994 /* NumberOfConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA3D24A910FF00922994 /* NumberOfConnection.swift */; };
 		C189CA4424A9269300922994 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C189CA4324A9269300922994 /* Measurement.swift */; };
-		C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1916855244A133300D6C443 /* UserDataMapper.swift */; };
 		C1916871244A240900D6C443 /* RequestMeasurementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1916870244A240900D6C443 /* RequestMeasurementDTO.swift */; };
 		C191687B244A429C00D6C443 /* SendMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191687A244A429C00D6C443 /* SendMeasurement.swift */; };
 		C191687D244A497300D6C443 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191687C244A497300D6C443 /* GetUser.swift */; };
@@ -88,8 +87,6 @@
 		C1AF0B8A245FC41400E07391 /* AccountApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B89245FC41400E07391 /* AccountApplicationModel.swift */; };
 		C1AF0B8D245FC4ED00E07391 /* connectionApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0B8C245FC4ED00E07391 /* connectionApplicationModel.swift */; };
 		C1AF0C272460E32B00E07391 /* ConnectionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C262460E32B00E07391 /* ConnectionRepositoryImpl.swift */; };
-		C1AF0C292460E34A00E07391 /* ConnectionDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C282460E34A00E07391 /* ConnectionDataMapper.swift */; };
-		C1AF0C2B2460E36200E07391 /* AccountDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C2A2460E36200E07391 /* AccountDataMapper.swift */; };
 		C1AF0C2D2460E56400E07391 /* RemoveConnectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C2C2460E56400E07391 /* RemoveConnectionDTO.swift */; };
 		C1AF0C2F2460E5FD00E07391 /* AcceptConnectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C2E2460E5FD00E07391 /* AcceptConnectionDTO.swift */; };
 		C1AF0C312460E64200E07391 /* DeclineConnectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0C302460E64200E07391 /* DeclineConnectionDTO.swift */; };
@@ -214,7 +211,6 @@
 		C189CA3B24A910A400922994 /* AllowedConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedConnection.swift; sourceTree = "<group>"; };
 		C189CA3D24A910FF00922994 /* NumberOfConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfConnection.swift; sourceTree = "<group>"; };
 		C189CA4324A9269300922994 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
-		C1916855244A133300D6C443 /* UserDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataMapper.swift; sourceTree = "<group>"; };
 		C1916870244A240900D6C443 /* RequestMeasurementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMeasurementDTO.swift; sourceTree = "<group>"; };
 		C191687A244A429C00D6C443 /* SendMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMeasurement.swift; sourceTree = "<group>"; };
 		C191687C244A497300D6C443 /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
@@ -274,8 +270,6 @@
 		C1AF0B89245FC41400E07391 /* AccountApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationModel.swift; sourceTree = "<group>"; };
 		C1AF0B8C245FC4ED00E07391 /* connectionApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connectionApplicationModel.swift; sourceTree = "<group>"; };
 		C1AF0C262460E32B00E07391 /* ConnectionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRepositoryImpl.swift; sourceTree = "<group>"; };
-		C1AF0C282460E34A00E07391 /* ConnectionDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDataMapper.swift; sourceTree = "<group>"; };
-		C1AF0C2A2460E36200E07391 /* AccountDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataMapper.swift; sourceTree = "<group>"; };
 		C1AF0C2C2460E56400E07391 /* RemoveConnectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveConnectionDTO.swift; sourceTree = "<group>"; };
 		C1AF0C2E2460E5FD00E07391 /* AcceptConnectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptConnectionDTO.swift; sourceTree = "<group>"; };
 		C1AF0C302460E64200E07391 /* DeclineConnectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineConnectionDTO.swift; sourceTree = "<group>"; };
@@ -530,7 +524,6 @@
 		C1AF0B4724526CC700E07391 /* user */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0B51245E625C00E07391 /* mapper */,
 				C1DAD2CE24394D2A00F2A951 /* repositoryImpl */,
 			);
 			path = user;
@@ -539,7 +532,6 @@
 		C1AF0B4824526D0500E07391 /* account */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0C212460E2B000E07391 /* mapper */,
 				C1AF0C1D2460E28B00E07391 /* repositoryImpl */,
 			);
 			path = account;
@@ -548,18 +540,9 @@
 		C1AF0B4924526D2D00E07391 /* connection */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0C202460E2AB00E07391 /* mapper */,
 				C19D31C2244806DC00B84B3B /* repositoryImpl */,
 			);
 			path = connection;
-			sourceTree = "<group>";
-		};
-		C1AF0B51245E625C00E07391 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C1916855244A133300D6C443 /* UserDataMapper.swift */,
-			);
-			path = mapper;
 			sourceTree = "<group>";
 		};
 		C1AF0BA8245FDEF400E07391 /* infrastructure */ = {
@@ -1175,22 +1158,6 @@
 			path = repositoryImpl;
 			sourceTree = "<group>";
 		};
-		C1AF0C202460E2AB00E07391 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0C282460E34A00E07391 /* ConnectionDataMapper.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
-		C1AF0C212460E2B000E07391 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0C2A2460E36200E07391 /* AccountDataMapper.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
 		C1AF0C612460FF2500E07391 /* measurementDataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1211,17 +1178,9 @@
 		C1D83E1724A561D300146EEE /* measurement */ = {
 			isa = PBXGroup;
 			children = (
-				C1D83E1824A561EB00146EEE /* mapper */,
 				C1D83E1924A561F100146EEE /* repositoryImpl */,
 			);
 			path = measurement;
-			sourceTree = "<group>";
-		};
-		C1D83E1824A561EB00146EEE /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = mapper;
 			sourceTree = "<group>";
 		};
 		C1D83E1924A561F100146EEE /* repositoryImpl */ = {
@@ -1299,8 +1258,8 @@
 		C1DAD2CE24394D2A00F2A951 /* repositoryImpl */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAD2CF24394D4A00F2A951 /* UserRepositoryImpl.swift */,
 				C1AF0B52245E62EE00E07391 /* AuthRepositoryImpl.swift */,
+				C1DAD2CF24394D4A00F2A951 /* UserRepositoryImpl.swift */,
 			);
 			path = repositoryImpl;
 			sourceTree = "<group>";
@@ -1430,7 +1389,6 @@
 				C1F661232449FADE0033697E /* AddMeasurement.swift in Sources */,
 				C1DAD2D024394D4A00F2A951 /* UserRepositoryImpl.swift in Sources */,
 				C1F613DC2470EFDB003635A4 /* SendConnectionError.swift in Sources */,
-				C1AF0C292460E34A00E07391 /* ConnectionDataMapper.swift in Sources */,
 				C1AF0C392460E7C900E07391 /* AcceptConnection.swift in Sources */,
 				C19D31AB2447F17900B84B3B /* SendFullBodyMeasurementDTO.swift in Sources */,
 				C1F613FA2470F311003635A4 /* DeclineMeasurementResponse.swift in Sources */,
@@ -1451,7 +1409,6 @@
 				C1AF0B2E24524E8300E07391 /* FreeTier.swift in Sources */,
 				C1F613EE2470F1FE003635A4 /* SaveAndUpdateAccountResponse.swift in Sources */,
 				C1AF0B59245EFCA600E07391 /* SignOutDTO.swift in Sources */,
-				C1AF0C2B2460E36200E07391 /* AccountDataMapper.swift in Sources */,
 				C1A8DA1F2430322B00B95C17 /* BottomMeasurement.swift in Sources */,
 				C1AF0C71246114F200E07391 /* CreateAccount.swift in Sources */,
 				C1AF0B34245269CC00E07391 /* ConnectionId.swift in Sources */,
@@ -1522,7 +1479,6 @@
 				C19D31AD2447F1CD00B84B3B /* MeasurementProtocolDTO.swift in Sources */,
 				C1AF0B8D245FC4ED00E07391 /* connectionApplicationModel.swift in Sources */,
 				C1F613DA2470EFBD003635A4 /* SendMeasurementResponse.swift in Sources */,
-				C1916856244A133300D6C443 /* UserDataMapper.swift in Sources */,
 				C1A8DA212430324900B95C17 /* FeetMeasurement.swift in Sources */,
 				C1F613FE2470F69E003635A4 /* RequestMeasurementResponse.swift in Sources */,
 				C1AF0C5B2460F8A500E07391 /* AcceptMeasurement.swift in Sources */,
