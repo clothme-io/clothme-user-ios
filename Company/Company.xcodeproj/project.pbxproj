@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C163EDBD24D4CF6A000BFD57 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C163EDBC24D4CF6A000BFD57 /* Core.framework */; };
 		C163EDBE24D4CF6A000BFD57 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C163EDBC24D4CF6A000BFD57 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C163EDD124D52414000BFD57 /* CompanyId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C163EDD024D52414000BFD57 /* CompanyId.swift */; };
 		C1A8D9FE24300FDA00B95C17 /* Company.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A8D9FC24300FDA00B95C17 /* Company.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1AF0CFD24691CE000E07391 /* CompanyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CFC24691CE000E07391 /* CompanyRepository.swift */; };
 		C1AF0CFF24691CF300E07391 /* BrandRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CFE24691CF300E07391 /* BrandRepository.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		C163EDBC24D4CF6A000BFD57 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C163EDD024D52414000BFD57 /* CompanyId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyId.swift; sourceTree = "<group>"; };
 		C1A8D9F924300FDA00B95C17 /* Company.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Company.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A8D9FC24300FDA00B95C17 /* Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		C1A8D9FD24300FDA00B95C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +94,9 @@
 		C163EDC824D52343000BFD57 /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				C163EDCC24D523D6000BFD57 /* company */,
+				C163EDCB24D523CA000BFD57 /* location */,
+				C163EDCA24D523C2000BFD57 /* brand */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -99,16 +104,62 @@
 		C163EDC924D52351000BFD57 /* value_object */ = {
 			isa = PBXGroup;
 			children = (
+				C163EDCF24D523F7000BFD57 /* company */,
+				C163EDCE24D523EB000BFD57 /* location */,
+				C163EDCD24D523E3000BFD57 /* brand */,
 			);
 			path = value_object;
+			sourceTree = "<group>";
+		};
+		C163EDCA24D523C2000BFD57 /* brand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = brand;
+			sourceTree = "<group>";
+		};
+		C163EDCB24D523CA000BFD57 /* location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		C163EDCC24D523D6000BFD57 /* company */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = company;
+			sourceTree = "<group>";
+		};
+		C163EDCD24D523E3000BFD57 /* brand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = brand;
+			sourceTree = "<group>";
+		};
+		C163EDCE24D523EB000BFD57 /* location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = location;
+			sourceTree = "<group>";
+		};
+		C163EDCF24D523F7000BFD57 /* company */ = {
+			isa = PBXGroup;
+			children = (
+				C163EDD024D52414000BFD57 /* CompanyId.swift */,
+			);
+			path = company;
 			sourceTree = "<group>";
 		};
 		C1A8D9EF24300FDA00B95C17 = {
 			isa = PBXGroup;
 			children = (
 				C1A8D9FB24300FDA00B95C17 /* Company */,
-				C1A8D9FA24300FDA00B95C17 /* Products */,
 				C163EDBB24D4CF6A000BFD57 /* Frameworks */,
+				C1A8D9FA24300FDA00B95C17 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,10 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0B82245FBDFF00E07391 /* application */,
-				C163EDC724D52337000BFD57 /* domain */,
-				C1AF0B83245FBE0700E07391 /* infrastructure */,
 				C1A8D9FC24300FDA00B95C17 /* Company.h */,
+				C163EDC724D52337000BFD57 /* domain */,
 				C1A8D9FD24300FDA00B95C17 /* Info.plist */,
+				C1AF0B83245FBE0700E07391 /* infrastructure */,
 			);
 			path = Company;
 			sourceTree = "<group>";
@@ -260,6 +311,7 @@
 			files = (
 				C1AF0D0124691D0100E07391 /* LocationRepository.swift in Sources */,
 				C1AF0CFD24691CE000E07391 /* CompanyRepository.swift in Sources */,
+				C163EDD124D52414000BFD57 /* CompanyId.swift in Sources */,
 				C1AF0CFF24691CF300E07391 /* BrandRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

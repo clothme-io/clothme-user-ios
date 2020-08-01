@@ -509,9 +509,9 @@
 		C191685C244A16A500D6C443 /* application */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0CBA2469109C00E07391 /* wishlist */,
 				C1AF0CB72469104500E07391 /* cart */,
 				C1AF0CB624690C8900E07391 /* product */,
+				C1AF0CBA2469109C00E07391 /* wishlist */,
 			);
 			path = application;
 			sourceTree = "<group>";
@@ -541,9 +541,9 @@
 		C1916867244A1ADD00D6C443 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C1AF0CBC2469115300E07391 /* cart */,
 				C1AF0CBF2469119B00E07391 /* product */,
 				C1AF0CBD2469115B00E07391 /* wishlist */,
-				C1AF0CBC2469115300E07391 /* cart */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";
@@ -659,9 +659,9 @@
 			children = (
 				C191685C244A16A500D6C443 /* application */,
 				C1AF0CC92469139200E07391 /* domain */,
+				C1AE1706242B0C7C00ED1EE4 /* Info.plist */,
 				C1916867244A1ADD00D6C443 /* infrastructure */,
 				C1AE1705242B0C7C00ED1EE4 /* Product.h */,
-				C1AE1706242B0C7C00ED1EE4 /* Info.plist */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -761,8 +761,8 @@
 		C1AF0CC92469139200E07391 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0CCB246913D000E07391 /* value_object */,
 				C1AF0CCA246913C600E07391 /* entity */,
+				C1AF0CCB246913D000E07391 /* value_object */,
 			);
 			path = domain;
 			sourceTree = "<group>";
