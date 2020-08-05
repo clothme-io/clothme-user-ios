@@ -1,15 +1,15 @@
 //
-//  ProductCategoryType.swift
+//  Fabric.swift
 //  Product
 //
-//  Created by MACPRO on 2020-05-13.
+//  Created by MACPRO on 2020-08-05.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
 import Foundation
 import Core
 
-public struct ProductCategoryType: Equatable {
+public struct Fabric: Equatable {
     
     private var _value: String;
     
@@ -17,12 +17,12 @@ public struct ProductCategoryType: Equatable {
         self._value = value;
     }
     
-    public static func create(with input: String) -> ResultOption<ProductCategoryType, AppError> {
-        let validInput = Guard.againstNilValue(argument: input)
-        if !validInput {
+    public static func create(with name: String) -> ResultOption<Fabric, AppError> {
+        let validName = Guard.againstNilValue(argument: name)
+        if !validName {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(ProductCategoryType(value: input))
+        return .ok(Fabric(value: name))
     }
     
     public var value: String {

@@ -17,7 +17,6 @@ public struct FirstName : Equatable {
         self._value = value;
     }
     
-    
     public static func create(with name: String) -> ResultOption<FirstName, AppError> {
         let validName = Guard.againstNilValue(argument: name)
         if !validName {
@@ -30,5 +29,6 @@ public struct FirstName : Equatable {
     public var value: String {
            return self._value
     }
+    
 }
 
