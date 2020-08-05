@@ -43,7 +43,6 @@
 		C1AF0D14246C45D900E07391 /* ReviewText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D13246C45D900E07391 /* ReviewText.swift */; };
 		C1AF0D16246C466C00E07391 /* ReviewCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D15246C466C00E07391 /* ReviewCount.swift */; };
 		C1AF0D18246C468E00E07391 /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D17246C468E00E07391 /* Reviewer.swift */; };
-		C1AF0D1A246C46B000E07391 /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D19246C46B000E07391 /* BadgeType.swift */; };
 		C1AF0D1C246C47B200E07391 /* ProductName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D1B246C47B200E07391 /* ProductName.swift */; };
 		C1AF0D1E246C47C800E07391 /* ProductDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D1D246C47C800E07391 /* ProductDescription.swift */; };
 		C1AF0D20246C47D900E07391 /* ProductPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D1F246C47D900E07391 /* ProductPrice.swift */; };
@@ -217,7 +216,6 @@
 		C1AF0D13246C45D900E07391 /* ReviewText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewText.swift; sourceTree = "<group>"; };
 		C1AF0D15246C466C00E07391 /* ReviewCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCount.swift; sourceTree = "<group>"; };
 		C1AF0D17246C468E00E07391 /* Reviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewer.swift; sourceTree = "<group>"; };
-		C1AF0D19246C46B000E07391 /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
 		C1AF0D1B246C47B200E07391 /* ProductName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductName.swift; sourceTree = "<group>"; };
 		C1AF0D1D246C47C800E07391 /* ProductDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescription.swift; sourceTree = "<group>"; };
 		C1AF0D1F246C47D900E07391 /* ProductPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPrice.swift; sourceTree = "<group>"; };
@@ -892,7 +890,6 @@
 		C1AF0CDF246917FF00E07391 /* badge */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0D19246C46B000E07391 /* BadgeType.swift */,
 				C1AF0D36246C4A6D00E07391 /* DeliveryBadge.swift */,
 				C1AF0D38246C4AAF00E07391 /* ReturnsBadge.swift */,
 				C1AF0D3A246C4AE200E07391 /* EthicalBadge.swift */,
@@ -1471,7 +1468,6 @@
 				C1AF0D87246C9E3700E07391 /* GetUnFitProductByUserIdDTO.swift in Sources */,
 				C1AF0DA7246CA00600E07391 /* GetLikeByProductId.swift in Sources */,
 				C15890C22482B2C500514750 /* CartApplicationModel.swift in Sources */,
-				C1AF0D1A246C46B000E07391 /* BadgeType.swift in Sources */,
 				C1AF0E24246CDD5000E07391 /* AddProductToCartResponseDTO.swift in Sources */,
 				C1AF0D39246C4AAF00E07391 /* ReturnsBadge.swift in Sources */,
 				C1F613922470DA3F003635A4 /* GetProductReviewByProductIdError.swift in Sources */,
