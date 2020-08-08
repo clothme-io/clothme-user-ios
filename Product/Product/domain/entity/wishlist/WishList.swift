@@ -11,21 +11,28 @@ import Core
 
 public class WishList: AggregateRoot {
     
-    private let wishListId: WishListId
-    private let wishListItem: [WishListItem]
+    private let _wishListId: WishListId
+    private let _wishListItem: [WishListItem]
     
     private init(
         wishListId: WishListId,
         wishListItem: [WishListItem]
     ) {
-        self.wishListId = wishListId
-        self.wishListItem = wishListItem
+        self._wishListId = wishListId
+        self._wishListItem = wishListItem
         super.init(_id: Guid(value: wishListId.eId.toString()))
     }
     
-    public func getWishListCount() -> WishListCount? {
-        let countOrError = WishListCount.create(with: self.wishListItem.count)
-        let count = countOrError.OptionalData().value
-        return count
+    func getWishListId() -> WishListId {
+        return self._wishListId
     }
+    
+    func getWishistItem() -> [WishListItem] {
+        return self._wishListItem
+    }
+//    public func getWishListCount() -> WishListCount? {
+//        let countOrError = WishListCount.create(with: self.wishListItem.count)
+//        let count = countOrError.OptionalData().value
+//        return count
+//    }
 }

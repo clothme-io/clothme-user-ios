@@ -11,4 +11,22 @@ import Core
 
 public struct ModifiedDate: Equatable {
     
+    private var _value: String;
+    
+    private init(value: String) {
+        self._value = value;
+    }
+    
+    public static func create(with name: String) -> ResultOption<ModifiedDate, AppError> {
+        let validName = Guard.againstNilValue(argument: name)
+        if !validName {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(ModifiedDate(value: name))
+    }
+    
+    public var value: String {
+           return self._value
+    }
+    
 }
