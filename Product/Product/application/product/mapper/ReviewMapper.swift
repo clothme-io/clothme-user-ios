@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import Core
 
 class ReviewMapper {
     
-    static func toDomainModel() {
+    static func toDomainModel(data: ReviewApplicationModel) -> ResultOption<Review, AppError> {
         
     }
     
-    static func toDataModel() {
+    static func toDataModel(model: Review) -> ReviewApplicationModel {
         
     }
     

@@ -15,9 +15,6 @@
 		C15890C22482B2C500514750 /* CartApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15890C12482B2C500514750 /* CartApplicationModel.swift */; };
 		C16562612479BCA9001EB497 /* WishListDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562602479BCA9001EB497 /* WishListDataMapper.swift */; };
 		C16562632479BD32001EB497 /* CartDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562622479BD32001EB497 /* CartDataMapper.swift */; };
-		C16562652479BD81001EB497 /* ProductDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562642479BD81001EB497 /* ProductDataMapper.swift */; };
-		C16562692479BDC9001EB497 /* ReviewDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562682479BDC9001EB497 /* ReviewDataMapper.swift */; };
-		C165626B2479BE03001EB497 /* LikeDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165626A2479BE03001EB497 /* LikeDataMapper.swift */; };
 		C165626D2479BE4E001EB497 /* ProductMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165626C2479BE4E001EB497 /* ProductMapper.swift */; };
 		C165626F2479C6B7001EB497 /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165626E2479C6B7001EB497 /* ReviewMapper.swift */; };
 		C16562732479CC26001EB497 /* LikeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16562722479CC26001EB497 /* LikeMapper.swift */; };
@@ -199,9 +196,6 @@
 		C15890C12482B2C500514750 /* CartApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApplicationModel.swift; sourceTree = "<group>"; };
 		C16562602479BCA9001EB497 /* WishListDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDataMapper.swift; sourceTree = "<group>"; };
 		C16562622479BD32001EB497 /* CartDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataMapper.swift; sourceTree = "<group>"; };
-		C16562642479BD81001EB497 /* ProductDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataMapper.swift; sourceTree = "<group>"; };
-		C16562682479BDC9001EB497 /* ReviewDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDataMapper.swift; sourceTree = "<group>"; };
-		C165626A2479BE03001EB497 /* LikeDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDataMapper.swift; sourceTree = "<group>"; };
 		C165626C2479BE4E001EB497 /* ProductMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMapper.swift; sourceTree = "<group>"; };
 		C165626E2479C6B7001EB497 /* ReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMapper.swift; sourceTree = "<group>"; };
 		C16562722479CC26001EB497 /* LikeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeMapper.swift; sourceTree = "<group>"; };
@@ -494,22 +488,6 @@
 			path = mapper;
 			sourceTree = "<group>";
 		};
-		C16562662479BDAD001EB497 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C16562682479BDC9001EB497 /* ReviewDataMapper.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
-		C16562672479BDB9001EB497 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C165626A2479BE03001EB497 /* LikeDataMapper.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
 		C191685C244A16A500D6C443 /* application */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,14 +528,6 @@
 				C1AF0CBD2469115B00E07391 /* wishlist */,
 			);
 			path = infrastructure;
-			sourceTree = "<group>";
-		};
-		C1916868244A1AF000D6C443 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				C16562642479BD81001EB497 /* ProductDataMapper.swift */,
-			);
-			path = mapper;
 			sourceTree = "<group>";
 		};
 		C1916869244A1AF700D6C443 /* repositoryImpl */ = {
@@ -637,6 +607,14 @@
 			isa = PBXGroup;
 			children = (
 				C1A8DA112430143800B95C17 /* Product.swift */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		C1A499EF24DF5FF30062ADEB /* product */ = {
+			isa = PBXGroup;
+			children = (
+				C1AF0D43246C5AEB00E07391 /* repositoryImpl */,
 			);
 			path = product;
 			sourceTree = "<group>";
@@ -732,9 +710,9 @@
 		C1AF0CBF2469119B00E07391 /* product */ = {
 			isa = PBXGroup;
 			children = (
+				C1A499EF24DF5FF30062ADEB /* product */,
 				C1AF0CBE2469117800E07391 /* badge */,
 				C1AF0D3F246C573100E07391 /* like */,
-				C1916868244A1AF000D6C443 /* mapper */,
 				C1916869244A1AF700D6C443 /* repositoryImpl */,
 				C1AF0D3E246C572A00E07391 /* review */,
 			);
@@ -925,7 +903,6 @@
 		C1AF0D3E246C572A00E07391 /* review */ = {
 			isa = PBXGroup;
 			children = (
-				C16562662479BDAD001EB497 /* mapper */,
 				C1AF0D44246C5AF400E07391 /* repositoryImpl */,
 			);
 			path = review;
@@ -934,8 +911,6 @@
 		C1AF0D3F246C573100E07391 /* like */ = {
 			isa = PBXGroup;
 			children = (
-				C16562672479BDB9001EB497 /* mapper */,
-				C1AF0D43246C5AEB00E07391 /* repositoryImpl */,
 			);
 			path = like;
 			sourceTree = "<group>";
@@ -1366,7 +1341,6 @@
 				C1A499EE24DF29650062ADEB /* WishListCount.swift in Sources */,
 				C165626F2479C6B7001EB497 /* ReviewMapper.swift in Sources */,
 				C1AF0E28246CDFD900E07391 /* GetFitProductByCountryResponse.swift in Sources */,
-				C16562692479BDC9001EB497 /* ReviewDataMapper.swift in Sources */,
 				C1F6135F2470798C003635A4 /* RemoveProductFromCartError.swift in Sources */,
 				C1AF0D20246C47D900E07391 /* ProductPrice.swift in Sources */,
 				C1F613742470CD4E003635A4 /* GetFitProductByUserIdError.swift in Sources */,
@@ -1394,7 +1368,6 @@
 				C1F613702470CD0F003635A4 /* GetUnFitProductByUserIdError.swift in Sources */,
 				C1A499D324DB12640062ADEB /* CartItem.swift in Sources */,
 				C1AF0CD02469173700E07391 /* WishList.swift in Sources */,
-				C16562652479BD81001EB497 /* ProductDataMapper.swift in Sources */,
 				C1A499DA24DF01EC0062ADEB /* ProductTax.swift in Sources */,
 				C1A499EC24DF29310062ADEB /* WishListItem.swift in Sources */,
 				C1AF0D85246C9E2300E07391 /* GetUnFitProductByUserId.swift in Sources */,
@@ -1457,7 +1430,6 @@
 				C1A499CC24DAFAB80062ADEB /* Fabric.swift in Sources */,
 				C1AF0D14246C45D900E07391 /* ReviewText.swift in Sources */,
 				C1AF0E26246CDF3500E07391 /* GetUnFitProductByUserIdResponse.swift in Sources */,
-				C165626B2479BE03001EB497 /* LikeDataMapper.swift in Sources */,
 				C1A499E624DF233C0062ADEB /* ReviewDate.swift in Sources */,
 				C1AF0D26246C494600E07391 /* ProductCategory.swift in Sources */,
 				C1AF0D95246C9F6300E07391 /* EditProductReviewDTO.swift in Sources */,

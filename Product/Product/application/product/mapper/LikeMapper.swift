@@ -11,7 +11,7 @@ import Core
 
 class LikeMapper {
     
-    static func toDomainModel(data: LikeDataMapper) -> ResultOption<Like, AppError> {
+    static func toDomainModel(data: LikeApplicationModel) -> ResultOption<Like, AppError> {
         
     }
     

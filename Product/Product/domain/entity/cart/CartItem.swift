@@ -32,7 +32,23 @@ public class CartItem: Entity {
         super.init(_id: Guid(value: productId.eId.toString()))
     }
     
-    func getPrice() -> ProductPrice {
+    func getProductId() -> ProductId {
+        return self._productId
+    }
+    
+    func getProductName() -> ProductName {
+        return self._productName
+    }
+    
+    func getProductPrice() -> ProductPrice {
         return self._productPrice
+    }
+    
+    func getProductDiscount() -> ProductDiscount {
+        return self._productDiscount
+    }
+    
+    func getProductTax() -> ProductTax {
+        return self._productTax
     }
 }
