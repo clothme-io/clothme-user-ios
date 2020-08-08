@@ -87,7 +87,10 @@ struct EditUser : UseCaseAble {
             }
             
             if let age = data.dateOfBirth {
-                
+                let ageOrError = Age.create(with: age).isSuccess()
+                if !ageOrError {
+                    return promise(.failure(AppError.emptyValueNotAllowed))
+                }
             }
             
             if let profession = data.profession {
