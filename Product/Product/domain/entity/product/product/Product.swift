@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Core
+
+public class Product: AggregateRoot {
+    
+    
+    
+}

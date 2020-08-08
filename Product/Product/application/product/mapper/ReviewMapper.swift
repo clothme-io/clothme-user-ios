@@ -1,5 +1,5 @@
 //
-//  LikeDomainMap.swift
+//  ReviewDomainMap.swift
 //  Product
 //
 //  Created by MACPRO on 2020-05-23.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LikeDomainMap {
+class ReviewMapper {
     
     static func toModel() {
         

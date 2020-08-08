@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProductDomainMapper {
+class ProductMapper {
     
     static func toModel() {
         

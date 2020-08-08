@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Core
+
+public class Review: Entity {
+    
+    // reviewId
+    // productId
+    // reviewText
+    // star
+    // reviewDate
+    // modifiedDate
+}

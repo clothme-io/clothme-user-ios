@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import Core
+
+public class Cart: AggregateRoot {
+    
+    // cartId
+    // [cartItem]
+    // totalPrice
+    // totalDiscount
+    // totalCount
+    // totalTax 
+    
+}

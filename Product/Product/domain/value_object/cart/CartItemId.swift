@@ -1,22 +1,22 @@
 //
-//  LikeId.swift
+//  CartItemId.swift
 //  Product
 //
-//  Created by MACPRO on 2020-05-11.
+//  Created by MACPRO on 2020-08-05.
 //  Copyright © 2020 Paul Ikhane. All rights reserved.
 //
 
 import Foundation
 import Core
 
-public class LikeId: Entity {
+public class CartItemId: Entity {
     
     private override init(_id: Guid?) {
            super.init(_id: _id)
        }
          
-       static func create(id: Guid?) -> ResultOption<LikeId, AppError> {
-           return .ok(LikeId(_id: id ?? Guid(value: nil)))
+       static func create(id: Guid?) -> ResultOption<CartItemId, AppError> {
+           return .ok(CartItemId(_id: id ?? Guid(value: nil)))
        }
          
        public func value() -> Guid {
@@ -26,4 +26,5 @@ public class LikeId: Entity {
        public func valueString() -> String {
            return self.eId.toString()
        }
+    
 }
