@@ -18,31 +18,31 @@
       location = "container:"
       name = "BoundedContext">
       <FileRef
-         location = "group:Rack/Rack.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Notification/Notification.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:AppSetting/AppSetting.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Payment/Payment.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:Circle/Circle.xcodeproj">
       </FileRef>
       <FileRef
+         location = "group:Company/Company.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Invite/Invite.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Company/Company.xcodeproj">
+         location = "group:Notification/Notification.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:Order/Order.xcodeproj">
       </FileRef>
       <FileRef
+         location = "group:Payment/Payment.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Product/Product.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Rack/Rack.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:User/User.xcodeproj">

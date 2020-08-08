@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import Core
 
 class LikeMapper {
     
-    static func toModel() {
+    static func toDomainModel(data: LikeDataMapper) -> ResultOption<Like, AppError> {
         
     }
+    
+    static func toDataModel(model: Like) -> LikeApplicationModel {
+        
+    }
+    
 }

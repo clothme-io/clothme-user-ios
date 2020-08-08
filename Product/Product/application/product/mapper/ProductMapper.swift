@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import Core
 
 class ProductMapper {
     
-    static func toModel() {
+    static func toDomainModel(data: ProductApplicationModel) -> ResultOption<Product, AppError> {
+        return .ok(product)
+    }
+    
+    static func toDataModel(model: Product) -> ProductApplicationModel {
         
     }
 }

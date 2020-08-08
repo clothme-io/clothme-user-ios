@@ -53,11 +53,11 @@
 		C183EC05242C1BE400785111 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0B80245FBDD400E07391 /* infrastructure */,
 				C1AF0B7F245FBDCD00E07391 /* application */,
 				C1AF0B7E245FBDC400E07391 /* domain */,
-				C183EC06242C1BE400785111 /* Order.h */,
 				C183EC07242C1BE400785111 /* Info.plist */,
+				C1AF0B80245FBDD400E07391 /* infrastructure */,
+				C183EC06242C1BE400785111 /* Order.h */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -66,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				C123BD8A24A15A4C00F4D31F /* order */,
-				C1DAD33624455C2D00F2A951 /* wardrobe */,
 				C1DAD33524455BE000F2A951 /* refund */,
+				C1DAD33624455C2D00F2A951 /* wardrobe */,
 			);
 			path = domain;
 			sourceTree = "<group>";

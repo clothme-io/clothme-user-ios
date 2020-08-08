@@ -287,12 +287,12 @@
 		C153CFEE2484A86500BD0A31 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				C1B4777D247AFE1400D0CCE2 /* authModule */,
 				C1589094247DE5B400514750 /* discoveryModule */,
-				C15890BA2482AFBD00514750 /* shoppingModule */,
 				C15890BB2482AFDE00514750 /* onbardingModule */,
 				C15890B92482A96500514750 /* rackModule */,
+				C15890BA2482AFBD00514750 /* shoppingModule */,
 				C1589093247DE5A200514750 /* userModule */,
-				C1B4777D247AFE1400D0CCE2 /* authModule */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -478,13 +478,13 @@
 		C1589093247DE5A200514750 /* userModule */ = {
 			isa = PBXGroup;
 			children = (
-				C153D0052484AE5F00BD0A31 /* wishList */,
-				C153D0042484ADE500BD0A31 /* connection */,
-				C153D0032484ADD300BD0A31 /* wardrope */,
-				C153D0022484AD9300BD0A31 /* myBrandList */,
-				C153D0012484AD8200BD0A31 /* setting */,
 				C153CFFB2484AC9900BD0A31 /* account */,
+				C153D0042484ADE500BD0A31 /* connection */,
+				C153D0022484AD9300BD0A31 /* myBrandList */,
 				C153CFFA2484AC5900BD0A31 /* profile */,
+				C153D0012484AD8200BD0A31 /* setting */,
+				C153D0032484ADD300BD0A31 /* wardrope */,
+				C153D0052484AE5F00BD0A31 /* wishList */,
 			);
 			path = userModule;
 			sourceTree = "<group>";
@@ -493,8 +493,8 @@
 			isa = PBXGroup;
 			children = (
 				C16494B7249D8FB6008ED2AF /* brand */,
-				C1649494249D4FBE008ED2AF /* merchant */,
 				C153D0092484AF1500BD0A31 /* discovery */,
+				C1649494249D4FBE008ED2AF /* merchant */,
 			);
 			path = discoveryModule;
 			sourceTree = "<group>";
@@ -511,12 +511,12 @@
 		C15890BA2482AFBD00514750 /* shoppingModule */ = {
 			isa = PBXGroup;
 			children = (
-				C1649496249D5239008ED2AF /* userProduct */,
-				C1649495249D51AF008ED2AF /* refund */,
+				C153D0062484AE7F00BD0A31 /* cart */,
+				C153D0072484AE8B00BD0A31 /* checkout */,
 				C1649493249D4DEC008ED2AF /* delivery */,
 				C153D0082484AECA00BD0A31 /* product */,
-				C153D0072484AE8B00BD0A31 /* checkout */,
-				C153D0062484AE7F00BD0A31 /* cart */,
+				C1649495249D51AF008ED2AF /* refund */,
+				C1649496249D5239008ED2AF /* userProduct */,
 			);
 			path = shoppingModule;
 			sourceTree = "<group>";
@@ -856,16 +856,16 @@
 		C1AE16C82429A15600ED1EE4 /* ClothME */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE16C92429A15600ED1EE4 /* AppDelegate.swift */,
+				C1AE16CF2429A15800ED1EE4 /* Assets.xcassets */,
 				C1649487249D4A26008ED2AF /* common */,
+				C1AE16CD2429A15600ED1EE4 /* ContentView.swift */,
+				C1AE16D72429A15800ED1EE4 /* Info.plist */,
+				C1AE16D42429A15800ED1EE4 /* LaunchScreen.storyboard */,
 				C153CFEF2484A87F00BD0A31 /* models */,
 				C153CFEE2484A86500BD0A31 /* modules */,
-				C1AE16C92429A15600ED1EE4 /* AppDelegate.swift */,
-				C1AE16CB2429A15600ED1EE4 /* SceneDelegate.swift */,
-				C1AE16CD2429A15600ED1EE4 /* ContentView.swift */,
-				C1AE16CF2429A15800ED1EE4 /* Assets.xcassets */,
-				C1AE16D42429A15800ED1EE4 /* LaunchScreen.storyboard */,
-				C1AE16D72429A15800ED1EE4 /* Info.plist */,
 				C1AE16D12429A15800ED1EE4 /* Preview Content */,
+				C1AE16CB2429A15600ED1EE4 /* SceneDelegate.swift */,
 			);
 			path = ClothME;
 			sourceTree = "<group>";
@@ -930,10 +930,10 @@
 		C1B4777D247AFE1400D0CCE2 /* authModule */ = {
 			isa = PBXGroup;
 			children = (
-				C153D0002484AD6B00BD0A31 /* resetPassword */,
-				C153CFFF2484AD6300BD0A31 /* signOut */,
 				C153CFFE2484ACDC00BD0A31 /* forgotPassword */,
+				C153D0002484AD6B00BD0A31 /* resetPassword */,
 				C1B4777E247AFE2200D0CCE2 /* signIn */,
+				C153CFFF2484AD6300BD0A31 /* signOut */,
 				C1B4777C247AFDF200D0CCE2 /* signUp */,
 			);
 			path = authModule;

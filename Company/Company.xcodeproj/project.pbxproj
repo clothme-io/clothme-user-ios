@@ -85,8 +85,8 @@
 		C163EDC724D52337000BFD57 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				C163EDC924D52351000BFD57 /* value_object */,
 				C163EDC824D52343000BFD57 /* entity */,
+				C163EDC924D52351000BFD57 /* value_object */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -104,9 +104,9 @@
 		C163EDC924D52351000BFD57 /* value_object */ = {
 			isa = PBXGroup;
 			children = (
+				C163EDCD24D523E3000BFD57 /* brand */,
 				C163EDCF24D523F7000BFD57 /* company */,
 				C163EDCE24D523EB000BFD57 /* location */,
-				C163EDCD24D523E3000BFD57 /* brand */,
 			);
 			path = value_object;
 			sourceTree = "<group>";
@@ -187,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0CFA24691C7E00E07391 /* brand */,
-				C1AF0CFB24691CC100E07391 /* location */,
 				C1AF0CF924691C7300E07391 /* company */,
+				C1AF0CFB24691CC100E07391 /* location */,
 			);
 			path = application;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 		C1AF0B83245FBE0700E07391 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				C163EDC324D4D04B000BFD57 /* location */,
-				C163EDC224D4D03D000BFD57 /* company */,
 				C163EDC124D4D035000BFD57 /* brand */,
+				C163EDC224D4D03D000BFD57 /* company */,
+				C163EDC324D4D04B000BFD57 /* location */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";

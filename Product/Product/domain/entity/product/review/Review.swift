@@ -11,10 +11,10 @@ import Core
 
 public class Review: Entity {
     
-    // reviewId
-    // productId
-    // reviewText
-    // star
-    // reviewDate
-    // modifiedDate
+    private let reviewId: ReviewId
+    private let productId: ProductId
+    private let reviewText: ReviewText
+    private let star: Star
+    private let reviewDate: ReviewDate
+    private let modifiedDate: ModifiedDate
 }

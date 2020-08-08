@@ -10,7 +10,12 @@ import Foundation
 
 class ReviewMapper {
     
-    static func toModel() {
+    static func toDomainModel() {
         
     }
+    
+    static func toDataModel() {
+        
+    }
+    
 }
