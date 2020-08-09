@@ -11,6 +11,8 @@ import Core
 
 public class WishListItem: Entity {
     
-    
+    private let _productId: ProductId
+    private let _productName: ProductName
+    private let _productPrice: ProductPrice
     
 }

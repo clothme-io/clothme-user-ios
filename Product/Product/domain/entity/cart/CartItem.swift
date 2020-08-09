@@ -12,6 +12,7 @@ import Core
 public class CartItem: Entity {
     
     private let _productId: ProductId
+    private let _productImage: ProductImage
     private let _productName: ProductName
     private let _productPrice: ProductPrice
     private let _productDiscount: ProductDiscount
@@ -19,12 +20,14 @@ public class CartItem: Entity {
     
     private init(
         productId: ProductId,
+        productImage: ProductImage,
         productName: ProductName,
         productPrice: ProductPrice,
         productDiscount: ProductDiscount,
         productTax: ProductTax
     ) {
         self._productId = productId
+        self._productImage = productImage
         self._productName = productName
         self._productPrice = productPrice
         self._productDiscount = productDiscount

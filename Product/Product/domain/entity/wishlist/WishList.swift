@@ -30,9 +30,5 @@ public class WishList: AggregateRoot {
     func getWishistItem() -> [WishListItem] {
         return self._wishListItem
     }
-//    public func getWishListCount() -> WishListCount? {
-//        let countOrError = WishListCount.create(with: self.wishListItem.count)
-//        let count = countOrError.OptionalData().value
-//        return count
-//    }
+    
 }
