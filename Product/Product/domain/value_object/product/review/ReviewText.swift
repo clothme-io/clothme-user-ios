@@ -25,7 +25,7 @@ public struct ReviewText: Equatable {
         return .ok(ReviewText(value: name))
     }
     
-    public var value: String {
+    public var text: String {
            return self._value
     }
     

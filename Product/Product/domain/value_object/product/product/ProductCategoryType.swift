@@ -25,7 +25,7 @@ public struct ProductCategoryType: Equatable {
         return .ok(ProductCategoryType(value: input))
     }
     
-    public var value: String {
+    public var categoryType: String {
            return self._value
     }
     

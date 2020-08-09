@@ -25,7 +25,7 @@ public struct ItemCount: Equatable {
         return .ok(ItemCount(value: input))
     }
     
-    public var value: Int {
+    public var count: Int {
            return self._value
     }
     

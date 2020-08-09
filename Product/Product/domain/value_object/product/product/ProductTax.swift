@@ -25,7 +25,7 @@ public struct ProductTax {
         return .ok(ProductTax(value: input))
     }
     
-    public var value: Double {
+    public var tax: Double {
            return self._value
     }
     

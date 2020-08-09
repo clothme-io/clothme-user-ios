@@ -25,7 +25,7 @@ public struct ReturnPolicy: Equatable {
         return .ok(ReturnPolicy(value: input))
     }
     
-    public var value: String {
+    public var policy: String {
            return self._value
     }
     

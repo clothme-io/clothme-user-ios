@@ -25,7 +25,7 @@ public struct Star: Equatable {
         return .ok(Star(value: input))
     }
     
-    public var value: Double {
+    public var star: Double {
            return self._value
     }
     

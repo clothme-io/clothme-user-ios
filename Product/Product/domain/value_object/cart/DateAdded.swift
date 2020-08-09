@@ -25,7 +25,7 @@ public struct DateAdded: Equatable {
         return .ok(DateAdded(value: name))
     }
     
-    public var value: String {
+    public var date: String {
            return self._value
     }
     

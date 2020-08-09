@@ -11,6 +11,22 @@ import Core
 
 public struct ProductGender: Equatable {
     
+    private var _value: String;
     
+    private init(value: String) {
+        self._value = value;
+    }
+    
+    public static func create(with name: String) -> ResultOption<ProductGender, AppError> {
+        let validName = Guard.againstNilValue(argument: name)
+        if !validName {
+            return .error(AppError.nilValueNotAllowed)
+        }
+        return .ok(ProductGender(value: name))
+    }
+    
+    public var gender: String {
+           return self._value
+    }
     
 }

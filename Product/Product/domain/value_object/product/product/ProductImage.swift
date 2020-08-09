@@ -20,6 +20,10 @@ public struct ProductImage: Equatable {
     }
     
     public static func create(images: [String]) -> ResultOption<ProductImage, AppError> {
+        let imageInput = Guard.againstNil(argument: images)
+        if !imageInput {
+            return .error(AppError.emptyData)
+        }
         return .ok(ProductImage(images: images))
     }
     

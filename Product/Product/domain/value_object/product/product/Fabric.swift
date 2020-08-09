@@ -25,7 +25,7 @@ public struct Fabric: Equatable {
         return .ok(Fabric(value: name))
     }
     
-    public var value: String {
+    public var fabric: String {
            return self._value
     }
     

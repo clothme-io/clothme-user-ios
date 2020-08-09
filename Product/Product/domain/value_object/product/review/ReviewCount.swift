@@ -25,7 +25,7 @@ public struct ReviewCount: Equatable {
         return .ok(ReviewCount(value: input))
     }
     
-    public var value: Double {
+    public var count: Double {
            return self._value
     }
     

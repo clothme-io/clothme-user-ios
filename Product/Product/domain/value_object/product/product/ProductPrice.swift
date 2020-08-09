@@ -25,7 +25,7 @@ public struct ProductPrice: Equatable {
         return .ok(ProductPrice(value: input))
     }
     
-    public var value: Double {
+    public var price: Double {
            return self._value
     }
     

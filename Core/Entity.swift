@@ -31,6 +31,10 @@ open class Entity {
     private func ToRawValue () -> Guid {
         return self.eId;
     }
+    
+    public func toStringValue() -> String {
+        return self.eId.toString()
+    }
 
 }
 

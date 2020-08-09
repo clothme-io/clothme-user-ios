@@ -25,7 +25,7 @@ public struct SpecialOffer: Equatable {
         return .ok(SpecialOffer(value: name))
     }
     
-    public var value: String {
+    public var offer: String {
            return self._value
     }
     

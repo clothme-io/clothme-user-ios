@@ -20,7 +20,7 @@ public class Cart: AggregateRoot {
     ) {
         self._cartId = cartId
         self._cartItem = cartItem
-        super.init(_id: Guid(value: cartId.eId.toString()))
+        super.init(_id: Guid(value: cartId.value().toString()))
     }
     
     static func create(

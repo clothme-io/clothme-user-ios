@@ -25,7 +25,7 @@ public struct ProductQuantity: Equatable {
         return .ok(ProductQuantity(value: input))
     }
     
-    public var value: Int {
+    public var quantity: Int {
            return self._value
     }
     

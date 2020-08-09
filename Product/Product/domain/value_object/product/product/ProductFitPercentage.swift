@@ -25,7 +25,7 @@ public struct ProductFitPercentage {
         return .ok(ProductFitPercentage(value: input))
     }
     
-    public var value: Double {
+    public var percentage: Double {
            return self._value
     }
     

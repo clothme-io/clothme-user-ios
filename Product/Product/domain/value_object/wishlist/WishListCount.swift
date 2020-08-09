@@ -25,7 +25,7 @@ public struct WishListCount: Equatable {
         return .ok(WishListCount(value: input))
     }
     
-    public var value: Int {
+    public var count: Int {
            return self._value
     }
     

@@ -25,7 +25,7 @@ public struct ProductDescription: Equatable {
         return .ok(ProductDescription(value: name))
     }
     
-    public var value: String {
+    public var description: String {
            return self._value
     }
     
