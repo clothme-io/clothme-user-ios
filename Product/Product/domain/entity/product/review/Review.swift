@@ -43,7 +43,7 @@ public class Review: Entity {
         reviewDate: ReviewDate,
         modifiedDate: ModifiedDate
     ) -> ResultOption<Review, AppError> {
-    
+        return .ok(Review(reviewId: reviewId, productId: productId, reviewText: reviewText, star: star, reviewDate: reviewDate, modifiedDate: modifiedDate))
     }
     
     func getReviewId() -> ReviewId {

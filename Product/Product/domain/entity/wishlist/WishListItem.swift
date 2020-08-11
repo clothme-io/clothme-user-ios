@@ -29,6 +29,15 @@ public class WishListItem: Entity {
         super.init(_id: Guid(value: productId.value().toString()))
     }
     
+    public static func create(
+        productId: ProductId,
+        productImage: ProductImage,
+        productName: ProductName,
+        productPrice: ProductPrice
+    ) -> ResultOption<WishListItem, AppError> {
+        return .ok(WishListItem(productId: productId, productImage: productImage, productName: productName, productPrice: productPrice))
+    }
+    
     func getProductId() -> ProductId {
         return self._productId
     }

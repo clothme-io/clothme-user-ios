@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Core
+
+public struct Reviewer: Equatable {
+    private let reviewerId: String
+    private let reviewerName: String
+    private let reviewerProfilePhoto: String
+    
+}

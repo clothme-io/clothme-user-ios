@@ -23,6 +23,13 @@ public class WishList: AggregateRoot {
         super.init(_id: Guid(value: wishListId.value().toString()))
     }
     
+    public static func create(
+        wishListId: WishListId,
+        wishListItem: [WishListItem]
+    ) -> ResultOption<WishList, AppError> {
+        return .ok(WishList(wishListId: wishListId, wishListItem: wishListItem))
+    }
+    
     func getWishListId() -> WishListId {
         return self._wishListId
     }
