@@ -11,16 +11,16 @@ import Core
 
 public class Product: AggregateRoot {
     
-    let _productId: ProductId
-    let _productName: ProductName
-    let _productDescription: ProductDescription
-    let _productPrice: ProductPrice
-    let _productGender: ProductGender
-    let _productCategory: ProductCategory
-    let _productCategoryType: ProductCategoryType
-    let _productDiscount: ProductDiscount
-    let _productReturns: ReturnPolicy
-    let _productDelivery: DeliveryPolicy
+    private let _productId: ProductId
+    private let _productName: ProductName
+    private let _productDescription: ProductDescription
+    private let _productPrice: ProductPrice
+    private let _productGender: ProductGender
+    private let _productCategory: ProductCategory
+    private let _productCategoryType: ProductCategoryType
+    private let _productDiscount: ProductDiscount
+    private let _productReturns: ReturnPolicy
+    private let _productDelivery: DeliveryPolicy
     
     private init(
         productId: ProductId,
