@@ -21,6 +21,8 @@ public class Product: AggregateRoot {
     private let _productDiscount: ProductDiscount
     private let _productReturns: ReturnPolicy
     private let _productDelivery: DeliveryPolicy
+    private let _like: Like
+    private let _review: [Review]
     
     private init(
         productId: ProductId,
@@ -32,7 +34,9 @@ public class Product: AggregateRoot {
         productCategoryType: ProductCategoryType,
         productDiscount: ProductDiscount,
         productReturns: ReturnPolicy,
-        productDelivery: DeliveryPolicy
+        productDelivery: DeliveryPolicy,
+        like: Like,
+        review: [Review]
     ) {
         self._productId = productId
         self._productName = productName
@@ -44,6 +48,8 @@ public class Product: AggregateRoot {
         self._productDiscount = productDiscount
         self._productReturns = productReturns
         self._productDelivery = productDelivery
+        self._like = like
+        self._review = review
         super.init(_id: Guid(value: productId.value().toIdString()))
     }
     
@@ -57,9 +63,24 @@ public class Product: AggregateRoot {
         productCategoryType: ProductCategoryType,
         productDiscount: ProductDiscount,
         productReturns: ReturnPolicy,
-        productDelivery: DeliveryPolicy
+        productDelivery: DeliveryPolicy,
+        like: Like,
+        review: [Review]
     ) -> ResultOption<Product, AppError> {
-        return .ok(Product(productId: productId, productName: productName, productDescription: productDescription, productPrice: productPrice, productGender: productGender, productCategory: productCategory, productCategoryType: productCategoryType, productDiscount: productDiscount, productReturns: productReturns, productDelivery: productDelivery))
+        return .ok(Product(
+            productId: productId,
+            productName: productName,
+            productDescription: productDescription,
+            productPrice: productPrice,
+            productGender: productGender,
+            productCategory: productCategory,
+            productCategoryType: productCategoryType,
+            productDiscount: productDiscount,
+            productReturns: productReturns,
+            productDelivery: productDelivery,
+            like: like,
+            review: review
+        ))
     }
     
     func getProductId() -> ProductId {
@@ -101,5 +122,14 @@ public class Product: AggregateRoot {
     func getProductDelivery() -> DeliveryPolicy {
         return self._productDelivery
     }
+    
+    func getLike() -> Like {
+        return self._like
+    }
+    
+    func getReview() -> [Review] {
+        return self._review
+    }
+
     
 }
