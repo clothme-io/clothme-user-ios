@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import Core
+
+public class LocationId : Entity {
+    private override init(_id: Guid?) {
+            super.init(_id: _id)
+    }
+      
+    static func create(id: Guid?) -> ResultOption<LocationId, AppError> {
+        return .ok(LocationId(_id: id ?? Guid(value: nil)))
+    }
+      
+    public func value() -> Guid {
+        return self.eId
+    }
+    
+    public func valueString() -> String {
+        return self.eId.toIdString()
+    }
+}
