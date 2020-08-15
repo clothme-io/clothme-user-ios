@@ -11,21 +11,17 @@ import Core
 
 public struct ProductPrice: Equatable {
     
-    private var _value: Double;
+    private var _value: Money;
     
-    private init(value: Double) {
+    private init(value: Money) {
         self._value = value;
     }
     
-    public static func create(with input: Double) -> ResultOption<ProductPrice, AppError> {
-        let validInput = Guard.againstNegative(value: input)
-        if !validInput {
-            return .error(AppError.nilValueNotAllowed)
-        }
+    public static func create(input: Money) -> ResultOption<ProductPrice, AppError> {
         return .ok(ProductPrice(value: input))
     }
     
-    public var price: Double {
+    public var price: Money {
            return self._value
     }
     
