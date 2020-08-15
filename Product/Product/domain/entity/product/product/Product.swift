@@ -44,7 +44,7 @@ public class Product: AggregateRoot {
         self._productDiscount = productDiscount
         self._productReturns = productReturns
         self._productDelivery = productDelivery
-        super.init(_id: Guid(value: productId.value().toString()))
+        super.init(_id: Guid(value: productId.value().toIdString()))
     }
     
     public static func create(

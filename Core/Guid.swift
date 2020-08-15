@@ -16,7 +16,7 @@ open class Guid : Equatable {
         self.Id = value ?? UUID().uuidString
     }
     
-    public func toString() -> String {
+    public func toIdString() -> String {
         return self.Id
     }
     

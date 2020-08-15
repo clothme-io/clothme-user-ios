@@ -33,7 +33,7 @@ open class Entity {
     }
     
     public func toStringValue() -> String {
-        return self.eId.toString()
+        return self.eId.toIdString()
     }
 
 }

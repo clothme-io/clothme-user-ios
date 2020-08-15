@@ -22,7 +22,7 @@ class Connection : Entity {
     ) {
         self.userId = userId
         self._numberOfConnection = numberOfConnection
-        super.init(_id: Guid(value: userId.eId.toString()))
+        super.init(_id: Guid(value: userId.eId.toIdString()))
     }
     
     static func create(

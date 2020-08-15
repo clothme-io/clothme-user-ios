@@ -24,7 +24,7 @@ public class CartItemId: Entity {
        }
        
        public func valueString() -> String {
-           return self.eId.toString()
+           return self.eId.toIdString()
        }
     
 }

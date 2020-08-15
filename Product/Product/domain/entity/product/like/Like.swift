@@ -22,7 +22,7 @@ public class Like: Entity {
         self._likeId = likeId
         self._productId = productId
         self._likeCount = likeCount
-        super.init(_id: Guid(value: likeId.value().toString()))
+        super.init(_id: Guid(value: likeId.value().toIdString()))
     }
     
     public static func create(

@@ -20,7 +20,7 @@ public class WishList: AggregateRoot {
     ) {
         self._wishListId = wishListId
         self._wishListItem = wishListItem
-        super.init(_id: Guid(value: wishListId.value().toString()))
+        super.init(_id: Guid(value: wishListId.value().toIdString()))
     }
     
     public static func create(

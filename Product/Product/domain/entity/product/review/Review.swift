@@ -32,7 +32,7 @@ public class Review: Entity {
         self._star = star
         self._reviewDate = reviewDate
         self._modifiedDate = modifiedDate
-        super.init(_id: Guid(value: reviewId.value().toString()))
+        super.init(_id: Guid(value: reviewId.value().toIdString()))
     }
     
     static func create(

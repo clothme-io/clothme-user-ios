@@ -27,7 +27,7 @@ public struct ProductImage: Equatable {
         return .ok(ProductImage(images: images))
     }
     
-    func images() -> [String] {
+    public var images: [String] {
         return self._images
     }
     

@@ -26,7 +26,7 @@ public class WishListItem: Entity {
         self._productImage = productImage
         self._productName = productName
         self._productPrice = productPrice
-        super.init(_id: Guid(value: productId.value().toString()))
+        super.init(_id: Guid(value: productId.value().toIdString()))
     }
     
     public static func create(

@@ -52,8 +52,8 @@ class ConnectedUser : Entity {
         self._shippingAddress = shippingAddress
         self._connectionDate = connectionDate
         self._connectionDuration = connectionDuration
-        self._connectionId = ConnectionId.create(id: Guid(value: connectionId.value().toString())).OptionalData().value ?? ConnectionId.create(id: nil).OptionalData().value!
-        super.init(_id: Guid(value: self._connectionId.value().toString()))
+        self._connectionId = ConnectionId.create(id: Guid(value: connectionId.value().toIdString())).OptionalData().value ?? ConnectionId.create(id: nil).OptionalData().value!
+        super.init(_id: Guid(value: self._connectionId.value().toIdString()))
     }
     
     public static func Create(

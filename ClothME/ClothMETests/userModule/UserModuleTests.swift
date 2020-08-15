@@ -44,7 +44,7 @@ class UserModuleTests: XCTestCase {
     }
     
     func testInit_UserId() {
-        let userId = UserId.create(id: Guid(value: "1234")).OptionalData().value?.value().toString()
+        let userId = UserId.create(id: Guid(value: "1234")).OptionalData().value?.value().toIdString()
         XCTAssertEqual(userId, "1234")
     }
     
@@ -98,7 +98,7 @@ class UserModuleTests: XCTestCase {
     
     func testInit_User_value() {
         let userId = UserId.create(id: Guid(value: "1234567")).OptionalData().value!
-        XCTAssertEqual(userId.value().toString(), "1234567")
+        XCTAssertEqual(userId.value().toIdString(), "1234567")
     }
     
     func testUserMapper_toDomainModel() {

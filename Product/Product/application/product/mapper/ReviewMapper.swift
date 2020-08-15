@@ -16,7 +16,7 @@ class ReviewMapper {
     }
     
     static func toDataModel(model: Review) -> ReviewApplicationModel {
-        
+        return ReviewApplicationModel(reviewId: <#T##String#>, productId: <#T##ProductId#>, reviewText: <#T##String#>, reviewCount: <#T##String#>, star: <#T##Double#>, reviewDate: <#T##String#>, modifiedDate: <#T##String#>)
     }
     
 }

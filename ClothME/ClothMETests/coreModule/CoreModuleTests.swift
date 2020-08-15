@@ -26,7 +26,7 @@ class CoreModuleTests: XCTestCase {
     func testInit_WithGuid() {
         let sut = Guid(value: "Paul123")
         
-        XCTAssertEqual(sut.toString(), "Paul123")
+        XCTAssertEqual(sut.toIdString(), "Paul123")
     }
 
 

@@ -24,6 +24,6 @@ public class UserId : Entity {
     }
     
     public func valueString() -> String {
-        return self.eId.toString()
+        return self.eId.toIdString()
     }
 }

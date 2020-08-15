@@ -11,5 +11,6 @@ import Foundation
 
 struct LikeApplicationModel : Codable {
     let likeId: String
+    let productId: String
     let likeCount: Int
 }

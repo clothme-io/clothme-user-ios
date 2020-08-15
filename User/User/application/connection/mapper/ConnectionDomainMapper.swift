@@ -19,7 +19,7 @@ class ConnectionDomainMapper {
         var index = 0
         var connectionUsers: [ConnectionUserApplicationModel] = [ConnectionUserApplicationModel]()
         while connection.connectedUsers.count <= index {
-            let users = ConnectionUserApplicationModel(connectionId: connection.connectedUsers[index].connectionId.value().toString(), userId:  connection.connectedUsers[index].userId.eId.toString(), firstName: connection.connectedUsers[index].firstName.value, lastName: connection.connectedUsers[index].lastName.value, city: connection.connectedUsers[index].city.value, connectionDate: connection.connectedUsers[index].connectionDate.date, connectionDuration: connection.connectedUsers[index].connectionDuration.value)
+            let users = ConnectionUserApplicationModel(connectionId: connection.connectedUsers[index].connectionId.value().toIdString(), userId:  connection.connectedUsers[index].userId.eId.toIdString(), firstName: connection.connectedUsers[index].firstName.value, lastName: connection.connectedUsers[index].lastName.value, city: connection.connectedUsers[index].city.value, connectionDate: connection.connectedUsers[index].connectionDate.date, connectionDuration: connection.connectedUsers[index].connectionDuration.value)
             connectionUsers.append(users)
             index += 1
         }

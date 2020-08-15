@@ -46,9 +46,9 @@ class AccountUser : Entity {
         self._dateAdded = dataAdded
         self._shippingAddress = shippingAddress
         self._brandId = brandId
-        let accountId = AccountId.create(id: Guid(value: accountId?.value().toString()))
+        let accountId = AccountId.create(id: Guid(value: accountId?.value().toIdString()))
         self._accountId = accountId.OptionalData().value ?? AccountId.create(id: nil).OptionalData().value!
-        super.init(_id: Guid(value: self._accountId.value().toString()))
+        super.init(_id: Guid(value: self._accountId.value().toIdString()))
     }
     
     public static func create(

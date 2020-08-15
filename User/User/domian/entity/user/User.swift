@@ -62,9 +62,9 @@ public class User : Entity {
         self._country = country
         self._shippingAddress = shippingAddress
         self._billingAddress = billingAddress
-        let id = UserId.create(id: Guid(value: userId?.value().toString()))
+        let id = UserId.create(id: Guid(value: userId?.value().toIdString()))
         self._userId = id.OptionalValue(result: id).optionalData
-        super.init(_id: Guid(value: self._userId?.value().toString()))
+        super.init(_id: Guid(value: self._userId?.value().toIdString()))
     }
     
     static func create (

@@ -18,7 +18,7 @@ class Account : Entity {
     private init(accountOwner: UserId, accountUser: AccountUser?, numberOfAccount: NumberOfAccount?) {
         self._accountOwner = accountOwner
         self._numberOfAccount = numberOfAccount
-        super.init(_id: Guid(value: self._accountOwner.value().toString()))
+        super.init(_id: Guid(value: self._accountOwner.value().toIdString()))
         if let accountUser = accountUser {
             self.addFor(accountUser)
         }
