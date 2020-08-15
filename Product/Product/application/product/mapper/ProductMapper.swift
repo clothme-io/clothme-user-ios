@@ -79,30 +79,31 @@ class ProductMapper {
         var index = 0
         var reviews = [Review]()
         while data.review.count > index {
-            let reviewId = ReviewId.create(id: Guid(value: data.review[index].reviewId)).OptionalData().value
-            guard let reviewIdValue = reviewId else { return }
-            
-            let productId = ProductId.create(id: Guid(value: data.review[index].productId)).OptionalData().value
-            let reviewText = ReviewText.create(with: data.review[index].reviewText).OptionalData().value
-            let star = Star.create(with: data.review[index].star).OptionalData().value
-            let reviewDate = ReviewDate.create(with: data.review[index].reviewDate).OptionalData().value
-            let modifiedDate = ModifiedDate.create(with: data.review[index].modifiedDate).OptionalData().value
+            let reviewId = ReviewId.create(id: Guid(value: data.review[index]?.reviewId ?? "")).OptionalData().value!
+            let productId = ProductId.create(id: Guid(value: data.review[index]?.productId ?? "")).OptionalData().value!
+            let reviewText = ReviewText.create(with: data.review[index]?.reviewText ?? "").OptionalData().value!
+            let star = Star.create(with: data.review[index]?.star ?? 0.0 ).OptionalData().value!
+            let reviewDate = ReviewDate.create(with: data.review[index]?.reviewDate ?? "").OptionalData().value!
+            let modifiedDate = ModifiedDate.create(with: data.review[index]?.modifiedDate ?? "").OptionalData().value!
             let reviewer = Reviewer.create(
-                reviewerId: data.review[index].reviewer.reviewerId,
-                reviewerName: data.review[index].reviewer.reviewerName,
-                reviewerProfilePhoto: data.review[index].reviewer.reviewerProfileUrl,
-                reviewerCity: data.review[index].reviewer.reviewerCity
-            ).OptionalData().value
+                reviewerId: data.review[index]?.reviewer.reviewerId ?? "",
+                reviewerName: data.review[index]?.reviewer.reviewerName ?? "",
+                reviewerProfilePhoto: data.review[index]?.reviewer.reviewerProfileUrl ?? "",
+                reviewerCity: data.review[index]?.reviewer.reviewerCity ?? ""
+            ).OptionalData().value!
             
             let review = Review.create(
-                reviewId: ,
-                productId: ,
-                reviewText: ,
-                star: ,
-                reviewDate: ,
-                modifiedDate: ,
-                reviewer:
-            )
+                reviewId: reviewId,
+                productId: productId,
+                reviewText: reviewText,
+                star: star,
+                reviewDate: reviewDate,
+                modifiedDate: modifiedDate,
+                reviewer: reviewer
+                ).OptionalData().value!
+            
+            reviews.append(review)
+            index += 1
         }
         return reviews
     }

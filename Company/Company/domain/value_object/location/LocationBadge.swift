@@ -20,10 +20,6 @@ public struct LocationBadge: Equatable {
     }
     
     public static func create(verified: Bool) -> ResultOption<LocationBadge, AppError> {
-        let validName = Guard.againstNilValue(argument: verified)
-        if !validName {
-            return .error(AppError.nilValueNotAllowed)
-        }
         return .ok(LocationBadge(verified: verified))
     }
     

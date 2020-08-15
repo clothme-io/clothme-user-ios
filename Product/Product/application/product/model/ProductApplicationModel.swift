@@ -21,7 +21,7 @@ struct ProductApplicationModel : RequestDataAble {
     let productReturns: String
     let productDelivery: String
     let like: LikeApplicationModel
-    let review: [ReviewApplicationModel]
+    let review: [ReviewApplicationModel?]
     
 }
 
