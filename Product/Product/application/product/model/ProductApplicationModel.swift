@@ -7,21 +7,30 @@
 //
 
 import Foundation
+import Core
 
-struct ProductApplicationModel : Codable {
+struct ProductApplicationModel : RequestDataAble {
     let productId: String
     let productName: String
     let productDescription: String
-    let productPrice: Double
+    let productPrice: ProductPriceApplicationModel
     let productGender: String
     let productCategory: String
     let productCategoryType: String
     let productDiscount: Double
     let productReturns: String
     let productDelivery: String
+    let like: LikeApplicationModel
+    let review: [ReviewApplicationModel]
     
-    
-    let companyId: String
-    let brandId: String
-    let locationId: String
+}
+
+struct ProductPriceApplicationModel : RequestDataAble {
+    let amount: Double
+    let currency: CurrencyApplicationModel
+}
+
+struct CurrencyApplicationModel : RequestDataAble {
+    let type: String
+    let symbol: String
 }

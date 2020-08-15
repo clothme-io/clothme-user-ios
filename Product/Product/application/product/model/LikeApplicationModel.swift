@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import Core
 
-
-struct LikeApplicationModel : Codable {
+struct LikeApplicationModel : RequestDataAble {
     let likeId: String
     let productId: String
     let likeCount: Int

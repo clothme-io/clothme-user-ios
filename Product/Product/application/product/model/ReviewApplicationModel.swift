@@ -11,10 +11,18 @@ import Core
 
 struct ReviewApplicationModel : RequestDataAble {
     let reviewId: String
-    let productId: ProductId
     let reviewText: String
     let reviewCount: String
     let star: Double
     let reviewDate: String
     let modifiedDate: String
+    let reviewer: ReviewerApplicationModel
+}
+
+
+struct ReviewerApplicationModel : RequestDataAble {
+    let reviewerId: String
+    let reviewerName: String
+    let reviewerProfileUrl: String
+    let reviewerCity: String
 }
