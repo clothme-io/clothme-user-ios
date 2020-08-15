@@ -15,17 +15,23 @@ public class WishListItem: Entity {
     private let _productImage: ProductImage
     private let _productName: ProductName
     private let _productPrice: ProductPrice
+    private let _productDescription: ProductDescription
+    private let _dateAdded: DateAdded
     
     private init(
         productId: ProductId,
         productImage: ProductImage,
         productName: ProductName,
-        productPrice: ProductPrice
+        productPrice: ProductPrice,
+        productDescription: ProductDescription,
+        dateAdded: DateAdded
     ) {
         self._productId = productId
         self._productImage = productImage
         self._productName = productName
         self._productPrice = productPrice
+        self._productDescription = productDescription
+        self._dateAdded = dateAdded
         super.init(_id: Guid(value: productId.value().toIdString()))
     }
     
@@ -33,9 +39,19 @@ public class WishListItem: Entity {
         productId: ProductId,
         productImage: ProductImage,
         productName: ProductName,
-        productPrice: ProductPrice
+        productPrice: ProductPrice,
+        productDescription: ProductDescription,
+        dateAdded: DateAdded
     ) -> ResultOption<WishListItem, AppError> {
-        return .ok(WishListItem(productId: productId, productImage: productImage, productName: productName, productPrice: productPrice))
+        return .ok(
+            WishListItem(
+                productId: productId,
+                productImage: productImage,
+                productName: productName,
+                productPrice: productPrice,
+                productDescription: productDescription,
+                dateAdded: dateAdded
+        ))
     }
     
     func getProductId() -> ProductId {
@@ -52,6 +68,14 @@ public class WishListItem: Entity {
     
     func getProductPrice() -> ProductPrice {
         return self._productPrice
+    }
+    
+    func getProductDescription() -> ProductDescription {
+        return self._productDescription
+    }
+    
+    func getDateAdded() -> DateAdded {
+        return self._dateAdded
     }
     
 }

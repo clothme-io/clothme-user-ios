@@ -13,21 +13,25 @@ public class WishList: AggregateRoot {
     
     private let _wishListId: WishListId
     private let _wishListItem: [WishListItem]
+    private let _dateAdded: DateAdded
     
     private init(
         wishListId: WishListId,
-        wishListItem: [WishListItem]
+        wishListItem: [WishListItem],
+        dateAdded: DateAdded
     ) {
         self._wishListId = wishListId
         self._wishListItem = wishListItem
+        self._dateAdded = dateAdded
         super.init(_id: Guid(value: wishListId.value().toIdString()))
     }
     
     public static func create(
         wishListId: WishListId,
-        wishListItem: [WishListItem]
+        wishListItem: [WishListItem],
+        dateAdded: DateAdded
     ) -> ResultOption<WishList, AppError> {
-        return .ok(WishList(wishListId: wishListId, wishListItem: wishListItem))
+        return .ok(WishList(wishListId: wishListId, wishListItem: wishListItem, dateAdded: dateAdded))
     }
     
     func getWishListId() -> WishListId {
@@ -38,4 +42,7 @@ public class WishList: AggregateRoot {
         return self._wishListItem
     }
     
+    func getDateAdded() -> DateAdded {
+        return self._dateAdded
+    }
 }

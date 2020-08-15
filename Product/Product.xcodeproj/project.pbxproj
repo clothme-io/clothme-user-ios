@@ -67,10 +67,6 @@
 		C1AF0D31246C49EC00E07391 /* LikeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D30246C49EC00E07391 /* LikeRepository.swift */; };
 		C1AF0D33246C49FF00E07391 /* ReviewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D32246C49FF00E07391 /* ReviewRepository.swift */; };
 		C1AF0D35246C4A1100E07391 /* BadgeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D34246C4A1100E07391 /* BadgeRepository.swift */; };
-		C1AF0D37246C4A6D00E07391 /* DeliveryBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D36246C4A6D00E07391 /* DeliveryBadge.swift */; };
-		C1AF0D39246C4AAF00E07391 /* ReturnsBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D38246C4AAF00E07391 /* ReturnsBadge.swift */; };
-		C1AF0D3B246C4AE200E07391 /* EthicalBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D3A246C4AE200E07391 /* EthicalBadge.swift */; };
-		C1AF0D3D246C4B0300E07391 /* RefundBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D3C246C4B0300E07391 /* RefundBadge.swift */; };
 		C1AF0D42246C576F00E07391 /* ProductRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D41246C576F00E07391 /* ProductRepositoryImpl.swift */; };
 		C1AF0D47246C5B7100E07391 /* BadgeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D46246C5B7100E07391 /* BadgeRepositoryImpl.swift */; };
 		C1AF0D49246C5B8100E07391 /* ReviewRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0D48246C5B8100E07391 /* ReviewRepositoryImpl.swift */; };
@@ -252,10 +248,6 @@
 		C1AF0D30246C49EC00E07391 /* LikeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRepository.swift; sourceTree = "<group>"; };
 		C1AF0D32246C49FF00E07391 /* ReviewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepository.swift; sourceTree = "<group>"; };
 		C1AF0D34246C4A1100E07391 /* BadgeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRepository.swift; sourceTree = "<group>"; };
-		C1AF0D36246C4A6D00E07391 /* DeliveryBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBadge.swift; sourceTree = "<group>"; };
-		C1AF0D38246C4AAF00E07391 /* ReturnsBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnsBadge.swift; sourceTree = "<group>"; };
-		C1AF0D3A246C4AE200E07391 /* EthicalBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthicalBadge.swift; sourceTree = "<group>"; };
-		C1AF0D3C246C4B0300E07391 /* RefundBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundBadge.swift; sourceTree = "<group>"; };
 		C1AF0D41246C576F00E07391 /* ProductRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryImpl.swift; sourceTree = "<group>"; };
 		C1AF0D46246C5B7100E07391 /* BadgeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRepositoryImpl.swift; sourceTree = "<group>"; };
 		C1AF0D48246C5B8100E07391 /* ReviewRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -821,7 +813,6 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0D29246C496D00E07391 /* product */,
-				C1AF0CDF246917FF00E07391 /* badge */,
 				C1AF0CDC246917CC00E07391 /* review */,
 				C1AF0CDB246917C600E07391 /* like */,
 			);
@@ -870,17 +861,6 @@
 				C1A499ED24DF29650062ADEB /* WishListCount.swift */,
 			);
 			path = wishlist;
-			sourceTree = "<group>";
-		};
-		C1AF0CDF246917FF00E07391 /* badge */ = {
-			isa = PBXGroup;
-			children = (
-				C1AF0D36246C4A6D00E07391 /* DeliveryBadge.swift */,
-				C1AF0D38246C4AAF00E07391 /* ReturnsBadge.swift */,
-				C1AF0D3A246C4AE200E07391 /* EthicalBadge.swift */,
-				C1AF0D3C246C4B0300E07391 /* RefundBadge.swift */,
-			);
-			path = badge;
 			sourceTree = "<group>";
 		};
 		C1AF0D29246C496D00E07391 /* product */ = {
@@ -1321,7 +1301,6 @@
 				C1AF0CE52469191300E07391 /* ReviewId.swift in Sources */,
 				C1AF0D83246C9E0A00E07391 /* GetProductByProductIdDTO.swift in Sources */,
 				C1AF0D2F246C49DC00E07391 /* ProductRepository.swift in Sources */,
-				C1AF0D3B246C4AE200E07391 /* EthicalBadge.swift in Sources */,
 				C1AF0D18246C468E00E07391 /* Reviewer.swift in Sources */,
 				C1AF0D16246C466C00E07391 /* ReviewCount.swift in Sources */,
 				C1A499E224DF0B5C0062ADEB /* SpecialOffer.swift in Sources */,
@@ -1337,7 +1316,6 @@
 				C1AF0DB0246CB4BB00E07391 /* GetProductByProductType.swift in Sources */,
 				C1AF0D1E246C47C800E07391 /* ProductDescription.swift in Sources */,
 				C1AF0D51246C5C0100E07391 /* CartRepositoryImpl.swift in Sources */,
-				C1AF0D3D246C4B0300E07391 /* RefundBadge.swift in Sources */,
 				C1F613882470D8C1003635A4 /* EditProductReviewResponse.swift in Sources */,
 				C1AF0D6E246C649A00E07391 /* GetBadgeByProductIdDTO.swift in Sources */,
 				C1AF0D99246C9F8400E07391 /* AddProductReviewDTO.swift in Sources */,
@@ -1417,7 +1395,6 @@
 				C15890C22482B2C500514750 /* CartApplicationModel.swift in Sources */,
 				C1A499DE24DF0B250062ADEB /* ItemCount.swift in Sources */,
 				C1AF0E24246CDD5000E07391 /* AddProductToCartResponseDTO.swift in Sources */,
-				C1AF0D39246C4AAF00E07391 /* ReturnsBadge.swift in Sources */,
 				C1F613922470DA3F003635A4 /* GetProductReviewByProductIdError.swift in Sources */,
 				C1AF0D9D246C9FAE00E07391 /* GetProductReviewByProductIdDTO.swift in Sources */,
 				C1AF0D2D246C49CB00E07391 /* CartRepository.swift in Sources */,
@@ -1464,7 +1441,6 @@
 				C1AF0CE12469187E00E07391 /* CartId.swift in Sources */,
 				C1AF0E1E246CD56900E07391 /* AddToWishListResponseDTO.swift in Sources */,
 				C1A499E824DF250B0062ADEB /* ModifiedDate.swift in Sources */,
-				C1AF0D37246C4A6D00E07391 /* DeliveryBadge.swift in Sources */,
 				C1AF0D33246C49FF00E07391 /* ReviewRepository.swift in Sources */,
 				C1AF0E2C246CE0E500E07391 /* GetFitProductByCityResponse.swift in Sources */,
 				C1AF0D4B246C5BB200E07391 /* LikeRepositoryImpl.swift in Sources */,
