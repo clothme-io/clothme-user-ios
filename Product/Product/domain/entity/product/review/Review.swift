@@ -12,6 +12,7 @@ import Core
 public class Review: Entity {
     
     private let _reviewId: ReviewId
+    private let _productId: ProductId
     private let _reviewText: ReviewText
     private let _star: Star
     private let _reviewDate: ReviewDate
@@ -20,6 +21,7 @@ public class Review: Entity {
     
     private init(
         reviewId: ReviewId,
+        productId: ProductId,
         reviewText: ReviewText,
         star: Star,
         reviewDate: ReviewDate,
@@ -27,6 +29,7 @@ public class Review: Entity {
         reviewer: Reviewer
     ) {
         self._reviewId = reviewId
+        self._productId = productId
         self._reviewText = reviewText
         self._star = star
         self._reviewDate = reviewDate
@@ -44,9 +47,9 @@ public class Review: Entity {
         modifiedDate: ModifiedDate,
         reviewer: Reviewer
     ) -> ResultOption<Review, AppError> {
-        return .ok(
-            Review(
+        return .ok(Review(
                 reviewId: reviewId,
+                productId: productId,
                 reviewText: reviewText,
                 star: star,
                 reviewDate: reviewDate,
@@ -57,6 +60,10 @@ public class Review: Entity {
     
     func getReviewId() -> ReviewId {
         return self._reviewId
+    }
+    
+    func getProductId() -> ProductId {
+        return self._productId
     }
     
     func getReviewText() -> ReviewText {

@@ -16,7 +16,20 @@ class ReviewMapper {
     }
     
     static func toDataModel(model: Review) -> ReviewApplicationModel {
-        return ReviewApplicationModel(reviewId: <#T##String#>, productId: <#T##ProductId#>, reviewText: <#T##String#>, reviewCount: <#T##String#>, star: <#T##Double#>, reviewDate: <#T##String#>, modifiedDate: <#T##String#>)
+        return ReviewApplicationModel(
+            reviewId: <#T##String#>,
+            productId: <#T##ProductId#>,
+            reviewText: <#T##String#>,
+            reviewCount: model.,
+            star: model.getStar().star,
+            reviewDate: model.getReviewDate().date,
+            reviewer: ReviewerApplicationModel(
+                reviewerId: <#T##String#>,
+                reviewerName: <#T##String#>,
+                reviewerProfileUrl: <#T##String#>,
+                reviewerCity: <#T##String#>),
+            modifiedDate: model.getModifiedDate().date
+        )
     }
     
 }

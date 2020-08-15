@@ -11,8 +11,8 @@ import Core
 
 struct ReviewApplicationModel : RequestDataAble {
     let reviewId: String
+    let productId: String
     let reviewText: String
-    let reviewCount: String
     let star: Double
     let reviewDate: String
     let modifiedDate: String
