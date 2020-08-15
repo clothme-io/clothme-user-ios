@@ -11,33 +11,24 @@ import Core
 
 public struct LocationBadge: Equatable {
     
-    private var _ethicalBadge: String
-    private var _refundBadge: String
-    private var _returnBadge: String
-    private var _environmentConsciousBadge: String
+    private var _verified: Bool
     
     private init(
-        ethicalBadge: String,
-        refundBadge: String,
-        returnBadge: String,
-        environmentConsciousBadge: String
+        verified: Bool
     ) {
-        self._ethicalBadge = ethicalBadge
-        self._refundBadge = refundBadge
-        self._returnBadge = returnBadge
-        self._environmentConsciousBadge = environmentConsciousBadge
+        self._verified = verified
     }
     
-    public static func create(with name: String) -> ResultOption<LocationBadge, AppError> {
-        let validName = Guard.againstNilValue(argument: name)
+    public static func create(verified: Bool) -> ResultOption<LocationBadge, AppError> {
+        let validName = Guard.againstNilValue(argument: verified)
         if !validName {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(LocationBadge(value: name))
+        return .ok(LocationBadge(verified: verified))
     }
     
-    public var name: String {
-           return self._value
+    public var verified: Bool {
+           return self._verified
     }
     
 }
