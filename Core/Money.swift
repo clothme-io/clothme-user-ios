@@ -20,18 +20,18 @@ public struct Money : Equatable {
         self._value = value
     }
     
-    static func create(
+    public static func create(
         currency: String,
         value: Double
     ) -> ResultOption<Money, AppError> {
         return .ok(Money(currency: currency, value: value))
     }
     
-    func getCurrency() -> String {
+    public func getCurrency() -> String {
         return self._curreny
     }
     
-    func getValue() -> Double {
+    public func getValue() -> Double {
         return self._value
     }
 }

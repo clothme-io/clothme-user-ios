@@ -26,11 +26,8 @@ struct ProductApplicationModel : RequestDataAble {
 }
 
 struct ProductPriceApplicationModel : RequestDataAble {
+    let currency: String
     let amount: Double
-    let currency: CurrencyApplicationModel
 }
 
-struct CurrencyApplicationModel : RequestDataAble {
-    let type: String
-    let symbol: String
-}
+

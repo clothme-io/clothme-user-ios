@@ -33,15 +33,15 @@ public class Like: Entity {
         return .ok(Like(likeId: likeId, productId: productId, likeCount: likeCount))
     }
     
-    func getLikeId() -> LikeId {
+    func likeId() -> LikeId {
         return self._likeId
     }
     
-    func getProductId() -> ProductId {
+    func productId() -> ProductId {
         return self._productId
     }
     
-    func getLikeCount() -> LikeCount {
+    func likeCount() -> LikeCount {
         return self._likeCount
     }
     

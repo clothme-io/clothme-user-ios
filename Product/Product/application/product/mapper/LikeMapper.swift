@@ -42,9 +42,9 @@ class LikeMapper {
     
     static func toDataModel(model: Like) -> LikeApplicationModel {
         return LikeApplicationModel(
-            likeId: model.getLikeId().value().toIdString(),
-            productId: model.getProductId().value().toIdString(),
-            likeCount: model.getLikeCount().count
+            likeId: model.likeId().value().toIdString(),
+            productId: model.productId().value().toIdString(),
+            likeCount: model.likeCount().count
         )
     }
     
