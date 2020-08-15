@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import Core
 
-struct CartApplicationModel : Codable {
+struct CartApplicationModel : RequestDataAble {
     
 }

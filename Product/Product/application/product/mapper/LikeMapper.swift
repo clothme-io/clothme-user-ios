@@ -12,14 +12,25 @@ import Core
 class LikeMapper {
     
     static func toDomainModel(data: LikeApplicationModel) -> ResultOption<Like, AppError> {
-        let likeId = LikeId.create(id: Guid(value: data.likeId)).OptionalData().value
-        let productId = ProductId.create(id: Guid(value: data.productId)).OptionalData().value
-        let likeCount = LikeCount.create(with: data.likeCount).OptionalData().value
+        let id = LikeId.create(id: Guid(value: data.likeId)).OptionalData().value
+        guard let likeId = id else {
+            return .error(AppError.emptyValueNotAllowed)
+        }
+        
+        let pId = ProductId.create(id: Guid(value: data.productId)).OptionalData().value
+        guard let productId = pId else {
+            return .error(AppError.emptyValueNotAllowed)
+        }
+        
+        let lCount = LikeCount.create(with: data.likeCount).OptionalData().value
+        guard let likeCount = lCount else {
+            return .error(AppError.emptyValueNotAllowed)
+        }
         
         let likeResult = Like.create(
-            likeId: <#T##LikeId#>,
-            productId: <#T##ProductId#>,
-            likeCount: <#T##LikeCount#>
+            likeId: likeId,
+            productId: productId,
+            likeCount: likeCount
             ).OptionalData().value
         
         guard let like = likeResult else {

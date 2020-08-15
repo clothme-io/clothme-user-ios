@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import Core
 
-struct WishListApplicationModel : Codable {
-    
+struct WishListApplicationModel : RequestDataAble {
+    let wishListId: String
+    let wishListItem: [WishLIstItemApplicationModel]
+    let dateAdded: String
 }
