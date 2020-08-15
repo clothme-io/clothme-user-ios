@@ -1,5 +1,5 @@
 //
-//  CompanyContact.swift
+//  LocationContact.swift
 //  Company
 //
 //  Created by MACPRO on 2020-08-15.
@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-struct CompanyContact : Equatable {
+struct LocationContact : Equatable {
     
     private var _email: String
     private var _phoneNumber: String
@@ -25,8 +25,8 @@ struct CompanyContact : Equatable {
     public static func create(
         email: String,
         phoneNumber: String
-    ) -> ResultOption<CompanyContact, AppError> {
-        return .ok(CompanyContact(
+    ) -> ResultOption<LocationContact, AppError> {
+        return .ok(LocationContact(
             email: email,
             phoneNumber: phoneNumber)
         )

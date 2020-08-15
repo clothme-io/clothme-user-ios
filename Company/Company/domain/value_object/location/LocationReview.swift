@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-public struct BrandName: Equatable {
+public struct LocationReview: Equatable {
     
     private var _value: String;
     
@@ -17,15 +17,15 @@ public struct BrandName: Equatable {
         self._value = value;
     }
     
-    public static func create(with name: String) -> ResultOption<BrandName, AppError> {
+    public static func create(with name: String) -> ResultOption<LocationReview, AppError> {
         let validName = Guard.againstNilValue(argument: name)
         if !validName {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(BrandName(value: name))
+        return .ok(LocationReview(value: name))
     }
     
-    public var name: String {
+    public var review: String {
            return self._value
     }
     

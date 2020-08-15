@@ -9,20 +9,31 @@
 import Foundation
 import Core
 
-public struct BrandName: Equatable {
+public struct LocationBadge: Equatable {
     
-    private var _value: String;
+    private var _ethicalBadge: String
+    private var _refundBadge: String
+    private var _returnBadge: String
+    private var _environmentConsciousBadge: String
     
-    private init(value: String) {
-        self._value = value;
+    private init(
+        ethicalBadge: String,
+        refundBadge: String,
+        returnBadge: String,
+        environmentConsciousBadge: String
+    ) {
+        self._ethicalBadge = ethicalBadge
+        self._refundBadge = refundBadge
+        self._returnBadge = returnBadge
+        self._environmentConsciousBadge = environmentConsciousBadge
     }
     
-    public static func create(with name: String) -> ResultOption<BrandName, AppError> {
+    public static func create(with name: String) -> ResultOption<LocationBadge, AppError> {
         let validName = Guard.againstNilValue(argument: name)
         if !validName {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(BrandName(value: name))
+        return .ok(LocationBadge(value: name))
     }
     
     public var name: String {

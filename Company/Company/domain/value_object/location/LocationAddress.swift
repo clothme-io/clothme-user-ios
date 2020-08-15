@@ -11,7 +11,10 @@ import Core
 
 public struct BrandName: Equatable {
     
-    private var _value: String;
+    private var _streetNumber: String
+    private var _streetName: String
+    private var _city: String
+    private var _country: String
     
     private init(value: String) {
         self._value = value;
