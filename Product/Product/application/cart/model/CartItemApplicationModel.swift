@@ -15,5 +15,9 @@ struct CartItemApplicationModel : RequestDataAble {
     let productName: String
     let productPrice: ProductPriceApplicationModel
     let productDescription: String
+    let productTax: Double
+    let productDiscount: Double
+    let itemCount: Int
     let dateAdded: String
+    let modifiedDate: String
 }
