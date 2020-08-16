@@ -26,7 +26,40 @@ class CartDomainMapper {
     }
     
     private static func cartModelItems(data: CartApplicationModel) -> [CartItem] {
-        
+        var index = 0
+        var cartitems = [CartItem]()
+        while data.cartItem.count > index {
+            let productId = ProductId.create(id: Guid(value: data.cartItem[index]?.productId ?? "")).OptionalData().value!
+            let productImage = ProductImage.create(images: data.cartItem[index]?.productImage ?? [""]).OptionalData().value!
+            let productName = ProductName.create(with: data.cartItem[index]?.productName ?? "").OptionalData().value!
+            let productDescription = ProductDescription.create(with: data.cartItem[index]?.productDescription ?? "").OptionalData().value!
+            let productPrice = ProductPrice.create(
+                input: Money.create(
+                    currency: data.cartItem[index]?.productPrice.currency ?? "",
+                    value: data.cartItem[index]?.productPrice.amount ?? 0.0).OptionalData().value!
+            ).OptionalData().value!
+            let productDiscount = ProductDiscount.create(with: data.cartItem[index]?.productDiscount ?? 0.0).OptionalData().value!
+            let productTax = ProductTax.create(with: data.cartItem[index]?.productTax ?? 0.0).OptionalData().value!
+            let itemCount = ItemCount.create(with: data.cartItem[index]?.itemCount ?? 0).OptionalData().value!
+            let dateAdded = DateAdded.create(with: data.cartItem[index]?.dateAdded ?? "").OptionalData().value!
+            let modifiedDate = DateAdded.create(with: data.cartItem[index]?.modifiedDate ?? "").OptionalData().value!
+            
+            let cartItem = CartItem.create(
+                productId: productId,
+                productImage: productImage,
+                productName: productName,
+                productDescription: productDescription,
+                productPrice: productPrice,
+                productDiscount: productDiscount,
+                productTax: productTax,
+                itemCount: itemCount,
+                dateAdded: dateAdded,
+                modifiedDate: modifiedDate).OptionalData().value!
+            
+            cartitems.append(cartItem)
+            index += 1
+        }
+        return cartitems
     }
     
     static func toDataModel(model: Cart) -> CartApplicationModel {

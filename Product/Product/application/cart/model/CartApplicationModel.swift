@@ -11,6 +11,6 @@ import Core
 
 struct CartApplicationModel : RequestDataAble {
     let cartId: String
-    let cartItem: [CartItemApplicationModel]
+    let cartItem: [CartItemApplicationModel?]
     let dateAdded: String
 }
