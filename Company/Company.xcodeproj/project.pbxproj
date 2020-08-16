@@ -30,6 +30,9 @@
 		C1A49A1D24E88E040062ADEB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A1C24E88E040062ADEB /* Location.swift */; };
 		C1A49A1F24E88E110062ADEB /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A1E24E88E110062ADEB /* Brand.swift */; };
 		C1A49A2A24E8A0800062ADEB /* LocationContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A2924E8A0800062ADEB /* LocationContact.swift */; };
+		C1A49A2C24E97FB40062ADEB /* CompanyApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A2B24E97FB40062ADEB /* CompanyApplicationModel.swift */; };
+		C1A49A2E24E981310062ADEB /* LocationApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A2D24E981310062ADEB /* LocationApplicationModel.swift */; };
+		C1A49A3024E981560062ADEB /* BrandApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A2F24E981560062ADEB /* BrandApplicationModel.swift */; };
 		C1A8D9FE24300FDA00B95C17 /* Company.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A8D9FC24300FDA00B95C17 /* Company.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1AF0CFD24691CE000E07391 /* CompanyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CFC24691CE000E07391 /* CompanyMapper.swift */; };
 		C1AF0CFF24691CF300E07391 /* BrandMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF0CFE24691CF300E07391 /* BrandMapper.swift */; };
@@ -73,6 +76,9 @@
 		C1A49A1C24E88E040062ADEB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C1A49A1E24E88E110062ADEB /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		C1A49A2924E8A0800062ADEB /* LocationContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationContact.swift; sourceTree = "<group>"; };
+		C1A49A2B24E97FB40062ADEB /* CompanyApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyApplicationModel.swift; sourceTree = "<group>"; };
+		C1A49A2D24E981310062ADEB /* LocationApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApplicationModel.swift; sourceTree = "<group>"; };
+		C1A49A2F24E981560062ADEB /* BrandApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandApplicationModel.swift; sourceTree = "<group>"; };
 		C1A8D9F924300FDA00B95C17 /* Company.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Company.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A8D9FC24300FDA00B95C17 /* Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		C1A8D9FD24300FDA00B95C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 		C1A49A2124E893020062ADEB /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C1A49A2D24E981310062ADEB /* LocationApplicationModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 		C1A49A2524E8932C0062ADEB /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C1A49A2B24E97FB40062ADEB /* CompanyApplicationModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 		C1A49A2624E893330062ADEB /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C1A49A2F24E981560062ADEB /* BrandApplicationModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -446,11 +455,13 @@
 				C1A49A0D24E88D5C0062ADEB /* LocationAddress.swift in Sources */,
 				C1A49A1724E88DBA0062ADEB /* LocationLaunchDate.swift in Sources */,
 				C1AF0D0124691D0100E07391 /* LocationMapper.swift in Sources */,
+				C1A49A2E24E981310062ADEB /* LocationApplicationModel.swift in Sources */,
 				C1A49A1924E88DD20062ADEB /* OperationDuration.swift in Sources */,
 				C1A49A0924E88AAF0062ADEB /* CompanyContact.swift in Sources */,
 				C1A49A1324E88D8C0062ADEB /* LocationName.swift in Sources */,
 				C1A49A0524E88A8D0062ADEB /* BrandName.swift in Sources */,
 				C1AF0CFD24691CE000E07391 /* CompanyMapper.swift in Sources */,
+				C1A49A2C24E97FB40062ADEB /* CompanyApplicationModel.swift in Sources */,
 				C1A49A1F24E88E110062ADEB /* Brand.swift in Sources */,
 				C1A499FB24E88A450062ADEB /* BrandBadge.swift in Sources */,
 				C1A49A1B24E88DF80062ADEB /* Company.swift in Sources */,
@@ -464,6 +475,7 @@
 				C1A49A0324E88A810062ADEB /* BrandId.swift in Sources */,
 				C1A49A2A24E8A0800062ADEB /* LocationContact.swift in Sources */,
 				C1A49A0724E88A9D0062ADEB /* BrandReturnPolicy.swift in Sources */,
+				C1A49A3024E981560062ADEB /* BrandApplicationModel.swift in Sources */,
 				C1A499FD24E88A540062ADEB /* BrandCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
