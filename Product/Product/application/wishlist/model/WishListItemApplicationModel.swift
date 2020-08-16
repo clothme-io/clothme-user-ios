@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-struct WishLIstItemApplicationModel : RequestDataAble {
+struct WishListItemApplicationModel : RequestDataAble {
     let productId: String
     let productImage: String
     let productName: String

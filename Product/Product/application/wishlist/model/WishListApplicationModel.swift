@@ -11,6 +11,6 @@ import Core
 
 struct WishListApplicationModel : RequestDataAble {
     let wishListId: String
-    let wishListItem: [WishLIstItemApplicationModel]
+    let wishListItem: [WishListItemApplicationModel?]
     let dateAdded: String
 }
