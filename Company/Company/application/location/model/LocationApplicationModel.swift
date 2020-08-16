@@ -9,6 +9,31 @@
 import Foundation
 import Core
 
-struct LocationApplicationModel {
+struct LocationApplicationModel : RequestDataAble {
     
+    let locationId: String
+    let locationName: String
+    let locationAddress: LocationAddressApplicationModel
+    let review: [LocationReviewApplicationModel]
+    let operationDuration: String
+    let launchDate: String
+    let locationContact: LocationContactApplicationModel
+ 
+}
+
+struct LocationReviewApplicationModel : RequestDataAble {
+    let text: String;
+    let star: Double
+}
+
+struct LocationAddressApplicationModel : RequestDataAble {
+    let streetNumber: String
+    let streetName: String
+    let city: String
+    let country: String
+}
+
+struct LocationContactApplicationModel : RequestDataAble {
+    let email: String
+    let phoneNumber: String
 }

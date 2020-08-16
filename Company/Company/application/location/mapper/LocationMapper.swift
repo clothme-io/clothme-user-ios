@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import Core
+
+class LocationMapper {
+    
+    static func toDomainModel(data: LocationApplicationModel) -> ResultOption<Location, AppError> {
+         
+     }
+     
+     static func toDataModel(model: Location) -> LocationApplicationModel {
+         return LocationApplicationModel()
+     }
+    
+}

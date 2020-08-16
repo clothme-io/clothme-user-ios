@@ -11,22 +11,32 @@ import Core
 
 public struct LocationReview: Equatable {
     
-    private var _value: String;
+    private var _text: String;
+    private var _star: Double
     
-    private init(value: String) {
-        self._value = value;
+    private init(
+        text: String,
+        star: Double
+    ) {
+        self._text = text
+        self._star = star
     }
     
-    public static func create(with name: String) -> ResultOption<LocationReview, AppError> {
-        let validName = Guard.againstNilValue(argument: name)
-        if !validName {
+    public static func create(text: String, star: Double) -> ResultOption<LocationReview, AppError> {
+        let validText = Guard.againstNilValue(argument: text)
+        let validStar = Guard.againstNegative(value: star)
+        if !validText || !validStar {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(LocationReview(value: name))
+        return .ok(LocationReview(text: text, star: star))
     }
     
     public var review: String {
-           return self._value
+        return self._text
+    }
+    
+    public var star: Double {
+        return self._star
     }
     
 }
