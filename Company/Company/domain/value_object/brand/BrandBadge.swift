@@ -11,16 +11,16 @@ import Core
 
 public struct BrandBadge: Equatable {
     
-    private var _ethicalBadge: String
-    private var _refundBadge: String
-    private var _returnBadge: String
-    private var _environmentConsciousBadge: String
+    private var _ethicalBadge: Bool?
+    private var _refundBadge: Bool?
+    private var _returnBadge: Bool?
+    private var _environmentConsciousBadge: Bool?
     
     private init(
-        ethicalBadge: String,
-        refundBadge: String,
-        returnBadge: String,
-        environmentConsciousBadge: String
+        ethicalBadge: Bool?,
+        refundBadge: Bool?,
+        returnBadge: Bool?,
+        environmentConsciousBadge: Bool?
     ) {
         self._ethicalBadge = ethicalBadge
         self._refundBadge = refundBadge
@@ -29,16 +29,11 @@ public struct BrandBadge: Equatable {
     }
     
     public static func create(
-        ethicalBadge: String,
-        refundBadge: String,
-        returnBadge: String,
-        environmentConsciousBadge: String
+        ethicalBadge: Bool?,
+        refundBadge: Bool?,
+        returnBadge: Bool?,
+        environmentConsciousBadge: Bool?
     ) -> ResultOption<BrandBadge, AppError> {
-        let validEthical = Guard.againstEmptyString(argument: ethicalBadge)
-        if !validEthical {
-            return .error(AppError.nilValueNotAllowed)
-        }
-        
         return .ok(BrandBadge(
             ethicalBadge: ethicalBadge,
             refundBadge: refundBadge,
@@ -47,19 +42,19 @@ public struct BrandBadge: Equatable {
         )
     }
     
-    public var ethicalBadge: String {
+    public var ethicalBadge: Bool? {
         return self._ethicalBadge
     }
     
-    public var refundBadge: String {
+    public var refundBadge: Bool? {
         return self._refundBadge
     }
     
-    public var returnBadge: String {
+    public var returnBadge: Bool? {
         return self._returnBadge
     }
     
-    public var environmentConsciousBadge: String {
+    public var environmentConsciousBadge: Bool? {
         return self._environmentConsciousBadge
     }
     
