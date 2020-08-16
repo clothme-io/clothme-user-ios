@@ -10,5 +10,7 @@ import Foundation
 import Core
 
 struct CartApplicationModel : RequestDataAble {
-    
+    let wishListId: String
+    let wishListItem: [CartItemApplicationModel]
+    let dateAdded: String
 }

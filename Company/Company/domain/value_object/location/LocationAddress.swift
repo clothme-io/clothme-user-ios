@@ -9,27 +9,58 @@
 import Foundation
 import Core
 
-public struct BrandName: Equatable {
+public struct LocationAddress: Equatable {
     
     private var _streetNumber: String
     private var _streetName: String
     private var _city: String
     private var _country: String
     
-    private init(value: String) {
-        self._value = value;
+    private init(
+        streetNumber: String,
+        streetName: String,
+        city: String,
+        country: String
+    ) {
+        self._streetNumber = streetNumber
+        self._streetName = streetName
+        self._city = city
+        self._country = country
     }
     
-    public static func create(with name: String) -> ResultOption<BrandName, AppError> {
-        let validName = Guard.againstNilValue(argument: name)
+    public static func create(
+        streetNumber: String,
+        streetName: String,
+        city: String,
+        country: String
+    ) -> ResultOption<LocationAddress, AppError> {
+        let validName = Guard.againstEmptyString(argument: streetName)
         if !validName {
             return .error(AppError.nilValueNotAllowed)
         }
-        return .ok(BrandName(value: name))
+        return .ok(LocationAddress(
+            streetNumber: streetNumber,
+            streetName: streetName,
+            city: city,
+            country: country)
+        )
     }
     
-    public var name: String {
-           return self._value
+    public func streetNumber() -> String {
+        return self._streetNumber
     }
+    
+    public func streetName() -> String {
+        return self._streetName
+    }
+    
+    public func city() -> String {
+        return self._city
+    }
+    
+    public func country() -> String {
+        return self._country
+    }
+    
     
 }

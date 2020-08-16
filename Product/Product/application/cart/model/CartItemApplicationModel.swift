@@ -10,5 +10,10 @@ import Foundation
 import Core
 
 struct CartItemApplicationModel : RequestDataAble {
-    
+    let productId: String
+    let productImage: String
+    let productName: String
+    let productPrice: ProductPriceApplicationModel
+    let productDescription: String
+    let dateAdded: String
 }
