@@ -32,11 +32,11 @@ struct CompanyContact : Equatable {
         )
     }
     
-    public func email() -> String {
+    public var email: String {
         return self._email
     }
     
-    public func phoneNumber() -> String {
+    public var phoneNumber: String {
         return self._phoneNumber
     }
 }

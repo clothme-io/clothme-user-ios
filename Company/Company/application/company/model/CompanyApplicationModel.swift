@@ -10,5 +10,12 @@ import Foundation
 import Core
 
 struct CompanyApplicationModel : RequestDataAble {
-    
+    let companyId: String
+    let companyName: String
+    let companyContact: CompanyContactApplicationModel
+}
+
+struct CompanyContactApplicationModel : RequestDataAble {
+    let email: String
+    let phoneNumber: String
 }
