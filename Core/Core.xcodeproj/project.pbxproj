@@ -73,9 +73,9 @@
 		C183EC10242C1CB800785111 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				C183EC11242C1CC900785111 /* entity */,
 				C1DAD29B2438117500F2A951 /* repository */,
 				C183EC14242C1CE200785111 /* value_object */,
-				C183EC11242C1CC900785111 /* entity */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -93,9 +93,9 @@
 		C183EC14242C1CE200785111 /* value_object */ = {
 			isa = PBXGroup;
 			children = (
-				C191689A244AC48600D6C443 /* ValueObject.swift */,
 				C1AF0B18244E366000E07391 /* Date.swift */,
 				C1A499F824E8706A0062ADEB /* Money.swift */,
+				C191689A244AC48600D6C443 /* ValueObject.swift */,
 			);
 			name = value_object;
 			sourceTree = "<group>";
@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				C1AF0B64245EFEE200E07391 /* application */,
-				C1A8D9CF242EF2E900B95C17 /* Error */,
 				C183EC10242C1CB800785111 /* domain */,
+				C1A8D9CF242EF2E900B95C17 /* Error */,
 			);
 			name = Shared;
 			path = ..;
@@ -151,9 +151,9 @@
 		C1AF0B64245EFEE200E07391 /* application */ = {
 			isa = PBXGroup;
 			children = (
+				C1AF0B65245EFEE900E07391 /* dto */,
 				C170A23C2474C16D00891A03 /* mapper */,
 				C1AF0B68245F0BA600E07391 /* useCase */,
-				C1AF0B65245EFEE900E07391 /* dto */,
 			);
 			name = application;
 			sourceTree = "<group>";

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Core
+
+public class Company: AggregateRoot {
+    private let _companyId: CompanyId
+    private let _companyName: CompanyName
+    private let _companyContact: CompanyContact
+}

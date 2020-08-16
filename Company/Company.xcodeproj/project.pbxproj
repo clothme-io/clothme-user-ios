@@ -140,9 +140,9 @@
 		C163EDC824D52343000BFD57 /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				C163EDCA24D523C2000BFD57 /* brand */,
 				C163EDCC24D523D6000BFD57 /* company */,
 				C163EDCB24D523CA000BFD57 /* location */,
-				C163EDCA24D523C2000BFD57 /* brand */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -200,12 +200,12 @@
 			children = (
 				C1A49A0C24E88D5C0062ADEB /* LocationAddress.swift */,
 				C1A49A0E24E88D6A0062ADEB /* LocationBadge.swift */,
+				C1A49A2924E8A0800062ADEB /* LocationContact.swift */,
 				C1A49A1024E88D770062ADEB /* LocationId.swift */,
+				C1A49A1624E88DBA0062ADEB /* LocationLaunchDate.swift */,
 				C1A49A1224E88D8C0062ADEB /* LocationName.swift */,
 				C1A49A1424E88D9E0062ADEB /* LocationReview.swift */,
-				C1A49A1624E88DBA0062ADEB /* LocationLaunchDate.swift */,
 				C1A49A1824E88DD20062ADEB /* OperationDuration.swift */,
-				C1A49A2924E8A0800062ADEB /* LocationContact.swift */,
 			);
 			path = location;
 			sourceTree = "<group>";

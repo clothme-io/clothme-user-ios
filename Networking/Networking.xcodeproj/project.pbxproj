@@ -36,6 +36,7 @@
 		C123BDB024A1BD4100F4D31F /* BillingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDAF24A1BD4100F4D31F /* BillingNetworkManager.swift */; };
 		C123BDB224A1BD5500F4D31F /* LocationNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDB124A1BD5500F4D31F /* LocationNetworkManager.swift */; };
 		C123BDB424A1BD6300F4D31F /* CompanyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123BDB324A1BD6300F4D31F /* CompanyNetworkManager.swift */; };
+		C1A49A3424E992B00062ADEB /* DBConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A49A3324E992B00062ADEB /* DBConstant.swift */; };
 		C1AD999B248D689D0005D40A /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */; };
 		C1AD999D248D6B680005D40A /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */; };
 		C1AD999F248D76FE0005D40A /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD999E248D76FE0005D40A /* NetworkRouter.swift */; };
@@ -105,6 +106,7 @@
 		C123BDAF24A1BD4100F4D31F /* BillingNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingNetworkManager.swift; sourceTree = "<group>"; };
 		C123BDB124A1BD5500F4D31F /* LocationNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNetworkManager.swift; sourceTree = "<group>"; };
 		C123BDB324A1BD6300F4D31F /* CompanyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyNetworkManager.swift; sourceTree = "<group>"; };
+		C1A49A3324E992B00062ADEB /* DBConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConstant.swift; sourceTree = "<group>"; };
 		C1AD999A248D689D0005D40A /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999C248D6B680005D40A /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		C1AD999E248D76FE0005D40A /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
@@ -217,6 +219,22 @@
 			path = billing;
 			sourceTree = "<group>";
 		};
+		C1A49A3124E992830062ADEB /* GCP */ = {
+			isa = PBXGroup;
+			children = (
+				C1A49A3224E9928E0062ADEB /* config */,
+			);
+			path = GCP;
+			sourceTree = "<group>";
+		};
+		C1A49A3224E9928E0062ADEB /* config */ = {
+			isa = PBXGroup;
+			children = (
+				C1A49A3324E992B00062ADEB /* DBConstant.swift */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
 		C1AD99A4248D8CDD0005D40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,11 +246,11 @@
 		C1AD99AD248D8EF10005D40A /* ProtocolNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				C1AF0CAB24627BAE00E07391 /* error */,
+				C1AF0C9F2462788D00E07391 /* encoding */,
 				C1AF0C9C2462785200E07391 /* endpointAPI */,
+				C1AF0CAB24627BAE00E07391 /* error */,
 				C1AF0C9D2462787B00E07391 /* manager */,
 				C1AF0C9E2462788500E07391 /* service */,
-				C1AF0C9F2462788D00E07391 /* encoding */,
 			);
 			path = ProtocolNetworking;
 			sourceTree = "<group>";
@@ -305,6 +323,7 @@
 		C1AF0C9324625DBB00E07391 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				C1A49A3124E992830062ADEB /* GCP */,
 				C1AD99AD248D8EF10005D40A /* ProtocolNetworking */,
 				C1AF0C9424625DBB00E07391 /* Networking.h */,
 				C1AF0C9524625DBB00E07391 /* Info.plist */,
@@ -494,6 +513,7 @@
 				C123BD7124A109A800F4D31F /* MeasurementNetworkManager.swift in Sources */,
 				C1AD99A3248D8C3F0005D40A /* NetworkEnvironment.swift in Sources */,
 				C123BD7F24A10F3400F4D31F /* WishListAPI.swift in Sources */,
+				C1A49A3424E992B00062ADEB /* DBConstant.swift in Sources */,
 				C123BD7D24A10F2400F4D31F /* ReviewAPI.swift in Sources */,
 				C123BD8524A10FFE00F4D31F /* WaldropeAPI.swift in Sources */,
 				C123BD9A24A1A6D800F4D31F /* BillingAPI.swift in Sources */,
