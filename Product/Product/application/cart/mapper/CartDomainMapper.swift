@@ -71,6 +71,27 @@ class CartDomainMapper {
     }
     
     private static func cartItems(model: Cart) -> [CartItemApplicationModel] {
-        
+        var index = 0
+        var cartItems = [CartItemApplicationModel]()
+        while model.getCartItem().count > index {
+            let cartItem = CartItemApplicationModel(
+                productId: model.getCartItem()[index].getProductId().value().toIdString(),
+                productImage: model.getCartItem()[index].getProductImages().images,
+                productName: model.getCartItem()[index].getProductName().name,
+                productPrice: ProductPriceApplicationModel(
+                    currency: model.getCartItem()[index].getProductPrice().price.getCurrency(),
+                    amount: model.getCartItem()[index].getProductPrice().price.getValue()
+                ),
+                productDescription: model.getCartItem()[index].getProductDescription().description,
+                productTax: model.getCartItem()[index].getProductTax().tax,
+                productDiscount: model.getCartItem()[index].getProductDiscount().discount,
+                itemCount: model.getCartItem()[index].getItemCount().count,
+                dateAdded: model.getCartItem()[index].getDateAdded().date,
+                modifiedDate: model.getCartItem()[index].getModifiedDate().date)
+            
+            cartItems.append(cartItem)
+            index += 1
+        }
+        return cartItems
     }
 }
