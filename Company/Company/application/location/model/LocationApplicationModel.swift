@@ -15,7 +15,7 @@ struct LocationApplicationModel : RequestDataAble {
     let locationName: String
     let locationAddress: LocationAddressApplicationModel
     let review: [LocationReviewApplicationModel]
-    let operationDuration: String
+    let operationDuration: LocationOperationDurationApplicationModel
     let launchDate: String
     let locationContact: LocationContactApplicationModel
  
@@ -36,4 +36,10 @@ struct LocationAddressApplicationModel : RequestDataAble {
 struct LocationContactApplicationModel : RequestDataAble {
     let email: String
     let phoneNumber: String
+}
+
+struct LocationOperationDurationApplicationModel : RequestDataAble {
+    let year: Int
+    let month: Int
+    let day: Int
 }

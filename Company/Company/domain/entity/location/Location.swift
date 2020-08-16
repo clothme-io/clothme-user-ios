@@ -73,7 +73,7 @@ public class Location: Entity {
         return self._review
     }
     
-    func getLperationDuration() -> OperationDuration {
+    func getLocationOperationDuration() -> OperationDuration {
         return self._operationDuration
     }
     
