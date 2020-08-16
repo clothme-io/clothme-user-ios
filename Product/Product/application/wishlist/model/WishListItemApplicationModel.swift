@@ -11,7 +11,7 @@ import Core
 
 struct WishListItemApplicationModel : RequestDataAble {
     let productId: String
-    let productImage: String
+    let productImage: [String]
     let productName: String
     let productPrice: ProductPriceApplicationModel
     let productDescription: String
